@@ -6,22 +6,33 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.time.Year;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class MainController {
-    @FXML private TableView<Book> tableView;
-    @FXML private TableColumn<Book, String> colBookId;
-    @FXML private TableColumn<Book, String> colTitle;
-    @FXML private TableColumn<Book, String> colAuthor;
-    @FXML private TableColumn<Book, Integer> colPublishYear;
-    @FXML private TableColumn<Book, Boolean> colIsBorrowed;
+    @FXML
+    private TableView<Book> tableView;
+    @FXML
+    private TableColumn<Book, String> colBookId;
+    @FXML
+    private TableColumn<Book, String> colTitle;
+    @FXML
+    private TableColumn<Book, String> colAuthor;
+    @FXML
+    private TableColumn<Book, Integer> colPublishYear;
+    @FXML
+    private TableColumn<Book, Boolean> colIsBorrowed;
 
-    @FXML private TextField tfBookId;
-    @FXML private TextField tfTitle;
-    @FXML private TextField tfAuthor;
-    @FXML private ComboBox<Integer> cbPublishYear;
+    @FXML
+    private TextField tfBookId;
+    @FXML
+    private TextField tfTitle;
+    @FXML
+    private TextField tfAuthor;
+    @FXML
+    private ComboBox<Integer> cbPublishYear;
 
     private ObservableList<Book> bookList = FXCollections.observableArrayList();
 
@@ -38,14 +49,14 @@ public class MainController {
         // Tạo danh sách các năm từ 1900 đến năm hiện tại
         int currentYear = Year.now().getValue();
         ObservableList<Integer> years = FXCollections.observableArrayList(
-            IntStream.rangeClosed(1900, currentYear)
-                .boxed()
-                .sorted((a, b) -> b.compareTo(a))  // Sắp xếp giảm dần
-                .collect(Collectors.toList())
+                IntStream.rangeClosed(1900, currentYear)
+                        .boxed()
+                        .sorted((a, b) -> b.compareTo(a))  // Sắp xếp giảm dần
+                        .collect(Collectors.toList())
         );
         years.add(0, YEAR_PROMPT); // Thêm giá trị đặc biệt vào đầu danh sách
         cbPublishYear.setItems(years);
-        
+
         // Đặt cell factory để hiển thị promptText cho giá trị đặc biệt
         cbPublishYear.setCellFactory(lv -> new ListCell<Integer>() {
             @Override
@@ -60,7 +71,7 @@ public class MainController {
                 }
             }
         });
-        
+
         // Đặt button cell để hiển thị promptText khi không có lựa chọn
         cbPublishYear.setButtonCell(new ListCell<Integer>() {
             @Override
@@ -83,8 +94,8 @@ public class MainController {
             String author = tfAuthor.getText().trim();
             Integer publishYear = cbPublishYear.getValue();
 
-            if (bookId.isEmpty() || title.isEmpty() || author.isEmpty() || 
-                publishYear == null || publishYear == YEAR_PROMPT) {
+            if (bookId.isEmpty() || title.isEmpty() || author.isEmpty() ||
+                    publishYear == null || publishYear == YEAR_PROMPT) {
                 showErrorAlert("Vui lòng điền đầy đủ thông tin sách.");
                 return;
             }
@@ -129,6 +140,6 @@ public class MainController {
         alert.setContentText(content);
         alert.showAndWait();
     }
-    
+
     private static final Integer YEAR_PROMPT = 0;
 }

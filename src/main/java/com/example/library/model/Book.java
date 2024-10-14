@@ -20,23 +20,63 @@ public class Book {
     }
 
     // Getters và setters
-    public String getBookId() { return bookId.get(); }
-    public void setBookId(String bookId) { this.bookId.set(bookId); }
-    public SimpleStringProperty bookIdProperty() { return bookId; }
+    public String getBookId() {
+        return bookId.get();
+    }
 
-    public String getTitle() { return title.get(); }
-    public void setTitle(String title) { this.title.set(title); }
-    public SimpleStringProperty titleProperty() { return title; }
+    public void setBookId(String bookId) {
+        this.bookId.set(bookId);
+    }
 
-    public String getAuthor() { return author.get(); }
-    public void setAuthor(String author) { this.author.set(author); }
-    public SimpleStringProperty authorProperty() { return author; }
+    public SimpleStringProperty bookIdProperty() {
+        return bookId;
+    }
 
-    public int getPublishYear() { return publishYear.get(); }
-    public void setPublishYear(int publishYear) { this.publishYear.set(publishYear); }
-    public SimpleIntegerProperty publishYearProperty() { return publishYear; }
+    public String getTitle() {
+        return title.get();
+    }
 
-    public boolean getIsBorrowed() { return isBorrowed.get(); }
-    public void setIsBorrowed(boolean isBorrowed) { this.isBorrowed.set(isBorrowed); }
-    public SimpleBooleanProperty isBorrowedProperty() { return isBorrowed; }
+    public void setTitle(String title) {
+        this.title.set(title);
+    }
+
+    public SimpleStringProperty titleProperty() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author.get();
+    }
+
+    public void setAuthor(String author) {
+        this.author.set(author);
+    }
+
+    public SimpleStringProperty authorProperty() {
+        return author;
+    }
+
+    public int getPublishYear() {
+        return publishYear.get();
+    }
+
+    public void setPublishYear(int publishYear) {
+        this.publishYear.set(publishYear);
+    }
+
+    public SimpleIntegerProperty publishYearProperty() {
+        return publishYear;
+    }
+
+    public boolean getIsBorrowed() {
+        return isBorrowed.get();
+    }
+
+    public void setIsBorrowed(boolean isBorrowed) {
+        this.isBorrowed.set(isBorrowed);
+    }
+
+    public SimpleBooleanProperty isBorrowedProperty() {
+        return isBorrowed;
+    }
 }

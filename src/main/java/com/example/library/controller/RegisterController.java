@@ -25,11 +25,7 @@ public class RegisterController {
     @FXML
     private Button loginButton;
 
-    private Map<String, String> userDatabase = new HashMap<>(); // Lưu trữ thông tin người dùng
-
-    private Parent root; // Biến root
-    private Scene scene; // Biến scene
-    private Stage stage; // Biến stage
+    private Map<String, String> userDatabase = new HashMap<>();
 
     @FXML
     public void initialize() {
@@ -56,13 +52,17 @@ public class RegisterController {
 
     private void switchToLogin() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/view/LoginView.fxml"));
-            root = loader.load();
-            stage = (Stage) loginButton.getScene().getWindow();
-            scene = new Scene(root, 300, 250);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/LoginView.fxml"));
+            if (loader.getLocation() == null) {
+                throw new IOException("Không thể tìm thấy file FXML.");
+            }
+            Parent root = loader.load();
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            Scene scene = new Scene(root, 300, 250);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
+            messageArea.setText("Không thể chuyển sang màn hình đăng nhập: " + e.getMessage());
         }
     }
 }

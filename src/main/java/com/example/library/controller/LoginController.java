@@ -1,6 +1,8 @@
 package com.example.library.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
@@ -8,9 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import javafx.scene.Parent;
 
@@ -33,11 +37,6 @@ public class LoginController {
     private Stage stage;
 
     @FXML
-    public void initialize() {
-        loginButton.setOnAction(e -> login());
-        registerButton.setOnAction(e -> switchToRegister());
-    }
-
     private void login() {
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -54,19 +53,20 @@ public class LoginController {
         }
     }
 
+    @FXML
     private void switchToRegister() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("main/resources/com/example/library/RegisterView.fxml"));
-            root = loader.load();
-            stage = (Stage) registerButton.getScene().getWindow();
-            scene = new Scene(root, 300, 250);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/RegisterView.fxml"));
+            if (loader.getLocation() == null) {
+                throw new IOException("Không thể tìm thấy file FXML.");
+            }
+            Parent root = loader.load();
+            Stage stage = (Stage) registerButton.getScene().getWindow();
+            Scene scene = new Scene(root, 300, 250);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
             messageArea.setText("Không thể chuyển sang màn hình đăng ký: " + e.getMessage());
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-            messageArea.setText("Có lỗi xảy ra: " + e.getMessage());
         }
     }
 }

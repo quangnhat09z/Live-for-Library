@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -11,8 +10,8 @@
         <Label text="Mật khẩu:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0"/>
         <PasswordField fx:id="passwordField" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="50.0"/>
         
-        <Button text="Đăng Nhập" fx:id="loginButton" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0"/>
-        <Button text="Chuyển sang Đăng Ký" fx:id="registerButton" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0"/>
+        <Button text="Đăng Nhập" fx:id="loginButton" onAction="#login" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0"/>
+        <Button text="Chuyển sang Đăng Ký" fx:id="registerButton" onAction="#switchToRegister" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0"/>
         
         <TextArea fx:id="messageArea" editable="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0"/>
     </children>
