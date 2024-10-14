@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.controller.MainController" spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="10">
+        <TextField fx:id="tfBookId" promptText="Mã sách"/>
+        <TextField fx:id="tfTitle" promptText="Tiêu đề"/>
+        <TextField fx:id="tfAuthor" promptText="Tác giả"/>
+        <ComboBox fx:id="cbPublishYear" promptText="Năm xuất bản"/>
+        <Button text="Thêm sách" onAction="#addBook"/>
+    </HBox>
+
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="colBookId" text="Mã sách"/>
+            <TableColumn fx:id="colTitle" text="Tiêu đề"/>
+            <TableColumn fx:id="colAuthor" text="Tác giả"/>
+            <TableColumn fx:id="colPublishYear" text="Năm xuất bản"/>
+            <TableColumn fx:id="colIsBorrowed" text="Đã mượn"/>
+        </columns>
+    </TableView>
+</VBox>

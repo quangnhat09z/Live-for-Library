@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.controller.RegisterController">
+    <children>
+        <Label text="Tên đăng nhập:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0"/>
+        <TextField fx:id="usernameField" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="10.0"/>
+        
+        <Label text="Mật khẩu:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0"/>
+        <PasswordField fx:id="passwordField" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="50.0"/>
+        
+        <Button text="Đăng Ký" fx:id="registerButton" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0"/>
+        <Button text="Chuyển sang Đăng Nhập" fx:id="loginButton" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0"/>
+        
+        <TextArea fx:id="messageArea" editable="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0"/>
+    </children>
+</AnchorPane>
