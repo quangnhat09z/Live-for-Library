@@ -10,13 +10,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 public class LoginController {
     @FXML
@@ -29,14 +30,27 @@ public class LoginController {
     private Button loginButton;
     @FXML
     private Button registerButton;
+    @FXML
+    private ImageView backgroundImage;
+    @FXML
+    private AnchorPane anchorPane; // Thêm biến AnchorPane
 
     private Map<String, String> userDatabase = new HashMap<>();
 
-    private Parent root;
-    private Scene scene;
-    private Stage stage;
-
     @FXML
+    public void initialize() {
+        // Tải hình ảnh và thiết lập cho ImageView
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/library.png"))); // Đường dẫn đến hình ảnh
+        backgroundImage.setImage(image);
+        
+        // Đặt kích thước cho ImageView
+        backgroundImage.fitWidthProperty().bind(anchorPane.widthProperty());
+        backgroundImage.fitHeightProperty().bind(anchorPane.heightProperty());
+        
+        loginButton.setOnAction(e -> login());
+        registerButton.setOnAction(e -> switchToRegister());
+    }
+
     private void login() {
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -53,20 +67,15 @@ public class LoginController {
         }
     }
 
-    @FXML
     private void switchToRegister() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/RegisterView.fxml"));
-            if (loader.getLocation() == null) {
-                throw new IOException("Không thể tìm thấy file FXML.");
-            }
             Parent root = loader.load();
             Stage stage = (Stage) registerButton.getScene().getWindow();
-            Scene scene = new Scene(root, 300, 250);
+            Scene scene = new Scene(root, 1000, 924);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
-            messageArea.setText("Không thể chuyển sang màn hình đăng ký: " + e.getMessage());
         }
     }
 }

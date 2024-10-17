@@ -11,9 +11,10 @@ import java.util.Objects;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LoginView.fxml")));
-        primaryStage.setTitle("Đăng Nhập");
-        primaryStage.setScene(new Scene(root, 300, 250));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainView.fxml")));
+        primaryStage.setTitle("Live for Library");
+        primaryStage.setScene(new Scene(root, 1600, 900));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

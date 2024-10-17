@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.controller.RegisterController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.controller.RegisterController" fx:id="anchorPane">
     <children>
-        <Label text="Tên đăng nhập:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0"/>
-        <TextField fx:id="usernameField" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="10.0"/>
-
-        <Label text="Mật khẩu:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0"/>
-        <PasswordField fx:id="passwordField" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="50.0"/>
-
-        <Button text="Đăng Ký" fx:id="registerButton" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0"/>
-        <Button text="Chuyển sang Đăng Nhập" fx:id="loginButton" AnchorPane.leftAnchor="150.0"
-                AnchorPane.topAnchor="100.0"/>
-
-        <TextArea fx:id="messageArea" editable="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="150.0"
-                  AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0"/>
+        <ImageView fx:id="backgroundImage"/>
+        <Label text="Tên đăng ký:" textFill="#c8c8db" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="Playpen Sans ExtraBold" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" layoutX="234.0" layoutY="11.0" opacity="0.3" prefHeight="25.0" prefWidth="322.0" promptText="Tên đăng ký" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="11.0">
+            <font>
+                <Font name="Playpen Sans Bold" size="12.0" />
+            </font>
+        </TextField>
+        
+        <Label text="Mật khẩu:" textFill="#c8c8db" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
+            <font>
+                <Font name="Playpen Sans ExtraBold" size="20.0" />
+            </font>
+        </Label>
+        <PasswordField fx:id="passwordField" layoutX="234.0" layoutY="51.0" opacity="0.3" prefHeight="25.0" prefWidth="322.0" promptText="Mật khẩu" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="51.0">
+            <font>
+                <Font name="Playpen Sans Bold" size="12.0" />
+            </font>
+        </PasswordField>
+        
+        <Button fx:id="registerButton" defaultButton="true" layoutX="67.0" layoutY="100.0" text="Đăng Ký" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="100.0" />
+        <Button fx:id="loginButton" layoutX="300.0" layoutY="100.0" text="Chuyển sang Đăng Nhập" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="100.0" />
+        
+        <TextArea fx:id="messageArea" editable="false" opacity="0.3" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0" />
     </children>
 </AnchorPane>
