@@ -50,7 +50,7 @@
             <Font name="Verdana Bold" size="10.0" />
           </font>
         </Button>
-            <Button fx:id="cometoRegister" layoutX="21.0" layoutY="311.0" mnemonicParsing="false" onAction="#cometoRegisterOnAction" prefHeight="26.0" prefWidth="251.0" style="-fx-background-color: #263F73;" text="REGISTER" textFill="#fefffe" visible="false">
+            <Button fx:id="cometoRegister" layoutX="21.0" layoutY="311.0" mnemonicParsing="false" onAction="#cometoRegisterOnAction" prefHeight="26.0" prefWidth="251.0" style="-fx-background-color: #263F73;" text="REGISTER" textFill="#fefffe">
                <font>
                   <Font name="Verdana Bold" size="15.0" />
                </font>
