@@ -35,15 +35,15 @@
     -fx-border-color: #748CF1;
 }
 
-#btn_workbench{
-     -fx-background-color:#141313;
+#homeButton{
+    -fx-background-color:#141313;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
     -fx-border-style: solid;
     -fx-border-color: #ffffff;
 }
-.btn_workbench11{
+.btn_1{
     -fx-background-color:#353A56;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 50px;

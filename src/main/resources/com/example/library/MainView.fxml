@@ -15,7 +15,8 @@
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1100.0" styleClass="root" stylesheets="@../../../CSSStyling/new.css"
-      xmlns:fx="http://javafx.com/fxml/1">
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.library.controller.MainController">
     <children>
         <VBox prefHeight="717.0" prefWidth="227.0">
             <children>
@@ -44,7 +45,7 @@
                                 </ImageView>
                             </children>
                         </Pane>
-                        <JFXButton fx:id="btn_workbench" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
+                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
                                    prefHeight="45.0" prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_workbench11"
                                    stylesheets="@../../../CSSStyling/new.css" text="Home" textFill="WHITE">
                             <font>
@@ -65,8 +66,8 @@
                                 <Image url="@../../../images/book_icon.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="btn_workbench1" buttonType="RAISED" layoutX="6.0" layoutY="180.0"
-                                   prefHeight="45.0" prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_workbench11"
+                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0"
+                                   prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_1"
                                    stylesheets="@../../../CSSStyling/new.css" text="Button1" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
@@ -79,9 +80,12 @@
                                     </image>
                                 </ImageView>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="btn_workbench11" buttonType="RAISED" layoutX="6.0" layoutY="240.0"
-                                   prefHeight="45.0" prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_workbench11"
+                        <JFXButton fx:id="button2" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0"
+                                   prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_1"
                                    stylesheets="@../../../CSSStyling/new.css" text="Button2" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
@@ -94,9 +98,12 @@
                                     </image>
                                 </ImageView>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="btn_workbench111" buttonType="RAISED" layoutX="6.0" layoutY="300.0"
-                                   prefHeight="45.0" prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_workbench11"
+                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="300.0" prefHeight="45.0"
+                                   prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_1"
                                    stylesheets="@../../../CSSStyling/new.css" text="Button3" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
@@ -109,9 +116,12 @@
                                     </image>
                                 </ImageView>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="btn_workbench1111" buttonType="RAISED" layoutX="6.0" layoutY="360.0"
-                                   prefHeight="45.0" prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_workbench11"
+                        <JFXButton fx:id="button4" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="45.0"
+                                   prefWidth="214.0" ripplerFill="WHITE" styleClass="btn_1"
                                    stylesheets="@../../../CSSStyling/new.css" text="Button4" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
@@ -124,6 +134,9 @@
                                     </image>
                                 </ImageView>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </JFXButton>
                     </children>
                 </AnchorPane>
@@ -141,8 +154,8 @@
                                 <Image url="@../../../images/search.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="710.0" layoutY="5.0"
-                                   prefHeight="50.0" prefWidth="50.0" text="Button">
+                        <JFXButton fx:id="setting_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
+                                   layoutX="710.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="Button">
                             <graphic>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
                                            smooth="false">
@@ -155,8 +168,8 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="780.0" layoutY="5.0"
-                                   prefHeight="50.0" prefWidth="50.0" text="Button">
+                        <JFXButton fx:id="user_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="780.0"
+                                   layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="Button">
                             <graphic>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -164,6 +177,9 @@
                                     </image>
                                 </ImageView>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </JFXButton>
                     </children>
                 </Pane>

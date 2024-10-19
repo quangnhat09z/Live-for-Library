@@ -9,30 +9,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.controller.LoginController" fx:id="anchorPane">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.controller.LoginController"
+            fx:id="anchorPane">
     <children>
         <ImageView fx:id="backgroundImage"/>
         <Label text="Tên đăng nhập:" textFill="#c8c8db" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-         <font>
-            <Font name="Playpen Sans ExtraBold" size="20.0" />
-         </font></Label>
-        <TextField fx:id="usernameField" layoutX="234.0" layoutY="11.0" opacity="0.3" prefHeight="25.0" prefWidth="322.0" promptText="Tên đăng nhập" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="11.0">
-         <font>
-            <Font name="Playpen Sans Bold" size="12.0" />
-         </font></TextField>
-        
+            <font>
+                <Font name="Playpen Sans ExtraBold" size="20.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" layoutX="234.0" layoutY="11.0" opacity="0.3" prefHeight="25.0"
+                   prefWidth="322.0" promptText="Tên đăng nhập" AnchorPane.leftAnchor="234.0"
+                   AnchorPane.topAnchor="11.0">
+            <font>
+                <Font name="Playpen Sans Bold" size="12.0"/>
+            </font>
+        </TextField>
+
         <Label text="Mật khẩu:" textFill="#c8c8db" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
-         <font>
-            <Font name="Playpen Sans ExtraBold" size="20.0" />
-         </font></Label>
-        <PasswordField fx:id="passwordField" layoutX="234.0" layoutY="51.0" opacity="0.3" prefHeight="25.0" prefWidth="322.0" promptText="Mật khẩu" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="51.0">
-         <font>
-            <Font name="Playpen Sans Bold" size="12.0" />
-         </font></PasswordField>
-        
-        <Button fx:id="loginButton" defaultButton="true" layoutX="67.0" layoutY="100.0" text="Đăng Nhập" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="100.0" />
-        <Button fx:id="registerButton" layoutX="300.0" layoutY="100.0" text="Chuyển sang Đăng Ký" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="100.0" />
-        
-        <TextArea fx:id="messageArea" editable="false" opacity="0.3" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0" />
+            <font>
+                <Font name="Playpen Sans ExtraBold" size="20.0"/>
+            </font>
+        </Label>
+        <PasswordField fx:id="passwordField" layoutX="234.0" layoutY="51.0" opacity="0.3" prefHeight="25.0"
+                       prefWidth="322.0" promptText="Mật khẩu" AnchorPane.leftAnchor="234.0"
+                       AnchorPane.topAnchor="51.0">
+            <font>
+                <Font name="Playpen Sans Bold" size="12.0"/>
+            </font>
+        </PasswordField>
+
+        <Button fx:id="loginButton" defaultButton="true" layoutX="67.0" layoutY="100.0" text="Đăng Nhập"
+                AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="100.0"/>
+        <Button fx:id="registerButton" layoutX="300.0" layoutY="100.0" text="Chuyển sang Đăng Ký"
+                AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="100.0"/>
+
+        <TextArea fx:id="messageArea" editable="false" opacity="0.3" AnchorPane.bottomAnchor="10.0"
+                  AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0"/>
     </children>
 </AnchorPane>
