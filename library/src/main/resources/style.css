@@ -35,11 +35,11 @@
 }
 
 .paneDeMuc {
-    -fx-background-color:  #ffff99; /* Màu nền chính (vàng) */
-    -fx-background-radius: 20; /* Bo góc */
-    -fx-border-color: black; /* Màu viền (đen) */
-    -fx-border-radius: 20; /* Bo góc cho viền */
-    -fx-border-width: 0.7; /* Độ dày của viền */
+    -fx-background-color:  #ffff99;
+    -fx-background-radius: 20;
+    -fx-border-color: black;
+    -fx-border-radius: 20;
+    -fx-border-width: 0.7;
 }
 
 .list {
