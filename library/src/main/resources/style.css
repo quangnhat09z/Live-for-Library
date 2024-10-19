@@ -46,17 +46,3 @@
     -fx-font-weight: bold; -fx-font-size: 14px;
 }
 
-.list-view.list-cell {
-    -fx-padding: 10px 15px; /* Khoảng cách bên trong mỗi mục */
-    -fx-font-size: 14px;    /* Kích thước chữ */
-    -fx-spacing: 5px;       /* Khoảng cách giữa các dòng trong một mục */
-    -fx-alignment: CENTER_LEFT; /* Căn chữ sang trái và căn giữa theo chiều dọc */
-}
-
-.list-view.list-cell:filled {
-    -fx-background-color: white; /* Màu nền cho mục đã có dữ liệu */
-}
-
-.list-view.list-cell:empty {
-    -fx-background-color: transparent; /* Ẩn nền cho các ô trống */
-}
