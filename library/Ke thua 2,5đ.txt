@@ -1,0 +1,4 @@
+Nên dung kế thừa trong 2 trường hợp:
+- Chuyên biệt hóa 1 lớp nào đó (base class - VD Person).
+- Tái sử dung mã nguồn chô các lớp có đặc điểm chung. 
+Không nên vi phạm 1 trong 2.

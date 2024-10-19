@@ -1,4 +1,4 @@
-package org.example.library;
+package org.example.library.Application;
 
 import java.io.BufferedReader;
 import java.io.IOException;
