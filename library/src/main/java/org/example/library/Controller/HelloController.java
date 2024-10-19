@@ -1,8 +1,14 @@
 package org.example.library.Controller;
 
+import javafx.animation.TranslateTransition;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.util.Duration;
+import com.jfoenix.controls.JFXButton;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
+
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 
@@ -19,10 +25,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import javafx.util.Duration;
 import org.example.library.Application.DatabaseHelper;
 import org.example.library.Application.Document;
+
 import org.example.library.Application.searchDocument;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -47,8 +56,6 @@ public class HelloController {
     @FXML
     private ListView<String> documentListView;
 
-    @FXML
-    private TextField findField;
 
     private DatabaseHelper databaseHelper = new DatabaseHelper(); // Initialize DatabaseHelper
 
@@ -130,21 +137,6 @@ public class HelloController {
     }
 
     @FXML
-    private TextField idField;
-    @FXML
-    private TextField titleField;
-    @FXML
-    private TextField authorField;
-    @FXML
-    private TextField publicYearField;
-    @FXML
-    private TextField publisherField;
-    @FXML
-    private TextField genreField;
-    @FXML
-    private TextField quantityField;
-
-    @FXML
     private void onAddDocumentClick() {
         String title = titleField.getText().trim();
         String author = authorField.getText().trim();
@@ -202,7 +194,7 @@ public class HelloController {
     }
     @FXML
     public void onDeleteDocumentInSearchingClick() {
-        String selectedDocument = String.valueOf(resultsListView.getSelectionModel().getSelectedItem());
+        String selectedDocument = String.valueOf(resultsTableView.getSelectionModel().getSelectedItem());
 
         // Kiểm tra nếu không có tài liệu nào được chọn
         if (selectedDocument == null || selectedDocument.equals("null")) {
@@ -213,7 +205,6 @@ public class HelloController {
             showSuccessAlert("Tài liệu đã được xóa.");
         }
     }
-
 
 
 
@@ -229,6 +220,13 @@ public class HelloController {
         alert.setHeaderText("Operation Completed");
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    public void showInfoAlert(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait(); // Hiển thị và chờ người dùng đóng
     }
 
     private void changeScene(ActionEvent event, String fxmlPath, String title) {
@@ -254,6 +252,77 @@ public class HelloController {
         changeScene(event, "/org/example/library/management-view.fxml", "Quản lý tài liệu");
     }
 
+    @FXML
+    private TextField idField;
+    @FXML
+    private TextField titleField;
+    @FXML
+    private TextField authorField;
+    @FXML
+    private TextField publicYearField;
+    @FXML
+    private TextField publisherField;
+    @FXML
+    private TextField genreField;
+    @FXML
+    private TextField quantityField;
+    @FXML
+    private TableView<Document> resultsTableView;
+    @FXML
+    private TableColumn<Document, String> idColumn;
+    @FXML
+    private TableColumn<Document, String> titleColumn;
+    @FXML
+    private TableColumn<Document, String> authorColumn;
+    @FXML
+    private TableColumn<Document, String> publicYearColumn;
+    @FXML
+    private TableColumn<Document, String> publisherColumn;
+    @FXML
+    private TableColumn<Document, String> genreColumn;
+    @FXML
+    private TableColumn<Document, String> quantityColumn;
+    @FXML
+    private void initialize() {
+        String[] a = {"idColumn", "titleColumn", "authorColumn",
+                "publicYearColumn", "publisherColumn", "genreColumn", "quantityColumn"};
+        int cnt = 0;
+        if (idColumn != null) {
+            idColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        cnt++;
+
+        if (titleColumn != null) {
+            titleColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        cnt++;
+
+        if (authorColumn != null) {
+            authorColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        cnt++;
+
+        if (publicYearColumn != null) {
+            publicYearColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        cnt++;
+
+        if (publisherColumn != null) {
+            publisherColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        cnt++;
+
+        if (genreColumn != null) {
+            genreColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        cnt++;
+
+        if (quantityColumn != null) {
+            quantityColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
+        }
+        if (myButton != null ) initializeMoving();
+    }
+
 
     @FXML
     private void onSearchClick(ActionEvent event) {
@@ -268,11 +337,34 @@ public class HelloController {
         searchDocument search = new searchDocument();
         List<Document> results = search.searchBooks(id, title, author, year, publisher, genre, quantity);
 
-        // Hiển thị kết quả tìm kiếm trong ListView
-        resultsListView.getItems().clear();
-        for (Document doc : results) {
-            resultsListView.getItems().add(doc.toString());
+
+        // Kiểm tra xem có kết quả không
+        if (results.isEmpty()) {
+            showInfoAlert("Thông báo", "Không tìm thấy sách bạn cần", "Vui lòng tìm sách khác");
+            System.out.println("No results found.");
+        } else {
+            System.out.println("Results found: " + results.size());
         }
+        // Hiển thị kết quả tìm kiếm trong TableView
+        ObservableList<Document> observableResults = FXCollections.observableArrayList(results);
+        resultsTableView.setItems(observableResults);
     }
 
+    @FXML
+    private Button myButton;
+
+
+    @FXML
+    public void initializeMoving() {
+        System.out.println("Controller initialized");
+        myButton.setOnMouseEntered(event -> moveButton(-5));
+        myButton.setOnMouseExited(event -> moveButton(0));
+    }
+
+    private void moveButton(double translateY) {
+        System.out.println("Moving button to: " + translateY); // Kiểm tra giá trị translateY
+        TranslateTransition transition = new TranslateTransition(Duration.millis(200), myButton);
+        transition.setToY(translateY);
+        transition.play();
+    }
 }

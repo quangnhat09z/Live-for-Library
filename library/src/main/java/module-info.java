@@ -6,6 +6,7 @@ module org.example.library {
     requires com.almasb.fxgl.all;
     requires org.json;
     requires java.sql;
+    requires com.jfoenix;
 
     opens org.example.library to javafx.fxml;
     exports org.example.library;
