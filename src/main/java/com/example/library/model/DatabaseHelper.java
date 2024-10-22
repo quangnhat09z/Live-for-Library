@@ -7,7 +7,7 @@ import java.util.List;
 public class DatabaseHelper {
     private static final String URL = "jdbc:mysql://localhost:3306/lib";
     private static final String USER = "root"; // Thay bằng tên người dùng của bạn
-    private static final String PASSWORD = "Jelly172005@iscool"; // Thay bằng mật khẩu của bạn
+    private static final String PASSWORD = "09022005"; // Thay bằng mật khẩu của bạn
 
     public static Connection connect() {
         try {
