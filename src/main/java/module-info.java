@@ -1,6 +1,8 @@
 module com.example.library {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
+    requires org.json;
 
 
     opens com.example.library to javafx.fxml;

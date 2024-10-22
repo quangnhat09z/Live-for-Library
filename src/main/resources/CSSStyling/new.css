@@ -13,8 +13,8 @@
 .side_anchorpane{
     -fx-background-color:#353A56;
     -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
     -fx-border-style: solid;
 }
 .inner_pane{
@@ -35,7 +35,7 @@
     -fx-border-color: #748CF1;
 }
 
-#homeButton{
+#mainButton{
     -fx-background-color:#141313;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 50px;

@@ -1,0 +1,48 @@
+.border {
+    -fx-background-radius: 15;
+    -fx-border-radius : 15;
+}
+
+.button {
+    -fx-background-color: #000069; /* Màu nền chuyển gradient */
+    -fx-background-radius: 15;  /* Bo góc 15px */
+    -fx-text-fill: white;        /* Màu chữ trắng */
+    -fx-font-size: 14px;         /* Kích thước chữ */
+    -fx-padding: 10 20;          /* Khoảng đệm trên-dưới và trái-phải */
+}
+/* Pane với màu nền */
+.pane {
+    -fx-background-color: #FFD700; /* Màu nền vàng */
+    -fx-background-radius: 20;      /* Bo góc 20px */
+    -fx-padding: 15;                /* Khoảng đệm */
+}
+
+.background{
+    -fx-background-image: url('result_manaImage.jpeg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+.backgroundInSearchScreen{
+    -fx-background-image: url('result_manaImage.jpeg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+
+.paneDeMuc {
+    -fx-background-color:  #ffff99;
+    -fx-background-radius: 20;
+    -fx-border-color: black;
+    -fx-border-radius: 20;
+    -fx-border-width: 0.7;
+}
+
+.list {
+    -fx-font-weight: bold; -fx-font-size: 14px;
+}
+
