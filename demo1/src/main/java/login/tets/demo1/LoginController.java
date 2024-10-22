@@ -63,6 +63,7 @@ public class LoginController {
           password_Textile.clear();
         }else{
           loginMessage.setText("Invalid Login.Please try again");
+          loginMessage.setTextFill(Color.RED);
           username_Textile.clear();
           password_Textile.clear();
           cometoRegister.setVisible(true);
