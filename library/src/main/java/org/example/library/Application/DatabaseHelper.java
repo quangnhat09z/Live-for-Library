@@ -4,6 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.library.Controller.HelloController.showSuccessAlert;
+import static org.example.library.Controller.HelloController.showWarningAlert;
+
 public class DatabaseHelper {
     private static final String URL = "jdbc:mysql://localhost:3306/library";
     private static final String USER = "root"; // Thay bằng tên người dùng của bạn
@@ -72,38 +75,45 @@ public class DatabaseHelper {
         return documents;
     }
 
-    public void deleteDocument(int id) {
+    public void deleteDocument(int id, int quantityToDelete) {
         // SQL statements
         String checkSql = "SELECT quantity FROM documents WHERE id = ?";
-        String updateSql = "UPDATE documents SET quantity = quantity - 1 WHERE id = ?";
+        String updateSql = "UPDATE documents SET quantity = quantity - ? WHERE id = ?";
         String deleteSql = "DELETE FROM documents WHERE id = ?";
 
         try (Connection conn = connect();
              PreparedStatement checkStmt = conn.prepareStatement(checkSql);
              PreparedStatement updateStmt = conn.prepareStatement(updateSql);
              PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
-
             // Check the current quantity
             checkStmt.setInt(1, id);
             ResultSet rs = checkStmt.executeQuery();
 
             if (rs.next()) {
-                int quantity = rs.getInt("quantity");
-
-                if (quantity > 1) {
-                    // If quantity is greater than 1, decrease it by 1
-                    updateStmt.setInt(1, id);
-                    updateStmt.executeUpdate();
+                int currentQuantity = rs.getInt("quantity");
+                if (currentQuantity > 0) {
+                    if (currentQuantity > quantityToDelete) {
+                        // Nếu số lượng hiện tại lớn hơn số lượng cần xóa, chỉ cần giảm đi
+                        updateStmt.setInt(1, quantityToDelete);
+                        updateStmt.setInt(2, id);
+                        updateStmt.executeUpdate();
+                        showSuccessAlert("Đã xóa " + quantityToDelete + " tài liệu.");
+                    } else {
+                        // Nếu số lượng hiện tại nhỏ hơn hoặc bằng số lượng cần xóa, xóa tài liệu
+                        deleteStmt.setInt(1, id);
+                        deleteStmt.executeUpdate();
+                        showSuccessAlert("Đã xóa " + currentQuantity + " tài liệu.");
+                    }
                 } else {
-                    // If quantity is 1, delete the document
-                    deleteStmt.setInt(1, id);
-                    deleteStmt.executeUpdate();
+                    showWarningAlert("Không có tài liệu nào để xóa.");
                 }
+            } else {
+                showWarningAlert("Tài liệu không tồn tại.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showWarningAlert("Đã xảy ra lỗi khi xóa tài liệu.");
         }
     }
-
 
 }

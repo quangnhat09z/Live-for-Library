@@ -46,3 +46,9 @@
     -fx-font-weight: bold; -fx-font-size: 14px;
 }
 
+.button-with-bg {
+    -fx-background-image: url('/ScreenSupport/Imagine/Remove-bg.ai_1729393035911.png');
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}

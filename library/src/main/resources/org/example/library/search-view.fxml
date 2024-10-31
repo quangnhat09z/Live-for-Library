@@ -9,9 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.library.Controller.HelloController">
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.library.Controller.SearchingController">
 
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="62.0" prefWidth="1108.0" style="-fx-background-color: #263F73;" stylesheets="@../../../style.css">
@@ -38,7 +36,7 @@
                   <TextField fx:id="publisherField" layoutX="642.0" layoutY="24.0" prefHeight="35.0" prefWidth="181.0" promptText="Nhà xuất bản" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
                   <TextField fx:id="publicYearField" layoutX="553.0" layoutY="24.0" prefHeight="35.0" prefWidth="90.0" promptText="Năm xuất bản" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
                   <TextField fx:id="idField" layoutX="108.0" layoutY="24.0" prefHeight="35.0" prefWidth="68.0" promptText="ID" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-                  <JFXButton fx:id="myButton" layoutX="205.0" layoutY="80.0" text="Hover Me" />
+                  <JFXButton fx:id="myButton" layoutX="205.0" layoutY="80.0" styleClass="button-with-bg" stylesheets="@../../../style.css" text="Hover Me" />
                </children>
             </AnchorPane>
          </children>
