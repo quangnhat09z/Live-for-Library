@@ -8,7 +8,7 @@ public class searchDocument {
 
     public List<Document> searchBooks(String id, String title, String author, String publicYear, String publisher, String genre, String quantity) {
         List<Document> books = new ArrayList<>();
-        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM documents WHERE 1=1");
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM docs WHERE 1=1");
         List<Object> params = new ArrayList<>();
 
         if (!id.isEmpty()) {

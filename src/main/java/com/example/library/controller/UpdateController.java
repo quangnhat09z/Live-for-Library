@@ -1,5 +1,6 @@
 package com.example.library.controller;
 
+import com.example.library.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -43,8 +44,7 @@ public class UpdateController {
     }
 
     private void handleMainButton() {
-        // Xử lý cho nút Home
-        System.out.println("Home button clicked");
+        // Xử lý cho nút Main (Update)
     }
 
     private void handleButton2() {

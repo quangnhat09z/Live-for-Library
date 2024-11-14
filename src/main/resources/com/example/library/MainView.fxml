@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -14,132 +15,108 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/new.css"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.MainController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.example.library.controller.MainController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
             <children>
-                <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane"
-                            stylesheets="@../../../CSSStyling/new.css">
+                <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane" stylesheets="@../../../CSSStyling/main.css">
                     <children>
-                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-                              styleClass="inner_pane" stylesheets="@../../../CSSStyling/new.css">
+                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="inner_pane" stylesheets="@../../../CSSStyling/main.css">
                             <children>
-                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
-                                      styleClass="most_inner_pane" stylesheets="@../../../CSSStyling/new.css">
+                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane" stylesheets="@../../../CSSStyling/main.css">
                                     <children>
-                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0"
-                                                   pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../../images/dots.png"/>
+                                                <Image url="@../../../images/dots.png" />
                                             </image>
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0"
-                                           pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/book_icon.png"/>
+                                        <Image url="@../../../images/book_icon.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </Pane>
-                        <JFXButton fx:id="mainButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
-                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   stylesheets="@../../../CSSStyling/new.css" text="Home" textFill="WHITE">
+                        <JFXButton fx:id="mainButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" stylesheets="@../../../CSSStyling/main.css" text="Home" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
-                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="DEFAULT"/>
+                                <Cursor fx:constant="DEFAULT" />
                             </cursor>
                         </JFXButton>
-                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0"
-                                   pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../images/book_icon.png"/>
+                                <Image url="@../../../images/book_icon.png" />
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="updateButton" buttonType="RAISED" layoutX="6.0" layoutY="180.0"
-                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   stylesheets="@../../../CSSStyling/new.css" text="Update" textFill="WHITE">
+                        <JFXButton fx:id="updateButton" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" stylesheets="@../../../CSSStyling/main.css" text="Update" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
-                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="button2" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   stylesheets="@../../../CSSStyling/new.css" text="Button2" textFill="WHITE">
+                        <JFXButton fx:id="button2" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" stylesheets="@../../../CSSStyling/main.css" text="Button2" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
-                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="300.0" prefHeight="45.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   stylesheets="@../../../CSSStyling/new.css" text="Button3" textFill="WHITE">
+                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="300.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" stylesheets="@../../../CSSStyling/main.css" text="Button3" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
-                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="button4" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="45.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   stylesheets="@../../../CSSStyling/new.css" text="Button4" textFill="WHITE">
+                        <JFXButton fx:id="button4" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" stylesheets="@../../../CSSStyling/main.css" text="Button4" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
-                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
                     </children>
@@ -148,216 +125,190 @@
         </VBox>
         <Pane prefHeight="650.0" prefWidth="1100.0">
             <children>
-                <Pane layoutX="10.0" layoutY="14.0" prefHeight="60.0" prefWidth="1050.0">
+                <Pane layoutX="10.0" layoutY="15.0" prefHeight="60.0" prefWidth="1050.0">
                     <children>
-                        <TextField fx:id="search" accessibleRole="TEXT_FIELD" layoutX="600.0" layoutY="15.0"
-                                   prefHeight="20.0" prefWidth="250.0" promptText="Search" styleClass="search"
-                                   stylesheets="@../../../CSSStyling/new.css"/>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="10.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <TextField fx:id="search" accessibleRole="TEXT_FIELD" layoutX="600.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0" promptText="Search" styleClass="search" stylesheets="@../../../CSSStyling/main.css" />
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../images/search.png"/>
+                                <Image url="@../../../images/search.png" />
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="setting_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
-                                   layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="Button">
+                        <JFXButton fx:id="setting_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="Button">
                             <graphic>
-                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
-                                           smooth="false">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                                     <image>
-                                        <Image url="@../../../images/setting.png"/>
+                                        <Image url="@../../../images/setting.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="user_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1000.0"
-                                   layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="Button">
+                        <JFXButton fx:id="user_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1000.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0" text="Button">
                             <graphic>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/profile.png"/>
+                                        <Image url="@../../../images/profile.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
                     </children>
                 </Pane>
-                <Label layoutX="20.0" layoutY="74.0" text="Welcome back!!">
+                <Label layoutX="20.0" layoutY="75.0" text="Welcome back!!">
                     <font>
-                        <Font name="Century Gothic Bold" size="46.0"/>
+                        <Font name="Century Gothic Bold" size="46.0" />
                     </font>
                 </Label>
-                <Label layoutX="24.0" layoutY="135.0" text="Live for Library 2024">
+                <Label layoutX="20.0" layoutY="135.0" text="Live for Library 2024">
                     <font>
-                        <Font name="Century Gothic" size="27.0"/>
+                        <Font name="Century Gothic" size="27.0" />
                     </font>
                 </Label>
-                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_1" stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: white;" styleClass="pane_1" stylesheets="@../../../CSSStyling/main.css">
                     <children>
                         <Label layoutX="54.0" layoutY="14.0" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
-                        <Label layoutX="62.0" layoutY="48.0" text="8">
+                        <Label fx:id="label1" layoutX="62.0" layoutY="48.0" text="1">
                             <font>
-                                <Font name="Century" size="46.0"/>
+                                <Font name="Century" size="46.0" />
                             </font>
                         </Label>
                         <Label layoutX="38.0" layoutY="126.0" text="Progress...">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress" layoutX="24.0" layoutY="159.0" prefHeight="18.0" prefWidth="102.0"
-                                     progress="0.89" styleClass="progress" stylesheets="@../../../CSSStyling/new.css"/>
+                        <ProgressBar fx:id="progress" layoutX="24.0" layoutY="159.0" prefHeight="18.0" prefWidth="102.0" progress="0.89" styleClass="progress" stylesheets="@../../../CSSStyling/main.css" />
                     </children>
                 </Pane>
                 <Label layoutX="24.0" layoutY="175.0" text="Book read">
                     <font>
-                        <Font name="Century" size="15.0"/>
+                        <Font name="Century" size="15.0" />
                     </font>
                 </Label>
-                <Pane fx:id="pane_11" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_11" stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_11" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: white;" styleClass="pane_11" stylesheets="@../../../CSSStyling/main.css">
                     <children>
                         <Label layoutX="56.0" layoutY="14.0" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
                         <Label layoutX="62.0" layoutY="48.0" text="8">
                             <font>
-                                <Font name="Century" size="46.0"/>
+                                <Font name="Century" size="46.0" />
                             </font>
                         </Label>
                         <Label layoutX="41.0" layoutY="127.0" text="Progress...">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress1" layoutX="26.0" layoutY="160.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"
-                                     stylesheets="@../../../CSSStyling/new.css"/>
+                        <ProgressBar fx:id="progress1" layoutX="26.0" layoutY="160.0" prefHeight="18.0" prefWidth="102.0" progress="0.89" styleClass="progress" stylesheets="@../../../CSSStyling/main.css" />
                     </children>
                 </Pane>
-                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_11" stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: white;" styleClass="pane_11" stylesheets="@../../../CSSStyling/main.css">
                     <children>
                         <Label layoutX="56.0" layoutY="14.0" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
                         <Label layoutX="64.0" layoutY="49.0" text="8">
                             <font>
-                                <Font name="Century" size="46.0"/>
+                                <Font name="Century" size="46.0" />
                             </font>
                         </Label>
                         <Label layoutX="41.0" layoutY="128.0" text="Progress...">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress11" layoutX="26.0" layoutY="159.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"
-                                     stylesheets="@../../../CSSStyling/new.css"/>
+                        <ProgressBar fx:id="progress11" layoutX="26.0" layoutY="159.0" prefHeight="18.0" prefWidth="102.0" progress="0.89" styleClass="progress" stylesheets="@../../../CSSStyling/main.css" />
                     </children>
                 </Pane>
-                <Pane fx:id="pane_1111" layoutX="550.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_111" stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_1111" layoutX="550.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: white;" styleClass="pane_111" stylesheets="@../../../CSSStyling/main.css">
                     <children>
                         <Label layoutX="54.0" layoutY="14.0" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
                         <Label layoutX="62.0" layoutY="48.0" text="8">
                             <font>
-                                <Font name="Century" size="46.0"/>
+                                <Font name="Century" size="46.0" />
                             </font>
                         </Label>
                         <Label layoutX="39.0" layoutY="127.0" text="Progress...">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress111" layoutX="24.0" layoutY="159.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"
-                                     stylesheets="@../../../CSSStyling/new.css"/>
+                        <ProgressBar fx:id="progress111" layoutX="24.0" layoutY="159.0" prefHeight="18.0" prefWidth="102.0" progress="0.89" styleClass="progress" stylesheets="@../../../CSSStyling/main.css" />
                     </children>
                 </Pane>
-                <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0"
-                      style="-fx-border-color: white;" styleClass="pane_1111"
-                      stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0" style="-fx-border-color: white;" styleClass="pane_1111" stylesheets="@../../../CSSStyling/main.css">
                     <children>
                         <Label layoutX="44.0" layoutY="14.0" text="Today" textFill="WHITE">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
                         <Label layoutX="52.0" layoutY="48.0" text="8" textFill="WHITE">
                             <font>
-                                <Font name="Century" size="46.0"/>
+                                <Font name="Century" size="46.0" />
                             </font>
                         </Label>
                         <Label layoutX="29.0" layoutY="126.0" text="Progress..." textFill="WHITE">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress1111" layoutX="14.0" layoutY="159.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"
-                                     stylesheets="@../../../CSSStyling/new.css"/>
+                        <ProgressBar fx:id="progress1111" layoutX="14.0" layoutY="159.0" prefHeight="18.0" prefWidth="102.0" progress="0.89" styleClass="progress" stylesheets="@../../../CSSStyling/main.css" />
                     </children>
                 </Pane>
-                <Pane fx:id="inner_pane1" layoutX="1000.0" layoutY="100.0" prefHeight="80.0" prefWidth="80.0"
-                      styleClass="inner_pane" stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="inner_pane1" layoutX="1000.0" layoutY="100.0" prefHeight="80.0" prefWidth="80.0" styleClass="inner_pane" stylesheets="@../../../CSSStyling/main.css">
                     <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../images/books.png"/>
+                                <Image url="@../../../images/books.png" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
                 <Label layoutX="14.0" layoutY="423.0" text="Features">
                     <font>
-                        <Font name="Century" size="15.0"/>
+                        <Font name="Century" size="15.0" />
                     </font>
                 </Label>
-                <Pane fx:id="pane_111111" layoutX="25.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
-                      style="-fx-border-color: white;" styleClass="pane_1111"
-                      stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_111111" layoutX="25.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0" style="-fx-border-color: white;" styleClass="pane_1111" stylesheets="@../../../CSSStyling/main.css">
                     <children>
                         <Label layoutX="31.0" layoutY="14.0" text="Today" textFill="WHITE">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century" size="15.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-                <Pane fx:id="pane_12" layoutX="570.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
-                      style="-fx-border-color: white;" styleClass="pane_1" stylesheets="@../../../CSSStyling/new.css">
+                <Pane fx:id="pane_12" layoutX="569.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0" style="-fx-border-color: white;" styleClass="pane_1" stylesheets="@../../../CSSStyling/main.css">
                     <children>
-                        <Label layoutX="44.0" layoutY="14.0" text="Today">
+                        <JFXTextArea fx:id="speech" editable="false" layoutX="12.5" layoutY="30.0" opacity="0.5" prefHeight="135.0" prefWidth="475.0">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Playpen Sans ExtraBold" size="15.0" />
                             </font>
-                        </Label>
+                        </JFXTextArea>
                     </children>
                 </Pane>
             </children>
             <HBox.margin>
-                <Insets/>
+                <Insets />
             </HBox.margin>
         </Pane>
     </children>
