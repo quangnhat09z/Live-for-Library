@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -11,42 +12,49 @@
 <AnchorPane prefHeight="652.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.library.Controller.ExploreController">
    <children>
       <ImageView fx:id="myImageView" fitHeight="351.0" fitWidth="364.0" layoutX="106.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true" />
-      <Pane layoutX="597.0" layoutY="286.0" prefHeight="323.0" prefWidth="340.0">
+      <Pane layoutX="597.0" layoutY="289.0" prefHeight="320.0" prefWidth="340.0">
          <children>
-            <Pane layoutX="3.0" layoutY="65.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+            <Pane layoutX="3.0" layoutY="99.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
                <children>
                   <Label layoutX="23.0" layoutY="8.0" text="Tác giả" />
                </children>
             </Pane>
-            <Pane layoutX="3.0" layoutY="25.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+            <Pane layoutX="3.0" layoutY="55.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
                <children>
                   <Label alignment="CENTER" layoutX="19.0" layoutY="8.0" text="Tên sách" textFill="#202020" />
                </children>
             </Pane>
-            <TextField fx:id="titleField" layoutX="100.0" layoutY="24.0" prefHeight="33.0" prefWidth="225.0" promptText="Scene Builder" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-            <TextField fx:id="authorField" layoutX="100.0" layoutY="64.0" prefHeight="33.0" prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-            <TextField fx:id="publicYearField" layoutX="100.0" layoutY="105.0" prefHeight="33.0" prefWidth="225.0" promptText="2024" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-            <TextField fx:id="publisherField" layoutX="100.0" layoutY="147.0" prefHeight="33.0" prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-            <TextField fx:id="genreField" layoutX="100.0" layoutY="188.0" prefHeight="33.0" prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-            <TextField fx:id="quantityField" layoutX="100.0" layoutY="229.0" prefHeight="33.0" prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
-            <Pane layoutX="3.0" layoutY="105.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+            <TextField fx:id="idField" layoutX="100.0" layoutY="14.0" prefHeight="33.0" prefWidth="225.0" promptText="ID" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <TextField fx:id="titleField" layoutX="100.0" layoutY="54.0" prefHeight="33.0" prefWidth="225.0" promptText="Scene Builder" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <TextField fx:id="authorField" layoutX="100.0" layoutY="98.0" prefHeight="33.0" prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <TextField fx:id="publicYearField" layoutX="100.0" layoutY="141.0" prefHeight="33.0" prefWidth="225.0" promptText="2024" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <TextField fx:id="publisherField" layoutX="100.0" layoutY="185.0" prefHeight="33.0" prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <TextField fx:id="genreField" layoutX="100.0" layoutY="229.0" prefHeight="33.0" prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <TextField fx:id="quantityField" layoutX="100.0" layoutY="273.0" prefHeight="33.0" prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../style.css" />
+            <Pane layoutX="3.0" layoutY="141.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
                <children>
-                  <Label layoutX="5.0" layoutY="-2.0" prefHeight="33.0" prefWidth="84.0" text="Năm xuất bản" />
+                  <Label layoutX="7.0" prefHeight="33.0" prefWidth="84.0" text="Năm xuất bản" />
                </children>
             </Pane>
-            <Pane layoutX="3.0" layoutY="147.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+            <Pane layoutX="3.0" layoutY="185.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
                <children>
                   <Label layoutX="7.0" layoutY="7.0" text="Nhà xuất bản" />
                </children>
             </Pane>
-            <Pane layoutX="3.0" layoutY="189.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+            <Pane layoutX="3.0" layoutY="230.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
                <children>
                   <Label layoutX="19.0" layoutY="8.0" text="Thể loại" />
                </children>
             </Pane>
-            <Pane layoutX="3.0" layoutY="229.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+            <Pane layoutX="3.0" layoutY="273.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
                <children>
                   <Label layoutX="19.0" layoutY="9.0" text="Số lượng" />
+               </children>
+            </Pane>
+      
+            <Pane layoutX="3.0" layoutY="14.0" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #ffff99;" styleClass="paneDeMuc">
+               <children>
+                  <Label alignment="CENTER" layoutX="19.0" layoutY="8.0" text="ID" textFill="#202020" />
                </children>
             </Pane>
          </children>
@@ -58,5 +66,6 @@
       </Label>
       <TextField fx:id="searchExploreField" layoutX="208.0" layoutY="66.0" prefHeight="66.0" prefWidth="608.0" promptText="Tìm sách theo tiêu đề" />
       <ListView fx:id="suggestionsList" layoutX="208.0" layoutY="143.0" prefHeight="110.0" prefWidth="608.0" />
+      <Hyperlink fx:id="myHyperlink" layoutX="458.0" layoutY="585.0" onAction="#handleHyperlinkAction" text="Go to book" />
    </children>
 </AnchorPane>

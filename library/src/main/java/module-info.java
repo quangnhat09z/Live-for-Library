@@ -7,6 +7,7 @@ module org.example.library {
     requires org.json;
     requires java.sql;
     requires com.jfoenix;
+    requires java.desktop;
 
     opens org.example.library to javafx.fxml;
     exports org.example.library;
