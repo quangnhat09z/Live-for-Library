@@ -9,10 +9,11 @@ public class Document {
     private String publisher;
     private String genre;
     private int quantity;
+    private String imageLink;
 
     // Constructor
     public Document(int id, String title, String author, String publicYear,
-                    String publisher, String genre, int quantity) {
+                    String publisher, String genre, int quantity, String imageLink) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -20,6 +21,11 @@ public class Document {
         this.publisher = publisher;
         this.genre = genre;
         this.quantity = quantity;
+        this.imageLink = imageLink;
+    }
+
+    public Document() {
+
     }
 
     @Override
@@ -84,5 +90,13 @@ public class Document {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 }

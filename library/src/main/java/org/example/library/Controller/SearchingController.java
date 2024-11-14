@@ -126,6 +126,7 @@ public class SearchingController {
         // Hiển thị kết quả tìm kiếm trong TableView
         ObservableList<Document> observableResults = FXCollections.observableArrayList(results);
         resultsTableView.setItems(observableResults);
+
     }
 
     @FXML

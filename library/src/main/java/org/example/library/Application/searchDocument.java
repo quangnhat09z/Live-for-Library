@@ -56,11 +56,11 @@ public class searchDocument {
                 String bookPublisher = resultSet.getString("publisher");
                 String bookGenre = resultSet.getString("genre");
                 int bookQuantity = resultSet.getInt("quantity");
-
+                String bookImageLink = resultSet.getString("imageLink");
 
                 // Thêm các trường khác nếu cần thiết
 
-                Document book = new Document(bookId, bookTitle, bookAuthor, bookPublicYear, bookPublisher, bookGenre, bookQuantity);
+                Document book = new Document(bookId, bookTitle, bookAuthor, bookPublicYear, bookPublisher, bookGenre, bookQuantity,bookImageLink);
                 books.add(book);
             }
         } catch (SQLException e) {

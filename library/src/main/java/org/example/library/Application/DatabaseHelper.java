@@ -67,7 +67,8 @@ public class DatabaseHelper {
                 String publisher = rs.getString("publisher");
                 String genre = rs.getString("genre");
                 int quantity = rs.getInt("quantity");
-                documents.add(new Document(id, title, author, publicYear, publisher, genre, quantity));
+                String imageLink = rs.getString("imageLink");
+                documents.add(new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,4 +117,48 @@ public class DatabaseHelper {
         }
     }
 
+    public List<String> getSuggestions(String query) {
+        List<String> suggestions = new ArrayList<>();
+        String sql = "SELECT title FROM documents WHERE title LIKE ?"; // Thay đổi tên bảng nếu cần
+
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, "%" + query + "%");
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                suggestions.add(rs.getString("title"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return suggestions;
+    }
+
+
+    public Document getDocumentByTitle(String title) {
+        Document document = null;
+        String query = "SELECT * FROM documents WHERE title = ?";
+
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, title);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                document = new Document();
+                document.setId(rs.getInt("id"));
+                document.setTitle(rs.getString("title"));
+                document.setAuthor(rs.getString("author"));
+                document.setPublicYear(String.valueOf(rs.getInt("publicYear")));
+                document.setPublisher(rs.getString("publisher"));
+                document.setGenre(rs.getString("genre"));
+                document.setQuantity(rs.getInt("quantity"));
+                document.setImageLink(rs.getString("imageLink"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return document;
+    }
 }
