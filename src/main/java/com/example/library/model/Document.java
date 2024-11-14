@@ -25,8 +25,8 @@ public class Document {
     @Override
     public String toString() {
         return String.format(
-                id+ " - " + title + " - " + author + " - " + publicYear + " - "
-                        + publisher + " - " + genre + " - "  + quantity);
+                id + " - " + title + " - " + author + " - " + publicYear + " - "
+                        + publisher + " - " + genre + " - " + quantity);
     }
 
     // Getter and Setter methods

@@ -1,12 +1,9 @@
 package com.example.library.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -45,8 +42,8 @@ public class SettingsController {
 
     private static String nameUser;
     private static String emailUser;
-    private static boolean isDarkMode;
-    private static boolean isNotification = true;
+    private static boolean darkMode;
+    private static boolean notification = true;
 
     public void initialize() {
         mainButton.setOnAction(actionEvent -> handleMainButton());
@@ -58,10 +55,10 @@ public class SettingsController {
 
         nameField.setText(nameUser);
         emailField.setText(emailUser);
-        darkModeCheckBox.setSelected(isDarkMode);
-        notificationsCheckBox.setSelected(isNotification);
+        darkModeCheckBox.setSelected(darkMode);
+        notificationsCheckBox.setSelected(notification);
 
-        if (isDarkMode) {
+        if (darkMode) {
             root.getStylesheets().clear();
             root.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/dark_settings.css")).toExternalForm());
@@ -79,6 +76,10 @@ public class SettingsController {
             pane.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/settings.css")).toExternalForm());
         }
+    }
+
+    public static boolean isDarkMode() {
+        return darkMode;
     }
 
     private void handleMainButton() {
@@ -130,8 +131,8 @@ public class SettingsController {
 
         nameUser = name;
         emailUser = email;
-        isDarkMode = darkMode;
-        isNotification = notifications;
+        SettingsController.darkMode = darkMode;
+        notification = notifications;
         initialize();
     }
 }

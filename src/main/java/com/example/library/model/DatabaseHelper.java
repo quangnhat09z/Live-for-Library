@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper {
-    private static final String URL = "jdbc:mysql://localhost:3306/library";
-    private static final String USER = "root"; // Thay bằng tên người dùng của bạn
-    private static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
+    public static final String URL = "jdbc:mysql://localhost:3306/library";
+    public static final String USER = "root"; // Thay bằng tên người dùng của bạn
+    public static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
 
     public static Connection connect() {
         try {

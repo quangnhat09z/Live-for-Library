@@ -1,5 +1,6 @@
 package com.example.library.controller;
 
+import com.example.library.model.DatabaseHelper;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,19 +8,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.*;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class MainController {
     @FXML
+    private HBox root;
+    @FXML
     private TextArea speech;
     @FXML
-    private Label label1;
+    private Label bookCount;
     @FXML
     private Button mainButton;
     @FXML
@@ -45,6 +51,19 @@ public class MainController {
         button4.setOnAction(actionEvent -> handleButton4());
         setting_button.setOnAction(actionEvent -> handleSettingButton());
         user_button.setOnAction(actionEvent -> handleUserButton());
+        setBookCount();
+
+        if (SettingsController.isDarkMode()) {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_main.css")).toExternalForm());
+
+        } else {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/main.css")).toExternalForm());
+
+        }
     }
 
     private void handleMainButton() {
@@ -97,10 +116,6 @@ public class MainController {
         System.out.println("UserButton clicked");
     }
 
-    private void setLabel1(String s) {
-        label1.setText(s);
-    }
-
     private void setSpeech(String filePath) {
         try {
             String randomQuote = null;
@@ -115,6 +130,27 @@ public class MainController {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+
+    private void setBookCount() {
+
+        String query = "SELECT COUNT(*) AS count FROM documents";
+
+        try (Connection conn = DriverManager.getConnection(DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                bookCount.setText(String.valueOf(count));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            bookCount.setText("");
+            System.out.println("Không thể lấy số lượng sách");
         }
     }
 }
