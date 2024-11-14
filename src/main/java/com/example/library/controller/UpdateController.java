@@ -1,6 +1,5 @@
 package com.example.library.controller;
 
-import com.example.library.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,7 +21,6 @@ public class UpdateController {
     @FXML
     private Button button4;
 
-    @FXML
     public void initialize() {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         mainButton.setOnAction(actionEvent -> handleMainButton());

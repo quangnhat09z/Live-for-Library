@@ -181,12 +181,11 @@ public class HelloController {
         List<Document> documents = databaseHelper.getAllDocuments();
         ObservableList<String> documentStrings = FXCollections.observableArrayList();
         for (Document doc : documents) {
-            documentStrings.add(doc.getId() + " - " + doc.getTitle() +" - " + doc.getAuthor() + " - "
-                    + doc.getPublicYear() + " - " + doc.getPublisher() + " - " + doc.getGenre() + " - " + doc.getQuantity() );
+            documentStrings.add(doc.getId() + " - " + doc.getTitle() + " - " + doc.getAuthor() + " - "
+                    + doc.getPublicYear() + " - " + doc.getPublisher() + " - " + doc.getGenre() + " - " + doc.getQuantity());
         }
         documentListView.setItems(documentStrings);
     }
-
 
 
     @FXML
@@ -201,6 +200,7 @@ public class HelloController {
             showWarningAlert("Vui lòng chọn tài liệu để xóa.");
         }
     }
+
     @FXML
     public void onDeleteDocumentInSearchingClick() {
         String selectedDocument = String.valueOf(resultsListView.getSelectionModel().getSelectedItem());
@@ -216,14 +216,12 @@ public class HelloController {
     }
 
 
-
-
-
     private void showWarningAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setContentText(message);
         alert.showAndWait();
     }
+
     private void showSuccessAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
         alert.setTitle("Success");

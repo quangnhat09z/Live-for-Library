@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper {
-    private static final String URL = "jdbc:mysql://localhost:3306/lib";
+    private static final String URL = "jdbc:mysql://localhost:3306/library";
     private static final String USER = "root"; // Thay bằng tên người dùng của bạn
-    private static final String PASSWORD = "Jelly172005@iscool"; // Thay bằng mật khẩu của bạn
+    private static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
 
     public static Connection connect() {
         try {
@@ -19,9 +19,9 @@ public class DatabaseHelper {
     }
 
     public void addDocument(Document document) throws SQLException {
-        String checkSql = "SELECT * FROM docs WHERE title = ?";
-        String updateSql = "UPDATE docs SET quantity = quantity + ? WHERE title = ?";
-        String insertSql = "INSERT INTO docs (title, author, publicYear, publisher, genre, quantity) VALUES (?, ?, ?, ?, ?, ?)";
+        String checkSql = "SELECT * FROM documents WHERE title = ?";
+        String updateSql = "UPDATE documents SET quantity = quantity + ? WHERE title = ?";
+        String insertSql = "INSERT INTO documents (title, author, publicYear, publisher, genre, quantity) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = connect();
              PreparedStatement checkStmt = conn.prepareStatement(checkSql);
@@ -52,7 +52,7 @@ public class DatabaseHelper {
 
     public List<Document> getAllDocuments() {
         List<Document> documents = new ArrayList<>();
-        String sql = "SELECT * FROM docs";
+        String sql = "SELECT * FROM documents";
 
         try (Connection conn = connect(); Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
@@ -74,9 +74,9 @@ public class DatabaseHelper {
 
     public void deleteDocument(int id) {
         // SQL statements
-        String checkSql = "SELECT quantity FROM docs WHERE id = ?";
-        String updateSql = "UPDATE docs SET quantity = quantity - 1 WHERE id = ?";
-        String deleteSql = "DELETE FROM docs WHERE id = ?";
+        String checkSql = "SELECT quantity FROM documents WHERE id = ?";
+        String updateSql = "UPDATE documents SET quantity = quantity - 1 WHERE id = ?";
+        String deleteSql = "DELETE FROM documents WHERE id = ?";
 
         try (Connection conn = connect();
              PreparedStatement checkStmt = conn.prepareStatement(checkSql);

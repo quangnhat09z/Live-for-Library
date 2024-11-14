@@ -1,9 +1,12 @@
 package com.example.library.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -12,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class SettingsController {
     @FXML
@@ -59,20 +63,23 @@ public class SettingsController {
 
         if (isDarkMode) {
             root.getStylesheets().clear();
-            root.getStylesheets().add(getClass().getResource("/CSSStyling/dark_settings.css").toExternalForm());
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_settings.css")).toExternalForm());
 
             pane.getStylesheets().clear();
-            pane.getStylesheets().add(getClass().getResource("/CSSStyling/dark_settings.css").toExternalForm());
+            pane.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_settings.css")).toExternalForm());
 
         } else {
             root.getStylesheets().clear();
-            root.getStylesheets().add(getClass().getResource("/CSSStyling/settings.css").toExternalForm());
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/settings.css")).toExternalForm());
 
             pane.getStylesheets().clear();
-            pane.getStylesheets().add(getClass().getResource("/CSSStyling/settings.css").toExternalForm());
+            pane.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/settings.css")).toExternalForm());
         }
     }
-
 
     private void handleMainButton() {
         // Xử lý cho nút Home
@@ -121,19 +128,10 @@ public class SettingsController {
         boolean darkMode = darkModeCheckBox.isSelected();
         boolean notifications = notificationsCheckBox.isSelected();
 
-        if ((name != null && email != null)) {
-            nameUser = name;
-            emailUser = email;
-            isDarkMode = darkMode;
-            isNotification = notifications;
-            initialize();
-        } else {
-            if (name == null) {
-                System.out.println("Name is empty");
-            }
-            if (email == null) {
-                System.out.println("Email is empty");
-            }
-        }
+        nameUser = name;
+        emailUser = email;
+        isDarkMode = darkMode;
+        isNotification = notifications;
+        initialize();
     }
 }
