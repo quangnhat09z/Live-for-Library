@@ -20,9 +20,9 @@ public class SettingsController {
     @FXML
     private HBox root;
     @FXML
-    private Button mainButton;
+    private Button homeButton;
     @FXML
-    private Button updateButton;
+    private Button button1;
     @FXML
     private Button button2;
     @FXML
@@ -46,8 +46,8 @@ public class SettingsController {
     private static boolean notification = true;
 
     public void initialize() {
-        mainButton.setOnAction(actionEvent -> handleMainButton());
-        updateButton.setOnAction(actionEvent -> handleUpdateButton());
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        button1.setOnAction(actionEvent -> handleButton1());
         button2.setOnAction(actionEvent -> handleButton2());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
@@ -82,12 +82,12 @@ public class SettingsController {
         return darkMode;
     }
 
-    private void handleMainButton() {
+    private void handleHomeButton() {
         // Xử lý cho nút Home
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/MainView.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) mainButton.getScene().getWindow();
+            Stage stage = (Stage) homeButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setScene(scene);
         } catch (IOException e) {
@@ -96,16 +96,9 @@ public class SettingsController {
         System.out.println("Home button clicked");
     }
 
-    private void handleUpdateButton() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/management-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) updateButton.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void handleButton1() {
+        // Xử lý cho nút Button1
+        System.out.println("Button1 clicked");
     }
 
     private void handleButton2() {

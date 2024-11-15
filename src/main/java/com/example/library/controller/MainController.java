@@ -20,6 +20,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class MainController {
+    public static final boolean ADMIN = true;
     @FXML
     private HBox root;
     @FXML
@@ -29,13 +30,15 @@ public class MainController {
     @FXML
     private Button mainButton;
     @FXML
-    private Button updateButton;
+    private Button button1;
     @FXML
     private Button button2;
     @FXML
     private Button button3;
     @FXML
     private Button button4;
+    @FXML
+    private Button admin_button;
     @FXML
     private Button setting_button;
     @FXML
@@ -45,10 +48,15 @@ public class MainController {
     public void initialize() {
         setSpeech("src/main/resources/book.txt");
         mainButton.setOnAction(actionEvent -> handleMainButton());
-        updateButton.setOnAction(actionEvent -> handleUpdateButton());
+        button1.setOnAction(actionEvent -> handleButton1());
         button2.setOnAction(actionEvent -> handleButton2());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
+        if (!ADMIN) {
+            admin_button.setVisible(false);
+        } else {
+            admin_button.setOnAction(actionEvent -> handleAdminButton());
+        }
         setting_button.setOnAction(actionEvent -> handleSettingButton());
         user_button.setOnAction(actionEvent -> handleUserButton());
         setBookCount();
@@ -71,16 +79,9 @@ public class MainController {
         System.out.println("Home button clicked");
     }
 
-    private void handleUpdateButton() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/management-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) updateButton.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void handleButton1() {
+        // Xử lý cho nút Button1
+        System.out.println("Button1 clicked");
     }
 
     private void handleButton2() {
@@ -98,12 +99,24 @@ public class MainController {
         System.out.println("Button4 clicked");
     }
 
+    private void handleAdminButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/management-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) button1.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void handleSettingButton() {
         //Xử lý cho nút setting
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/SettingsView.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) updateButton.getScene().getWindow();
+            Stage stage = (Stage) button1.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setScene(scene);
         } catch (IOException e) {

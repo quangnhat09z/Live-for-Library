@@ -17,7 +17,7 @@
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
       prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.HelloController">
+      fx:controller="com.example.library.controller.ManagementController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
             <children>
@@ -70,9 +70,9 @@
                                 <Image url="@../../../images/book_icon.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="mainButton" buttonType="RAISED" layoutX="6.0" layoutY="180.0"
-                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   stylesheets="@../../../CSSStyling/main.css" text="Update" textFill="WHITE">
+                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                                   stylesheets="@../../../CSSStyling/main.css" text="Button1" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
                             </font>
@@ -228,7 +228,7 @@
                                   prefWidth="570.0" styleClass="list" stylesheets="@../../../CSSStyling/style.css"/>
                     </children>
                 </Pane>
-                <Label alignment="CENTER" prefHeight="58.0" prefWidth="1100.0" style="-fx-background-color: #263F73;"
+                <Label alignment="CENTER" prefHeight="60.0" prefWidth="1100.0" style="-fx-background-color: #263F73;"
                        text="Cập nhật sách mới" textAlignment="CENTER" textFill="#ffff99">
                     <font>
                         <Font size="20.0"/>

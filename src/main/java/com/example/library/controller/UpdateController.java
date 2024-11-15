@@ -13,7 +13,7 @@ public class UpdateController {
     @FXML
     private Button homeButton;
     @FXML
-    private Button mainButton;
+    private Button button1;
     @FXML
     private Button button2;
     @FXML
@@ -23,7 +23,7 @@ public class UpdateController {
 
     public void initialize() {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
-        mainButton.setOnAction(actionEvent -> handleMainButton());
+        button1.setOnAction(actionEvent -> handleButton1());
         button2.setOnAction(actionEvent -> handleButton2());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
@@ -33,7 +33,7 @@ public class UpdateController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/MainView.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) mainButton.getScene().getWindow();
+            Stage stage = (Stage) button1.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setScene(scene);
         } catch (IOException e) {
@@ -41,8 +41,8 @@ public class UpdateController {
         }
     }
 
-    private void handleMainButton() {
-        // Xử lý cho nút Main (Update)
+    private void handleButton1() {
+        // Xử lý cho nút Update
     }
 
     private void handleButton2() {

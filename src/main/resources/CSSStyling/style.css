@@ -18,7 +18,7 @@
 }
 
 .background{
-    -fx-background-image: url('result_manaImage.jpeg');
+    -fx-background-image: url('../images/result_manaImage.jpeg');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -26,7 +26,7 @@
     -fx-border-radius: 5px;
 }
 .backgroundInSearchScreen{
-    -fx-background-image: url('result_searchImage.jpeg');
+    -fx-background-image: url('../images/result_searchImage.jpeg');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;

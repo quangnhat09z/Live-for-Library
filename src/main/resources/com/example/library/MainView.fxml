@@ -64,15 +64,16 @@
                                 <Cursor fx:constant="DEFAULT"/>
                             </cursor>
                         </JFXButton>
-                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0"
+                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0"
+                                   layoutX="5.0" layoutY="475.0"
                                    pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../images/book_icon.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="updateButton" buttonType="RAISED" layoutX="6.0" layoutY="180.0"
-                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Update" textFill="WHITE">
+                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button1"
+                                   textFill="WHITE">
                             <font>
                                 <Font size="14.0"/>
                             </font>
@@ -159,8 +160,8 @@
                             </image>
                         </ImageView>
                         <JFXButton fx:id="setting_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
-                                   layoutX="925.0" layoutY="5.0" styleClass="button" prefHeight="50.0" prefWidth="50.0"
-                                   text="Button">
+                                   layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0"
+                                   styleClass="pane_button" text="Button">
                             <graphic>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
                                            smooth="false" styleClass="setting">
@@ -174,7 +175,8 @@
                             </cursor>
                         </JFXButton>
                         <JFXButton fx:id="user_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1000.0"
-                                   layoutY="5.0" styleClass="button" prefHeight="50.0" prefWidth="50.0" text="Button">
+                                   layoutY="5.0" prefHeight="50.0" prefWidth="50.0" styleClass="pane_button"
+                                   text="Button">
                             <graphic>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
                                            styleClass="button">
@@ -186,6 +188,12 @@
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="admin_button" layoutX="60.0" layoutY="10.0" prefHeight="40.0"
+                                   prefWidth="100.0" styleClass="pane_button" text="Admin">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0"/>
+                            </font>
                         </JFXButton>
                     </children>
                 </Pane>
@@ -217,7 +225,7 @@
                 </Pane>
                 <Label layoutX="24.0" layoutY="175.0" styleClass="text" text="Statistics">
                     <font>
-                        <Font name="Century" size="15.0"/>
+                        <Font name="Century Gothic" size="15.0"/>
                     </font>
                 </Label>
                 <Pane fx:id="pane_11" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
@@ -354,6 +362,9 @@
             <HBox.margin>
                 <Insets/>
             </HBox.margin>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
         </Pane>
     </children>
 </HBox>

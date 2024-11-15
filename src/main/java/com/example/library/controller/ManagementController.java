@@ -15,7 +15,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -28,31 +27,47 @@ import com.example.library.model.searchDocument;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class HelloController {
+public class ManagementController {
     @FXML
     private Label welcomeText;
-
     @FXML
     private TextField searchField;
-
+    @FXML
+    private TextField idField;
+    @FXML
+    private TextField titleField;
+    @FXML
+    private TextField authorField;
+    @FXML
+    private TextField publicYearField;
+    @FXML
+    private TextField publisherField;
+    @FXML
+    private TextField genreField;
+    @FXML
+    private TextField quantityField;
     @FXML
     private TextArea resultText;
-
     @FXML
     private Button searchButton;
-
-
     @FXML
     private ListView<String> resultsListView;
-
     @FXML
     private ListView<String> documentListView;
-
     @FXML
     private TextField findField;
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Button button1;
+    @FXML
+    private Button button2;
+    @FXML
+    private Button button3;
+    @FXML
+    private Button button4;
 
     private DatabaseHelper databaseHelper = new DatabaseHelper(); // Initialize DatabaseHelper
-
     private static final String API_KEY = "YOUR_API_KEY"; // Replace with your API key
 
     @FXML
@@ -61,6 +76,47 @@ public class HelloController {
         searchField.setVisible(true);
         searchField.requestFocus();
         searchButton.setVisible(true);
+    }
+
+    @FXML
+    public void initialize() {
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        button1.setOnAction(actionEvent -> handleButton1());
+        button2.setOnAction(actionEvent -> handleButton2());
+        button3.setOnAction(actionEvent -> handleButton3());
+        button4.setOnAction(actionEvent -> handleButton4());
+    }
+
+    private void handleHomeButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/MainView.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) button1.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void handleButton1() {
+        // Xử lý cho nút Button1
+        System.out.println("Button1 clicked");
+    }
+
+    private void handleButton2() {
+        // Xử lý cho nút Button2
+        System.out.println("Button2 clicked");
+    }
+
+    private void handleButton3() {
+        // Xử lý cho nút Button3
+        System.out.println("Button3 clicked");
+    }
+
+    private void handleButton4() {
+        // Xử lý cho nút Button4
+        System.out.println("Button4 clicked");
     }
 
     @FXML
@@ -78,7 +134,6 @@ public class HelloController {
         StringBuilder response = new StringBuilder();
         String urlString = "https://www.googleapis.com/books/v1/volumes?q=" +
                 searchTerm.replace(" ", "+") + "&key=" + API_KEY;
-
         try {
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -99,7 +154,6 @@ public class HelloController {
         } catch (IOException e) {
             response.append("Exception: ").append(e.getMessage());
         }
-
         return response.toString();
     }
 
@@ -129,21 +183,6 @@ public class HelloController {
             e.printStackTrace();
         }
     }
-
-    @FXML
-    private TextField idField;
-    @FXML
-    private TextField titleField;
-    @FXML
-    private TextField authorField;
-    @FXML
-    private TextField publicYearField;
-    @FXML
-    private TextField publisherField;
-    @FXML
-    private TextField genreField;
-    @FXML
-    private TextField quantityField;
 
     @FXML
     private void onAddDocumentClick() {
@@ -215,7 +254,6 @@ public class HelloController {
         }
     }
 
-
     private void showWarningAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setContentText(message);
@@ -253,7 +291,6 @@ public class HelloController {
         changeScene(event, "/com/example/library/management-view.fxml", "Quản lý tài liệu");
     }
 
-
     @FXML
     private void onSearchClick(ActionEvent event) {
         String id = idField.getText();
@@ -273,57 +310,4 @@ public class HelloController {
             resultsListView.getItems().add(doc.toString());
         }
     }
-
-    @FXML
-    private Button homeButton;
-    @FXML
-    private Button mainButton;
-    @FXML
-    private Button button2;
-    @FXML
-    private Button button3;
-    @FXML
-    private Button button4;
-
-    @FXML
-    public void initialize() {
-        homeButton.setOnAction(actionEvent -> handleHomeButton());
-        mainButton.setOnAction(actionEvent -> handleMainButton());
-        button2.setOnAction(actionEvent -> handleButton2());
-        button3.setOnAction(actionEvent -> handleButton3());
-        button4.setOnAction(actionEvent -> handleButton4());
-    }
-
-    private void handleHomeButton() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/MainView.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) mainButton.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void handleMainButton() {
-        // Xử lý cho nút Home
-        System.out.println("Home button clicked");
-    }
-
-    private void handleButton2() {
-        // Xử lý cho nút Button2
-        System.out.println("Button2 clicked");
-    }
-
-    private void handleButton3() {
-        // Xử lý cho nút Button3
-        System.out.println("Button3 clicked");
-    }
-
-    private void handleButton4() {
-        // Xử lý cho nút Button4
-        System.out.println("Button4 clicked");
-    }
-
 }
