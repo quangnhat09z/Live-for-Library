@@ -6,7 +6,7 @@ import java.util.List;
 
 public class searchDocument {
 
-    public List<Document> searchBooks(String id, String title, String author, String publicYear, String publisher, String genre, String quantity, String imageLink) {
+    public List<Document> searchBooks(String id, String title, String author, String publicYear, String publisher, String genre, String quantity) {
         List<Document> books = new ArrayList<>();
         StringBuilder queryBuilder = new StringBuilder("SELECT * FROM documents WHERE 1=1");
         List<Object> params = new ArrayList<>();
@@ -57,8 +57,7 @@ public class searchDocument {
                 String bookGenre = resultSet.getString("genre");
                 int bookQuantity = resultSet.getInt("quantity");
                 String bookImageLink = resultSet.getString("imageLink");
-
-
+                
                 // Thêm các trường khác nếu cần thiết
 
                 Document book = new Document(bookId, bookTitle, bookAuthor, bookPublicYear, bookPublisher, bookGenre, bookQuantity, bookImageLink);

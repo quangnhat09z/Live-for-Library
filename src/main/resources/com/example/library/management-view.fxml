@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="com.example.library.controller.ManagementController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.ManagementController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
             <children>
@@ -123,7 +123,7 @@
                 </AnchorPane>
             </children>
         </VBox>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1098.0" style="-fx-background-color: #888888;" styleClass="background" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1098.0" style="-fx-background-color: #888888;" styleClass="background" stylesheets="@../../../CSSStyling/style.css">
          <children>
             <Pane layoutX="441.0" layoutY="95.0" opacity="0.8" prefHeight="536.0" prefWidth="636.0" style="-fx-background-color: #000000;">
                <styleClass>
@@ -131,7 +131,7 @@
                   <String fx:value="border" />
                </styleClass>
                <children>
-                  <ListView fx:id="documentListView" layoutX="10.0" layoutY="12.0" prefHeight="479.0" prefWidth="617.0" stylesheets="@../../../../../../../../Live-for-Library-thanhphuocjr/library/src/main/resources/style.css">
+                  <ListView fx:id="documentListView" layoutX="10.0" layoutY="12.0" prefHeight="479.0" prefWidth="617.0" stylesheets="@../../../CSSStyling/styleAccount.css">
                      <styleClass>
                         <String fx:value="list" />
                         <String fx:value="border" />
@@ -144,12 +144,12 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="910.0" layoutY="14.0" mnemonicParsing="false" onAction="#onChangeToSearchingClick" prefHeight="43.0" prefWidth="160.0" styleClass="button:hover" stylesheets="@../../../../../../../../Live-for-Library-thanhphuocjr/library/src/main/resources/styleAccount.css" text="Search Document" textFill="#cccc99">
+            <Button layoutX="910.0" layoutY="14.0" mnemonicParsing="false" onAction="#onChangeToSearchingClick" prefHeight="43.0" prefWidth="160.0" styleClass="button:hover" stylesheets="@../../../CSSStyling/styleAccount.css" text="Search Document" textFill="#cccc99">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Pane layoutX="57.0" layoutY="120.0" opacity="0.92" prefHeight="473.0" prefWidth="370.0" style="-fx-background-color: #C0C0C0;" styleClass="pane" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
+            <Pane layoutX="57.0" layoutY="120.0" opacity="0.92" prefHeight="473.0" prefWidth="370.0" style="-fx-background-color: #C0C0C0;" styleClass="pane" stylesheets="@../../../CSSStyling/style.css" />
             <Pane layoutX="75.0" layoutY="145.0" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #9C9C9C;" styleClass="pane">
                <children>
                   <Label alignment="CENTER" layoutX="43.0" layoutY="7.0" text="Title" textFill="#202020">
@@ -159,13 +159,13 @@
                   </Label>
                </children>
             </Pane>
-            <TextField fx:id="titleField" layoutX="194.0" layoutY="144.0" prefHeight="33.0" prefWidth="225.0" promptText="Scene Builder" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
-            <TextField fx:id="authorField" layoutX="194.0" layoutY="184.0" prefHeight="33.0" prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
-            <TextField fx:id="publicYearField" layoutX="194.0" layoutY="225.0" prefHeight="33.0" prefWidth="225.0" promptText="2024" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
-            <TextField fx:id="publisherField" layoutX="194.0" layoutY="267.0" prefHeight="33.0" prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
-            <TextField fx:id="genreField" layoutX="194.0" layoutY="308.0" prefHeight="33.0" prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
-            <TextField fx:id="quantityField" layoutX="194.0" layoutY="349.0" prefHeight="33.0" prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
-            <TextField fx:id="imageLinkField" layoutX="194.0" layoutY="394.0" prefHeight="33.0" prefWidth="225.0" promptText="If have" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../../../../../../Live-for-Library/library/src/main/resources/style.css" />
+            <TextField fx:id="titleField" layoutX="194.0" layoutY="144.0" prefHeight="33.0" prefWidth="225.0" promptText="Scene Builder" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="authorField" layoutX="194.0" layoutY="184.0" prefHeight="33.0" prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="publicYearField" layoutX="194.0" layoutY="225.0" prefHeight="33.0" prefWidth="225.0" promptText="2024" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="publisherField" layoutX="194.0" layoutY="267.0" prefHeight="33.0" prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="genreField" layoutX="194.0" layoutY="308.0" prefHeight="33.0" prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="quantityField" layoutX="194.0" layoutY="349.0" prefHeight="33.0" prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="imageLinkField" layoutX="194.0" layoutY="394.0" prefHeight="33.0" prefWidth="225.0" promptText="If have" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
             <Pane layoutX="75.0" layoutY="349.0" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #9C9C9C;" styleClass="pane">
                <children>
                   <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" text="Quantity" textFill="#202020">
@@ -175,7 +175,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="147.0" layoutY="512.0" mnemonicParsing="false" onAction="#onShowDocumentsClick" prefHeight="47.0" prefWidth="170.0" styleClass="button_show" stylesheets="@../../../../../../../../Live-for-Library-thanhphuocjr/library/src/main/resources/styleAccount.css" text="LIST DOCUMENT" textFill="YELLOW">
+            <Button layoutX="147.0" layoutY="512.0" mnemonicParsing="false" onAction="#onShowDocumentsClick" prefHeight="47.0" prefWidth="170.0" styleClass="button_show" stylesheets="@../../../CSSStyling/styleAccount.css" text="LIST DOCUMENT" textFill="YELLOW">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -183,12 +183,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="257.0" layoutY="436.0" mnemonicParsing="false" onAction="#onDeleteDocumentClick" prefHeight="43.0" prefWidth="120.0" styleClass="button_delete" stylesheets="@../../../../../../../../Live-for-Library-thanhphuocjr/library/src/main/resources/styleAccount.css" text="DELETE" textFill="#cccc99">
+            <Button layoutX="257.0" layoutY="436.0" mnemonicParsing="false" onAction="#onDeleteDocumentClick" prefHeight="43.0" prefWidth="120.0" styleClass="button_delete" stylesheets="@../../../CSSStyling/styleAccount.css" text="DELETE" textFill="#cccc99">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="87.0" layoutY="436.0" mnemonicParsing="false" onAction="#onAddDocumentClick" prefHeight="43.0" prefWidth="120.0" styleClass="button_add" stylesheets="@../../../../../../../../Live-for-Library-thanhphuocjr/library/src/main/resources/styleAccount.css" text="ADD" textFill="#cccc99">
+            <Button layoutX="87.0" layoutY="436.0" mnemonicParsing="false" onAction="#onAddDocumentClick" prefHeight="43.0" prefWidth="120.0" styleClass="button_add" stylesheets="@../../../CSSStyling/styleAccount.css" text="ADD" textFill="#cccc99">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

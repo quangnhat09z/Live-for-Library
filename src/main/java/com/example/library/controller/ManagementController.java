@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -122,71 +123,6 @@ public class ManagementController {
     }
 
     @FXML
-    public void onSearchButtonClick(ActionEvent actionEvent) {
-        String searchTerm = searchField.getText();
-        if (!searchTerm.isEmpty()) {
-            String response = searchBooks(searchTerm);
-            displayResults(response);
-        } else {
-            resultText.setText("Vui lòng nhập từ khóa tìm kiếm.");
-        }
-    }
-
-    private String searchBooks(String searchTerm) {
-        StringBuilder response = new StringBuilder();
-        String urlString = "https://www.googleapis.com/books/v1/volumes?q=" +
-                searchTerm.replace(" ", "+") + "&key=" + API_KEY;
-        try {
-            URL url = new URL(urlString);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-
-            int responseCode = conn.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String inputLine;
-
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
-                }
-                in.close();
-            } else {
-                response.append("Error: ").append(responseCode);
-            }
-        } catch (IOException e) {
-            response.append("Exception: ").append(e.getMessage());
-        }
-        return response.toString();
-    }
-
-    private void displayResults(String response) {
-        try {
-            JSONObject jsonResponse = new JSONObject(response);
-            JSONArray items = jsonResponse.optJSONArray("items");
-
-            if (items != null && items.length() > 0) {
-                StringBuilder results = new StringBuilder();
-                for (int i = 0; i < items.length(); i++) {
-                    JSONObject book = items.getJSONObject(i);
-                    JSONObject volumeInfo = book.getJSONObject("volumeInfo");
-
-                    String title = volumeInfo.getString("title");
-                    String description = volumeInfo.optString("description", "Không có mô tả.");
-
-                    results.append("Tiêu đề: ").append(title).append("\n")
-                            .append("Mô tả: ").append(description).append("\n\n");
-                }
-                resultText.setText(results.toString());
-            } else {
-                resultText.setText("Không tìm thấy sách nào.");
-            }
-        } catch (Exception e) {
-            resultText.setText("Lỗi khi phân tích dữ liệu.");
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
     private void onAddDocumentClick() {
         String title = titleField.getText().trim();
         String author = authorField.getText().trim();
@@ -234,41 +170,62 @@ public class ManagementController {
     public void onDeleteDocumentClick() {
         String selectedDocument = documentListView.getSelectionModel().getSelectedItem();
         if (selectedDocument != null) {
-            int id = Integer.parseInt(selectedDocument.split(" - ")[0]); // Assume format is "ID - Title"
-            databaseHelper.deleteDocument(id); // Delete document from database
-            updateDocumentList(); // Update document list
-            showSuccessAlert("Tài liệu đã được xóa.");
-        } else {
-            showWarningAlert("Vui lòng chọn tài liệu để xóa.");
-        }
-    }
-
-    @FXML
-    public void onDeleteDocumentInSearchingClick() {
-        String selectedDocument = String.valueOf(resultsListView.getSelectionModel().getSelectedItem());
-
-        // Kiểm tra nếu không có tài liệu nào được chọn
-        if (selectedDocument == null || selectedDocument.equals("null")) {
-            showWarningAlert("Vui lòng chọn tài liệu để xóa.");
-        } else {
             int id = Integer.parseInt(selectedDocument.split(" - ")[0]); // Giả định format là "ID - Title"
-            databaseHelper.deleteDocument(id); // Xóa tài liệu khỏi database
-            showSuccessAlert("Tài liệu đã được xóa.");
+
+            // Hộp thoại để nhập số lượng cần xóa
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Xóa tài liệu");
+            dialog.setHeaderText("Nhập số lượng sách cần xóa:");
+            dialog.setContentText("Số lượng:");
+
+            Optional<String> result = dialog.showAndWait();
+            if (result.isPresent()) {
+                try {
+                    int quantityToDelete = Integer.parseInt(result.get());
+
+                    // Gọi phương thức để xóa số lượng tài liệu tương ứng
+                    if (quantityToDelete < 0) {
+                        showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                        return;
+                    }
+                    if (quantityToDelete == 0) {
+                        return;
+                    }
+                    databaseHelper.deleteDocument(id, quantityToDelete); // Gọi hàm void
+
+                    // Cập nhật danh sách tài liệu
+                    updateDocumentList();
+                } catch (NumberFormatException e) {
+                    showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                }
+            }
+        } else {
+            showWarningAlert("Vui lòng chọn tài liệu để xóa.");
         }
     }
 
-    private void showWarningAlert(String message) {
+
+
+    public static void showWarningAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setContentText(message);
         alert.showAndWait();
     }
 
-    private void showSuccessAlert(String message) {
+    public static void showSuccessAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
         alert.setTitle("Success");
         alert.setHeaderText("Operation Completed");
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public static void showInfoAlert(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait(); // Hiển thị và chờ người dùng đóng
     }
 
     private void changeScene(ActionEvent event, String fxmlPath, String title) {
@@ -287,31 +244,5 @@ public class ManagementController {
     @FXML
     private void onChangeToSearchingClick(ActionEvent event) {
         changeScene(event, "/com/example/library/search-view.fxml", "Tìm kiếm tài liệu");
-    }
-
-    @FXML
-    private void onChangeToManageClick(ActionEvent event) {
-        changeScene(event, "/com/example/library/management-view.fxml", "Quản lý tài liệu");
-    }
-
-    @FXML
-    private void onSearchClick(ActionEvent event) {
-        String id = idField.getText();
-        String title = titleField.getText();
-        String author = authorField.getText();
-        String year = publicYearField.getText();
-        String publisher = publisherField.getText();
-        String genre = genreField.getText();
-        String quantity = quantityField.getText();
-        String imageLink = quantityField.getText();
-
-        searchDocument search = new searchDocument();
-        List<Document> results = search.searchBooks(id, title, author, year, publisher, genre, quantity, imageLink);
-
-        // Hiển thị kết quả tìm kiếm trong ListView
-        resultsListView.getItems().clear();
-        for (Document doc : results) {
-            resultsListView.getItems().add(doc.toString());
-        }
     }
 }
