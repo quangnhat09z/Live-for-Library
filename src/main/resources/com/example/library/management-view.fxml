@@ -165,7 +165,7 @@
             <TextField fx:id="publisherField" layoutX="194.0" layoutY="267.0" prefHeight="33.0" prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
             <TextField fx:id="genreField" layoutX="194.0" layoutY="308.0" prefHeight="33.0" prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
             <TextField fx:id="quantityField" layoutX="194.0" layoutY="349.0" prefHeight="33.0" prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
-            <TextField fx:id="imageLinkField" layoutX="194.0" layoutY="394.0" prefHeight="33.0" prefWidth="225.0" promptText="If have" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
+            <TextField fx:id="imageLinkField" layoutX="194.0" layoutY="394.0" prefHeight="33.0" prefWidth="225.0" promptText="Optional" style="-fx-border-color: #000080;" styleClass="border" stylesheets="@../../../CSSStyling/style.css" />
             <Pane layoutX="75.0" layoutY="349.0" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #9C9C9C;" styleClass="pane">
                <children>
                   <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" text="Quantity" textFill="#202020">
