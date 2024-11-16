@@ -83,9 +83,8 @@ public class SettingsController {
     }
 
     private void handleHomeButton() {
-        // Xử lý cho nút Home
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/main-view.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) homeButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
@@ -93,7 +92,6 @@ public class SettingsController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Home button clicked");
     }
 
     private void handleButton1() {

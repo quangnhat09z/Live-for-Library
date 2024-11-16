@@ -101,7 +101,7 @@ public class MainController {
 
     private void handleAdminButton() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/management-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/update-view.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) button1.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
@@ -114,7 +114,7 @@ public class MainController {
     private void handleSettingButton() {
         //Xử lý cho nút setting
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/SettingsView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/settings-view.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) button1.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);

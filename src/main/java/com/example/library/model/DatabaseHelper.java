@@ -4,13 +4,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.library.controller.ManagementController.showSuccessAlert;
-import static com.example.library.controller.ManagementController.showWarningAlert;
+import static com.example.library.controller.UpdateController.showSuccessAlert;
+import static com.example.library.controller.UpdateController.showWarningAlert;
 
 public class DatabaseHelper {
     public static final String URL = "jdbc:mysql://localhost:3306/library";
     public static final String USER = "root"; // Thay bằng tên người dùng của bạn
-    public static final String PASSWORD = "09022005"; // Thay bằng mật khẩu của bạn
+    public static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
 
     public static Connection connect() {
         try {

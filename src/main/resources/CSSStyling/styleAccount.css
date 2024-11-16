@@ -11,7 +11,7 @@
     -fx-padding:6px;
 }
 
-.button,.button_delete,.button_add,.button_show {
+.button_delete,.button_add,.button_show,.button_change {
     -fx-background-color: white;
     -fx-background-radius: 6;      /* Bo góc 6px */
     -fx-text-fill: black;           /* Màu chữ đen */
@@ -25,27 +25,6 @@
     -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
 }
 
-.buttonRole{
- -fx-background-color: white;
-    -fx-background-radius: 6;      /* Bo góc 6px */
-    -fx-text-fill: black;           /* Màu chữ đen */
-    -fx-font-size: 15px;            /* Kích thước chữ */       /* Chữ đậm */
-    -fx-padding: 15;                /* Khoảng cách đệm */
-    -fx-border-color: black;       /* Màu viền đen */
-    -fx-border-width: 2px;         /* Độ dày viền */
-    -fx-border-radius: 6;          /* Bo góc viền giống nút */
-    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
-    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
-}
-
-.button:hover, .buttonRole:hover {
-    -fx-background-color: white; /* Màu nền khi hover */
-    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
-    -fx-border-color: black;     /* Màu viền khi hover */
-    -fx-background-radius: 6;      /* Bo góc viền khi hover */
-    -fx-scale-x: 1.02;              /* Phóng to nút theo chiều ngang */
-    -fx-scale-y: 1.02;              /* Phóng to nút theo chiều dọc */
-}
 .button_delete:hover {
     -fx-background-color: red; /* Màu nền khi hover */
     -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
@@ -65,6 +44,15 @@
 
 .button_show:hover {
     -fx-background-color: #33CCFF ; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+
+.button_change:hover {
+    -fx-background-color: yellow ; /* Màu nền khi hover */
     -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
@@ -102,3 +90,41 @@
     -fx-padding: 5;
 }
 
+#bar {
+    -fx-background-color: gray;
+}
+
+.button_main {
+    -fx-background-color: #222222;
+    -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-text-fill: white;           /* Màu chữ đen */
+    -fx-font-size: 15px;            /* Kích thước chữ */
+    -fx-font-weight: bold;          /* Chữ đậm */
+    -fx-border-color: black;       /* Màu viền đen */
+    -fx-border-width: 2px;         /* Độ dày viền */
+    -fx-border-radius: 6;          /* Bo góc viền giống nút */
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.button_not_main {
+    -fx-background-color: white;
+    -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-text-fill: black;           /* Màu chữ đen */
+    -fx-font-size: 15px;            /* Kích thước chữ */
+    -fx-font-weight: bold;          /* Chữ đậm */
+    -fx-border-color: black;       /* Màu viền đen */
+    -fx-border-width: 2px;         /* Độ dày viền */
+    -fx-border-radius: 6;          /* Bo góc viền giống nút */
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.button_not_main:hover {
+    -fx-background-color: yellow ; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}

@@ -2,15 +2,11 @@ package com.example.library.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -18,18 +14,18 @@ import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
 import com.example.library.model.searchDocument;
 
-import static com.example.library.controller.ManagementController.showInfoAlert;
-import static com.example.library.controller.ManagementController.showWarningAlert;
+import static com.example.library.controller.UpdateController.showInfoAlert;
+import static com.example.library.controller.UpdateController.showWarningAlert;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
 
-public class SearchingController {
+public class SearchController {
     private DatabaseHelper databaseHelper;
 
-    public SearchingController() {
+    public SearchController() {
         databaseHelper = new DatabaseHelper(); // Khởi tạo đối tượng DatabaseHelper
     }
 
@@ -63,6 +59,23 @@ public class SearchingController {
     private TableColumn<Document, String> genreColumn;
     @FXML
     private TableColumn<Document, String> quantityColumn;
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Button button1;
+    @FXML
+    private Button button2;
+    @FXML
+    private Button button3;
+    @FXML
+    private Button button4;
+    @FXML
+    private Button searchButton;
+    @FXML
+    private Button deleteButton;
+    @FXML
+    private Button changeButton;
+
 
     @FXML
     private void initialize() {
@@ -103,10 +116,39 @@ public class SearchingController {
             quantityColumn.setCellValueFactory(new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
         }
         //if (myButton != null ) initializeMoving();
+
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        button1.setOnAction(actionEvent -> handleButton1());
+        button2.setOnAction(actionEvent -> handleButton2());
+        button3.setOnAction(actionEvent -> handleButton3());
+        button4.setOnAction(actionEvent -> handleButton4());
+        searchButton.setOnAction(actionEvent -> handleSearchButton());
+        deleteButton.setOnAction(actionEvent -> handleDeleteButton());
+        changeButton.setOnAction(actionEvent -> handleChangeButton());
+    }
+
+    private void handleHomeButton() {
+        changeScene("/com/example/library/main-view.fxml", "Home");
+    }
+
+    private void handleButton1() {
+        System.out.println("Button1 clicked");
+    }
+
+    private void handleButton2() {
+        System.out.println("Button2 clicked");
+    }
+
+    private void handleButton3() {
+        System.out.println("Button3 clicked");
+    }
+
+    private void handleButton4() {
+        System.out.println("Button4 clicked");
     }
 
     @FXML
-    private void onSearchClick(ActionEvent event) {
+    private void handleSearchButton() {
         String id = idField.getText();
         String title = titleField.getText();
         String author = authorField.getText();
@@ -132,7 +174,7 @@ public class SearchingController {
     }
 
     @FXML
-    public void onDeleteDocumentInSearchingClick() {
+    public void handleDeleteButton() {
         String selectedDocument = String.valueOf(resultsTableView.getSelectionModel().getSelectedItem());
 
         // Kiểm tra nếu không có tài liệu nào được chọn
@@ -160,21 +202,20 @@ public class SearchingController {
         }
     }
 
-    private void changeScene(ActionEvent event, String fxmlPath, String title) {
+    private void handleChangeButton() {
+        changeScene("/com/example/library/update-view.fxml", "Manage Documents");
+    }
+
+    private void changeScene(String fxmlPath, String title) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Scene scene = new Scene(fxmlLoader.load(), 1300, 650);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
             stage.setTitle(title);
-            stage.show();
+            stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    private void onChangeToManageClick(ActionEvent event) {
-        changeScene(event, "/com/example/library/management-view.fxml", "Quản lý tài liệu");
     }
 }
