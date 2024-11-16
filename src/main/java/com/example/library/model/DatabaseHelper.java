@@ -21,7 +21,7 @@ public class DatabaseHelper {
     public void addDocument(Document document) throws SQLException {
         String checkSql = "SELECT * FROM documents WHERE title = ?";
         String updateSql = "UPDATE documents SET quantity = quantity + ? WHERE title = ?";
-        String insertSql = "INSERT INTO documents (title, author, publicYear, publisher, genre, quantity) VALUES (?, ?, ?, ?, ?, ?)";
+        String insertSql = "INSERT INTO documents (title, author, publicYear, publisher, genre, quantity, imageLink) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = connect();
              PreparedStatement checkStmt = conn.prepareStatement(checkSql);
@@ -45,6 +45,7 @@ public class DatabaseHelper {
                 insertStmt.setString(4, document.getPublisher());
                 insertStmt.setString(5, document.getGenre());
                 insertStmt.setInt(6, document.getQuantity()); // Số lượng ban đầu
+                insertStmt.setString(7, document.getImageLink());
                 insertStmt.executeUpdate();
             }
         }
@@ -64,7 +65,8 @@ public class DatabaseHelper {
                 String publisher = rs.getString("publisher");
                 String genre = rs.getString("genre");
                 int quantity = rs.getInt("quantity");
-                documents.add(new Document(id, title, author, publicYear, publisher, genre, quantity));
+                String imageLink = rs.getString("imageLink");
+                documents.add(new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink));
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -47,6 +47,8 @@ public class ManagementController {
     @FXML
     private TextField quantityField;
     @FXML
+    private TextField imageLinkField;
+    @FXML
     private TextArea resultText;
     @FXML
     private Button searchButton;
@@ -192,6 +194,7 @@ public class ManagementController {
         String publisher = publisherField.getText().trim();
         String genre = genreField.getText().trim();
         String quantityText = quantityField.getText().trim();
+        String imageLink = imageLinkField.getText();
 
         if (title.isEmpty() || author.isEmpty() || publicYear.isEmpty() || publisher.isEmpty() || genre.isEmpty() || quantityText.isEmpty()) {
             showWarningAlert("Vui lòng nhập đầy đủ thông tin.");
@@ -201,7 +204,7 @@ public class ManagementController {
         try {
             int quantity = Integer.parseInt(quantityText);
             int id = 0; // Hoặc để id = -1 nếu bạn không có giá trị cụ thể
-            Document document = new Document(id, title, author, publicYear, publisher, genre, quantity);
+            Document document = new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink);
             databaseHelper.addDocument(document); // Gọi phương thức addDocument
             updateDocumentList();
             showWarningAlert("Tài liệu đã được thêm thành công!");
@@ -300,9 +303,10 @@ public class ManagementController {
         String publisher = publisherField.getText();
         String genre = genreField.getText();
         String quantity = quantityField.getText();
+        String imageLink = quantityField.getText();
 
         searchDocument search = new searchDocument();
-        List<Document> results = search.searchBooks(id, title, author, year, publisher, genre, quantity);
+        List<Document> results = search.searchBooks(id, title, author, year, publisher, genre, quantity, imageLink);
 
         // Hiển thị kết quả tìm kiếm trong ListView
         resultsListView.getItems().clear();
