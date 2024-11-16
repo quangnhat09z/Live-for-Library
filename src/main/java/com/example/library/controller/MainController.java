@@ -46,7 +46,7 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        setSpeech("src/main/resources/book.txt");
+        setSpeech("src/main/resources/quote.txt");
         mainButton.setOnAction(actionEvent -> handleMainButton());
         button1.setOnAction(actionEvent -> handleButton1());
         button2.setOnAction(actionEvent -> handleButton2());

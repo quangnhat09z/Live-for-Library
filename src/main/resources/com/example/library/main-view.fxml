@@ -5,7 +5,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +16,7 @@
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.library.controller.MainController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
@@ -46,7 +45,7 @@
                                 </ImageView>
                             </children>
                         </Pane>
-                        <JFXButton fx:id="mainButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
+                        <JFXButton fx:id="mainButton" buttonType="RAISED" disable="true" layoutX="6.0" layoutY="120.0"
                                    prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
                                    text="Home" textFill="WHITE">
                             <font>
@@ -64,8 +63,7 @@
                                 <Cursor fx:constant="DEFAULT"/>
                             </cursor>
                         </JFXButton>
-                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0"
-                                   layoutX="5.0" layoutY="475.0"
+                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0"
                                    pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../images/book_icon.png"/>
@@ -210,15 +208,15 @@
                 <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
                       style="-fx-border-color: white;" styleClass="pane_1">
                     <children>
-                        <Label layoutX="54.0" layoutY="14.0" styleClass="text" text="Books">
-                            <font>
-                                <Font name="Century" size="15.0"/>
-                            </font>
-                        </Label>
                         <Label fx:id="bookCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0"
                                styleClass="text" text="0" textAlignment="CENTER">
                             <font>
                                 <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Books">
+                            <font>
+                                <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
                     </children>
@@ -231,89 +229,65 @@
                 <Pane fx:id="pane_11" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
                       style="-fx-border-color: white;" styleClass="pane_11">
                     <children>
-                        <Label layoutX="56.0" layoutY="14.0" styleClass="text" text="Today">
-                            <font>
-                                <Font name="Century" size="15.0"/>
-                            </font>
-                        </Label>
-                        <Label layoutX="62.0" layoutY="48.0" styleClass="text" text="8">
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0" styleClass="text"
+                               text="8">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
                         </Label>
-                        <Label layoutX="41.0" layoutY="127.0" styleClass="text" text="Progress...">
+                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress1" layoutX="26.0" layoutY="160.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
                     </children>
                 </Pane>
                 <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
                       style="-fx-border-color: white;" styleClass="pane_11">
                     <children>
-                        <Label layoutX="56.0" layoutY="14.0" styleClass="text" text="Today">
+                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
-                        <Label layoutX="64.0" layoutY="49.0" styleClass="text" text="8">
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0" styleClass="text"
+                               text="8">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
                         </Label>
-                        <Label layoutX="41.0" layoutY="128.0" styleClass="text" text="Progress...">
-                            <font>
-                                <Font name="Century" size="15.0"/>
-                            </font>
-                        </Label>
-                        <ProgressBar fx:id="progress11" layoutX="26.0" layoutY="159.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
                     </children>
                 </Pane>
                 <Pane fx:id="pane_1111" layoutX="550.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
                       style="-fx-border-color: white;" styleClass="pane_111">
                     <children>
-                        <Label layoutX="54.0" layoutY="14.0" styleClass="text" text="Today">
+                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
-                        <Label layoutX="62.0" layoutY="48.0" styleClass="text" text="8">
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0" styleClass="text"
+                               text="8">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
                         </Label>
-                        <Label layoutX="39.0" layoutY="127.0" styleClass="text" text="Progress...">
-                            <font>
-                                <Font name="Century" size="15.0"/>
-                            </font>
-                        </Label>
-                        <ProgressBar fx:id="progress111" layoutX="24.0" layoutY="159.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
                     </children>
                 </Pane>
                 <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0"
                       style="-fx-border-color: white;" styleClass="pane_1111">
                     <children>
-                        <Label layoutX="44.0" layoutY="14.0" styleClass="text" text="Today">
-                            <font>
-                                <Font name="Century" size="15.0"/>
-                            </font>
-                        </Label>
-                        <Label layoutX="52.0" layoutY="48.0" styleClass="text" text="8" textFill="#030303">
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="300.0" styleClass="text"
+                               text="8" textFill="#030303">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
                         </Label>
-                        <Label layoutX="29.0" layoutY="126.0" styleClass="text" text="Progress...">
+                        <Label alignment="CENTER" layoutY="20.0" prefWidth="300.0" styleClass="text" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
-                        <ProgressBar fx:id="progress1111" layoutX="14.0" layoutY="159.0" prefHeight="18.0"
-                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
                     </children>
                 </Pane>
                 <Pane fx:id="inner_pane1" layoutX="1000.0" layoutY="100.0" prefHeight="80.0" prefWidth="80.0"
@@ -329,15 +303,15 @@
                 </Pane>
                 <Label layoutX="15.0" layoutY="425.0" styleClass="text" text="Features">
                     <font>
-                        <Font name="Century" size="15.0"/>
+                        <Font name="Century Gothic" size="15.0"/>
                     </font>
                 </Label>
                 <Pane fx:id="pane_111111" layoutX="25.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
                       style="-fx-border-color: white;" styleClass="pane_1111">
                     <children>
-                        <Label layoutX="31.0" layoutY="14.0" styleClass="text" text="Today" textFill="WHITE">
+                        <Label layoutX="31.0" layoutY="14.0" styleClass="text" text="Today">
                             <font>
-                                <Font name="Century" size="15.0"/>
+                                <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
                     </children>
@@ -345,17 +319,17 @@
                 <Pane fx:id="pane_12" layoutX="550.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
                       style="-fx-border-color: white;" styleClass="pane_1">
                     <children>
-                        <JFXTextArea fx:id="speech" editable="false" layoutX="12.5" layoutY="30.0" opacity="0.5"
-                                     prefHeight="135.0" prefWidth="475.0" styleClass="text-area">
+                        <JFXTextArea fx:id="speech" editable="false" layoutX="12.5" layoutY="30.0" prefHeight="135.0"
+                                     prefWidth="475.0" styleClass="text-area" text="Test" unFocusColor="BLACK">
                             <font>
-                                <Font name="Playpen Sans ExtraBold" size="15.0"/>
+                                <Font name="Century Gothic Bold" size="15.0"/>
                             </font>
                         </JFXTextArea>
                     </children>
                 </Pane>
                 <Label layoutX="550.0" layoutY="425.0" styleClass="text" text="Quote of the day">
                     <font>
-                        <Font name="Century" size="15.0"/>
+                        <Font name="Century Gothic" size="15.0"/>
                     </font>
                 </Label>
             </children>
@@ -363,7 +337,7 @@
                 <Insets/>
             </HBox.margin>
             <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="DEFAULT"/>
             </cursor>
         </Pane>
     </children>
