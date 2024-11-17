@@ -1,0 +1,135 @@
+.root {
+    -fx-background-color: #1E1E1E; /* Màu nền tối */
+}
+
+.search {
+    -fx-background-color: #2D2D2D; /* Màu nền tối cho ô tìm kiếm */
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+}
+
+.side_anchorpane{
+    -fx-background-color:#353A56;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-border-style: solid;
+}
+.inner_pane{
+    -fx-background-color:#748CF1;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+
+}
+.most_inner_pane{
+    -fx-background-color:#6780E2;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+
+#mainButton{
+    -fx-background-color:#141313;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #ffffff;
+}
+
+.btn_1 {
+    -fx-background-color: #353A56;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+.btn_1:hover {
+    -fx-background-color: #FFA500;
+    -fx-text-fill: black;
+}
+
+.pane_1 {
+    -fx-background-color: #222947; /* Màu nền tối cho pane_1 */
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #5D5D5D; /* Viền màu xám */
+}
+
+.progress {
+    -fx-background-color: #2D2D2D; /* Màu nền tối cho progress */
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+}
+
+.pane_11 {
+    -fx-background-color: #1E2124;
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+}
+
+.pane_111 {
+    -fx-background-color: #999228;
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #5D5D5D; /* Viền màu xám */
+}
+
+.pane_1111 {
+    -fx-background-color: #583E96;
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+}
+
+.text {
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-text-fill: white; /* Màu chữ trắng cho TextArea */
+    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+}
+
+.pane_button {
+    -fx-background-color: #2D2D2D; /* Màu nền tối */
+    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+}
+
+.pane_button:hover {
+    -fx-background-color: #3D3D3D; /* Màu nền sáng hơn khi hover */
+    -fx-border-color: #6D6D6D; /* Viền màu xám sáng hơn khi hover */
+    -fx-cursor: hand;
+}
+
+
+

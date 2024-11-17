@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.library.controller.MainController">
+    <children>
+        <VBox prefHeight="717.0" prefWidth="200.0">
+            <children>
+                <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
+                    <children>
+                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
+                              styleClass="inner_pane">
+                            <children>
+                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
+                                      styleClass="most_inner_pane">
+                                    <children>
+                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0"
+                                                   pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../images/dots.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </Pane>
+                                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/book_icon.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="mainButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
+                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                                   text="Home" textFill="WHITE">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/home.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT"/>
+                            </cursor>
+                        </JFXButton>
+                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0"
+                                   layoutX="5.0" layoutY="475.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/book_icon.png"/>
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button1"
+                                   textFill="WHITE">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/home.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="button2" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button2"
+                                   textFill="WHITE">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/home.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="300.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button3"
+                                   textFill="WHITE">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/home.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="button4" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button4"
+                                   textFill="WHITE">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/home.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="650.0" prefWidth="1100.0">
+            <children>
+                <Pane layoutX="10.0" layoutY="15.0" prefHeight="60.0" prefWidth="1050.0">
+                    <children>
+                        <TextField fx:id="search" layoutX="600.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0"
+                                   promptText="Search" styleClass="search"/>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="10.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/search.png"/>
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="setting_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
+                                   layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0"
+                                   styleClass="pane_button" text="Button">
+                            <graphic>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                           smooth="false" styleClass="setting">
+                                    <image>
+                                        <Image url="@../../../images/setting.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="user_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1000.0"
+                                   layoutY="5.0" prefHeight="50.0" prefWidth="50.0" styleClass="pane_button"
+                                   text="Button">
+                            <graphic>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                           styleClass="button">
+                                    <image>
+                                        <Image url="@../../../images/profile.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="admin_button" layoutX="60.0" layoutY="10.0" prefHeight="40.0"
+                                   prefWidth="100.0" styleClass="pane_button" text="Admin">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0"/>
+                            </font>
+                        </JFXButton>
+                    </children>
+                </Pane>
+                <Label layoutX="20.0" layoutY="75.0" styleClass="text" text="Welcome back!!">
+                    <font>
+                        <Font name="Century Gothic Bold" size="46.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="20.0" layoutY="135.0" styleClass="text" text="Live for Library 2024">
+                    <font>
+                        <Font name="Century Gothic" size="27.0"/>
+                    </font>
+                </Label>
+                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
+                      style="-fx-border-color: white;" styleClass="pane_1">
+                    <children>
+                        <Label layoutX="54.0" layoutY="14.0" styleClass="text" text="Books">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="bookCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0"
+                               styleClass="text" text="0" textAlignment="CENTER">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Label layoutX="24.0" layoutY="175.0" styleClass="text" text="Statistics">
+                    <font>
+                        <Font name="Century Gothic" size="15.0"/>
+                    </font>
+                </Label>
+                <Pane fx:id="pane_11" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
+                      style="-fx-border-color: white;" styleClass="pane_11">
+                    <children>
+                        <Label layoutX="56.0" layoutY="14.0" styleClass="text" text="Today">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="48.0" styleClass="text" text="8">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="41.0" layoutY="127.0" styleClass="text" text="Progress...">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <ProgressBar fx:id="progress1" layoutX="26.0" layoutY="160.0" prefHeight="18.0"
+                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
+                      style="-fx-border-color: white;" styleClass="pane_11">
+                    <children>
+                        <Label layoutX="56.0" layoutY="14.0" styleClass="text" text="Today">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="64.0" layoutY="49.0" styleClass="text" text="8">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="41.0" layoutY="128.0" styleClass="text" text="Progress...">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <ProgressBar fx:id="progress11" layoutX="26.0" layoutY="159.0" prefHeight="18.0"
+                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_1111" layoutX="550.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
+                      style="-fx-border-color: white;" styleClass="pane_111">
+                    <children>
+                        <Label layoutX="54.0" layoutY="14.0" styleClass="text" text="Today">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="48.0" styleClass="text" text="8">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="39.0" layoutY="127.0" styleClass="text" text="Progress...">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <ProgressBar fx:id="progress111" layoutX="24.0" layoutY="159.0" prefHeight="18.0"
+                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0"
+                      style="-fx-border-color: white;" styleClass="pane_1111">
+                    <children>
+                        <Label layoutX="44.0" layoutY="14.0" styleClass="text" text="Today">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="52.0" layoutY="48.0" styleClass="text" text="8" textFill="#030303">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="29.0" layoutY="126.0" styleClass="text" text="Progress...">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                        <ProgressBar fx:id="progress1111" layoutX="14.0" layoutY="159.0" prefHeight="18.0"
+                                     prefWidth="102.0" progress="0.89" styleClass="progress"/>
+                    </children>
+                </Pane>
+                <Pane fx:id="inner_pane1" layoutX="1000.0" layoutY="100.0" prefHeight="80.0" prefWidth="80.0"
+                      styleClass="inner_pane">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/books.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Label layoutX="15.0" layoutY="425.0" styleClass="text" text="Features">
+                    <font>
+                        <Font name="Century" size="15.0"/>
+                    </font>
+                </Label>
+                <Pane fx:id="pane_111111" layoutX="25.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
+                      style="-fx-border-color: white;" styleClass="pane_1111">
+                    <children>
+                        <Label layoutX="31.0" layoutY="14.0" styleClass="text" text="Today" textFill="WHITE">
+                            <font>
+                                <Font name="Century" size="15.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_12" layoutX="550.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
+                      style="-fx-border-color: white;" styleClass="pane_1">
+                    <children>
+                        <JFXTextArea fx:id="speech" editable="false" layoutX="12.5" layoutY="30.0" opacity="0.5"
+                                     prefHeight="135.0" prefWidth="475.0" styleClass="text-area">
+                            <font>
+                                <Font name="Playpen Sans ExtraBold" size="15.0"/>
+                            </font>
+                        </JFXTextArea>
+                    </children>
+                </Pane>
+                <Label layoutX="550.0" layoutY="425.0" styleClass="text" text="Quote of the day">
+                    <font>
+                        <Font name="Century" size="15.0"/>
+                    </font>
+                </Label>
+            </children>
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Pane>
+    </children>
+</HBox>

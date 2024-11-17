@@ -1,0 +1,88 @@
+/* Đặt kiểu cơ bản cho giao diện */
+.root {
+    -fx-background-color: #2E2E2E; /* Màu nền tối */
+}
+
+/* Đặt kiểu cho VBox */
+.vbox-style {
+    -fx-padding: 20px;
+    -fx-background-color: #3A3A3A; /* Nền màu xám đậm */
+    -fx-border-color: #777; /* Viền màu xám nhạt */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Đặt kiểu cho Label */
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #DDDDDD; /* Màu chữ xám nhạt */
+}
+
+/* Đặt kiểu cho TextField */
+.text-field {
+    -fx-background-color: #555; /* Màu nền xám */
+    -fx-border-color: #777; /* Viền màu xám nhạt */
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+}
+
+/* Đặt kiểu cho CheckBox */
+.check-box {
+    -fx-background-color: #555; /* Màu nền xám */
+    -fx-border-color: #777; /* Viền màu xám nhạt */
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+}
+
+/* Đặt kiểu cho Button */
+.button {
+    -fx-background-color: #4169E1; /* Màu nền xanh dương đậm */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+    -fx-cursor: hand;
+    -fx-border-color: #777; /* Viền màu xám nhạt */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #3B5998; /* Màu nền xanh đậm hơn khi hover */
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+}
+
+/* Đặt kiểu cho TitledPane */
+.titled-pane {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #DDDDDD; /* Màu chữ xám nhạt */
+    -fx-background-color: linear-gradient(to bottom, #333, #555); /* Gradient nền tối */
+    -fx-border-color: #777; /* Viền xám nhạt */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.titled-pane > .title {
+    -fx-padding: 10px;
+    -fx-background-color: #444; /* Màu nền tiêu đề */
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .content {
+    -fx-padding: 15px;
+    -fx-background-color: #3A3A3A; /* Màu nền nội dung */
+    -fx-border-color: #777; /* Viền nội dung */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}

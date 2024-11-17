@@ -1,0 +1,86 @@
+/* Đặt kiểu cơ bản cho giao diện */
+.root {
+    -fx-background-color: #F0F8FF; /* Màu nền xanh nhạt */
+}
+
+/* Đặt kiểu cho VBox */
+.vbox-style {
+    -fx-padding: 20px;
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #4169E1; /* Viền màu xanh dương */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Đặt kiểu cho Label */
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4169E1; /* Màu chữ xanh dương */
+}
+
+/* Đặt kiểu cho TextField */
+.text-field {
+    -fx-background-color: #FFFACD; /* Màu nền vàng nhạt */
+    -fx-border-color: #4169E1;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+/* Đặt kiểu cho CheckBox */
+.check-box {
+    -fx-background-color: #FFFACD; /* Màu nền vàng nhạt */
+    -fx-border-color: #4169E1;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+/* Đặt kiểu cho Button */
+.button {
+    -fx-background-color: #FFD700; /* Màu nền vàng */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-border-color: #4169E1;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #FFA500; /* Màu nền vàng cam khi hover */
+    -fx-text-fill: black;
+}
+
+/* Đặt kiểu cho TitledPane */
+.titled-pane {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4169E1; /* Màu chữ xanh dương */
+    -fx-background-color: linear-gradient(to bottom, #E0FFFF, #B0E0E6); /* Gradient nền */
+    -fx-border-color: #4169E1; /* Viền xanh dương */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.titled-pane > .title {
+    -fx-padding: 10px;
+    -fx-background-color: #FFFFFF; /* Màu nền tiêu đề */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .content {
+    -fx-padding: 15px;
+    -fx-background-color: #F5F5F5; /* Màu nền nội dung */
+    -fx-border-color: #4169E1; /* Viền nội dung */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
