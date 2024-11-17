@@ -5,22 +5,17 @@ public class Account {
   private int id;
   private String username;
   private String password;
+  private String email;
   private String role; // Có thể là "user", "admin", v.v.
 
-  // Constructor
-  public Account(int id, String username, String password, String role) {
+  public Account(int id,String username, String password, String email, String role) {
     this.id = id;
     this.username = username;
     this.password = password;
+    this.email = email;
     this.role = role;
   }
 
-  public String toString() {
-    return String.format(
-        id + " - " + username + " - " + password + " - " + role);
-  }
-
-  // Getters và Setter
   public int getId() {
     return id;
   }
@@ -45,6 +40,14 @@ public class Account {
     this.password = password;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   public String getRole() {
     return role;
   }
@@ -52,5 +55,4 @@ public class Account {
   public void setRole(String role) {
     this.role = role;
   }
-
 }

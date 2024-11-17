@@ -24,10 +24,10 @@ import static org.example.library.Controller.ManageDocumentController.showInfoAl
 import static org.example.library.Controller.ManageDocumentController.showWarningAlert;
 import org.example.library.Application.DatabaseHelper;
 
-public class SearchingController {
+public class SearchDocumentsController {
     private DatabaseHelper databaseHelper;
 
-    public SearchingController() {
+    public SearchDocumentsController() {
         databaseHelper = new DatabaseHelper(); // Khởi tạo đối tượng DatabaseHelper
     }
 
@@ -173,6 +173,6 @@ public class SearchingController {
 
     @FXML
     private void onChangeToManageClick(ActionEvent event) {
-        changeScene(event, "/org/example/library/manage-documents.fxml", "Quản lý tài liệu");
+        changeScene(event, "/org/example/library/manage-documents-view.fxml", "Quản lý tài liệu");
     }
 }

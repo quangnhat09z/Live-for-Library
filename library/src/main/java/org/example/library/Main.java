@@ -6,17 +6,26 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
+//    @Override
+//    public void start(Stage stage) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-login-view.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 1100, 650);
+//        stage.setTitle("Live_For_Library!");
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("manage-accounts.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1100, 650);
-        stage.setTitle("Live_For_Library!");
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-login-view.fxml"));
+        stage.initStyle(StageStyle.UNDECORATED);
+        Scene scene = new Scene(fxmlLoader.load(), 520, 400);
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }

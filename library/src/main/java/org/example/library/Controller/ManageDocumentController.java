@@ -177,7 +177,7 @@ public class ManageDocumentController {
   }
 
   public void onShowDocumentsClick(ActionEvent actionEvent) {
-    updateDocumentList(); // Cập nhật danh sách tài liệu
+    updateDocumentList(); //Update
   }
 
   private void updateDocumentList() {
@@ -199,7 +199,7 @@ public class ManageDocumentController {
       int id = Integer.parseInt(
           selectedDocument.split(" - ")[0]); // Giả định format là "ID - Title"
 
-      // Hộp thoại để nhập số lượng cần xóa
+      //Show Box
       TextInputDialog dialog = new TextInputDialog();
       dialog.setTitle("Xóa tài liệu");
       dialog.setHeaderText("Nhập số lượng sách cần xóa:");
@@ -288,7 +288,7 @@ public class ManageDocumentController {
 
   @FXML
   private void onChangeToSearchingClick(ActionEvent event) {
-    changeScene(event, "/org/example/library/search-view.fxml", "Tìm kiếm tài liệu");
+    changeScene(event, "/org/example/library/search-docs-view.fxml", "Tìm kiếm tài liệu");
   }
 
   public void giveBlackSpace() {

@@ -21,7 +21,8 @@ public class ManageAccountController {
   private TextField usernameField;
   @FXML
   private TextField passwordField;
-
+  @FXML
+  private TextField emailField;
   @FXML
   private ComboBox<String> roleComboBox;
   @FXML
@@ -43,6 +44,7 @@ public class ManageAccountController {
   @FXML
   public void onShowAccountClick(ActionEvent actionEvent) {
     updateAccountList();
+    giveBlackSpace();
   }
 
   public void updateAccountList() {
@@ -50,6 +52,7 @@ public class ManageAccountController {
     ObservableList<String> accountStrings = FXCollections.observableArrayList();
     for (Account acc : accounts) {
       accountStrings.add(acc.getId() + " - " + acc.getUsername() + " - " + acc.getPassword() + " - "
+          + acc.getEmail() + " - "
           + acc.getRole());
     }
     accountListView.setItems(accountStrings);
@@ -61,13 +64,14 @@ public class ManageAccountController {
     String username = usernameField.getText();
     String password = passwordField.getText();
     String role = roleComboBox.getSelectionModel().getSelectedItem();
+    String email = emailField.getText();
 
     if (username.isEmpty() || password.isEmpty() || role == null) {
       showWarningAlert("Vui lòng điền đầy đủ thông tin.");
       return;
     }
     try {
-      Account newAccount = new Account(0, username, password, role);
+      Account newAccount = new Account(0, username, password, email, role);
       dbHelper.addAccount(newAccount, this);
       showSuccessAlert("Add Account Successfully");
       updateAccountList();
@@ -108,6 +112,7 @@ public class ManageAccountController {
     } else {
       showWarningAlert("Please choose Account to delete");
     }
+    giveBlackSpace();
   }
 
   public void onChangeToSearchingClick(ActionEvent event) {
@@ -117,11 +122,19 @@ public class ManageAccountController {
   public void giveBlackSpace() {
     usernameField.clear();
     passwordField.clear();
+    emailField.clear();
+    roleComboBox.getItems().clear();
+    roleComboBox.setPromptText("Role");
     roleComboBox.getItems().addAll("admin", "user");
   }
 
+
   public void clearUsernameField() {
     usernameField.clear();
+  }
+
+  public void clearEmailField() {
+    emailField.clear();
   }
 
   public static void showWarningAlert(String message) {
