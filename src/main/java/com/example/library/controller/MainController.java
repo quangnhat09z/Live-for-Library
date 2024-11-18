@@ -85,7 +85,15 @@ public class MainController {
     }
 
     private void handleButton2() {
-        // Xử lý cho nút Button2
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/explore-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) button1.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Button2 clicked");
     }
 

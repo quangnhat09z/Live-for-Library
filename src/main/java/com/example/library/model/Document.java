@@ -12,6 +12,10 @@ public class Document {
     private String imageLink;
 
     // Constructor
+    public Document() {
+
+    }
+
     public Document(int id, String title, String author, String publicYear,
                     String publisher, String genre, int quantity, String imageLink) {
         this.id = id;
