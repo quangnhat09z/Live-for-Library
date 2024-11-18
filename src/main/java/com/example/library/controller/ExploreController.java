@@ -142,8 +142,12 @@ public class ExploreController {
 
     private void searchInGoogleByLink(String googleSearchUrl) {
         try {
-            Desktop.getDesktop().browse(new URI(googleSearchUrl));
-            System.out.println(googleSearchUrl);
+            if (googleSearchUrl != null) {
+                Desktop.getDesktop().browse(new URI(googleSearchUrl));
+                System.out.println(googleSearchUrl);
+            } else {
+                UpdateController.showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
+            }
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
