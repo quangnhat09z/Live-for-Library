@@ -47,7 +47,7 @@ public class UpdateController {
     @FXML
     private Button button1;
     @FXML
-    private Button button2;
+    private Button exploreButton;
     @FXML
     private Button button3;
     @FXML
@@ -70,7 +70,7 @@ public class UpdateController {
     public void initialize() {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         button1.setOnAction(actionEvent -> handleButton1());
-        button2.setOnAction(actionEvent -> handleButton2());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
         addButton.setOnAction(actionEvent -> handleAddButton());
@@ -94,9 +94,9 @@ public class UpdateController {
         System.out.println("Button1 clicked");
     }
 
-    private void handleButton2() {
+    private void handleExploreButton() {
         // Xử lý cho nút Button2
-        System.out.println("Button2 clicked");
+        changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
     private void handleButton3() {

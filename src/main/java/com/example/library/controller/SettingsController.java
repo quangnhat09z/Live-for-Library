@@ -24,7 +24,7 @@ public class SettingsController {
     @FXML
     private Button button1;
     @FXML
-    private Button button2;
+    private Button exploreButton;
     @FXML
     private Button button3;
     @FXML
@@ -48,7 +48,7 @@ public class SettingsController {
     public void initialize() {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         button1.setOnAction(actionEvent -> handleButton1());
-        button2.setOnAction(actionEvent -> handleButton2());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
         saveButton.setOnAction(actionEvent -> handleSaveButton());
@@ -83,15 +83,7 @@ public class SettingsController {
     }
 
     private void handleHomeButton() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/main-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) homeButton.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeScene("/com/example/library/main-view.fxml", "Main");
     }
 
     private void handleButton1() {
@@ -99,9 +91,9 @@ public class SettingsController {
         System.out.println("Button1 clicked");
     }
 
-    private void handleButton2() {
+    private void handleExploreButton() {
         // Xử lý cho nút Button2
-        System.out.println("Button2 clicked");
+        changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
     private void handleButton3() {
@@ -126,4 +118,18 @@ public class SettingsController {
         notification = notifications;
         initialize();
     }
+
+    private void changeScene(String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = (Stage) button1.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setTitle(title);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

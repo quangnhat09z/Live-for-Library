@@ -3,6 +3,9 @@ package com.example.library.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ListView;
@@ -14,6 +17,8 @@ import com.example.library.model.Document;
 
 import java.awt.Desktop;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,7 +48,16 @@ public class ExploreController {
     @FXML
     private Hyperlink myHyperlink;
     @FXML
-    private Button toggleButton;
+    private Button showButton;
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Button button1;
+    @FXML
+    private Button button3;
+    @FXML
+    private Button button4;
+
 
     private DatabaseHelper databaseHelper;
     private boolean isListViewVisible = false; // Track visibility state
@@ -56,7 +70,7 @@ public class ExploreController {
         // Lắng nghe sự kiện nhập liệu trong TextField
         suggestionsList.setVisible(false); // Ẩn ListView
         searchExploreField.textProperty().addListener((observable, oldValue, newValue) -> {
-            toggleButton.setText("Hide");
+            showButton.setText("Hide");
             if (newValue != null && !newValue.isEmpty()) {
                 updateSuggestions(newValue);
             } else {
@@ -71,7 +85,7 @@ public class ExploreController {
                 loadDocumentDetails(newValue); // Gọi phương thức để nạp thông tin tài liệu
                 searchExploreField.setText(newValue);
                 suggestionsList.setVisible(false); // Ẩn ListView sau khi chọn
-                toggleButton.setText("Show");
+                showButton.setText("Show");
             } else {
                 System.out.println("Không có mục nào được chọn.");
             }
@@ -85,18 +99,50 @@ public class ExploreController {
                 // Đặt con trỏ ở cuối văn bản
                 searchExploreField.positionCaret(currentText.length() + 1); // +1 để đặt con trỏ sau dấu cách
             }
-            toggleButton.setText("Show");
+            showButton.setText("Show");
         });
 
         myHyperlink.setOnAction(event -> handleHyperlinkAction());
+
+        showButton.setOnAction(actionEvent -> handleShowButton());
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        button1.setOnAction(actionEvent -> handleButton1());
+        button3.setOnAction(actionEvent -> handleButton3());
+        button4.setOnAction(actionEvent -> handleButton4());
     }
 
-    @FXML
-    private void onToggleListView() {
+    private void handleHomeButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/main-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void handleButton1() {
+        // Xử lý cho nút Button1
+        System.out.println("Button1 clicked");
+    }
+
+    private void handleButton3() {
+        // Xử lý cho nút Button3
+        System.out.println("Button3 clicked");
+    }
+
+    private void handleButton4() {
+        // Xử lý cho nút Button4
+        System.out.println("Button4 clicked");
+    }
+
+    private void handleShowButton() {
         isListViewVisible = !isListViewVisible; // Toggle visibility state
         suggestionsList.setVisible(isListViewVisible);
         suggestionsList.setManaged(isListViewVisible);
-        toggleButton.setText(isListViewVisible ? "Hide" : "Show"); // Update button text
+        showButton.setText(isListViewVisible ? "Hide" : "Show"); // Update button text
     }
 
     // Phương thức cập nhật gợi ý

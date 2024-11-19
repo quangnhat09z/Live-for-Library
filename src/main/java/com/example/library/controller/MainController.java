@@ -28,11 +28,9 @@ public class MainController {
     @FXML
     private Label bookCount;
     @FXML
-    private Button mainButton;
-    @FXML
     private Button button1;
     @FXML
-    private Button button2;
+    private Button exploreButton;
     @FXML
     private Button button3;
     @FXML
@@ -47,9 +45,8 @@ public class MainController {
     @FXML
     public void initialize() {
         setSpeech("src/main/resources/quote.txt");
-        mainButton.setOnAction(actionEvent -> handleMainButton());
         button1.setOnAction(actionEvent -> handleButton1());
-        button2.setOnAction(actionEvent -> handleButton2());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
         if (!ADMIN) {
@@ -74,27 +71,13 @@ public class MainController {
         }
     }
 
-    private void handleMainButton() {
-        // Xử lý cho nút Home
-        System.out.println("Home button clicked");
-    }
-
     private void handleButton1() {
         // Xử lý cho nút Button1
         System.out.println("Button1 clicked");
     }
 
-    private void handleButton2() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/explore-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) button1.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Button2 clicked");
+    private void handleExploreButton() {
+        changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
     private void handleButton3() {
@@ -108,29 +91,11 @@ public class MainController {
     }
 
     private void handleAdminButton() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/update-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) button1.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeScene("/com/example/library/update-view.fxml", "Update");
     }
 
     private void handleSettingButton() {
-        //Xử lý cho nút setting
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/settings-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) button1.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("SettingButton clicked");
+        changeScene("/com/example/library/settings-view.fxml", "Settings");
     }
 
     private void handleUserButton() {
@@ -154,7 +119,6 @@ public class MainController {
         }
     }
 
-
     private void setBookCount() {
 
         String query = "SELECT COUNT(*) AS count FROM documents";
@@ -172,6 +136,19 @@ public class MainController {
             e.printStackTrace();
             bookCount.setText("");
             System.out.println("Không thể lấy số lượng sách");
+        }
+    }
+
+    private void changeScene(String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = (Stage) button1.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setTitle(title);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

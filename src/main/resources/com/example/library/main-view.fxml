@@ -87,8 +87,9 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="button2" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button2"
+                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="240.0"
+                                   prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore"
                                    textFill="WHITE">
                             <font>
                                 <Font size="14.0"/>

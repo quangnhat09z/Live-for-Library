@@ -64,7 +64,7 @@ public class SearchController {
     @FXML
     private Button button1;
     @FXML
-    private Button button2;
+    private Button exploreButton;
     @FXML
     private Button button3;
     @FXML
@@ -119,7 +119,7 @@ public class SearchController {
 
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         button1.setOnAction(actionEvent -> handleButton1());
-        button2.setOnAction(actionEvent -> handleButton2());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
         button4.setOnAction(actionEvent -> handleButton4());
         searchButton.setOnAction(actionEvent -> handleSearchButton());
@@ -135,8 +135,8 @@ public class SearchController {
         System.out.println("Button1 clicked");
     }
 
-    private void handleButton2() {
-        System.out.println("Button2 clicked");
+    private void handleExploreButton() {
+        changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
     private void handleButton3() {
