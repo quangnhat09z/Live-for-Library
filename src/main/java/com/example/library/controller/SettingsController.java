@@ -6,9 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public class SettingsController {
     @FXML
-    private Pane pane;
+    private ScrollPane scrollPane;
     @FXML
     private HBox root;
     @FXML
@@ -63,8 +63,8 @@ public class SettingsController {
             root.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/dark_settings.css")).toExternalForm());
 
-            pane.getStylesheets().clear();
-            pane.getStylesheets().add(Objects.requireNonNull(
+            scrollPane.getStylesheets().clear();
+            scrollPane.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/dark_settings.css")).toExternalForm());
 
         } else {
@@ -72,8 +72,8 @@ public class SettingsController {
             root.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/settings.css")).toExternalForm());
 
-            pane.getStylesheets().clear();
-            pane.getStylesheets().add(Objects.requireNonNull(
+            scrollPane.getStylesheets().clear();
+            scrollPane.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/settings.css")).toExternalForm());
         }
     }

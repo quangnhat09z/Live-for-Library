@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.SettingsController">
+      prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.SettingsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
             <children>
@@ -70,8 +73,8 @@
                                 <Image url="@../../../images/book_icon.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0"
-                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0"
+                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
                                    stylesheets="@../../../CSSStyling/main.css" text="Button1" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
@@ -88,8 +91,8 @@
                                 <Cursor fx:constant="DEFAULT"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="240.0"
+                                   prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
                                    stylesheets="@../../../CSSStyling/main.css" text="Explore" textFill="WHITE">
                             <font>
                                 <Font size="18.0"/>
@@ -146,9 +149,9 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <Pane fx:id="pane" prefHeight="650.0" prefWidth="1100.0" styleClass="root"
-              stylesheets="@../../../CSSStyling/settings.css">
-            <children>
+        <ScrollPane fx:id="scrollPane" prefHeight="650.0" prefWidth="1100.0"
+                    stylesheets="@../../../CSSStyling/settings.css">
+            <content>
                 <VBox alignment="CENTER" prefWidth="1100.0" spacing="20.0">
                     <children>
                         <TitledPane expanded="true" prefWidth="600" styleClass="titled-pane"
@@ -156,16 +159,50 @@
                             <content>
                                 <VBox alignment="CENTER" spacing="10.0" styleClass="vbox-style">
                                     <children>
-                                        <HBox spacing="10.0">
-                                            <Label styleClass="label" text="Name:"/>
+                                        <GridPane hgap="10" vgap="10">
+                                            <Label styleClass="label" text="Name:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="0"/>
                                             <TextField fx:id="nameField" prefHeight="45.0" prefWidth="300"
-                                                       styleClass="text-field"/>
-                                        </HBox>
-                                        <HBox spacing="10.0">
-                                            <Label styleClass="label" text="Email:"/>
+                                                       styleClass="text-field" GridPane.columnIndex="1"
+                                                       GridPane.rowIndex="0"/>
+                                            <Label styleClass="label" text="Email:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="1"/>
                                             <TextField fx:id="emailField" prefHeight="45.0" prefWidth="300"
-                                                       styleClass="text-field"/>
-                                        </HBox>
+                                                       styleClass="text-field" GridPane.columnIndex="1"
+                                                       GridPane.rowIndex="1"/>
+                                            <Label styleClass="label" text="Username:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="2"/>
+                                            <TextField fx:id="usernameField" prefHeight="45.0" prefWidth="300"
+                                                       styleClass="text-field" GridPane.columnIndex="1"
+                                                       GridPane.rowIndex="2"/>
+                                            <Label styleClass="label" text="Password:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="3"/>
+                                            <TextField fx:id="passwordField" prefHeight="45.0" prefWidth="300"
+                                                       styleClass="text-field" GridPane.columnIndex="1"
+                                                       GridPane.rowIndex="3"/>
+                                            <Label styleClass="label" text="Created Date:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="4"/>
+                                            <TextField fx:id="createdDateField" prefHeight="45.0" prefWidth="300"
+                                                       styleClass="text-field" GridPane.columnIndex="1"
+                                                       GridPane.rowIndex="4"/>
+                                            <Label styleClass="label" text="Last Update:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="5"/>
+                                            <TextField fx:id="lastUpdateField" prefHeight="45.0" prefWidth="300"
+                                                       styleClass="text-field" GridPane.columnIndex="1"
+                                                       GridPane.rowIndex="5"/>
+                                            <columnConstraints>
+                                                <ColumnConstraints/>
+                                                <ColumnConstraints/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints/>
+                                                <RowConstraints/>
+                                                <RowConstraints/>
+                                                <RowConstraints/>
+                                                <RowConstraints/>
+                                                <RowConstraints/>
+                                            </rowConstraints>
+                                        </GridPane>
                                     </children>
                                 </VBox>
                             </content>
@@ -174,14 +211,24 @@
                             <content>
                                 <VBox alignment="CENTER" spacing="10.0" styleClass="vbox-style">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                            <Label styleClass="label" text="Dark Mode:"/>
-                                            <CheckBox fx:id="darkModeCheckBox" styleClass="check-box"/>
-                                        </HBox>
-                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                            <Label styleClass="label" text="Notifications:"/>
-                                            <CheckBox fx:id="notificationsCheckBox" styleClass="check-box"/>
-                                        </HBox>
+                                        <GridPane hgap="10" vgap="10">
+                                            <Label styleClass="label" text="Dark Mode:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="0"/>
+                                            <CheckBox fx:id="darkModeCheckBox" styleClass="check-box"
+                                                      GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                            <Label styleClass="label" text="Notifications:" GridPane.columnIndex="0"
+                                                   GridPane.rowIndex="1"/>
+                                            <CheckBox fx:id="notificationsCheckBox" styleClass="check-box"
+                                                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                            <columnConstraints>
+                                                <ColumnConstraints/>
+                                                <ColumnConstraints/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints/>
+                                                <RowConstraints/>
+                                            </rowConstraints>
+                                        </GridPane>
                                     </children>
                                 </VBox>
                             </content>
@@ -189,10 +236,7 @@
                         <JFXButton fx:id="saveButton" styleClass="button" text="Save"/>
                     </children>
                 </VBox>
-            </children>
-            <HBox.margin>
-                <Insets top="75.0"/>
-            </HBox.margin>
-        </Pane>
+            </content>
+        </ScrollPane>
     </children>
 </HBox>

@@ -1,7 +1,31 @@
 /* Đặt kiểu cơ bản cho giao diện */
-.root {
-    -fx-background-color: #F0F8FF; /* Màu nền xanh nhạt */
+.scroll-pane {
+    -fx-background: #FFFFFF; /* Màu nền sáng */
+    -fx-border-color: #D2D2D2; /* Viền màu xám nhạt */
 }
+
+.scroll-pane .viewport {
+    -fx-background: #FFFFFF; /* Màu nền sáng */
+}
+
+.scroll-pane .content {
+    -fx-background: #FFFFFF; /* Màu nền sáng */
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color: #E0E0E0; /* Màu nền cho nút cuộn */
+    -fx-background-insets: 0, 0, 0;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #C0C0C0; /* Màu cho thanh cuộn */
+    -fx-background-insets: 0, 0, 0;
+}
+
 
 /* Đặt kiểu cho VBox */
 .vbox-style {
