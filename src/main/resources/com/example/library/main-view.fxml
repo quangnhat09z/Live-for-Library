@@ -279,7 +279,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Label layoutX="15.0" layoutY="425.0" styleClass="text" text="Features">
+                <Label layoutX="15.0" layoutY="425.0" styleClass="text" text="Recommend">
                     <font>
                         <Font name="Century Gothic" size="15.0"/>
                     </font>
@@ -287,11 +287,34 @@
                 <Pane fx:id="pane_111111" layoutX="25.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
                       style="-fx-border-color: white;" styleClass="pane_1111">
                     <children>
-                        <Label layoutX="31.0" layoutY="14.0" styleClass="text" text="Today">
-                            <font>
-                                <Font name="Century Gothic" size="15.0"/>
-                            </font>
-                        </Label>
+                        <HBox layoutX="12.5" layoutY="12.5" prefHeight="150.0" prefWidth="475.0">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <Label fx:id="titleLabel" alignment="CENTER" prefHeight="50.0" prefWidth="325.0"
+                                               styleClass="text" text="Today">
+                                            <font>
+                                                <Font name="Playpen Sans Regular" size="15.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="authorLabel" alignment="CENTER" prefHeight="50.0"
+                                               prefWidth="325.0" styleClass="text" text="Today">
+                                            <font>
+                                                <Font name="Playpen Sans Regular" size="15.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="yearLabel" alignment="CENTER" prefHeight="50.0" prefWidth="325.0"
+                                               styleClass="text" text="Today">
+                                            <font>
+                                                <Font name="Playpen Sans Regular" size="15.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <ImageView fx:id="bookImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true"
+                                           preserveRatio="true"/>
+                            </children>
+                        </HBox>
                     </children>
                 </Pane>
                 <Pane fx:id="pane_12" layoutX="550.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"

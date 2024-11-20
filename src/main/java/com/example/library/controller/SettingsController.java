@@ -80,7 +80,7 @@ public class SettingsController {
     }
 
     private void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Main");
+        changeScene("/com/example/library/main-view.fxml", "Live for Library");
     }
 
     private void handleButton1() {

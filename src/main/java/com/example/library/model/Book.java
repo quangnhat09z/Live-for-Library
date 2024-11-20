@@ -5,39 +5,37 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 
 public class Book {
-    private final SimpleStringProperty bookId;
+    private final SimpleIntegerProperty bookId;
     private final SimpleStringProperty title;
     private final SimpleStringProperty author;
     private final SimpleIntegerProperty publishYear;
+    private final SimpleStringProperty publisher;
     private final SimpleBooleanProperty isBorrowed;
+    private final SimpleStringProperty imageLink;
 
-    public Book(String bookId, String title, String author, int publishYear) {
-        this.bookId = new SimpleStringProperty(bookId);
-        this.title = new SimpleStringProperty(title);
-        this.author = new SimpleStringProperty(author);
-        this.publishYear = new SimpleIntegerProperty(publishYear);
-        this.isBorrowed = new SimpleBooleanProperty(false);
+    public Book(SimpleIntegerProperty bookId, SimpleStringProperty title,
+                SimpleStringProperty author, SimpleIntegerProperty publishYear,
+                SimpleStringProperty publisher, SimpleBooleanProperty isBorrowed,
+                SimpleStringProperty imageLink) {
+        this.bookId = bookId;
+        this.title = title;
+        this.author = author;
+        this.publishYear = publishYear;
+        this.publisher = publisher;
+        this.isBorrowed = isBorrowed;
+        this.imageLink = imageLink;
     }
 
-    // Getters và setters
-    public String getBookId() {
+    public int getBookId() {
         return bookId.get();
     }
 
-    public void setBookId(String bookId) {
-        this.bookId.set(bookId);
-    }
-
-    public SimpleStringProperty bookIdProperty() {
+    public SimpleIntegerProperty bookIdProperty() {
         return bookId;
     }
 
     public String getTitle() {
         return title.get();
-    }
-
-    public void setTitle(String title) {
-        this.title.set(title);
     }
 
     public SimpleStringProperty titleProperty() {
@@ -48,10 +46,6 @@ public class Book {
         return author.get();
     }
 
-    public void setAuthor(String author) {
-        this.author.set(author);
-    }
-
     public SimpleStringProperty authorProperty() {
         return author;
     }
@@ -60,23 +54,31 @@ public class Book {
         return publishYear.get();
     }
 
-    public void setPublishYear(int publishYear) {
-        this.publishYear.set(publishYear);
-    }
-
     public SimpleIntegerProperty publishYearProperty() {
         return publishYear;
     }
 
-    public boolean getIsBorrowed() {
-        return isBorrowed.get();
+    public String getPublisher() {
+        return publisher.get();
     }
 
-    public void setIsBorrowed(boolean isBorrowed) {
-        this.isBorrowed.set(isBorrowed);
+    public SimpleStringProperty publisherProperty() {
+        return publisher;
+    }
+
+    public boolean isIsBorrowed() {
+        return isBorrowed.get();
     }
 
     public SimpleBooleanProperty isBorrowedProperty() {
         return isBorrowed;
+    }
+
+    public String getImageLink() {
+        return imageLink.get();
+    }
+
+    public SimpleStringProperty imageLinkProperty() {
+        return imageLink;
     }
 }

@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -27,6 +29,14 @@ public class MainController {
     private TextArea speech;
     @FXML
     private Label bookCount;
+    @FXML
+    private Label titleLabel;
+    @FXML
+    private Label authorLabel;
+    @FXML
+    private Label yearLabel;
+    @FXML
+    private ImageView bookImageView;
     @FXML
     private Button button1;
     @FXML
@@ -54,6 +64,7 @@ public class MainController {
         setting_button.setOnAction(actionEvent -> handleSettingButton());
         user_button.setOnAction(actionEvent -> handleUserButton());
         setBookCount();
+        setBookInfo();
 
         if (SettingsController.isDarkMode()) {
             root.getStylesheets().clear();
@@ -128,6 +139,38 @@ public class MainController {
             e.printStackTrace();
             bookCount.setText("");
             System.out.println("Không thể lấy số lượng sách");
+        }
+    }
+
+    private void setBookInfo() {
+        String query = "SELECT * FROM documents ORDER BY RAND() LIMIT 1";
+
+        try (Connection conn = DriverManager.getConnection(DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            if (rs.next()) {
+                String title = rs.getString("title");
+                String author = rs.getString("author");
+                String publishYear = rs.getString("publicYear");
+
+                titleLabel.setText(title);
+                authorLabel.setText(author);
+                yearLabel.setText(publishYear);
+
+                String imageLink = rs.getString("imageLink");
+                if (imageLink != null && !imageLink.isEmpty()) {
+                    Image image = new Image(imageLink);
+                    bookImageView.setImage(image);
+                } else {
+                    bookImageView.setImage(null);
+                    System.out.println("Couldn't load image");
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            bookCount.setText("");
+            System.out.println("BookInfo Error");
         }
     }
 

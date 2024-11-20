@@ -109,15 +109,7 @@ public class ExploreController {
     }
 
     private void handleHomeButton() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/main-view.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) homeButton.getScene().getWindow();
-            Scene scene = new Scene(root, 1300, 650);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeScene("/com/example/library/main-view.fxml", "Live for Library");
     }
 
     private void handleButton1() {
@@ -187,6 +179,19 @@ public class ExploreController {
                 UpdateController.showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
             }
         } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void changeScene(String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = (Stage) button1.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setTitle(title);
+            stage.setScene(scene);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

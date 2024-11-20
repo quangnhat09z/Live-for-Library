@@ -83,7 +83,7 @@ public class UpdateController {
     }
 
     private void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Home");
+        changeScene("/com/example/library/main-view.fxml", "Live for Library");
     }
 
     private void handleButton1() {
