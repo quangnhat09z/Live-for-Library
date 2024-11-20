@@ -1,0 +1,65 @@
+
+
+
+
+
+------------Tao Bang user_verification
+CREATE TABLE IF NOT EXISTS user_verification (
+    id INT AUTO_INCREMENT PRIMARY KEY,                       -- Khóa chính tự động tăng
+    full_name VARCHAR(100),                                  -- Họ tên
+    age INT CHECK (age > 0),                                 -- Tuổi, phải lớn hơn 0
+    gender ENUM('Male', 'Female', 'Other') DEFAULT 'Other',  -- Giới tính
+    phone_number VARCHAR(15) UNIQUE,                         -- Số điện thoại
+    address VARCHAR(255),                                    -- Địa chỉ
+    dark_mode BOOLEAN DEFAULT FALSE,                         -- Chế độ tối
+    notification BOOLEAN DEFAULT TRUE                        -- Thông báo
+);
+
+------------Tao Bang accounts
+accounts	CREATE TABLE `accounts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('active','inactive','banned') COLLATE utf8mb4_unicode_ci DEFAULT 'inactive',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+
+
+Khi tạo cơ sở dữ liệu SQL thì phải thêm các DELIMITER này
+-----------Khi thêm 1 account thì cũng đồng thời thêm vào user_verification các giá trị bao gồm cả null và default
+DELIMITER //
+
+CREATE TRIGGER after_insert_accounts
+AFTER INSERT ON accounts
+FOR EACH ROW
+BEGIN
+    INSERT INTO user_verification (id, full_name, age, gender, phone_number, address, dark_mode, notification)
+    VALUES (NEW.id, NULL, NULL, 'Other', NULL, NULL, FALSE, TRUE);
+END;
+//
+
+DELIMITER ;
+
+
+
+
+
+
+-----------Khi xoá 1 account thì cũng đồng thời thêm vào user_verification các giá trị bao gồm cả null và default
+DELIMITER //
+
+CREATE TRIGGER after_delete_accounts
+AFTER DELETE ON accounts
+FOR EACH ROW
+BEGIN
+    DELETE FROM user_verification WHERE id = OLD.id;
+END;
+//
+DELIMITER ;
