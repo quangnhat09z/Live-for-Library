@@ -28,8 +28,6 @@ public class SettingsController {
     @FXML
     private Button button3;
     @FXML
-    private Button button4;
-    @FXML
     private Button saveButton;
     @FXML
     private TextField nameField;
@@ -50,7 +48,6 @@ public class SettingsController {
         button1.setOnAction(actionEvent -> handleButton1());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
-        button4.setOnAction(actionEvent -> handleButton4());
         saveButton.setOnAction(actionEvent -> handleSaveButton());
 
         nameField.setText(nameUser);
@@ -99,11 +96,6 @@ public class SettingsController {
     private void handleButton3() {
         // Xử lý cho nút Button3
         System.out.println("Button3 clicked");
-    }
-
-    private void handleButton4() {
-        // Xử lý cho nút Button4
-        System.out.println("Button4 clicked");
     }
 
     private void handleSaveButton() {

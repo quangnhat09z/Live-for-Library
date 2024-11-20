@@ -55,8 +55,6 @@ public class ExploreController {
     private Button button1;
     @FXML
     private Button button3;
-    @FXML
-    private Button button4;
 
 
     private DatabaseHelper databaseHelper;
@@ -108,7 +106,6 @@ public class ExploreController {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         button1.setOnAction(actionEvent -> handleButton1());
         button3.setOnAction(actionEvent -> handleButton3());
-        button4.setOnAction(actionEvent -> handleButton4());
     }
 
     private void handleHomeButton() {
@@ -131,11 +128,6 @@ public class ExploreController {
     private void handleButton3() {
         // Xử lý cho nút Button3
         System.out.println("Button3 clicked");
-    }
-
-    private void handleButton4() {
-        // Xử lý cho nút Button4
-        System.out.println("Button4 clicked");
     }
 
     private void handleShowButton() {

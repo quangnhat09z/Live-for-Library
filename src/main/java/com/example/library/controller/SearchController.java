@@ -68,8 +68,6 @@ public class SearchController {
     @FXML
     private Button button3;
     @FXML
-    private Button button4;
-    @FXML
     private Button searchButton;
     @FXML
     private Button deleteButton;
@@ -121,7 +119,6 @@ public class SearchController {
         button1.setOnAction(actionEvent -> handleButton1());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
-        button4.setOnAction(actionEvent -> handleButton4());
         searchButton.setOnAction(actionEvent -> handleSearchButton());
         deleteButton.setOnAction(actionEvent -> handleDeleteButton());
         changeButton.setOnAction(actionEvent -> handleChangeButton());
@@ -141,10 +138,6 @@ public class SearchController {
 
     private void handleButton3() {
         System.out.println("Button3 clicked");
-    }
-
-    private void handleButton4() {
-        System.out.println("Button4 clicked");
     }
 
     @FXML
