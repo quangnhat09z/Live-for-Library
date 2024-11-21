@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import com.example.library.model.DatabaseHelper;
@@ -21,6 +22,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
+
 
 public class SearchController {
     private DatabaseHelper databaseHelper;
@@ -28,7 +31,8 @@ public class SearchController {
     public SearchController() {
         databaseHelper = new DatabaseHelper(); // Khởi tạo đối tượng DatabaseHelper
     }
-
+    @FXML
+    private HBox root;
     @FXML
     private TextField idField;
     @FXML
@@ -122,6 +126,8 @@ public class SearchController {
         searchButton.setOnAction(actionEvent -> handleSearchButton());
         deleteButton.setOnAction(actionEvent -> handleDeleteButton());
         changeButton.setOnAction(actionEvent -> handleChangeButton());
+
+        applySoundEffectsToButtons(root);
     }
 
     private void handleHomeButton() {

@@ -14,12 +14,17 @@ import java.util.Optional;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
 
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
+
 public class UpdateController {
+    @FXML
+    private HBox root;
     @FXML
     private Label welcomeText;
     @FXML
@@ -75,6 +80,8 @@ public class UpdateController {
         showButton.setOnAction(actionEvent -> handleShowButton());
         changeButton.setOnAction(actionEvent -> handleChangeButton());
         accountButton.setOnAction(actionEvent -> handleAccountButton());
+
+        applySoundEffectsToButtons(root);
     }
 
     //Sẽ được cài đặt khi có view của Phước.

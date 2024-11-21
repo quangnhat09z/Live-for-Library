@@ -1,18 +1,21 @@
 package com.example.library.controller;
 
+import com.example.library.model.ChangeView;
+import com.example.library.model.SoundUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import javax.sound.midi.Soundbank;
 import java.io.IOException;
 import java.util.Objects;
+
+import static com.example.library.model.SoundUtil.*;
 
 public class SettingsController {
     @FXML
@@ -29,6 +32,10 @@ public class SettingsController {
     private Button button3;
     @FXML
     private Button saveButton;
+    @FXML
+    private Slider musicVolumeSlider;
+    @FXML
+    private Slider sfxVolumeSlider;
     @FXML
     private TextField nameField;
     @FXML
@@ -55,6 +62,28 @@ public class SettingsController {
         darkModeCheckBox.setSelected(darkMode);
         notificationsCheckBox.setSelected(notification);
 
+        // Liên kết musicVolumeSlider với âm lượng của MediaPlayer
+        MediaPlayer mediaPlayer = MainController.getMediaPlayer();
+        if (mediaPlayer != null) {
+            // Đặt giá trị ban đầu cho thanh trượt
+            musicVolumeSlider.setValue(mediaPlayer.getVolume() * 100);
+
+            // Lắng nghe sự thay đổi giá trị của thanh trượt
+            musicVolumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                double volume = newValue.doubleValue() / 100.0;
+                if (volume >= 0.0 && volume <= 1.0) {
+                    mediaPlayer.setVolume(volume); // Cập nhật âm lượng
+                }
+            });
+        }
+
+        // Liên kết sfxVolumeSlider với âm lượng của hiệu ứng âm thanh
+        sfxVolumeSlider.setValue(SoundUtil.getHoverMediaPlayer().getVolume() * 100); // Đặt giá trị ban đầu
+        sfxVolumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            double volume = newValue.doubleValue() / 100.0;
+            setSfxVolume(volume);
+        });
+
         if (darkMode) {
             root.getStylesheets().clear();
             root.getStylesheets().add(Objects.requireNonNull(
@@ -73,6 +102,8 @@ public class SettingsController {
             scrollPane.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/settings.css")).toExternalForm());
         }
+
+        applySoundEffectsToButtons(root);
     }
 
     public static boolean isDarkMode() {
@@ -80,7 +111,9 @@ public class SettingsController {
     }
 
     private void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Live for Library");
+//        changeScene("/com/example/library/main-view.fxml", "Live for Library");
+        Stage stage = (Stage) homeButton.getScene().getWindow();
+        ChangeView.changeViewFXML("/com/example/library/main-view.fxml", stage);
     }
 
     private void handleButton1() {
@@ -123,5 +156,4 @@ public class SettingsController {
             e.printStackTrace();
         }
     }
-
 }

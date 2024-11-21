@@ -1,25 +1,31 @@
 package com.example.library.controller;
 
+import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseHelper;
+import com.example.library.model.SoundUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.nio.file.Paths;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Random;
+
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class MainController {
     public static final boolean ADMIN = true;
@@ -44,11 +50,15 @@ public class MainController {
     @FXML
     private Button button3;
     @FXML
-    private Button admin_button;
+    private Button quitButton;
     @FXML
-    private Button setting_button;
+    private Button adminButton;
     @FXML
-    private Button user_button;
+    private Button settingButton;
+    @FXML
+    private Button userButton;
+
+    private static MediaPlayer mediaPlayer;
 
     @FXML
     public void initialize() {
@@ -57,12 +67,13 @@ public class MainController {
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         button3.setOnAction(actionEvent -> handleButton3());
         if (!ADMIN) {
-            admin_button.setVisible(false);
+            adminButton.setVisible(false);
         } else {
-            admin_button.setOnAction(actionEvent -> handleAdminButton());
+            adminButton.setOnAction(actionEvent -> handleAdminButton());
         }
-        setting_button.setOnAction(actionEvent -> handleSettingButton());
-        user_button.setOnAction(actionEvent -> handleUserButton());
+        quitButton.setOnAction(actionEvent -> handleQuitButton());
+        settingButton.setOnAction(actionEvent -> handleSettingButton());
+        userButton.setOnAction(actionEvent -> handleUserButton());
         setBookCount();
         setBookInfo();
 
@@ -77,6 +88,25 @@ public class MainController {
                     getClass().getResource("/CSSStyling/main.css")).toExternalForm());
 
         }
+
+        String musicFile = "src/main/resources/audio/music.mp3";
+        Media sound = new Media(Paths.get(musicFile).toUri().toString());
+        if (mediaPlayer == null) {
+            mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
+        } else if (mediaPlayer.getStatus() != MediaPlayer.Status.PLAYING) {
+            mediaPlayer.play();
+        }
+
+        applySoundEffectsToButtons(root);
+    }
+
+    public static MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+
+    public static void setMediaPlayer(MediaPlayer mediaPlayer) {
+        MainController.mediaPlayer = mediaPlayer;
     }
 
     private void handleButton1() {
@@ -97,8 +127,30 @@ public class MainController {
         changeScene("/com/example/library/update-view.fxml", "Update");
     }
 
+    private void handleQuitButton() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Quit Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to quit?");
+
+        // Thêm nút xác nhận và hủy
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+
+        // Xử lý kết quả
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == buttonTypeYes) {
+            Stage stage = (Stage) quitButton.getScene().getWindow();
+            stage.close();
+        }
+    }
+
+
     private void handleSettingButton() {
-        changeScene("/com/example/library/settings-view.fxml", "Settings");
+//        changeScene("/com/example/library/settings-view.fxml", "Settings");
+        Stage stage = (Stage) settingButton.getScene().getWindow();
+        ChangeView.changeViewFXML("/com/example/library/settings-view.fxml", stage);
     }
 
     private void handleUserButton() {

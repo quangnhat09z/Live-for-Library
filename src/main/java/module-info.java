@@ -4,7 +4,7 @@ module com.example.library {
     requires java.sql;
     requires org.json;
     requires java.desktop;
-
+    requires javafx.media;
 
 
     opens com.example.library to javafx.fxml;

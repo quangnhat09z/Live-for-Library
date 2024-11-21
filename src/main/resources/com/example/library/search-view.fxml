@@ -14,8 +14,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
-      prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.library.controller.SearchController">
     <children>

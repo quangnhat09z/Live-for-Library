@@ -16,96 +16,96 @@
 <?import javafx.scene.effect.Light?>
 <?import javafx.scene.effect.Light.Distant?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-  prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23"
-  xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="com.example.library.controller.Login_RegisterController">
-  <left>
-    <AnchorPane prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: #263F73;"
-      BorderPane.alignment="CENTER">
-      <children>
-        <Label layoutX="34.0" layoutY="-15.0" prefHeight="288.0" prefWidth="161.0"
-          text="LIVE FOR LIB" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-          <font>
-            <Font name="Times New Roman Bold" size="40.0"/>
-          </font>
-          <effect>
-            <Lighting diffuseConstant="1.3" specularConstant="0.25" specularExponent="35.26"
-              surfaceScale="3.7">
-              <bumpInput>
-                <Shadow/>
-              </bumpInput>
-              <light>
-                <Light.Distant/>
-              </light>
-            </Lighting>
-          </effect>
-        </Label>
-        <Line endX="112.5" layoutX="115.0" layoutY="220.0" startX="-117.5" stroke="WHITE"/>
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="221.0"
-          pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../../images/bookpng.png"/>
-          </image>
-        </ImageView>
-      </children>
-    </AnchorPane>
-  </left>
-  <center>
-    <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
-      <children>
-        <Label contentDisplay="TOP" layoutX="73.0" layoutY="37.0" text="WELCOME">
-          <font>
-            <Font name="Verdana Bold" size="26.0"/>
-          </font>
-          <effect>
-            <DropShadow blurType="TWO_PASS_BOX" height="38.69" radius="21.79" width="50.47"/>
-          </effect>
-        </Label>
-        <Label layoutX="14.0" layoutY="163.0" text="USERNAME:">
-          <font>
-            <Font name="Verdana Bold" size="13.0"/>
-          </font>
-        </Label>
-        <Label layoutX="12.0" layoutY="217.0" prefHeight="16.0" prefWidth="109.0" text="PASSWORD:">
-          <font>
-            <Font name="Verdana Bold" size="13.0"/>
-          </font>
-        </Label>
-        <TextField fx:id="usernameTextile" layoutX="14.0" layoutY="179.0" promptText="username"/>
-        <PasswordField fx:id="passwordTextile" layoutX="14.0" layoutY="233.0"
-          promptText="password"/>
-        <Label fx:id="registerMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0"
-          layoutY="258.0" prefHeight="52.0" prefWidth="245.0" textFill="#ff4e4e" wrapText="true"/>
-        <Button fx:id="cancelButton" layoutX="266.0" layoutY="3.0" mnemonicParsing="false"
-          onAction="#cancelButtonOnAction" prefHeight="22.0" prefWidth="26.0"
-          style="-fx-background-color: #880000;" text="X" textAlignment="CENTER" textFill="#fefffe"
-          AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
-          <font>
-            <Font name="Verdana Bold" size="10.0"/>
-          </font>
-        </Button>
-        <Button fx:id="registerButton" layoutX="12.0" layoutY="310.0" mnemonicParsing="false"
-          onAction="#registerButtonOnAction" prefHeight="26.0" prefWidth="251.0"
-          style="-fx-background-color: #263F73;" text="REGISTER" textFill="#fefffe">
-          <font>
-            <Font name="Verdana Bold" size="15.0"/>
-          </font>
-        </Button>
-        <Label layoutX="14.0" layoutY="112.0" text="EMAIL:">
-          <font>
-            <Font name="Verdana Bold" size="13.0"/>
-          </font>
-        </Label>
-        <TextField fx:id="emailTextile" layoutX="14.0" layoutY="128.0" promptText="email"/>
-        <Button fx:id="BackLoginButton" layoutX="12.0" layoutY="346.0" mnemonicParsing="false"
-          onAction="#backLoginButtonOnAction" prefHeight="26.0" prefWidth="251.0"
-          style="-fx-background-color: #263F73;" text="BACK TO LOGIN" textFill="#fefffe">
-          <font>
-            <Font name="Verdana Bold" size="15.0"/>
-          </font>
-        </Button>
+            prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.library.controller.Login_RegisterController">
+    <left>
+        <AnchorPane prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: #263F73;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="34.0" layoutY="-15.0" prefHeight="288.0" prefWidth="161.0"
+                       text="LIVE FOR LIB" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                    <font>
+                        <Font name="Times New Roman Bold" size="40.0"/>
+                    </font>
+                    <effect>
+                        <Lighting diffuseConstant="1.3" specularConstant="0.25" specularExponent="35.26"
+                                  surfaceScale="3.7">
+                            <bumpInput>
+                                <Shadow/>
+                            </bumpInput>
+                            <light>
+                                <Light.Distant/>
+                            </light>
+                        </Lighting>
+                    </effect>
+                </Label>
+                <Line endX="112.5" layoutX="115.0" layoutY="220.0" startX="-117.5" stroke="WHITE"/>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="221.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/bookpng.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label contentDisplay="TOP" layoutX="73.0" layoutY="37.0" text="WELCOME">
+                    <font>
+                        <Font name="Verdana Bold" size="26.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" height="38.69" radius="21.79" width="50.47"/>
+                    </effect>
+                </Label>
+                <Label layoutX="14.0" layoutY="163.0" text="USERNAME:">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="12.0" layoutY="217.0" prefHeight="16.0" prefWidth="109.0" text="PASSWORD:">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="usernameTextile" layoutX="14.0" layoutY="179.0" promptText="username"/>
+                <PasswordField fx:id="passwordTextile" layoutX="14.0" layoutY="233.0"
+                               promptText="password"/>
+                <Label fx:id="registerMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0"
+                       layoutY="258.0" prefHeight="52.0" prefWidth="245.0" textFill="#ff4e4e" wrapText="true"/>
+                <Button fx:id="cancelButton" layoutX="266.0" layoutY="3.0" mnemonicParsing="false"
+                        onAction="#cancelButtonOnAction" prefHeight="22.0" prefWidth="26.0"
+                        style="-fx-background-color: #880000;" text="X" textAlignment="CENTER" textFill="#fefffe"
+                        AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                    <font>
+                        <Font name="Verdana Bold" size="10.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="registerButton" layoutX="12.0" layoutY="310.0" mnemonicParsing="false"
+                        onAction="#registerButtonOnAction" prefHeight="26.0" prefWidth="251.0"
+                        style="-fx-background-color: #263F73;" text="REGISTER" textFill="#fefffe">
+                    <font>
+                        <Font name="Verdana Bold" size="15.0"/>
+                    </font>
+                </Button>
+                <Label layoutX="14.0" layoutY="112.0" text="EMAIL:">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="emailTextile" layoutX="14.0" layoutY="128.0" promptText="email"/>
+                <Button fx:id="BackLoginButton" layoutX="12.0" layoutY="346.0" mnemonicParsing="false"
+                        onAction="#backLoginButtonOnAction" prefHeight="26.0" prefWidth="251.0"
+                        style="-fx-background-color: #263F73;" text="BACK TO LOGIN" textFill="#fefffe">
+                    <font>
+                        <Font name="Verdana Bold" size="15.0"/>
+                    </font>
+                </Button>
 
-      </children>
-    </AnchorPane>
-  </center>
+            </children>
+        </AnchorPane>
+    </center>
 </BorderPane>

@@ -17,6 +17,7 @@ import com.example.library.model.Document;
 
 import java.awt.Desktop;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,7 +25,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
+
 public class ExploreController {
+    @FXML
+    private HBox root;
     @FXML
     private TextField searchExploreField;
     @FXML
@@ -106,6 +111,8 @@ public class ExploreController {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         button1.setOnAction(actionEvent -> handleButton1());
         button3.setOnAction(actionEvent -> handleButton3());
+
+        applySoundEffectsToButtons(root);
     }
 
     private void handleHomeButton() {

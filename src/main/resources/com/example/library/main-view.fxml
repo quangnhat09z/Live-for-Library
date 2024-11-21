@@ -125,7 +125,7 @@
         </VBox>
         <Pane prefHeight="650.0" prefWidth="1100.0">
             <children>
-                <Pane layoutX="10.0" layoutY="15.0" prefHeight="60.0" prefWidth="1050.0">
+                <Pane layoutY="15.0" prefHeight="60.0" prefWidth="1100.0">
                     <children>
                         <TextField fx:id="search" layoutX="600.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0"
                                    promptText="Search" styleClass="search"/>
@@ -135,7 +135,7 @@
                                 <Image url="@../../../images/search.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="setting_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
+                        <JFXButton fx:id="settingButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
                                    layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="pane_button" text="Button">
                             <graphic>
@@ -150,7 +150,7 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="user_button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1000.0"
+                        <JFXButton fx:id="userButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1000.0"
                                    layoutY="5.0" prefHeight="50.0" prefWidth="50.0" styleClass="pane_button"
                                    text="Button">
                             <graphic>
@@ -165,8 +165,14 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="admin_button" layoutX="60.0" layoutY="10.0" prefHeight="40.0"
+                        <JFXButton fx:id="adminButton" layoutX="125.0" layoutY="10.0" prefHeight="40.0"
                                    prefWidth="100.0" styleClass="pane_button" text="Admin">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0"/>
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="quitButton" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="100.0"
+                                   style="-fx-background-color: RED;" styleClass="pane_button" text="QUIT">
                             <font>
                                 <Font name="Century Gothic Bold" size="15.0"/>
                             </font>
@@ -183,16 +189,17 @@
                         <Font name="Century Gothic" size="27.0"/>
                     </font>
                 </Label>
-                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_1">
+                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
+                      style="-fx-border-color: white;" styleClass="pane_111">
                     <children>
-                        <Label fx:id="bookCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0"
+                        <Label fx:id="bookCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0"
                                styleClass="text" text="0" textAlignment="CENTER">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
                         </Label>
-                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Books">
+                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
+                               text="Books">
                             <font>
                                 <Font name="Century Gothic" size="15.0"/>
                             </font>
@@ -204,31 +211,16 @@
                         <Font name="Century Gothic" size="15.0"/>
                     </font>
                 </Label>
-                <Pane fx:id="pane_11" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
+                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
                       style="-fx-border-color: white;" styleClass="pane_11">
                     <children>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0" styleClass="text"
-                               text="8">
-                            <font>
-                                <Font name="Century" size="46.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Today">
+                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
+                               text="Today">
                             <font>
                                 <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
-                    </children>
-                </Pane>
-                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_11">
-                    <children>
-                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Today">
-                            <font>
-                                <Font name="Century Gothic" size="15.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0" styleClass="text"
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0" styleClass="text"
                                text="8">
                             <font>
                                 <Font name="Century" size="46.0"/>
@@ -236,32 +228,17 @@
                         </Label>
                     </children>
                 </Pane>
-                <Pane fx:id="pane_1111" layoutX="550.0" layoutY="200.0" prefHeight="200.0" prefWidth="150.0"
-                      style="-fx-border-color: white;" styleClass="pane_111">
-                    <children>
-                        <Label alignment="CENTER" layoutY="20.0" prefWidth="150.0" styleClass="text" text="Today">
-                            <font>
-                                <Font name="Century Gothic" size="15.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="150.0" styleClass="text"
-                               text="8">
-                            <font>
-                                <Font name="Century" size="46.0"/>
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
-                <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0"
+                <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
                       style="-fx-border-color: white;" styleClass="pane_1111">
                     <children>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="300.0" styleClass="text"
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0" styleClass="text"
                                text="8" textFill="#030303">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
                         </Label>
-                        <Label alignment="CENTER" layoutY="20.0" prefWidth="300.0" styleClass="text" text="Today">
+                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
+                               text="Today">
                             <font>
                                 <Font name="Century Gothic" size="15.0"/>
                             </font>
@@ -292,19 +269,19 @@
                                 <VBox>
                                     <children>
                                         <Label fx:id="titleLabel" alignment="CENTER" prefHeight="50.0" prefWidth="325.0"
-                                               styleClass="text" text="Today">
+                                               styleClass="text" text="Title">
                                             <font>
                                                 <Font name="Playpen Sans Regular" size="15.0"/>
                                             </font>
                                         </Label>
                                         <Label fx:id="authorLabel" alignment="CENTER" prefHeight="50.0"
-                                               prefWidth="325.0" styleClass="text" text="Today">
+                                               prefWidth="325.0" styleClass="text" text="Author">
                                             <font>
                                                 <Font name="Playpen Sans Regular" size="15.0"/>
                                             </font>
                                         </Label>
                                         <Label fx:id="yearLabel" alignment="CENTER" prefHeight="50.0" prefWidth="325.0"
-                                               styleClass="text" text="Today">
+                                               styleClass="text" text="Year">
                                             <font>
                                                 <Font name="Playpen Sans Regular" size="15.0"/>
                                             </font>
