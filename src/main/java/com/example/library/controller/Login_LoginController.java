@@ -1,8 +1,12 @@
 package com.example.library.controller;
-
 import com.example.library.model.ChangeView;
-import com.example.library.model.DatabaseConnection;
+import com.example.library.model.DatabaseHelper;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.*;
 
 import javafx.event.ActionEvent;
@@ -17,15 +21,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import static com.example.library.model.DatabaseHelper.connect;
-
 public class Login_LoginController {
 
   @FXML
   private Button cancelButton;
-  @FXML
-  private Button loginButton;
   @FXML
   private  Button comeToRegister;
   @FXML
@@ -66,36 +65,34 @@ public class Login_LoginController {
   }
 
   public void validateLogin() {
-    DatabaseConnection connectNow = new DatabaseConnection();
-    Connection connectDB = connectNow.getConnection();
-    String verifyLogin =
-        "SELECT COUNT(1) FROM accounts WHERE username='" + username_Textile.getText()
-            + "' AND password='" + password_Textile.getText() + "';";
-    try {
-      Statement statement = connectDB.createStatement();
-      ResultSet queryResult = statement.executeQuery(verifyLogin);
-      while (queryResult.next()) {
-        if (queryResult.getInt(1) == 1) {
-          loginMessage.setText("Waiting for server...!");
-          loginMessage.setTextFill(Color.GREEN);
-          String username = username_Textile.getText();
-          SettingsController.setId(getId(username));
-          username_Textile.clear();
-          password_Textile.clear();
-          Stage stage = (Stage) username_Textile.getScene().getWindow();
-          ChangeView.changeViewFXML("/com/example/library/main-view.fxml", stage);
+    String query="SELECT COUNT(1) FROM accounts WHERE username = ? AND password = ?;";
+    try(Connection conn = DatabaseHelper.connect();
+        PreparedStatement pstmt= conn.prepareStatement(query)){
+      pstmt.setString(1,username_Textile.getText());
+      pstmt.setString(2,password_Textile.getText());
+      ResultSet queryResult= pstmt.executeQuery();
+      if(queryResult.next() && queryResult.getInt(1)==1 ){
+        loginMessage.setText("Waiting for server...!");
+        loginMessage.setTextFill(Color.GREEN);
+        username_Textile.clear();
+        password_Textile.clear();
 
-        } else {
-          loginMessage.setText("Invalid Login. Please try again");
-          loginMessage.setTextFill(Color.RED);
-          username_Textile.clear();
-          password_Textile.clear();
-          comeToRegister.setVisible(true);
-        }
+        // Chuyển sang giao diện chính
+        Stage stage = (Stage) username_Textile.getScene().getWindow();
+        ChangeView.changeViewFXML("/com/example/library/main-view.fxml", stage);
+      }else{
+        loginMessage.setText("Invalid Login. Please try again");
+        loginMessage.setTextFill(Color.RED);
+        username_Textile.clear();
+        password_Textile.clear();
+        comeToRegister.setVisible(true);
       }
-    } catch (Exception e) {
+    } catch (SQLException e){
       e.printStackTrace();
+      loginMessage.setText("Error connecting to the database");
+      loginMessage.setTextFill(Color.RED);
     }
+
   }
 
   private int getId(String username) {

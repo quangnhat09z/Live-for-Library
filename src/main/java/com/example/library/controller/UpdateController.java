@@ -87,6 +87,7 @@ public class UpdateController extends Controller {
     //Sẽ được cài đặt khi có view của Phước.
     private void handleAccountButton() {
 //        changeScene(path, title);
+        changeScene("/com/example/library/manage-accounts-view.fxml", "ManageAccount");
     }
 
     @Override
@@ -182,7 +183,7 @@ public class UpdateController extends Controller {
     }
 
     private void handleChangeButton() {
-        changeScene("/com/example/library/search-view.fxml", "Search Documents");
+        changeScene("/com/example/library/search-documents-view.fxml", "Search Documents");
     }
 
     private void updateDocumentList() {

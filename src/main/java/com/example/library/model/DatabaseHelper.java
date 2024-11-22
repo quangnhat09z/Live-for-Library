@@ -1,8 +1,6 @@
 package com.example.library.model;
 
-import static com.example.library.controller.UpdateController.showSuccessAlert;
-import static com.example.library.controller.UpdateController.showWarningAlert;
-
+import com.example.library.controller.ManageAccountController;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,12 +9,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.control.Alert;
 
 public class DatabaseHelper {
 
   public static final String URL = "jdbc:mysql://localhost:3306/library";
   public static final String USER = "root"; // Thay bằng tên người dùng của bạn
-  public static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
+  public static final String PASSWORD = "Anhphuoc1@"; // Thay bằng mật khẩu của bạn
 
   public static Connection connect() {
     try {
@@ -169,6 +168,130 @@ public class DatabaseHelper {
     }
     return document;
   }
+
+
+  //Account
+  public void addAccount(Account account, ManageAccountController controller) throws SQLException {
+    String checkSql = "SELECT * FROM accounts WHERE username = ?";
+    String checkSql1 = "SELECT * FROM accounts WHERE email = ?";
+    String insertSql = "INSERT INTO accounts (username, password, email, role) VALUES (?, ?, ?, ?)";
+
+    //checkSql : username
+    //checkSql1: email
+    try (Connection conn = connect();
+        PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+        PreparedStatement checkStmt1 = conn.prepareStatement(checkSql1);
+        PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+
+      // Kiểm tra xem username đã tồn tại chưa
+      checkStmt.setString(1, account.getUsername());
+      checkStmt1.setString(1, account.getEmail());
+      ResultSet rs = checkStmt.executeQuery();
+      ResultSet rs1 = checkStmt1.executeQuery();
+
+      if (rs.next()) {
+        // Username đã tồn tại, hiển thị cảnh báo và xóa trường nhập liệu
+        ManageAccountController.showWarningAlert(
+            "Username already exists, please enter another UserName");
+        controller.clearUsernameField();
+        System.out.println("Please enter a different username");
+        throw new SQLException("Username already exists.");
+      } else if (rs1.next()) {
+        // Email đã tồn tại, hiển thị cảnh báo và xóa trường nhập liệu
+        ManageAccountController.showWarningAlert(
+            "Email already exists, please enter another Email");
+        controller.clearEmailField();
+        System.out.println("Please enter a different Email");
+        throw new SQLException("Email already exists.");
+      } else {
+        // Username chưa tồn tại, thêm tài khoản mới
+        insertStmt.setString(1, account.getUsername());
+        insertStmt.setString(2, account.getPassword());
+        insertStmt.setString(3, account.getEmail());
+        insertStmt.setString(4, account.getRole());
+        insertStmt.executeUpdate();
+        System.out.println("Account added successfully");
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println("Failed to add Account.");
+      throw e;
+    }
+  }
+
+
+  public void deleteAccount(int id) throws SQLException {
+    String checkSql = "SELECT * FROM accounts WHERE id = ?";
+    String deleteSql = "DELETE FROM accounts WHERE id= ?";
+    String deleteSql1 = "DELETE FROM user_verification WHERE id= ?";
+    try (Connection conn = connect();
+        PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+        PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
+      checkStmt.setInt(1, id);
+      ResultSet rs = checkStmt.executeQuery();
+      if (rs.next()) {
+        //Account exists
+        //=> Can delete
+        deleteStmt.setInt(1, id);
+        int affectedRows = deleteStmt.executeUpdate();
+        if (affectedRows > 0) {
+          System.out.println("Delete !");
+        } else {
+          System.out.println("Account not exists !");
+        }
+      } else {
+        System.out.println("Account not exists !");
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println("Have some problems when delete Account");
+    }
+  }
+
+  public List<Account> getAllAcounts() {
+    List<Account> accounts = new ArrayList<>();
+    String sql = "SELECT * FROM accounts";
+    try (Connection conn = connect();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql)) {
+
+      while (rs.next()) {
+        int id = rs.getInt("id");
+        String username = rs.getString("username");
+        String password = rs.getString("password");
+        String email = rs.getString("email");
+        String role = rs.getString("role");
+        accounts.add(new Account(id, username, password, email, role));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+      showWarningAlert("CAN NOT GET ALL ACCOUNTS");
+    }
+    return accounts;
+  }
+
+  public static void showWarningAlert(String message) {
+    Alert alert = new Alert(Alert.AlertType.WARNING);
+    alert.setContentText(message);
+    alert.showAndWait();
+  }
+
+  public static void showSuccessAlert(String message) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
+    alert.setTitle("Success");
+    alert.setHeaderText("SUCCESS ADD ACCOUNT");
+    alert.setContentText(message);
+    alert.showAndWait();
+  }
+
+  public static void showInfoAlert(String title, String header, String content) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(header);
+    alert.setContentText(content);
+    alert.showAndWait(); // Hiển thị và chờ người dùng đóng
+  }
+
 
 }
 

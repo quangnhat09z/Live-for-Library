@@ -18,7 +18,7 @@ public class ChangeView {
 
     public static void changeViewFXML(String url, Stage stage) {
         // Wait 1.5s for change
-        PauseTransition pause = new PauseTransition(Duration.seconds(1.0));
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.005));
         pause.setOnFinished(event -> {
             try {
                 // Upload
@@ -45,4 +45,5 @@ public class ChangeView {
         });
         pause.play();
     }
+
 }
