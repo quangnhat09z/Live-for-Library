@@ -17,88 +17,102 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.effect.Light?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.Login_LoginController">
-  <right>
-    <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
-      <children>
-        <Label contentDisplay="TOP" layoutX="73.0" layoutY="104.0" text="WELCOME">
-          <font>
-            <Font name="Verdana Bold" size="26.0" />
-          </font>
-          <effect>
-            <DropShadow blurType="TWO_PASS_BOX" height="38.69" radius="21.79" width="50.47" />
-          </effect>
-        </Label>
-        <Label layoutX="21.0" layoutY="180.0" text="USERNAME:">
-          <font>
-            <Font name="Verdana Bold" size="13.0" />
-          </font>
-        </Label>
-        <Label layoutX="19.0" layoutY="215.0" text="PASSWORD:">
-          <font>
-            <Font name="Verdana Bold" size="13.0" />
-          </font>
-        </Label>
-        <TextField fx:id="username_Textile" layoutX="111.0" layoutY="175.0" promptText="username">
-          <cursor>
-            <Cursor fx:constant="HAND" />
-          </cursor>
-        </TextField>
-        <PasswordField fx:id="password_Textile" layoutX="111.0" layoutY="210.0" promptText="password">
-          <cursor>
-            <Cursor fx:constant="HAND" />
-          </cursor>
-        </PasswordField>
-        <Button fx:id="loginButton" layoutX="21.0" layoutY="267.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="251.0" style="-fx-background-color: #263F73;" text="LOGIN" textFill="#fefffe">
-          <font>
-            <Font name="Verdana Bold" size="15.0" />
-          </font>
-          <cursor>
-            <Cursor fx:constant="HAND" />
-          </cursor>
-        </Button>
-        <Label fx:id="loginMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="239.0" prefHeight="17.0" prefWidth="245.0" textFill="#ff4e4e" />
-        <Button fx:id="cancelButton" layoutX="266.0" layoutY="3.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="22.0" prefWidth="26.0" style="-fx-background-color: #880000;" text="X" textAlignment="CENTER" textFill="#fefffe" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
-          <font>
-            <Font name="Verdana Bold" size="10.0" />
-          </font>
-        </Button>
-        <Button fx:id="cometoRegister" layoutX="21.0" layoutY="311.0" mnemonicParsing="false" onAction="#comeRegisterOnAction" prefHeight="26.0" prefWidth="251.0" style="-fx-background-color: #263F73;" text="REGISTER" textFill="#fefffe">
-          <font>
-            <Font name="Verdana Bold" size="15.0" />
-          </font>
-          <cursor>
-            <Cursor fx:constant="HAND" />
-          </cursor>
-        </Button>
-      </children>
-    </AnchorPane>
-  </right>
-  <left>
-    <AnchorPane prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
-      <children>
-        <Label layoutX="34.0" layoutY="-15.0" prefHeight="288.0" prefWidth="161.0" text="LIVE FOR LIB" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-          <font>
-            <Font name="Times New Roman Bold" size="40.0" />
-          </font>
-          <effect>
-            <Lighting diffuseConstant="1.3" specularConstant="0.25" specularExponent="35.26" surfaceScale="3.7">
-              <bumpInput>
-                <Shadow />
-              </bumpInput>
-              <light>
-                <Light.Distant />
-              </light>
-            </Lighting>
-          </effect>
-        </Label>
-        <Line endX="112.5" layoutX="115.0" layoutY="220.0" startX="-117.5" stroke="WHITE" />
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../../images/bookpng.png"/>
-          </image>
-        </ImageView>
-      </children>
-    </AnchorPane>
-  </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.library.controller.Login_LoginController">
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label contentDisplay="TOP" layoutX="73.0" layoutY="104.0" text="WELCOME">
+                    <font>
+                        <Font name="Verdana Bold" size="26.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" height="38.69" radius="21.79" width="50.47"/>
+                    </effect>
+                </Label>
+                <Label layoutX="21.0" layoutY="180.0" text="USERNAME:">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="19.0" layoutY="215.0" text="PASSWORD:">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="username_Textile" layoutX="111.0" layoutY="175.0" promptText="username">
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                </TextField>
+                <PasswordField fx:id="password_Textile" layoutX="111.0" layoutY="210.0" promptText="password">
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                </PasswordField>
+                <Button fx:id="loginButton" layoutX="21.0" layoutY="267.0" mnemonicParsing="false"
+                        onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="251.0"
+                        style="-fx-background-color: #263F73;" text="LOGIN" textFill="#fefffe">
+                    <font>
+                        <Font name="Verdana Bold" size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Label fx:id="loginMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="239.0"
+                       prefHeight="17.0" prefWidth="245.0" textFill="#ff4e4e"/>
+                <Button fx:id="cancelButton" layoutX="266.0" layoutY="3.0" mnemonicParsing="false"
+                        onAction="#cancelButtonOnAction" prefHeight="22.0" prefWidth="26.0"
+                        style="-fx-background-color: #880000;" text="X" textAlignment="CENTER" textFill="#fefffe"
+                        AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                    <font>
+                        <Font name="Verdana Bold" size="10.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="comeToRegister" layoutX="21.0" layoutY="311.0" mnemonicParsing="false"
+                        onAction="#comeRegisterOnAction" prefHeight="26.0" prefWidth="251.0"
+                        style="-fx-background-color: #263F73;" text="REGISTER" textFill="#fefffe">
+                    <font>
+                        <Font name="Verdana Bold" size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </children>
+        </AnchorPane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: #263F73;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="34.0" layoutY="-15.0" prefHeight="288.0" prefWidth="161.0" text="LIVE FOR LIB"
+                       textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                    <font>
+                        <Font name="Times New Roman Bold" size="40.0"/>
+                    </font>
+                    <effect>
+                        <Lighting diffuseConstant="1.3" specularConstant="0.25" specularExponent="35.26"
+                                  surfaceScale="3.7">
+                            <bumpInput>
+                                <Shadow/>
+                            </bumpInput>
+                            <light>
+                                <Light.Distant/>
+                            </light>
+                        </Lighting>
+                    </effect>
+                </Label>
+                <Line endX="112.5" layoutX="115.0" layoutY="220.0" startX="-117.5" stroke="WHITE"/>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="220.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/bookpng.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
 </BorderPane>

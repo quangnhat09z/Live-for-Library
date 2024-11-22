@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javafx.animation.PauseTransition;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,9 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class Login_LoginController {
 
@@ -29,7 +27,7 @@ public class Login_LoginController {
   @FXML
   private Button loginButton;
   @FXML
-  private  Button cometoRegister;
+  private  Button comeToRegister;
   @FXML
   private TextField username_Textile;
   @FXML
@@ -49,11 +47,11 @@ public class Login_LoginController {
   private void handleEnterKey(KeyEvent event) {
     // If Enter key is pressed, trigger the login button action
     if (event.getCode().equals(javafx.scene.input.KeyCode.ENTER)) {
-      loginButtonOnAction(new ActionEvent());
+      loginButtonOnAction();
     }
   }
 
-  public void loginButtonOnAction(ActionEvent e) {
+  public void loginButtonOnAction() {
 
     if (!username_Textile.getText().isBlank() && !password_Textile.getText().isBlank()) {
       validateLogin();
@@ -62,7 +60,7 @@ public class Login_LoginController {
     }
   }
 
-  public void cancelButtonOnAction(ActionEvent e) {
+  public void cancelButtonOnAction() {
     Stage stage = (Stage) cancelButton.getScene().getWindow();
     stage.close();
   }
@@ -92,7 +90,7 @@ public class Login_LoginController {
           loginMessage.setTextFill(Color.RED);
           username_Textile.clear();
           password_Textile.clear();
-          cometoRegister.setVisible(true);
+          comeToRegister.setVisible(true);
         }
       }
     } catch (Exception e) {
