@@ -1,13 +1,9 @@
 .root{
-    -fx-background-color:#EAEEF4;
+    -fx-background-color:#FEF8F3;
 }
 
-.search{
-	-fx-background-color:#353A56;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
+.background {
+    -fx-background-color: #FEF8F3;
 }
 
 .side_anchorpane{
@@ -17,15 +13,16 @@
     -fx-background-radius: 0px;
     -fx-border-style: solid;
 }
+
 .inner_pane{
-    -fx-background-color:#748CF1;
+    -fx-background-color:#FEF8F3;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-border-style: solid;
     -fx-border-color: #748CF1;
-    
 }
+
 .most_inner_pane{
     -fx-background-color:#6780E2;
     -fx-border-width: 2px 2px 2px 2px;
@@ -60,30 +57,13 @@
     -fx-background-color: #FFA500;
     -fx-text-fill: black;
 }
-
-.pane_1{
-    -fx-background-color:#748CF1;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
-    -fx-border-color: #748CF1;
-}
-.progress{
-     -fx-background-color:#ffffff;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 16px;
-    -fx-background-radius: 16px;
-     -fx-border-style: solid;
-    -fx-border-color: #ffffff;
-}
 .pane_11{
       -fx-background-color:#ffffff;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
      -fx-border-style: solid;
-    -fx-border-color: #ffffff;
+    -fx-border-color: black;
 }
 .pane_111{
     -fx-background-color:#FD9999;
@@ -94,14 +74,6 @@
     -fx-border-color: #FD9999;
     
 }
-.pane_1111{
-     -fx-background-color:#FFD700;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 16px;
-    -fx-background-radius: 16px;
-     -fx-border-style: solid;
-    -fx-border-color: #353A56;
-}
 
 .pane_button {
     -fx-background-color: #FFFFFF; /* Màu nền trắng */
@@ -110,6 +82,18 @@
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
     -fx-text-fill: #000000; /* Màu chữ đen */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-size: 15px; /* Cỡ chữ 15 */
+    -fx-font-weight: bold; /* Chữ đậm */
+}
+
+.pane_button:hover {
+        -fx-background-color: #33CCFF ; /* Màu nền khi hover */
+        -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+        -fx-border-color: black;     /* Màu viền khi hover */
+        -fx-background-radius: 50;      /* Bo góc viền khi hover */
+        -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+        -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
 }
 
 .pane_button:hover {
@@ -117,3 +101,20 @@
     -fx-border-color: #B0B0B0; /* Viền màu xám đậm hơn khi hover */
     -fx-cursor: hand;
 }
+
+.text {
+     -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+}
+
+.text_area {
+    -fx-background-color: #FFFFFF; /* Màu nền sáng */
+    -fx-text-fill: #000000; /* Màu chữ đen */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-size: 15px; /* Cỡ chữ 15 pixel */
+    -fx-padding: 10px; /* Khoảng cách lề trong */
+    -fx-border-color: #D2D2D2; /* Màu viền xám nhạt */
+    -fx-border-width: 2px; /* Độ rộng viền */
+    -fx-border-radius: 10px; /* Bo góc viền */
+    -fx-background-radius: 10px; /* Bo góc nền */
+}
+

@@ -69,7 +69,7 @@
                                 <Image url="@../../../images/book_icon.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0"
+                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0"
                                    prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books"
                                    textFill="WHITE">
                             <font>
@@ -103,7 +103,7 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0"
+                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0"
                                    prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game"
                                    textFill="WHITE">
                             <font>

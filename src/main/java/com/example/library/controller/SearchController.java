@@ -25,7 +25,7 @@ import java.util.Optional;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 
-public class SearchController {
+public class SearchController extends Controller {
     private DatabaseHelper databaseHelper;
 
     public SearchController() {
@@ -66,11 +66,11 @@ public class SearchController {
     @FXML
     private Button homeButton;
     @FXML
-    private Button button1;
+    private Button bookButton;
     @FXML
     private Button exploreButton;
     @FXML
-    private Button button3;
+    private Button gameButton;
     @FXML
     private Button searchButton;
     @FXML
@@ -79,8 +79,8 @@ public class SearchController {
     private Button changeButton;
 
 
-    @FXML
-    private void initialize() {
+    @Override
+    public void initialize() {
         String[] a = {"idColumn", "titleColumn", "authorColumn",
                 "publicYearColumn", "publisherColumn", "genreColumn", "quantityColumn"};
         int cnt = 0;
@@ -120,9 +120,9 @@ public class SearchController {
         //if (myButton != null ) initializeMoving();
 
         homeButton.setOnAction(actionEvent -> handleHomeButton());
-        button1.setOnAction(actionEvent -> handleButton1());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
-        button3.setOnAction(actionEvent -> handleButton3());
+        gameButton.setOnAction(actionEvent -> handleGameButton());
         searchButton.setOnAction(actionEvent -> handleSearchButton());
         deleteButton.setOnAction(actionEvent -> handleDeleteButton());
         changeButton.setOnAction(actionEvent -> handleChangeButton());
@@ -130,19 +130,23 @@ public class SearchController {
         applySoundEffectsToButtons(root);
     }
 
-    private void handleHomeButton() {
+    @Override
+    public void handleHomeButton() {
         changeScene("/com/example/library/main-view.fxml", "Live for Library");
     }
 
-    private void handleButton1() {
+    @Override
+    public void handleBookButton() {
         System.out.println("Button1 clicked");
     }
 
-    private void handleExploreButton() {
+    @Override
+    public void handleExploreButton() {
         changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
-    private void handleButton3() {
+    @Override
+    public void handleGameButton() {
         System.out.println("Button3 clicked");
     }
 
@@ -205,7 +209,8 @@ public class SearchController {
         changeScene("/com/example/library/update-view.fxml", "Manage Documents");
     }
 
-    private void changeScene(String fxmlPath, String title) {
+    @Override
+    protected void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();

@@ -22,7 +22,7 @@ import com.example.library.model.Document;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
-public class UpdateController {
+public class UpdateController extends Controller {
     @FXML
     private HBox root;
     @FXML
@@ -50,11 +50,11 @@ public class UpdateController {
     @FXML
     private Button homeButton;
     @FXML
-    private Button button1;
+    private Button bookButton;
     @FXML
     private Button exploreButton;
     @FXML
-    private Button button3;
+    private Button gameButton;
     @FXML
     private Button addButton;
     @FXML
@@ -69,12 +69,12 @@ public class UpdateController {
     private DatabaseHelper databaseHelper = new DatabaseHelper(); // Initialize DatabaseHelper
     private static final String API_KEY = "YOUR_API_KEY"; // Replace with your API key
 
-    @FXML
+    @Override
     public void initialize() {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
-        button1.setOnAction(actionEvent -> handleButton1());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
-        button3.setOnAction(actionEvent -> handleButton3());
+        gameButton.setOnAction(actionEvent -> handleGameButton());
         addButton.setOnAction(actionEvent -> handleAddButton());
         deleteButton.setOnAction(actionEvent -> handleDeleteButton());
         showButton.setOnAction(actionEvent -> handleShowButton());
@@ -89,21 +89,25 @@ public class UpdateController {
 //        changeScene(path, title);
     }
 
-    private void handleHomeButton() {
+    @Override
+    public void handleHomeButton() {
         changeScene("/com/example/library/main-view.fxml", "Live for Library");
     }
 
-    private void handleButton1() {
+    @Override
+    public void handleBookButton() {
         // Xử lý cho nút Button1
         System.out.println("Button1 clicked");
     }
 
-    private void handleExploreButton() {
+    @Override
+    public void handleExploreButton() {
         // Xử lý cho nút Button2
         changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
-    private void handleButton3() {
+    @Override
+    public void handleGameButton() {
         // Xử lý cho nút Button3
         System.out.println("Button3 clicked");
     }
@@ -213,11 +217,12 @@ public class UpdateController {
         alert.showAndWait(); // Hiển thị và chờ người dùng đóng
     }
 
-    private void changeScene(String fxmlPath, String title) {
+    @Override
+    protected void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-            Stage stage = (Stage) button1.getScene().getWindow();
+            Stage stage = (Stage) bookButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setTitle(title);
             stage.setScene(scene);

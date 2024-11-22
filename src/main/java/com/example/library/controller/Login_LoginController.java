@@ -3,9 +3,7 @@ package com.example.library.controller;
 import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseConnection;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import static com.example.library.model.DatabaseHelper.connect;
 
 public class Login_LoginController {
 
@@ -78,12 +78,12 @@ public class Login_LoginController {
         if (queryResult.getInt(1) == 1) {
           loginMessage.setText("Waiting for server...!");
           loginMessage.setTextFill(Color.GREEN);
+          String username = username_Textile.getText();
+          SettingsController.setId(getId(username));
           username_Textile.clear();
           password_Textile.clear();
           Stage stage = (Stage) username_Textile.getScene().getWindow();
           ChangeView.changeViewFXML("/com/example/library/main-view.fxml", stage);
-
-
 
         } else {
           loginMessage.setText("Invalid Login. Please try again");
@@ -98,6 +98,22 @@ public class Login_LoginController {
     }
   }
 
+  private int getId(String username) {
+    int id = 0;
+    String query = "SELECT accounts.id FROM accounts LEFT JOIN user_verification ON accounts.id = user_verification.id WHERE accounts.username = ?;";
+    try (Connection conn = connect();
+         PreparedStatement checkStmt = conn.prepareStatement(query)) {
+
+      checkStmt.setString(1, username);
+      ResultSet resultSet = checkStmt.executeQuery();
+      if (resultSet.next()) {
+        id = resultSet.getInt("id");
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+      return id;
+  }
 
   public void comeRegisterOnAction(ActionEvent e) {
     try {

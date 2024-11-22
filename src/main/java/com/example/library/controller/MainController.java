@@ -2,10 +2,8 @@ package com.example.library.controller;
 
 import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseHelper;
-import com.example.library.model.SoundUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+
 import java.nio.file.Paths;
 
 import java.io.IOException;
@@ -27,14 +26,15 @@ import java.util.Random;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
-public class MainController {
-    public static final boolean ADMIN = true;
+public class MainController extends Controller {
     @FXML
     private HBox root;
     @FXML
     private TextArea speech;
     @FXML
     private Label bookCount;
+    @FXML
+    private Label accountCount;
     @FXML
     private Label titleLabel;
     @FXML
@@ -44,11 +44,11 @@ public class MainController {
     @FXML
     private ImageView bookImageView;
     @FXML
-    private Button button1;
+    private Button bookButton;
     @FXML
     private Button exploreButton;
     @FXML
-    private Button button3;
+    private Button gameButton;
     @FXML
     private Button quitButton;
     @FXML
@@ -60,12 +60,12 @@ public class MainController {
 
     private static MediaPlayer mediaPlayer;
 
-    @FXML
+    @Override
     public void initialize() {
         setSpeech("src/main/resources/quote.txt");
-        button1.setOnAction(actionEvent -> handleButton1());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
-        button3.setOnAction(actionEvent -> handleButton3());
+        gameButton.setOnAction(actionEvent -> handleGameButton());
         if (!ADMIN) {
             adminButton.setVisible(false);
         } else {
@@ -75,6 +75,7 @@ public class MainController {
         settingButton.setOnAction(actionEvent -> handleSettingButton());
         userButton.setOnAction(actionEvent -> handleUserButton());
         setBookCount();
+        setAccountCount();
         setBookInfo();
 
         if (SettingsController.isDarkMode()) {
@@ -109,16 +110,24 @@ public class MainController {
         MainController.mediaPlayer = mediaPlayer;
     }
 
-    private void handleButton1() {
+    @Override
+    public void handleHomeButton() {
+
+    }
+
+    @Override
+    public void handleBookButton() {
         // Xử lý cho nút Button1
         System.out.println("Button1 clicked");
     }
 
-    private void handleExploreButton() {
+    @Override
+    public void handleExploreButton() {
         changeScene("/com/example/library/explore-view.fxml", "Explore");
     }
 
-    private void handleButton3() {
+    @Override
+    public void handleGameButton() {
         // Xử lý cho nút Button3
         System.out.println("Button3 clicked");
     }
@@ -194,6 +203,27 @@ public class MainController {
         }
     }
 
+    private void setAccountCount() {
+
+        String query = "SELECT COUNT(*) AS count FROM accounts";
+
+        try (Connection conn = DriverManager.getConnection(
+                DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                accountCount.setText(String.valueOf(count));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            bookCount.setText("");
+            System.out.println("Không thể lấy số lượng tài khoản");
+        }
+    }
+
     private void setBookInfo() {
         String query = "SELECT * FROM documents ORDER BY RAND() LIMIT 1";
 
@@ -226,11 +256,12 @@ public class MainController {
         }
     }
 
-    private void changeScene(String fxmlPath, String title) {
+    @Override
+    protected void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-            Stage stage = (Stage) button1.getScene().getWindow();
+            Stage stage = (Stage) bookButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setTitle(title);
             stage.setScene(scene);

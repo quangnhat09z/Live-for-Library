@@ -27,7 +27,7 @@ import java.util.List;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
-public class ExploreController {
+public class ExploreController extends Controller {
     @FXML
     private HBox root;
     @FXML
@@ -57,16 +57,16 @@ public class ExploreController {
     @FXML
     private Button homeButton;
     @FXML
-    private Button button1;
+    private Button bookButton;
     @FXML
-    private Button button3;
+    private Button gameButton;
 
 
     private DatabaseHelper databaseHelper;
     private boolean isListViewVisible = false; // Track visibility state
     private String googleSearchUrl;
 
-    @FXML
+    @Override
     public void initialize() {
         databaseHelper = new DatabaseHelper();
 
@@ -109,22 +109,30 @@ public class ExploreController {
 
         showButton.setOnAction(actionEvent -> handleShowButton());
         homeButton.setOnAction(actionEvent -> handleHomeButton());
-        button1.setOnAction(actionEvent -> handleButton1());
-        button3.setOnAction(actionEvent -> handleButton3());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
+        gameButton.setOnAction(actionEvent -> handleGameButton());
 
         applySoundEffectsToButtons(root);
     }
 
-    private void handleHomeButton() {
+    @Override
+    public void handleHomeButton() {
         changeScene("/com/example/library/main-view.fxml", "Live for Library");
     }
 
-    private void handleButton1() {
+    @Override
+    public void handleBookButton() {
         // Xử lý cho nút Button1
         System.out.println("Button1 clicked");
     }
 
-    private void handleButton3() {
+    @Override
+    public void handleExploreButton() {
+
+    }
+
+    @Override
+    public void handleGameButton() {
         // Xử lý cho nút Button3
         System.out.println("Button3 clicked");
     }
@@ -190,11 +198,12 @@ public class ExploreController {
         }
     }
 
-    private void changeScene(String fxmlPath, String title) {
+    @Override
+    protected void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-            Stage stage = (Stage) button1.getScene().getWindow();
+            Stage stage = (Stage) bookButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setTitle(title);
             stage.setScene(scene);

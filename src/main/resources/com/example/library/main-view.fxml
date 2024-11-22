@@ -5,7 +5,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,7 +23,7 @@
                 <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                     <children>
                         <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-                              styleClass="inner_pane">
+                              style="-fx-background-color: #748CF1;" styleClass="inner_pane">
                             <children>
                                 <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
                                       styleClass="most_inner_pane">
@@ -68,7 +67,8 @@
                                 <Image url="@../../../images/book_icon.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0"
+                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0"
+                                   prefHeight="60.0"
                                    prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books"
                                    textFill="WHITE">
                             <font>
@@ -102,7 +102,8 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0"
+                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0"
+                                   prefHeight="60.0"
                                    prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game"
                                    textFill="WHITE">
                             <font>
@@ -123,18 +124,16 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <Pane prefHeight="650.0" prefWidth="1100.0">
+        <Pane prefHeight="650.0" prefWidth="1100.0" styleClass="background">
             <children>
+                <ImageView fitHeight="135.0" fitWidth="150.0" layoutX="710.0" layoutY="27.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/snowflake.png"/>
+                    </image>
+                </ImageView>
                 <Pane layoutY="15.0" prefHeight="60.0" prefWidth="1100.0">
                     <children>
-                        <TextField fx:id="search" layoutX="600.0" layoutY="15.0" prefHeight="20.0" prefWidth="250.0"
-                                   promptText="Search" styleClass="search"/>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="550.0" layoutY="10.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/search.png"/>
-                            </image>
-                        </ImageView>
                         <JFXButton fx:id="settingButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
                                    layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="pane_button" text="Button">
@@ -165,86 +164,41 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="adminButton" layoutX="125.0" layoutY="10.0" prefHeight="40.0"
+                        <JFXButton fx:id="adminButton" layoutX="800.0" layoutY="10.0" prefHeight="40.0"
                                    prefWidth="100.0" styleClass="pane_button" text="Admin">
                             <font>
                                 <Font name="Century Gothic Bold" size="15.0"/>
                             </font>
                         </JFXButton>
                         <JFXButton fx:id="quitButton" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="100.0"
-                                   style="-fx-background-color: RED;" styleClass="pane_button" text="QUIT">
+                                   style="-fx-background-color: RED;" styleClass="pane_button" text="Quit">
                             <font>
-                                <Font name="Century Gothic Bold" size="15.0"/>
+                                <Font name="Times New Roman Bold" size="15.0"/>
                             </font>
                         </JFXButton>
                     </children>
                 </Pane>
+                <Pane fx:id="pane_1111111" layoutX="35.0" layoutY="460.0" opacity="0.75" prefHeight="175.0"
+                      prefWidth="500.0" styleClass="pane_111"/>
                 <Label layoutX="20.0" layoutY="75.0" styleClass="text" text="Welcome back!!">
                     <font>
-                        <Font name="Century Gothic Bold" size="46.0"/>
+                        <Font name="Times New Roman Bold" size="46.0"/>
                     </font>
                 </Label>
-                <Label layoutX="20.0" layoutY="135.0" styleClass="text" text="Live for Library 2024">
+                <Label layoutX="20.0" layoutY="135.0" style="-fx-font-family: &quot;Times New Roman&quot;;"
+                       styleClass="text" text="Live for Library 2024">
                     <font>
-                        <Font name="Century Gothic" size="27.0"/>
+                        <Font name="Times New Roman" size="27.0"/>
                     </font>
                 </Label>
-                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
-                      style="-fx-border-color: white;" styleClass="pane_111">
-                    <children>
-                        <Label fx:id="bookCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0"
-                               styleClass="text" text="0" textAlignment="CENTER">
-                            <font>
-                                <Font name="Century" size="46.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
-                               text="Books">
-                            <font>
-                                <Font name="Century Gothic" size="15.0"/>
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
-                <Label layoutX="24.0" layoutY="175.0" styleClass="text" text="Statistics">
+                <Label layoutX="20.0" layoutY="175.0" style="-fx-font-family: &quot;Times New Roman&quot;;"
+                       styleClass="text" text="Statistics">
                     <font>
-                        <Font name="Century Gothic" size="15.0"/>
+                        <Font name="Times New Roman" size="15.0"/>
                     </font>
                 </Label>
-                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
-                      style="-fx-border-color: white;" styleClass="pane_11">
-                    <children>
-                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
-                               text="Today">
-                            <font>
-                                <Font name="Century Gothic" size="15.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0" styleClass="text"
-                               text="8">
-                            <font>
-                                <Font name="Century" size="46.0"/>
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
-                <Pane fx:id="pane_11111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
-                      style="-fx-border-color: white;" styleClass="pane_1111">
-                    <children>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0" styleClass="text"
-                               text="8" textFill="#030303">
-                            <font>
-                                <Font name="Century" size="46.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
-                               text="Today">
-                            <font>
-                                <Font name="Century Gothic" size="15.0"/>
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
+                <Pane fx:id="pane_11111" layoutX="35.0" layoutY="210.0" prefHeight="200.0" prefWidth="325.0"
+                      styleClass="pane_111"/>
                 <Pane fx:id="inner_pane1" layoutX="1000.0" layoutY="100.0" prefHeight="80.0" prefWidth="80.0"
                       styleClass="inner_pane">
                     <children>
@@ -256,13 +210,13 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Label layoutX="15.0" layoutY="425.0" styleClass="text" text="Recommend">
+                <Label layoutX="20.0" layoutY="425.0" styleClass="text" text="Recommend">
                     <font>
                         <Font name="Century Gothic" size="15.0"/>
                     </font>
                 </Label>
                 <Pane fx:id="pane_111111" layoutX="25.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
-                      style="-fx-border-color: white;" styleClass="pane_1111">
+                      styleClass="pane_11">
                     <children>
                         <HBox layoutX="12.5" layoutY="12.5" prefHeight="150.0" prefWidth="475.0">
                             <children>
@@ -294,22 +248,88 @@
                         </HBox>
                     </children>
                 </Pane>
-                <Pane fx:id="pane_12" layoutX="550.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
-                      style="-fx-border-color: white;" styleClass="pane_1">
-                    <children>
-                        <JFXTextArea fx:id="speech" editable="false" layoutX="12.5" layoutY="30.0" prefHeight="135.0"
-                                     prefWidth="475.0" styleClass="text-area" text="Test" unFocusColor="BLACK">
-                            <font>
-                                <Font name="Century Gothic Bold" size="15.0"/>
-                            </font>
-                        </JFXTextArea>
-                    </children>
-                </Pane>
-                <Label layoutX="550.0" layoutY="425.0" styleClass="text" text="Quote of the day">
+                <Label layoutX="550.0" layoutY="425.0" style="-fx-font-family: &quot;Times New Roman&quot;;"
+                       styleClass="text" text="Quote of the day">
                     <font>
                         <Font name="Century Gothic" size="15.0"/>
                     </font>
                 </Label>
+                <Pane fx:id="pane_1" layoutX="25.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
+                      styleClass="pane_11">
+                    <children>
+                        <Label fx:id="bookCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0"
+                               styleClass="text" text="0" textAlignment="CENTER">
+                            <font>
+                                <Font name="Times New Roman" size="46.0"/>
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
+                               text="Books">
+                            <font>
+                                <Font name="Times New Roman" size="15.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_111112" layoutX="385.0" layoutY="210.0" prefHeight="200.0" prefWidth="325.0"
+                      styleClass="pane_111"/>
+                <Pane fx:id="pane_111" layoutX="375.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
+                      styleClass="pane_11">
+                    <children>
+                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
+                               text="Accounts">
+                            <font>
+                                <Font name="Times New Roman" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="accountCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0"
+                               prefWidth="325.0" styleClass="text" text="0">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_1111121" layoutX="735.0" layoutY="210.0" prefHeight="200.0" prefWidth="325.0"
+                      styleClass="pane_111"/>
+                <Pane fx:id="pane_1111" layoutX="725.0" layoutY="200.0" prefHeight="200.0" prefWidth="325.0"
+                      styleClass="pane_11">
+                    <children>
+                        <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
+                               text="Accounts">
+                            <font>
+                                <Font name="Century Gothic" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0" styleClass="text"
+                               text="8">
+                            <font>
+                                <Font name="Century" size="46.0"/>
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="317.0" fitWidth="305.0" layoutX="121.0" layoutY="14.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/snowman.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane_11111111" layoutX="560.0" layoutY="460.0" opacity="0.75" prefHeight="175.0"
+                      prefWidth="500.0" styleClass="pane_111"/>
+                <Pane fx:id="pane_12" layoutX="550.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
+                      styleClass="pane_11">
+                    <children>
+                        <JFXTextArea fx:id="speech" editable="false" focusColor="BLACK" layoutX="12.5" layoutY="30.0"
+                                     prefHeight="135.0" prefWidth="475.0"
+                                     style="-fx-font-family: &quot;Times New Roman&quot;;" styleClass="text_area"
+                                     text="This is a sample text" unFocusColor="BLACK">
+                            <font>
+                                <Font name="Times New Roman" size="20.0"/>
+                            </font>
+                        </JFXTextArea>
+                    </children>
+                </Pane>
             </children>
             <HBox.margin>
                 <Insets/>

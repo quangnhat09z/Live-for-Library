@@ -1,14 +1,9 @@
-.root {
+.root{
     -fx-background-color: #1E1E1E; /* Màu nền tối */
 }
 
-.search {
-    -fx-background-color: #2D2D2D; /* Màu nền tối cho ô tìm kiếm */
-    -fx-border-width: 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
-    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+.background {
+    -fx-background-color: #1E1E1E; /* Màu nền tối */
 }
 
 .side_anchorpane{
@@ -18,15 +13,16 @@
     -fx-background-radius: 0px;
     -fx-border-style: solid;
 }
+
 .inner_pane{
-    -fx-background-color:#748CF1;
+    -fx-background-color:#1E1E1E;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-border-style: solid;
     -fx-border-color: #748CF1;
-
 }
+
 .most_inner_pane{
     -fx-background-color:#6780E2;
     -fx-border-width: 2px 2px 2px 2px;
@@ -62,74 +58,59 @@
     -fx-text-fill: black;
 }
 
-.pane_1 {
-    -fx-background-color: #222947; /* Màu nền tối cho pane_1 */
-    -fx-border-width: 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
-    -fx-border-color: #5D5D5D; /* Viền màu xám */
-}
-
-.progress {
-    -fx-background-color: #2D2D2D; /* Màu nền tối cho progress */
-    -fx-border-width: 2px;
-    -fx-border-radius: 16px;
-    -fx-background-radius: 16px;
-    -fx-border-style: solid;
-    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
-}
-
 .pane_11 {
-    -fx-background-color: #1E2124;
+    -fx-background-color: #0b0b0b; /* Màu nền tối cho Pane */
     -fx-border-width: 2px;
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
     -fx-border-style: solid;
-    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+    -fx-border-color: white;
 }
 
 .pane_111 {
-    -fx-background-color: #999228;
+    -fx-background-color: #582419; /* Màu nền tối hơn cho Pane */
     -fx-border-width: 2px;
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
     -fx-border-style: solid;
-    -fx-border-color: #5D5D5D; /* Viền màu xám */
-}
-
-.pane_1111 {
-    -fx-background-color: #583E96;
-    -fx-border-width: 2px;
-    -fx-border-radius: 16px;
-    -fx-background-radius: 16px;
-    -fx-border-style: solid;
-    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
-}
-
-.text {
-    -fx-text-fill: white;
-}
-
-.text-area {
-    -fx-text-fill: white; /* Màu chữ trắng cho TextArea */
-    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+    -fx-border-color: #555;
 }
 
 .pane_button {
-    -fx-background-color: #2D2D2D; /* Màu nền tối */
-    -fx-border-color: #4D4D4D; /* Viền màu xám đậm */
+    -fx-background-color: #2E2E2E; /* Màu nền tối cho nút */
+    -fx-border-color: #444; /* Viền tối */
     -fx-border-width: 2px;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
     -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-size: 15px; /* Cỡ chữ 15 */
+    -fx-font-weight: bold; /* Chữ đậm */
 }
 
 .pane_button:hover {
-    -fx-background-color: #3D3D3D; /* Màu nền sáng hơn khi hover */
-    -fx-border-color: #6D6D6D; /* Viền màu xám sáng hơn khi hover */
+    -fx-background-color: #474747; /* Màu nền khi hover */
+    -fx-border-color: #666; /* Viền khi hover */
     -fx-cursor: hand;
+    -fx-background-radius: 50; /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05; /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05; /* Phóng to nút theo chiều dọc */
 }
 
+.text {
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-text-fill: white; /* Màu chữ trắng */
+}
 
+.text_area {
+    -fx-background-color: #2E2E2E; /* Màu nền tối */
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-size: 15px; /* Cỡ chữ 15 pixel */
+    -fx-padding: 10px; /* Khoảng cách lề trong */
+    -fx-border-color: #444; /* Màu viền tối */
+    -fx-border-width: 2px; /* Độ rộng viền */
+    -fx-border-radius: 10px; /* Bo góc viền */
+    -fx-background-radius: 10px; /* Bo góc nền */
+}
 
