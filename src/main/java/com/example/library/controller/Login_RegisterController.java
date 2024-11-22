@@ -4,7 +4,7 @@ import static com.example.library.model.Validator.checkEmail;
 import static com.example.library.model.Validator.checkPassword;
 import static com.example.library.model.Validator.checkUsername;
 
-import com.example.library.model.DatabaseConnection;
+import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Validator;
 import java.io.IOException;
 import java.sql.Connection;
@@ -61,68 +61,50 @@ public class Login_RegisterController {
   }
 
   public void insertUser(String email, String role, String username, String password) {
-    DatabaseConnection connectionClass = new DatabaseConnection();
-    Connection connection = connectionClass.getConnection();
 
     String query = "INSERT INTO accounts (email, role, username, password) VALUES (?, ?, ?, ?)";
+    try (Connection connection = DatabaseHelper.connect();
+        PreparedStatement pstm = connection.prepareStatement(query)) {
+      pstm.setString(1, email);
+      pstm.setString(2, role);
+      pstm.setString(3, username);
+      pstm.setString(4, password);
 
-    try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-      pstmt.setString(1, email);
-      pstmt.setString(2, role);
-      pstmt.setString(3, username);
-      pstmt.setString(4, password);
-
-      pstmt.executeUpdate();
-      System.out.println("User inserted successfully!");
-
+      pstm.executeUpdate();
+      System.out.println("Account inserted successfully!");
     } catch (SQLException e) {
-      System.out.println("Error while inserting user!");
+      System.out.println("Error while inserting account!");
       e.printStackTrace();
     }
   }
 
   public boolean isUsernameTaken(String username) {
-    DatabaseConnection connectionClass = new DatabaseConnection();
-    Connection connection = connectionClass.getConnection();
 
     String query = "SELECT * FROM accounts WHERE username = ?";
-
-    try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-      pstmt.setString(1, username);
-      ResultSet resultSet = pstmt.executeQuery();
-
-      // If we get a result, the username is already taken
-      if (resultSet.next()) {
-        return true;
-      }
-    } catch (SQLException e) {
+    try(Connection connection=DatabaseHelper.connect();
+   PreparedStatement pstmt= connection.prepareStatement(query)){
+      pstmt.setString(1,username);
+      ResultSet resultSet= pstmt.executeQuery();
+      return resultSet.next();
+    } catch (SQLException e){
       System.out.println("Error checking username!");
       e.printStackTrace();
+      return false;
     }
-
-    return false;
   }
-
   public boolean isEmailTaken(String email) {
-    DatabaseConnection connectionClass = new DatabaseConnection();
-    Connection connection = connectionClass.getConnection();
 
     String query = "SELECT * FROM accounts WHERE email = ?";
-
-    try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-      pstmt.setString(1, email);
-      ResultSet resultSet = pstmt.executeQuery();
-
-      // If we get a result, the username is already taken
-      if (resultSet.next()) {
-        return true;
-      }
-    } catch (SQLException e) {
+    try(Connection connection=DatabaseHelper.connect();
+        PreparedStatement pstmt= connection.prepareStatement(query)){
+      pstmt.setString(1,email);
+      ResultSet resultSet= pstmt.executeQuery();
+      return resultSet.next();
+    } catch (SQLException e){
       System.out.println("Error checking email!");
       e.printStackTrace();
+      return false;
     }
-
-    return false;
   }
 
   public void registerButtonOnAction(ActionEvent e) {
