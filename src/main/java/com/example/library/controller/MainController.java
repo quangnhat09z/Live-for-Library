@@ -66,7 +66,7 @@ public class MainController extends Controller {
         bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         gameButton.setOnAction(actionEvent -> handleGameButton());
-        if (!ADMIN) {
+        if (!admin) {
             adminButton.setVisible(false);
         } else {
             adminButton.setOnAction(actionEvent -> handleAdminButton());
@@ -78,7 +78,7 @@ public class MainController extends Controller {
         setAccountCount();
         setBookInfo();
 
-        if (SettingsController.isDarkMode()) {
+        if (Controller.isDarkMode()) {
             root.getStylesheets().clear();
             root.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/dark_main.css")).toExternalForm());
@@ -95,6 +95,7 @@ public class MainController extends Controller {
         if (mediaPlayer == null) {
             mediaPlayer = new MediaPlayer(sound);
             mediaPlayer.play();
+            mediaPlayer.setVolume(0);
         } else if (mediaPlayer.getStatus() != MediaPlayer.Status.PLAYING) {
             mediaPlayer.play();
         }

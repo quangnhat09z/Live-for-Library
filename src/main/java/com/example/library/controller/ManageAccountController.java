@@ -30,8 +30,6 @@ import javafx.stage.Stage;
 public class ManageAccountController {
 
   @FXML
-  private Button homeButton;
-  @FXML
   private TextField usernameField;
   @FXML
   private TextField passwordField;
@@ -214,14 +212,14 @@ public class ManageAccountController {
 //    ChangeView.changeViewFXML("/com/example/library/.search-accounts.fxml", stage);
 //  }
   public void onChangeToSearchView() {
-    changeScene("/com/example/library/search-search-view.fxml", "Search Accounts");
+    changeScene("/com/example/library/search-accounts-view.fxml", "Search Accounts");
   }
 
   private void changeScene(String fxmlPath, String title) {
     try {
       FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
       Parent root = loader.load();
-      Stage stage = (Stage) homeButton.getScene().getWindow();
+      Stage stage = (Stage) usernameField.getScene().getWindow();
       Scene scene = new Scene(root, 1300, 650);
       stage.setTitle(title);
       stage.setScene(scene);

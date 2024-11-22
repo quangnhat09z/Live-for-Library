@@ -1,8 +1,8 @@
 package com.example.library.controller;
 
-import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.SoundUtil;
+import com.example.library.model.Validator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -55,7 +55,6 @@ public class SettingsController extends Controller {
     private CheckBox notificationsCheckBox;
 
     private static int id;
-    private static boolean darkMode;
 
     @Override
     public void initialize() {
@@ -67,11 +66,6 @@ public class SettingsController extends Controller {
 
         getInfo();
 
-//        nameField.setText(name);
-//        emailField.setText(email);
-//        darkModeCheckBox.setSelected(darkMode);
-//        notificationsCheckBox.setSelected(notification);
-
         // Liên kết musicVolumeSlider với âm lượng của MediaPlayer
         MediaPlayer mediaPlayer = MainController.getMediaPlayer();
         if (mediaPlayer != null) {
@@ -82,7 +76,7 @@ public class SettingsController extends Controller {
             musicVolumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
                 double volume = newValue.doubleValue() / 100.0;
                 if (volume >= 0.0 && volume <= 1.0) {
-                    mediaPlayer.setVolume(volume); // Cập nhật âm lượng
+                    mediaPlayer.setVolume(volume);
                 }
             });
 //            System.out.println("ID is now: " + id);
@@ -96,7 +90,7 @@ public class SettingsController extends Controller {
             setSfxVolume(volume);
         });
 
-        if (darkMode) {
+        if (Controller.isDarkMode()) {
             root.getStylesheets().clear();
             root.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/dark_settings.css")).toExternalForm());
@@ -116,10 +110,6 @@ public class SettingsController extends Controller {
         }
 
         applySoundEffectsToButtons(root);
-    }
-
-    public static boolean isDarkMode() {
-        return darkMode;
     }
 
     public static int getId() {
@@ -155,8 +145,7 @@ public class SettingsController extends Controller {
                 lastUpdateField.setText(updated);
                 darkModeCheckBox.setSelected(darkMode);
                 notificationsCheckBox.setSelected(notifications);
-                ;
-                SettingsController.darkMode = darkMode;
+                Controller.setDarkMode(darkMode);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -196,6 +185,32 @@ public class SettingsController extends Controller {
         boolean darkMode = darkModeCheckBox.isSelected();
         boolean notifications = notificationsCheckBox.isSelected();
 
+        if (!Validator.checkEmail(email)) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Email Requirement");
+            alert.setHeaderText(null);
+            alert.setContentText("Email is invalid.");
+            alert.showAndWait();
+            return;
+        }
+        if (!Validator.checkUsername(username)) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Username Requirement");
+            alert.setHeaderText(null);
+            alert.setContentText("Username is invalid.");
+            alert.showAndWait();
+            return;
+        }
+        if (!Validator.checkPassword(password)) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Password Requirement");
+            alert.setHeaderText(null);
+            alert.setContentText(
+                    "Password must contain at least 8 characters, 1 uppercase letter, and 1 special character.");
+            alert.showAndWait();
+            return;
+        }
+
         String query = "UPDATE accounts SET email = ?" +
                 ", username = ?, password = ?, created_at = ?, updated_at = ?" +
                 " WHERE id = ?";
@@ -208,8 +223,6 @@ public class SettingsController extends Controller {
             pstmt.setString(3, password);
             pstmt.setString(4, created);
             pstmt.setString(5, updated);
-//            pstmt.setBoolean(6, darkMode);
-//            pstmt.setBoolean(7, notifications);
             pstmt.setInt(6, SettingsController.id);
             pstmt.executeUpdate();
             conn.close();
@@ -236,7 +249,6 @@ public class SettingsController extends Controller {
             System.out.println("Có lỗi xảy ra khi lưu lại thông tin!");
         }
         initialize();
-
 
 
     }
