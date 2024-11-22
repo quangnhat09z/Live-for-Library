@@ -28,6 +28,17 @@ public class Document {
         this.imageLink = imageLink;
     }
 
+    public Document(String title, String author, String publicYear, String publisher, String genre, int quantity, String imageLink) {
+        this.title = title;
+        this.author = author;
+        this.publicYear = publicYear;
+        this.publisher = publisher;
+        this.genre = genre;
+        this.quantity = quantity;
+        this.imageLink = imageLink;
+    }
+
+
     @Override
     public String toString() {
         return String.format(

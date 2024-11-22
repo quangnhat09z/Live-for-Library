@@ -1,13 +1,16 @@
 package com.example.library.controller;
 
+import com.example.library.model.DocumentChangeInfo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -77,6 +80,8 @@ public class SearchController {
     private Button deleteButton;
     @FXML
     private Button changeButton;
+    @FXML
+    private Button changeInfo;
 
 
     @FXML
@@ -215,6 +220,111 @@ public class SearchController {
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void onChangeInfoInSearchingClick() {
+        Document selectedDocument = resultsTableView.getSelectionModel().getSelectedItem();
+        if (selectedDocument != null) {
+            // Tạo hộp thoại
+            Dialog<Document> dialog = new Dialog<>();
+            dialog.setTitle("Cập nhật tài liệu");
+            dialog.setHeaderText("Chỉnh sửa thông tin tài liệu");
+
+            // Tạo các trường nhập liệu
+            GridPane grid = new GridPane();
+            grid.setHgap(15);
+            grid.setVgap(15);
+            grid.setPadding(new Insets(30, 150, 30, 30));
+
+
+
+            TextField titleField = new TextField(selectedDocument.getTitle());
+            titleField.setPrefWidth(400); // Chiều rộng ưa thích cho trường Tiêu đề
+
+            TextField authorField = new TextField(selectedDocument.getAuthor());
+            authorField.setPrefWidth(400);
+
+            TextField publicYearField = new TextField(String.valueOf(selectedDocument.getPublicYear()));
+            publicYearField.setPrefWidth(400);
+
+            TextField publisherField = new TextField(selectedDocument.getPublisher());
+            publisherField.setPrefWidth(400);
+
+            TextField genreField = new TextField(selectedDocument.getGenre());
+            genreField.setPrefWidth(400);
+
+            TextField quantityField = new TextField(String.valueOf(selectedDocument.getQuantity()));
+            quantityField.setPrefWidth(400);
+
+            TextField imageLinkField = new TextField(selectedDocument.getImageLink());
+            imageLinkField.setPrefWidth(400);
+
+            grid.add(new Label("Title:"), 0, 0);
+            grid.add(titleField, 1, 0);
+            grid.add(new Label("Author:"), 0, 1);
+            grid.add(authorField, 1, 1);
+            grid.add(new Label("Year of publication:"), 0, 2);
+            grid.add(publicYearField, 1, 2);
+            grid.add(new Label("Publisher:"), 0, 3);
+            grid.add(publisherField, 1, 3);
+            grid.add(new Label("Genre:"), 0, 4);
+            grid.add(genreField, 1, 4);
+            grid.add(new Label("Quantity:"), 0, 5);
+            grid.add(quantityField, 1, 5);
+            grid.add(new Label("Image link:"), 0, 6);
+            grid.add(imageLinkField, 1, 6);
+
+            dialog.getDialogPane().setContent(grid);
+
+            // Thêm nút "OK" và "Cancel"
+            ButtonType okButton = new ButtonType("Cập nhật", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().addAll(okButton, ButtonType.CANCEL);
+
+            // Xử lý kết quả khi nhấn nút "OK"
+            dialog.setResultConverter(dialogButton -> {
+                if (dialogButton == okButton) {
+                    return new Document(
+                            titleField.getText(),
+                            authorField.getText(),
+                            publicYearField.getText(),
+                            publisherField.getText(),
+                            genreField.getText(),
+                            Integer.parseInt(quantityField.getText()),
+                            imageLinkField.getText()
+                    );
+                }
+                return null;
+            });
+
+            // Hiển thị hộp thoại và lấy kết quả
+            dialog.showAndWait().ifPresent(updatedDocument -> {
+                DocumentChangeInfo documentDAO = new DocumentChangeInfo();
+                boolean isUpdated = documentDAO.updateDocument(
+                        selectedDocument.getId(),
+                        updatedDocument.getTitle(),
+                        updatedDocument.getAuthor(),
+                        updatedDocument.getPublicYear(),
+                        updatedDocument.getPublisher(),
+                        updatedDocument.getGenre(),
+                        updatedDocument.getQuantity(),
+                        updatedDocument.getImageLink());
+
+                if (isUpdated) {
+                    System.out.println("Cập nhật thành công!");
+                    // Cập nhật lại danh sách tài liệu trong bảng
+                } else {
+                    System.out.println("Cập nhật thất bại!");
+                }
+            });
+        } else {
+            // Thông báo nếu không có tài liệu nào được chọn
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Cảnh báo");
+            alert.setHeaderText("Không có tài liệu nào được chọn");
+            alert.setContentText("Vui lòng chọn một tài liệu để cập nhật.");
+            alert.showAndWait();
         }
     }
 }
