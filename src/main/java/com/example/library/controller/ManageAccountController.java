@@ -4,6 +4,8 @@ import static com.example.library.model.Validator.checkEmail;
 import static com.example.library.model.Validator.checkPassword;
 import static com.example.library.model.Validator.checkUsername;
 
+import com.example.library.model.ChangeView;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +13,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -19,9 +25,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import com.example.library.model.Account;
 import com.example.library.model.DatabaseHelper;
+import javafx.stage.Stage;
 
 public class ManageAccountController {
 
+  @FXML
+  private Button homeButton;
   @FXML
   private TextField usernameField;
   @FXML
@@ -199,7 +208,25 @@ public class ManageAccountController {
     alert.setContentText(content);
     alert.showAndWait(); // Hiển thị và chờ người dùng đóng
   }
+//
+//  public void onChangeToSearchView(ActionEvent event) {
+//    Stage stage = (Stage)usernameField.getScene().getWindow();
+//    ChangeView.changeViewFXML("/com/example/library/.search-accounts.fxml", stage);
+//  }
+  public void onChangeToSearchView() {
+    changeScene("/com/example/library/search-search-view.fxml", "Search Accounts");
+  }
 
-  public void onChangeToSearchView(ActionEvent event) {
+  private void changeScene(String fxmlPath, String title) {
+    try {
+      FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+      Parent root = loader.load();
+      Stage stage = (Stage) homeButton.getScene().getWindow();
+      Scene scene = new Scene(root, 1300, 650);
+      stage.setTitle(title);
+      stage.setScene(scene);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

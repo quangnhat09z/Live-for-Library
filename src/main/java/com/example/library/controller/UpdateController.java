@@ -87,7 +87,7 @@ public class UpdateController {
     //Sẽ được cài đặt khi có view của Phước.
     private void handleAccountButton() {
 //        changeScene(path, title);
-        changeScene("/com/example/library/manage-accounts-view.fxml", "ManageAccounts");
+        changeScene("/com/example/library/manage-accounts-view.fxml", "ManageAccount");
     }
 
     private void handleHomeButton() {
