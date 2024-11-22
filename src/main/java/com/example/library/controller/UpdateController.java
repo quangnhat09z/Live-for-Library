@@ -87,6 +87,7 @@ public class UpdateController {
     //Sẽ được cài đặt khi có view của Phước.
     private void handleAccountButton() {
 //        changeScene(path, title);
+        changeScene("/com/example/library/manage-accounts-view.fxml", "ManageAccounts");
     }
 
     private void handleHomeButton() {
@@ -178,7 +179,7 @@ public class UpdateController {
     }
 
     private void handleChangeButton() {
-        changeScene("/com/example/library/search-view.fxml", "Search Documents");
+        changeScene("/com/example/library/search-documents-view.fxml", "Search Documents");
     }
 
     private void updateDocumentList() {
@@ -213,7 +214,7 @@ public class UpdateController {
         alert.showAndWait(); // Hiển thị và chờ người dùng đóng
     }
 
-    private void changeScene(String fxmlPath, String title) {
+    public void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();

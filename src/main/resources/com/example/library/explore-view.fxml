@@ -182,33 +182,33 @@
                         </Pane>
                         <TextField fx:id="idField" editable="false" layoutX="100.0" layoutY="7.5" prefHeight="35.0"
                                    prefWidth="225.0" promptText="ID" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/style.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="titleField" editable="false" layoutX="100.0" layoutY="52.5" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Scene Builder" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/style.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="authorField" editable="false" layoutX="100.0" layoutY="97.5" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/style.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="publicYearField" editable="false" layoutX="100.0" layoutY="142.5"
                                    prefHeight="35.0" prefWidth="225.0" promptText="2024"
                                    style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/style.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="publisherField" editable="false" layoutX="100.0" layoutY="187.5"
                                    prefHeight="35.0" prefWidth="225.0" promptText="Đại học Quốc gia"
                                    style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/style.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="genreField" editable="false" layoutX="100.0" layoutY="232.5" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/style.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="quantityField" editable="false" layoutX="100.0" layoutY="277.5"
                                    prefHeight="35.0" prefWidth="225.0" promptText="1, 2"
                                    style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/style.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                     </children>
                 </Pane>
                 <TextField fx:id="searchExploreField" layoutX="208.0" layoutY="39.0" prefHeight="50.0" prefWidth="700.0"
                            promptText="Tìm sách theo tiêu đề" style="-fx-border-color: blue;" styleClass="border"
-                           stylesheets="@../../../CSSStyling/style.css"/>
+                           stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                 <ListView fx:id="suggestionsList" layoutX="208.0" layoutY="89.0" prefHeight="130.0" prefWidth="700.0"
                           style="-fx-border-color: blue;" styleClass="border"/>
                 <Hyperlink fx:id="myHyperlink" layoutX="312.0" layoutY="593.0" onAction="#handleHyperlinkAction"
