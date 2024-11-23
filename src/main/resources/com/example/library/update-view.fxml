@@ -25,7 +25,7 @@
                 <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                     <children>
                         <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-                              styleClass="inner_pane">
+                              styleClass="menu_pane">
                             <children>
                                 <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
                                       styleClass="most_inner_pane">
