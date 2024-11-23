@@ -131,6 +131,7 @@ public class MainController extends Controller {
     public void handleGameButton() {
         // Xử lý cho nút Button3
         changeScene("/com/example/library/gameProgress-view.fxml", "Game");
+        mediaPlayer.pause();
     }
 
     private void handleAdminButton() {
