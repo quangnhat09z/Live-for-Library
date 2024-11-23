@@ -134,7 +134,7 @@ public class MainController extends Controller {
     }
 
     private void handleAdminButton() {
-        changeScene("/com/example/library/update-view.fxml", "Update");
+        changeScene("/com/example/library/manage-documents-view.fxml", "Update");
     }
 
     private void handleQuitButton() {

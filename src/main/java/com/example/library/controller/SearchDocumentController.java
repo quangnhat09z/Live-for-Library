@@ -28,10 +28,14 @@ import java.util.Optional;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 
+<<<<<<< HEAD:src/main/java/com/example/library/controller/SearchController.java
 public class SearchController extends Controller {
+=======
+public class SearchDocumentController {
+>>>>>>> ce393f9 (ViewMoreAccount):src/main/java/com/example/library/controller/SearchDocumentController.java
     private DatabaseHelper databaseHelper;
 
-    public SearchController() {
+    public SearchDocumentController() {
         databaseHelper = new DatabaseHelper(); // Khởi tạo đối tượng DatabaseHelper
     }
     @FXML
@@ -211,7 +215,7 @@ public class SearchController extends Controller {
     }
 
     private void handleChangeButton() {
-        changeScene("/com/example/library/update-view.fxml", "Manage Documents");
+        changeScene("/com/example/library/manage-documents-view.fxml", "Manage Documents");
     }
 
     @Override
