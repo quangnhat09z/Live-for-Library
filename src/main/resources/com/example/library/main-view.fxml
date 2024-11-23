@@ -318,9 +318,8 @@
                 <Pane fx:id="pane_12" layoutX="550.0" layoutY="450.0" prefHeight="175.0" prefWidth="500.0"
                       styleClass="pane_11">
                     <children>
-                        <JFXTextArea fx:id="speech" editable="false" focusColor="BLACK" layoutX="12.5" layoutY="30.0"
-                                     prefHeight="135.0" prefWidth="475.0"
-                                     style="-fx-font-family: &quot;Times New Roman&quot;;" styleClass="text_area"
+                        <JFXTextArea fx:id="speech" editable="false" focusColor="BLACK" layoutX="12.5" layoutY="10.0"
+                                     prefHeight="155.0" prefWidth="475.0" styleClass="text_area"
                                      text="This is a sample text" unFocusColor="BLACK">
                             <font>
                                 <Font name="Times New Roman" size="20.0"/>

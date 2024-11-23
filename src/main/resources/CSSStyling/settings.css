@@ -1,15 +1,15 @@
 /* Đặt kiểu cơ bản cho giao diện */
 .scroll-pane {
-    -fx-background: #FFFFFF; /* Màu nền sáng */
+    -fx-background: #FEF8F3; /* Màu nền sáng */
     -fx-border-color: #D2D2D2; /* Viền màu xám nhạt */
 }
 
 .scroll-pane .viewport {
-    -fx-background: #FFFFFF; /* Màu nền sáng */
+    -fx-background: #FEF8F3; /* Màu nền sáng */
 }
 
 .scroll-pane .content {
-    -fx-background: #FFFFFF; /* Màu nền sáng */
+    -fx-background: #FEF8F3; /* Màu nền sáng */
 }
 
 .scroll-bar:vertical .increment-button,

@@ -1,9 +1,9 @@
 .root{
-    -fx-background-color: #1E1E1E; /* Màu nền tối */
+    -fx-background-color: #2D2D2D; /* Màu nền tối */
 }
 
 .background {
-    -fx-background-color: #1E1E1E; /* Màu nền tối */
+    -fx-background-color: #2D2D2D; /* Màu nền tối */
 }
 
 .side_anchorpane{
@@ -68,7 +68,7 @@
 }
 
 .pane_11 {
-    -fx-background-color: #0b0b0b; /* Màu nền tối cho Pane */
+    -fx-background-color: #1E1E1E; /* Màu nền tối cho Pane */
     -fx-border-width: 2px;
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;

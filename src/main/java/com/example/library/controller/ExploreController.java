@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Objects;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
@@ -111,6 +112,16 @@ public class ExploreController extends Controller {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         bookButton.setOnAction(actionEvent -> handleBookButton());
         gameButton.setOnAction(actionEvent -> handleGameButton());
+
+        if (Controller.isDarkMode()) {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_explore.css")).toExternalForm());
+        } else {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/explore.css")).toExternalForm());
+        }
 
         applySoundEffectsToButtons(root);
     }

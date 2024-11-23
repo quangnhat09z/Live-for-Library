@@ -21,6 +21,7 @@
   -fx-border-color: #00008B; /* Viền xanh đậm */
   -fx-border-radius: 8px; /* Bo góc */
   -fx-background-color: #f8f9fa; /* Màu nền nhạt */
+  -fx-font-family: "Times New Roman";
   -fx-font-size: 14px; /* Kích thước chữ */
   -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
   -fx-transition: border-color 0.3s, background-color 0.3s; /* Hiệu ứng chuyển đổi màu */
@@ -32,13 +33,12 @@
   -fx-background-color: #e6f2ff; /* Màu nền khi focus */
 }
 
-
-
 .customListView {
   -fx-padding: 10px;
   -fx-border-color: #00008B; /* Viền xanh đậm */
   -fx-border-radius: 10px; /* Bo góc */
   -fx-background-color: #FFFFFF; /* Màu nền trắng */
+  -fx-font-family: "Times New Roman";
   -fx-font-size: 14px; /* Kích thước chữ */
   -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
 }
@@ -62,6 +62,7 @@
     -fx-background-color: white;
     -fx-background-radius: 6;      /* Bo góc 6px */
     -fx-text-fill: black;           /* Màu chữ đen */
+    -fx-font-family: "Times New Roman";
     -fx-font-size: 15px;            /* Kích thước chữ */
     -fx-font-weight: bold;          /* Chữ đậm */
     -fx-padding: 15;                /* Khoảng cách đệm */
@@ -82,15 +83,16 @@
 }
 
 .customHyperlink {
-  -fx-text-fill: #B0E2FF; /* Màu xanh */
+  -fx-text-fill: blue; /* Màu xanh */
   -fx-cursor: hand; /* Con trỏ chuột thay đổi thành hình bàn tay */
   -fx-underline: true; /* Gạch chân */
   -fx-font-size: 16px; /* Kích thước chữ */
   -fx-transition: color 0.3s; /* Hiệu ứng chuyển đổi màu */
+  -fx-font-family: "Times New Roman";
 }
 
 .customHyperlink:pressed {
-  -fx-text-fill: #EEE8AA; /* Màu xanh lục khi nhấn */
+    -fx-text-fill: #FFFACD; /* Màu vàng nhạt khi nhấn */
 }
 
 .customImageView {
@@ -98,3 +100,10 @@
   -fx-fit-height: 200; /* Chiều cao cố định */
   -fx-preserve-ratio: true; /* Bảo toàn tỷ lệ khung hình */
 }
+
+.label {
+    -fx-text-fill: #000000; /* Màu chữ trắng */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-size: 12px; /* Cỡ chữ 12 */
+}
+
