@@ -5,6 +5,7 @@ module com.example.library {
     requires org.json;
     requires java.desktop;
     requires javafx.media;
+    requires com.jfoenix;
 
 
     opens com.example.library to javafx.fxml;

@@ -130,7 +130,7 @@ public class MainController extends Controller {
     @Override
     public void handleGameButton() {
         // Xử lý cho nút Button3
-        System.out.println("Button3 clicked");
+        changeScene("/com/example/library/gameProgress-view.fxml", "Game");
     }
 
     private void handleAdminButton() {
