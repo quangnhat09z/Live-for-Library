@@ -55,4 +55,10 @@ public class Account {
   public void setRole(String role) {
     this.role = role;
   }
+  public String toString() {
+    return String.format(
+        id + " - " + username + " - " + password + " - " + email + " - "
+            + role) ;
+  }
+
 }
