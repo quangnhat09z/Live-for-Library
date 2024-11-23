@@ -28,14 +28,14 @@ import java.util.Optional;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 
-<<<<<<< HEAD:src/main/java/com/example/library/controller/SearchController.java
+//<<<<<<< HEAD:src/main/java/com/example/library/controller/SearchController.java
 public class SearchController extends Controller {
-=======
-public class SearchDocumentController {
->>>>>>> ce393f9 (ViewMoreAccount):src/main/java/com/example/library/controller/SearchDocumentController.java
+//=======
+//public class SearchDocumentController {
+//>>>>>>> ce393f9 (ViewMoreAccount):src/main/java/com/example/library/controller/SearchDocumentController.java
     private DatabaseHelper databaseHelper;
 
-    public SearchDocumentController() {
+    public SearchController() {
         databaseHelper = new DatabaseHelper(); // Khởi tạo đối tượng DatabaseHelper
     }
     @FXML

@@ -4,6 +4,18 @@ import javafx.event.ActionEvent;
 
 public class SearchAccountsController {
 
+
+
+
+
+
+
+
+
+
+
+
+
   public void onDeleteDocumentInSearchingClick(ActionEvent event) {
   }
 
@@ -12,5 +24,8 @@ public class SearchAccountsController {
 
   public void onSearchClick(ActionEvent event) {
     
+  }
+
+  public void onChangeInfoInSearchingClick(ActionEvent event) {
   }
 }

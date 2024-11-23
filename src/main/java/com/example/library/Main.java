@@ -13,24 +13,24 @@ import javafx.util.Duration;
 public class Main extends Application {
   //Login
 
-//  @Override
-//  public void start(Stage primaryStage) throws Exception {
-//    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/login-login-view.fxml")));
-//    primaryStage.setScene(new Scene(root, 520, 400));
-//    primaryStage.initStyle(StageStyle.UNDECORATED);
-//    primaryStage.setResizable(false);
-//    primaryStage.show();
-//  }
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/login-login-view.fxml")));
+    primaryStage.setScene(new Scene(root, 520, 400));
+    primaryStage.initStyle(StageStyle.UNDECORATED);
+    primaryStage.setResizable(false);
+    primaryStage.show();
+  }
 
 
-     @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/main-view.fxml")));
-        primaryStage.setTitle("Live for Library");
-        primaryStage.setScene(new Scene(root, 1300, 650));
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
+//     @Override
+//    public void start(Stage primaryStage) throws Exception {
+//        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/main-view.fxml")));
+//        primaryStage.setTitle("Live for Library");
+//        primaryStage.setScene(new Scene(root, 1300, 650));
+//        primaryStage.setResizable(false);
+//        primaryStage.show();
+//    }
 
 
 

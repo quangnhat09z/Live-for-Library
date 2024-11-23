@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,314 +13,90 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<<<<<<< HEAD
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.SearchAccountsController">
-    <children>
-        <VBox prefHeight="717.0" prefWidth="200.0">
-            <children>
-                <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
-                    <children>
-                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-                              styleClass="menu_pane">
-                            <children>
-                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
-                                      styleClass="most_inner_pane">
-                                    <children>
-                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0"
-                                                   pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@../../../images/dots.png"/>
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </Pane>
-                                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0"
-                                           pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../images/book_icon.png"/>
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </Pane>
-                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Home" textFill="WHITE">
-                            <font>
-                                <Font size="14.0"/>
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../images/home.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="DEFAULT"/>
-                            </cursor>
-                        </JFXButton>
-                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0"
-                                   pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/book_icon.png"/>
-                            </image>
-                        </ImageView>
-                        <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books"
-                                   textFill="WHITE">
-                            <font>
-                                <Font size="14.0"/>
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../images/borrow.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </JFXButton>
-                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Explore" textFill="WHITE">
-                            <font>
-                                <Font size="14.0"/>
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../images/explore.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </JFXButton>
-                        <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game"
-                                   textFill="WHITE">
-                            <font>
-                                <Font size="14.0"/>
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../images/game.png"/>
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </JFXButton>
-                    </children>
-                </AnchorPane>
-            </children>
-        </VBox>
-        <VBox>
-            <children>
-                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0"
-                      stylesheets="@../../../CSSStyling/styleAccount.css">
-                    <children>
-                        <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0"
-                                   prefWidth="150.0" styleClass="button_main" text="Documents"/>
-                        <JFXButton fx:id="accountButton" buttonType="RAISED" layoutX="650.0" layoutY="5.0"
-                                   prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Accounts">
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </JFXButton>
-                    </children>
-                </Pane>
-                <AnchorPane prefHeight="600.0" prefWidth="1100.0" styleClass="backgroundInSearchScreen"
-                            stylesheets="@../../../CSSStyling/styleDoccuments.css">
-                    <children>
-                        <TextField fx:id="idField" layoutX="75.0" layoutY="50.0" prefHeight="35.0" prefWidth="70.0"
-                                   promptText="ID" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <TextField fx:id="titleField" layoutX="145.0" layoutY="50.0" prefHeight="35.0" prefWidth="200.0"
-                                   promptText="Title" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <TextField fx:id="authorField" layoutX="345.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="175.0" promptText="Author" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <TextField fx:id="publicYearField" layoutX="520.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="100.0" promptText="Publication year" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <TextField fx:id="publisherField" layoutX="620.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="200.0" promptText="Publisher" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <TextField fx:id="genreField" layoutX="820.0" layoutY="50.0" prefHeight="35.0" prefWidth="120.0"
-                                   promptText="Genre" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <TextField fx:id="quantityField" layoutX="940.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="85.0" promptText="Quantity" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
-                        <Button fx:id="searchButton" defaultButton="true" layoutX="175.0" layoutY="115.0"
-                                mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="button_show"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="SEARCH" textFill="YELLOW">
-                            <font>
-                                <Font name="System Bold" size="13.0"/>
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <Button fx:id="deleteButton" layoutX="475.0" layoutY="115.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="150.0" styleClass="button_delete"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="DELETE" textFill="#cccc99">
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <Button fx:id="changeButton" layoutX="775.0" layoutY="115.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="150.0" styleClass="button_change"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="UPDATE" textFill="#cccc99">
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <AnchorPane layoutX="25.0" layoutY="200.0" opacity="0.91" prefHeight="375.0" prefWidth="1050.0"
-                                    style="-fx-background-color: #000000;" styleClass="button"
-                                    stylesheets="@../../../CSSStyling/styleAccount.css">
-                            <children>
-                                <TableView fx:id="resultsTableView" layoutX="50.0" layoutY="25.0" prefHeight="325.0"
-                                           prefWidth="950.0" styleClass="list"
-                                           stylesheets="@../../../CSSStyling/styleDoccuments.css">
-                                    <columns>
-                                        <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
-                                        <TableColumn fx:id="titleColumn" prefWidth="186.39999389648438" text="Title"/>
-                                        <TableColumn fx:id="authorColumn" prefWidth="151.20001220703125" text="Author"/>
-                                        <TableColumn fx:id="publicYearColumn" minWidth="0.0"
-                                                     prefWidth="80.79998779296875" text="PublicYear"/>
-                                        <TableColumn fx:id="publisherColumn" prefWidth="223.20001220703125"
-                                                     text="Publisher"/>
-                                        <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="151.2000732421875"
-                                                     text="Genre"/>
-                                        <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="112.0"
-                                                     text="Quantity"/>
-                                    </columns>
-                                </TableView>
-                            </children>
-                        </AnchorPane>
-                    </children>
-                </AnchorPane>
-            </children>
-        </VBox>
-    </children>
-=======
-<HBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-  minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root"
-  stylesheets="@../../../CSSStyling/main.css" xmlns="http://javafx.com/javafx/23"
-  fx:controller="com.example.library.controller.SearchAccountsController"
-  fx:id="root">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.SearchAccountsController">
   <children>
     <VBox prefHeight="717.0" prefWidth="200.0">
       <children>
-        <AnchorPane prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane"
-          fx:id="side_anchorpane">
+        <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
           <children>
-            <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0"
-              layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../images/book_icon.png"/>
+                <Image url="@../../../images/book_icon.png" />
               </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="120.0" prefHeight="60.0"
-              prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE"
-              fx:id="homeButton">
+            <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE">
               <cursor>
-                <Cursor fx:constant="DEFAULT"/>
+                <Cursor fx:constant="DEFAULT" />
               </cursor>
               <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
               </font>
               <graphic>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                  preserveRatio="true">
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../../images/home.png"/>
+                    <Image url="@../../../images/home.png" />
                   </image>
                 </ImageView>
               </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0"
-              prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books"
-              textFill="WHITE" fx:id="button1">
+            <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books" textFill="WHITE">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
               <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
               </font>
               <graphic>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                  preserveRatio="true">
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../../images/borrow.png"/>
+                    <Image url="@../../../images/borrow.png" />
                   </image>
                 </ImageView>
               </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="280.0" prefHeight="60.0"
-              prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore"
-              textFill="WHITE" fx:id="exploreButton">
+            <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore" textFill="WHITE">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
               <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
               </font>
               <graphic>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                  preserveRatio="true">
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../../images/explore.png"/>
+                    <Image url="@../../../images/explore.png" />
                   </image>
                 </ImageView>
               </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0"
-              prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game" textFill="WHITE"
-              fx:id="button3">
+            <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game" textFill="WHITE">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
               <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
               </font>
               <graphic>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
-                  preserveRatio="true">
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../../images/game.png"/>
+                    <Image url="@../../../images/game.png" />
                   </image>
                 </ImageView>
               </graphic>
             </JFXButton>
-            <Pane layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-              styleClass="inner_pane" fx:id="inner_pane">
+            <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="inner_pane">
               <children>
-                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0"
-                  pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../../images/book_icon.png"/>
+                    <Image url="@../../../images/book_icon.png" />
                   </image>
                 </ImageView>
-                <Pane layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane"
-                  fx:id="most_inner_pane">
+                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane">
                   <children>
-                    <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0"
-                      pickOnBounds="true" preserveRatio="true">
+                    <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                       <image>
-                        <Image url="@../../../images/dots.png"/>
+                        <Image url="@../../../images/dots.png" />
                       </image>
                     </ImageView>
                   </children>
@@ -333,86 +109,59 @@
     </VBox>
     <VBox>
       <children>
-        <AnchorPane style="-fx-background-color: #FEF;" prefHeight="600.0" prefWidth="1100.0"
-          stylesheets="@../../../CSSStyling/styleDoccuments.css">
+        <AnchorPane prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #FEF;" stylesheets="@../../../CSSStyling/styleDoccuments.css">
           <children>
-            <AnchorPane style="-fx-background-color: #000000;" layoutX="25.0" layoutY="225.0" opacity="0.91"
-              prefHeight="350.0" prefWidth="900.0" styleClass="button"
-              stylesheets="@../../../CSSStyling/styleAccount.css">
+            <AnchorPane layoutX="25.0" layoutY="225.0" opacity="0.91" prefHeight="350.0" prefWidth="900.0" style="-fx-background-color: #000000;" styleClass="button" stylesheets="@../../../CSSStyling/styleAccount.css">
               <children>
-                <TableView layoutX="40.0" layoutY="18.0" prefHeight="325.0" prefWidth="950.0"
-                  styleClass="list" stylesheets="@../../../CSSStyling/styleDoccuments.css"
-                  fx:id="resultsTableView">
+                <TableView fx:id="resultsTableView" layoutX="40.0" layoutY="18.0" prefHeight="325.0" prefWidth="950.0" styleClass="list" stylesheets="@../../../CSSStyling/styleDoccuments.css">
                   <columns>
-                    <TableColumn prefWidth="47.224945068359375" text="ID" fx:id="idColumn"/>
-                    <TableColumn prefWidth="124.47064208984375" text="USERNAME"
-                      fx:id="usernameColumn"/>
-                    <TableColumn prefWidth="182.22491455078125" text="PASSWORD"
-                      fx:id="passwordColumn"/>
-                    <TableColumn minWidth="0.0" prefWidth="177.88922119140625"
-                      text="FULLNAME" fx:id="fullnameColumn"/>
-                    <TableColumn prefWidth="159.304443359375" text="PHONE_NUMBER"
-                      fx:id="phoneNumberColumn"/>
-                    <TableColumn minWidth="0.0" prefWidth="194.93603515625" text="ADDRESS"
-                      fx:id="addressColumn"/>
-                    <TableColumn minWidth="0.0" prefWidth="62.06396484375" text="ROLE"
-                      fx:id="roleColumn"/>
+                    <TableColumn fx:id="idColumn" prefWidth="47.224945068359375" text="ID" />
+                    <TableColumn fx:id="usernameColumn" prefWidth="124.47064208984375" text="USERNAME" />
+                    <TableColumn fx:id="passwordColumn" prefWidth="182.22491455078125" text="PASSWORD" />
+                    <TableColumn fx:id="fullnameColumn" minWidth="0.0" prefWidth="177.88922119140625" text="FULLNAME" />
+                    <TableColumn fx:id="phoneNumberColumn" prefWidth="159.304443359375" text="PHONE_NUMBER" />
+                    <TableColumn fx:id="addressColumn" minWidth="0.0" prefWidth="194.93603515625" text="ADDRESS" />
+                    <TableColumn fx:id="roleColumn" minWidth="0.0" prefWidth="62.06396484375" text="ROLE" />
                   </columns>
                 </TableView>
               </children>
             </AnchorPane>
-            <Button layoutX="191.0" layoutY="68.0" mnemonicParsing="false" prefHeight="53.0"
-              prefWidth="130.0" styleClass="button_delete" stylesheets="@../../../CSSStyling/styleAccount.css"
-              text="DELETE" textFill="#cccc99" fx:id="deleteButton">
+            <Button fx:id="deleteButton" layoutX="191.0" layoutY="68.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" styleClass="button_delete" stylesheets="@../../../CSSStyling/styleAccount.css" text="DELETE" textFill="#cccc99">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
             </Button>
-            <Button layoutX="191.0" layoutY="131.0" mnemonicParsing="false" prefHeight="55.0"
-              prefWidth="130.0" styleClass="button_change" stylesheets="@../../../CSSStyling/styleAccount.css"
-              text="UPDATE" textFill="#cccc99" fx:id="changeButton">
+            <Button fx:id="changeManageAccountButton" layoutX="366.0" layoutY="67.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="130.0" styleClass="button_change" stylesheets="@../../../CSSStyling/styleAccount.css" text="MANAGE" textFill="#cccc99">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
             </Button>
-            <Button layoutX="38.0" layoutY="132.0" mnemonicParsing="false" onAction="#onChangeInfoInSearchingClick"
-              prefHeight="53.0" prefWidth="130.0" styleClass="button_changeInfo"
-              stylesheets="@../../../CSSStyling/styleAccount.css" text="CHANGE INFO"
-              textFill="#cccc99" fx:id="changeInfo">
+            <Button fx:id="changeInfo" layoutX="152.0" layoutY="149.0" mnemonicParsing="false" onAction="#onChangeInfoInSearchingClick" prefHeight="53.0" prefWidth="208.0" styleClass="button_changeInfo" stylesheets="@../../../CSSStyling/styleAccount.css" text="CHANGE INFO" textFill="#cccc99">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
             </Button>
-            <Button defaultButton="true" layoutX="38.0" layoutY="68.0" mnemonicParsing="false"
-              prefHeight="53.0" prefWidth="130.0" styleClass="button_show" stylesheets="@../../../CSSStyling/styleAccount.css"
-              text="SEARCH" textFill="YELLOW" fx:id="searchButton">
+            <Button fx:id="searchButton" defaultButton="true" layoutX="38.0" layoutY="68.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" styleClass="button_show" stylesheets="@../../../CSSStyling/styleAccount.css" text="SEARCH" textFill="YELLOW">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
               <font>
-                <Font name="System Bold" size="13.0"/>
+                <Font name="System Bold" size="13.0" />
               </font>
             </Button>
-            <TextField style="-fx-border-color: #000080;" layoutX="545.0" layoutY="95.0" prefHeight="35.0"
-              prefWidth="200.0" promptText="EMAIL" fx:id="emailField"/>
-            <TextField style="-fx-border-color: #000080;" layoutX="545.0" layoutY="51.0" prefHeight="35.0"
-              prefWidth="200.0" promptText="ID" fx:id="idField"/>
+            <TextField fx:id="emailField" layoutX="545.0" layoutY="95.0" prefHeight="35.0" prefWidth="200.0" promptText="EMAIL" style="-fx-border-color: #000080;" />
+            <TextField fx:id="idField" layoutX="545.0" layoutY="51.0" prefHeight="35.0" prefWidth="200.0" promptText="ID" style="-fx-border-color: #000080;" />
 
-            <TextField style="-fx-border-color: #000080;" layoutX="545.0" layoutY="141.0" prefHeight="35.0"
-              prefWidth="200.0" promptText="USERNAME" fx:id="usernameField"/>
-            <TextField style="-fx-border-color: #000080;" layoutX="545.0" layoutY="185.0" prefHeight="35.0"
-              prefWidth="200.0" promptText="ROLE" fx:id="roleField"/>
+            <TextField fx:id="usernameField" layoutX="545.0" layoutY="141.0" prefHeight="35.0" prefWidth="200.0" promptText="USERNAME" style="-fx-border-color: #000080;" />
+            <TextField fx:id="roleField" layoutX="545.0" layoutY="185.0" prefHeight="35.0" prefWidth="200.0" promptText="ROLE" style="-fx-border-color: #000080;" />
           </children>
         </AnchorPane>
-        <Pane prefHeight="50.0" prefWidth="1100.0" stylesheets="@../../../CSSStyling/styleAccount.css"
-          fx:id="bar">
+        <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0" stylesheets="@../../../CSSStyling/styleAccount.css">
           <children>
-            <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0"
-              prefHeight="40.0" prefWidth="150.0" styleClass="button_main" text="Documents"/>
-            <JFXButton buttonType="RAISED" layoutX="650.0" layoutY="5.0" prefHeight="40.0"
-              prefWidth="150.0" styleClass="button_not_main" text="Accounts" fx:id="accountButton">
+            <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0" prefWidth="150.0" styleClass="button_main" text="Documents" />
+            <JFXButton fx:id="accountButton" buttonType="RAISED" layoutX="650.0" layoutY="5.0" prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Accounts">
               <cursor>
-                <Cursor fx:constant="HAND"/>
+                <Cursor fx:constant="HAND" />
               </cursor>
             </JFXButton>
           </children>
@@ -420,5 +169,4 @@
       </children>
     </VBox>
   </children>
->>>>>>> ce393f9 (ViewMoreAccount)
 </HBox>
