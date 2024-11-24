@@ -1,13 +1,12 @@
 package com.example.library.controller;
 
-import static com.example.library.controller.UpdateController.showWarningAlert;
+import static com.example.library.controller.ManageDocumentsController.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 import com.example.library.model.AccountChangeInfor;
 import com.example.library.model.AccountDetail;
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
-import com.example.library.model.DocumentChangeInfo;
 import com.example.library.model.searchAccount;
 import java.io.IOException;
 import java.util.List;

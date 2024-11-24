@@ -18,8 +18,8 @@ import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
 import com.example.library.model.searchDocument;
 
-import static com.example.library.controller.UpdateController.showInfoAlert;
-import static com.example.library.controller.UpdateController.showWarningAlert;
+import static com.example.library.controller.ManageDocumentsController.showInfoAlert;
+import static com.example.library.controller.ManageDocumentsController.showWarningAlert;
 
 import java.io.IOException;
 import java.util.List;

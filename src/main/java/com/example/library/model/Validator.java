@@ -37,13 +37,13 @@ public class Validator {
 
 
 
-  public static void main(String[] args) {
-    // Kiểm tra các ví dụ
-    System.out.println("Email valid: " + checkEmail("test@example.com"));
-    System.out.println("Username valid: " + checkUsername("username"));
-    System.out.println("Password valid: " + checkPassword("Paaaa3!"));
-    System.out.println("Password valid: " + checkPassword("password123"));
-  }
+//  public static void main(String[] args) {
+//    // Kiểm tra các ví dụ
+//    System.out.println("Email valid: " + checkEmail("test@example.com"));
+//    System.out.println("Username valid: " + checkUsername("username"));
+//    System.out.println("Password valid: " + checkPassword("Paaaa3!"));
+//    System.out.println("Password valid: " + checkPassword("password123"));
+//  }
 }
 
 /**
