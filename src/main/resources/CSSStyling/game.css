@@ -61,7 +61,7 @@
   -fx-padding: 10px;
   -fx-border-color: #FECFA7; /* Viền xanh đậm */
   -fx-background-color: #FFFFFF; /* Màu nền trắng */
-  -fx-font-size: 14px; /* Kích thước chữ */
+  -fx-font-size: 16px; /* Kích thước chữ */
   -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
 }
 
@@ -87,6 +87,7 @@
   -fx-border-color: #AADCEB; /* Màu viền dưới */
   -fx-padding: 0 0 0 30px; /* Thêm khoảng cách lề trái 30px */
   -fx-wrap-text: true; /* Tự động xuống dòng khi nội dung dài */
+  -fx-text-size:16px
 }
 
 
@@ -101,7 +102,7 @@
     -fx-min-height: 35px;
     -fx-max-width: 65px;
     -fx-max-height: 65px;
-    -fx-text-size: 44px;
+
 }
 
 .button:hover {

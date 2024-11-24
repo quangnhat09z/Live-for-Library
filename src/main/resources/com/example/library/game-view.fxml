@@ -15,12 +15,12 @@
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.GameController">
-    <children>
-        <VBox prefHeight="717.0" prefWidth="200.0">
+   <children>
+      <VBox prefHeight="717.0" prefWidth="200.0">
          <children>
             <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                <children>
-                  <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="menu_pane">
+                  <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="inner_pane">
                      <children>
                         <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane">
                            <children>
@@ -38,12 +38,12 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <JFXButton fx:id="mainButton" buttonType="RAISED" disable="true" layoutX="6.0" layoutY="120.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE">
+                  <JFXButton fx:id="mainButton" buttonType="RAISED" disable="true" layoutX="6.0" layoutY="120.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/home.png" />
                            </image>
@@ -58,14 +58,14 @@
                         <Image url="@../../../images/book_icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books" textFill="WHITE">
+                  <JFXButton fx:id="button1" buttonType="RAISED" layoutX="6.0" layoutY="180.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button1" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/borrow.png" />
+                              <Image url="@../../../images/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -73,14 +73,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore" textFill="WHITE">
+                  <JFXButton fx:id="button2" buttonType="RAISED" layoutX="6.0" layoutY="240.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button2" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/explore.png" />
+                              <Image url="@../../../images/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -88,14 +88,29 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game" textFill="WHITE">
+                  <JFXButton fx:id="button3" buttonType="RAISED" layoutX="6.0" layoutY="300.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button3" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/game.png" />
+                              <Image url="@../../../images/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="button4" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="45.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Button4" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView blendMode="EXCLUSION" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -106,7 +121,7 @@
                </children>
             </AnchorPane>
          </children>
-        </VBox>
+      </VBox>
       <AnchorPane prefHeight="650.0" prefWidth="1098.0" styleClass="backgroundInGameScreen2" stylesheets="@../../../CSSStyling/game.css">
          <children>
             <TextField fx:id="answerA" editable="false" layoutX="505.0" layoutY="311.0" prefHeight="55.0" prefWidth="459.0" styleClass="customListViewInAnswer" stylesheets="@../../../CSSStyling/game.css" />
@@ -123,7 +138,7 @@
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Label>
-       <Button fx:id="chooseA" layoutX="459.0" layoutY="309.0" maxHeight="60.0" maxWidth="64.0" mnemonicParsing="false" onAction="#chooseAnswer" prefHeight="60.0" prefWidth="64.0" stylesheets="@../../../CSSStyling/game.css" text="A" textFill="#d11919">
+            <Button fx:id="chooseA" layoutX="459.0" layoutY="309.0" maxHeight="60.0" maxWidth="64.0" mnemonicParsing="false" onAction="#chooseAnswer" prefHeight="60.0" prefWidth="64.0" stylesheets="@../../../CSSStyling/game.css" text="A" textFill="#d11919">
                <font>
                   <Font size="24.0" />
                </font>
@@ -236,5 +251,5 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-    </children>
+   </children>
 </HBox>
