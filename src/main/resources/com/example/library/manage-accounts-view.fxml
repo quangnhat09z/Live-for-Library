@@ -164,7 +164,7 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="emailField" layoutX="124.0" layoutY="55.0" prefHeight="38.0"
+                                <TextField fx:id="emailField" layoutX="125.0" layoutY="55.0" prefHeight="38.0"
                                            prefWidth="220.0" promptText="Ex: ntp2005gmail.com"
                                            style="-fx-border-color: BLACK; -fx-background-color: WHITE;"
                                            styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css">
@@ -184,7 +184,7 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="usernameField" layoutX="121.0" layoutY="110.0" prefHeight="38.0"
+                                <TextField fx:id="usernameField" layoutX="125.0" layoutY="110.0" prefHeight="38.0"
                                            prefWidth="219.0" promptText="Ex: ntpjr2005"
                                            style="-fx-border-color: BLACK; -fx-background-color: WHITE;"
                                            styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css">
@@ -192,7 +192,7 @@
                                         <DropShadow/>
                                     </effect>
                                 </TextField>
-                                <Pane layoutX="25.0" layoutY="163.0" prefHeight="38.0" prefWidth="84.0"
+                                <Pane layoutX="25.0" layoutY="165.0" prefHeight="38.0" prefWidth="84.0"
                                       style="-fx-background-color: WHITE;">
                                     <children>
                                         <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0"
@@ -204,7 +204,7 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="passwordField" layoutX="121.0" layoutY="163.0" prefHeight="38.0"
+                                <TextField fx:id="passwordField" layoutX="125.0" layoutY="165.0" prefHeight="38.0"
                                            prefWidth="219.0" promptText="Ex: ntpjr2005@"
                                            style="-fx-border-color: BLACK; -fx-background-color: white;"
                                            styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css">
@@ -212,7 +212,7 @@
                                         <DropShadow/>
                                     </effect>
                                 </TextField>
-                                <Pane layoutX="25.0" layoutY="225.0" prefHeight="38.0" prefWidth="84.0"
+                                <Pane layoutX="25.0" layoutY="220.0" prefHeight="38.0" prefWidth="84.0"
                                       style="-fx-background-color: WHITE;">
                                     <children>
                                         <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0"
@@ -224,7 +224,7 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <ComboBox fx:id="roleComboBox" layoutX="127.0" layoutY="222.0" mouseTransparent="false"
+                                <ComboBox fx:id="roleComboBox" layoutX="125.0" layoutY="220.0" mouseTransparent="false"
                                           prefHeight="41.0" prefWidth="106.0" style="-fx-background-color: #FFFFFF;"
                                           visibleRowCount="2">
                                     <items>
