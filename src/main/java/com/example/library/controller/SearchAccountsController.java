@@ -100,7 +100,7 @@ public class SearchAccountsController extends Controller {
   @Override
   public void initialize() {
     String[] a = {"idColumn", "usernameColumn", "passwordColumn",
-        "emailColumn", "fullNameColumn", "addressColumn", "roleColumn", "phoneColumn",
+        "emailColumn", "fullNameColumn", "addressColumn", "roleColumn", "phoneNumberColumn",
         "statusColumn"};
     int cnt = 0;
     if (idColumn != null) {
