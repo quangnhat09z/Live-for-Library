@@ -220,7 +220,7 @@
                         <Image url="@../../../images/starImage.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="buttonExit" layoutX="367.0" layoutY="373.0" maxWidth="66.0" prefHeight="37.0" prefWidth="66.0" styleClass="buttonAgree" stylesheets="@../../../CSSStyling/game.css" text="Thoát" />
+                  <JFXButton fx:id="exitButton" layoutX="367.0" layoutY="373.0" maxWidth="66.0" prefHeight="37.0" prefWidth="66.0" styleClass="buttonAgree" stylesheets="@../../../CSSStyling/game.css" text="Thoát" />
                   <ImageView fitHeight="330.0" fitWidth="334.0" layoutX="244.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/scoreboard.png" />
