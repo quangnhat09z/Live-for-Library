@@ -10,6 +10,7 @@ public class Document {
     private String genre;
     private int quantity;
     private String imageLink;
+    private String description;
 
     // Constructor
     public Document() {
@@ -36,6 +37,16 @@ public class Document {
         this.genre = genre;
         this.quantity = quantity;
         this.imageLink = imageLink;
+    }
+
+    public Document(String title, String author, String publicYear, String publisher, String genre, String imageLink, String description) {
+        this.title = title;
+        this.author = author;
+        this.publicYear = publicYear;
+        this.publisher = publisher;
+        this.imageLink = imageLink;
+        this.description = description;
+        this.genre = genre;
     }
 
 
@@ -109,5 +120,13 @@ public class Document {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

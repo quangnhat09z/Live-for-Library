@@ -6,6 +6,7 @@ module com.example.library {
     requires java.desktop;
     requires javafx.media;
     requires com.jfoenix;
+    requires com.google.gson;
 
 
     opens com.example.library to javafx.fxml;

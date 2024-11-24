@@ -39,7 +39,7 @@ public abstract class Controller {
     @FXML
     public void handleExploreButton() {
         // Xử lý cho nút Button2
-        changeScene("/com/example/library/explore-view.fxml", "Explore");
+        changeScene("/com/example/library/APIexplore-view.fxml", "Explore");
     }
 
     @FXML

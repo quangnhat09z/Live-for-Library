@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/explore.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.APIController">
+    <children>
+        <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
+            <children>
+                <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
+                    <children>
+                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="menu_pane">
+                            <children>
+                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane">
+                                    <children>
+                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../images/dots.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </Pane>
+                                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/book_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/home.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT" />
+                            </cursor>
+                        </JFXButton>
+                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/book_icon.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/borrow.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="mainButton" buttonType="RAISED" disable="true" layoutX="6.0" layoutY="280.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/explore.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/game.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <AnchorPane prefHeight="650.0" prefWidth="1099.0" styleClass="backgroundInExploreScreen">
+            <children>
+                <Pane layoutX="240.0" layoutY="140.0" opacity="0.95" prefHeight="280.0" prefWidth="225.0" styleClass="paneIma">
+                    <children>
+                        <ImageView fx:id="myImageView" fitHeight="244.0" fitWidth="183.0" layoutX="34.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </Pane>
+                <Pane layoutX="533.0" layoutY="80.0" prefHeight="400.0" prefWidth="350.0">
+                    <children>
+                        <Pane layoutX="-28.0" layoutY="68.0" prefHeight="35.0" prefWidth="118.0" styleClass="pane">
+                            <children>
+                                <Label alignment="CENTER" layoutX="22.0" layoutY="5.0" prefHeight="25.0" prefWidth="70.0" text="Title" textFill="#202020" />
+                            </children>
+                        </Pane>
+                        <Pane layoutX="-28.0" layoutY="128.0" prefHeight="35.0" prefWidth="118.0" styleClass="pane">
+                            <children>
+                                <Label alignment="CENTER" layoutX="13.0" layoutY="5.0" prefHeight="25.0" prefWidth="85.0" text="Author" />
+                            </children>
+                        </Pane>
+                        <Pane layoutX="-29.0" layoutY="188.0" prefHeight="35.0" prefWidth="118.0" styleClass="pane">
+                            <children>
+                                <Label alignment="CENTER" layoutX="8.0" layoutY="5.0" prefHeight="25.0" prefWidth="102.0" text="Publication of year" />
+                            </children>
+                        </Pane>
+                        <Pane layoutX="-30.0" layoutY="248.0" prefHeight="35.0" prefWidth="118.0" styleClass="pane">
+                            <children>
+                                <Label alignment="CENTER" layoutX="3.0" layoutY="5.0" prefHeight="25.0" prefWidth="111.0" text="Publisher" />
+                            </children>
+                        </Pane>
+                        <Pane layoutX="-30.0" layoutY="308.0" prefHeight="35.0" prefWidth="118.0" styleClass="pane">
+                            <children>
+                                <Label alignment="CENTER" layoutX="10.0" layoutY="5.0" prefHeight="25.0" prefWidth="91.0" text="Genre" />
+                            </children>
+                        </Pane>
+                        <TextField fx:id="titleField" editable="false" layoutX="100.0" layoutY="60.0" prefHeight="35.0" prefWidth="225.0" promptText="Scene Builder" styleClass="customTextField" />
+                        <TextField fx:id="authorField" editable="false" layoutX="100.0" layoutY="120.0" prefHeight="35.0" prefWidth="225.0" promptText="Kiều Văn Tuyên" styleClass="customTextField" />
+                        <TextField fx:id="publicYearField" editable="false" layoutX="100.0" layoutY="180.0" prefHeight="35.0" prefWidth="225.0" promptText="2024" styleClass="customTextField" />
+                        <TextField fx:id="publisherField" editable="false" layoutX="100.0" layoutY="240.0" prefHeight="35.0" prefWidth="225.0" promptText="Đại học Quốc gia" styleClass="customTextField" />
+                        <TextField fx:id="genreField" editable="false" layoutX="100.0" layoutY="300.0" prefHeight="35.0" prefWidth="225.0" promptText="Sách khoa học" styleClass="customTextField" />
+                    </children>
+                </Pane>
+                <TextField fx:id="searchExploreField" layoutX="152.0" layoutY="40.0" prefHeight="50.0" prefWidth="912.0" promptText="Find book by title" styleClass="customTextField" />
+                <Hyperlink fx:id="myHyperlink" layoutX="310.0" layoutY="432.0" onAction="#handleHyperlinkAction" prefHeight="35.0" styleClass="customHyperlink" text="Go to book" />
+                <Button fx:id="showButton" layoutX="24.0" layoutY="40.0" mnemonicParsing="false" onAction="#onToggleListView" prefHeight="34.0" prefWidth="117.0" styleClass="buttonHideAndSHow" text="Show" textFill="#cccc99">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            <Label fx:id="descriptionField" layoutX="31.0" layoutY="470.0" prefHeight="163.0" prefWidth="1039.0" styleClass="LongTextLabel" stylesheets="@../../../CSSStyling/explore.css" />
+                <ListView fx:id="suggestionsList" layoutX="152.0" layoutY="90.0" prefHeight="130.0" prefWidth="912.0" styleClass="customListView" />
+            </children>
+        </AnchorPane>
+    </children>
+</HBox>
