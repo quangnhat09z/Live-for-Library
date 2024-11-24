@@ -136,25 +136,7 @@ public class GameController extends Controller {
         exitButton.setOnAction(actionEvent -> handleHomeButton());
     }
 
-    @Override
-    public void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Home");
-    }
 
-    @Override
-    public void handleBookButton() {
-        System.out.println("");
-    }
-
-    @Override
-    public void handleExploreButton() {
-
-    }
-
-    @Override
-    public void handleGameButton() {
-
-    }
 
     private void sunTrans(ImageView sunImage) {
         RotateTransition rotateTransition = new RotateTransition(Duration.seconds(1), sunImage);
@@ -164,7 +146,6 @@ public class GameController extends Controller {
         rotateTransition.setAutoReverse(true); // Đảo ngược hiệu ứng
         rotateTransition.play(); // Bắt đầu hiệu ứng
     }
-
 
     private void loadQuiz(int index) {
         if (quizzes != null && !quizzes.isEmpty() && index < quizzes.size()) {
@@ -291,6 +272,7 @@ public class GameController extends Controller {
         quizImage.setImage(null);
 
     }
+
     @FXML
     private void chooseAnswer(ActionEvent event) {
         window.setVisible(false);
@@ -462,10 +444,15 @@ public class GameController extends Controller {
     @Override
     public void changeScene(String fxmlPath, String title) {
         try {
+            // Dừng âm nhạc và đếm ngược khi chuyển màn hình
+            if (timeline != null) {
+                timeline.stop(); // Dừng Timeline
+            }
+            gameMusic.stopAudio(); // Dừng âm nhạc
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             Stage stage = (Stage) exitButton.getScene().getWindow();
-            // mediaPlayer.stop();
             Scene scene = new Scene(root);
             stage.setTitle(title);
             stage.setScene(scene);
@@ -473,6 +460,14 @@ public class GameController extends Controller {
             // Optional: Set minimum size
             stage.setMinWidth(800);
             stage.setMinHeight(600);
+
+            // Reset các biến liên quan đến câu hỏi và thời gian
+            currentQuizIndex = 0;
+            timeSeconds = 21;
+            scorePoint = 0;
+            wrongTimes = 0;
+            hasAnswered = false;
+            isNextButtonClicked = false;
 
         } catch (IOException e) {
             e.printStackTrace();
