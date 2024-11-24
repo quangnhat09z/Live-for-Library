@@ -116,24 +116,6 @@ public class MainController extends Controller {
 
     }
 
-    @Override
-    public void handleBookButton() {
-        // Xử lý cho nút Button1
-        System.out.println("Button1 clicked");
-    }
-
-    @Override
-    public void handleExploreButton() {
-        changeScene("/com/example/library/explore-view.fxml", "Explore");
-    }
-
-    @Override
-    public void handleGameButton() {
-        // Xử lý cho nút Button3
-        changeScene("/com/example/library/gameProgress-view.fxml", "Game");
-        mediaPlayer.pause();
-    }
-
     private void handleAdminButton() {
         changeScene("/com/example/library/manage-documents-view.fxml", "Update");
     }

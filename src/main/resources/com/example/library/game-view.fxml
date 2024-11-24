@@ -163,7 +163,7 @@
                   <ImageView fx:id="quizImage" fitHeight="282.0" fitWidth="294.0" layoutX="46.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <JFXButton fx:id="nextButton" layoutX="978.0" layoutY="309.0" maxHeight="66.0" maxWidth="66.0" minHeight="60.0" minWidth="20.0" onAction="#onNext" prefHeight="60.0" prefWidth="66.0" styleClass="buttonPlay" stylesheets="@../../../CSSStyling/gameProgress.css" text="Tiếp tục" />
+            <JFXButton fx:id="nextButton" layoutX="978.0" layoutY="309.0" maxHeight="66.0" maxWidth="66.0" minHeight="60.0" minWidth="20.0" onAction="#handleNextButton" prefHeight="60.0" prefWidth="66.0" styleClass="buttonPlay" stylesheets="@../../../CSSStyling/gameProgress.css" text="Tiếp tục" />
             <Label fx:id="countdownLabel" layoutX="881.0" layoutY="125.0" prefHeight="47.0" prefWidth="66.0" styleClass="countdownLabel" stylesheets="@../../../CSSStyling/game.css" />
             <ImageView fx:id="sunImage1" fitHeight="60.0" fitWidth="66.0" layoutX="621.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -220,7 +220,7 @@
                         <Image url="@../../../images/starImage.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="buttonExit" layoutX="367.0" layoutY="373.0" maxWidth="66.0" prefHeight="37.0" prefWidth="66.0" styleClass="buttonAgree" stylesheets="@../../../CSSStyling/game.css" text="Thoát" />
+                  <JFXButton fx:id="exitButton" layoutX="367.0" layoutY="373.0" maxWidth="66.0" prefHeight="37.0" prefWidth="66.0" styleClass="buttonAgree" stylesheets="@../../../CSSStyling/game.css" text="Thoát" />
                   <ImageView fitHeight="330.0" fitWidth="334.0" layoutX="244.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/scoreboard.png" />

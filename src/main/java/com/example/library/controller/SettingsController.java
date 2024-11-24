@@ -152,29 +152,6 @@ public class SettingsController extends Controller {
         }
     }
 
-    @Override
-    public void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Live for Library");
-    }
-
-    @Override
-    public void handleBookButton() {
-        // Xử lý cho nút Button1
-        System.out.println("Button1 clicked");
-    }
-
-    @Override
-    public void handleExploreButton() {
-        // Xử lý cho nút Button2
-        changeScene("/com/example/library/explore-view.fxml", "Explore");
-    }
-
-    @Override
-    public void handleGameButton() {
-        // Xử lý cho nút Button3
-        System.out.println("Button3 clicked");
-    }
-
     private void handleSaveButton() {
         String name = nameField.getText();
         String email = emailField.getText();

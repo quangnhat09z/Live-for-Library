@@ -29,7 +29,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class GameController {
+public class GameController extends Controller {
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Button bookButton;
+    @FXML
+    private Button exploreButton;
+    @FXML
+    private Button mainButton;
     @FXML
     private JFXButton nextButton;
     @FXML
@@ -53,7 +61,7 @@ public class GameController {
     @FXML
     private Button chooseD;
     @FXML
-    private Button buttonExit;
+    private Button exitButton;
     @FXML
     private ImageView quizImage;
     @FXML
@@ -74,7 +82,6 @@ public class GameController {
 
     @FXML
     private Button buttonAgree;
-
     private Button chosenButton;
     private String chosenAnswer = "";
     private int wrongTimes = 0;
@@ -105,7 +112,7 @@ public class GameController {
         correctAnswerSound = new AudioManagement("src/main/resources/audio/correctAnswer.mp3");
     }
 
-
+    @Override
     public void initialize() {
         gameMusic.playAudio();
         endPane.setVisible(false);
@@ -116,18 +123,37 @@ public class GameController {
 
         GetQuiz quiz = new GetQuiz();
         quizzes = quiz.getNumberOfQuiz();
-        // Gán sự kiện cho nút
-        nextButton.setOnAction(event -> onNext(event));
-
         // Khởi tạo hiệu ứng quay cho các hình ảnh mặt trời
         sunTrans(sunImage1);
         sunTrans(sunImage2);
         sunTrans(sunImage3);
 
-        buttonExit.setOnAction(actionEvent -> {
-            handleHomeButton(actionEvent);
-                    gameMusic.stopAudio();
-        });
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
+        mainButton.setOnAction(actionEvent -> handleGameButton());
+        nextButton.setOnAction(actionEvent -> handleNextButton());
+        exitButton.setOnAction(actionEvent -> handleHomeButton());
+    }
+
+    @Override
+    public void handleHomeButton() {
+        changeScene("/com/example/library/main-view.fxml", "Home");
+    }
+
+    @Override
+    public void handleBookButton() {
+        System.out.println("");
+    }
+
+    @Override
+    public void handleExploreButton() {
+
+    }
+
+    @Override
+    public void handleGameButton() {
+
     }
 
     private void sunTrans(ImageView sunImage) {
@@ -234,7 +260,7 @@ public class GameController {
         // Tạo và khởi động Timeline
         timeline = new Timeline(new KeyFrame(Duration.seconds(10), e -> {
             restore(chosenButton);// Khôi phục màu sắc ban đầu
-            onNext(event); // Chuyển sang câu hỏi tiếp theo
+            handleNextButton(); // Chuyển sang câu hỏi tiếp theo
         }));
         timeline.play();
     }
@@ -384,7 +410,7 @@ public class GameController {
     }
 
     // Phương thức để gán trạng thái cho nextButton
-    public void onNext(ActionEvent event) {
+    public void handleNextButton() {
         isNextButtonClicked = true; // Đánh dấu rằng nút nextButton đã được nhấn
         if (wrongTimes == 3) return;
         // Hủy Timeline nếu nó đang chạy
@@ -433,16 +459,12 @@ public class GameController {
         timeline.play(); // Bắt đầu đếm ngược
     }
 
-
-    private void handleHomeButton(ActionEvent event) {
-        changeScene("/com/example/library/main-view.fxml", "Home");
-    }
-
-    private void changeScene(String fxmlPath, String title) {
+    @Override
+    public void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-            Stage stage = (Stage) buttonExit.getScene().getWindow();
+            Stage stage = (Stage) exitButton.getScene().getWindow();
             // mediaPlayer.stop();
             Scene scene = new Scene(root);
             stage.setTitle(title);

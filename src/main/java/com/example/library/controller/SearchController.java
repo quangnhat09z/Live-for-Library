@@ -139,26 +139,6 @@ public class SearchController extends Controller {
         applySoundEffectsToButtons(root);
     }
 
-    @Override
-    public void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Live for Library");
-    }
-
-    @Override
-    public void handleBookButton() {
-        System.out.println("Button1 clicked");
-    }
-
-    @Override
-    public void handleExploreButton() {
-        changeScene("/com/example/library/explore-view.fxml", "Explore");
-    }
-
-    @Override
-    public void handleGameButton() {
-        System.out.println("Button3 clicked");
-    }
-
     @FXML
     private void handleSearchButton() {
         String id = idField.getText();

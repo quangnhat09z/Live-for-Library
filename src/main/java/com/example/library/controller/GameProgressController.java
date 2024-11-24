@@ -7,6 +7,7 @@ import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -14,15 +15,52 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class GameProgressController {
-
-    public JFXButton play;
+public class GameProgressController extends Controller{
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Button bookButton;
+    @FXML
+    private Button exploreButton;
+    @FXML
+    private Button mainButton;
+    @FXML
+    private JFXButton playButton;
     @FXML
     private Circle myCircle;
     private MediaPlayer mediaPlayer;
 
+    @Override
+    public void initialize() {
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
+        mainButton.setOnAction(actionEvent -> handleGameButton());
+        playButton.setOnAction(actionEvent -> handlePlayButton());
+    }
+
+    @Override
+    public void handleHomeButton() {
+        changeScene("/com/example/library/main-view.fxml", "Explore");
+    }
+
+    @Override
+    public void handleBookButton() {
+        System.out.println("Book Button clicked");
+    }
+
+    @Override
+    public void handleExploreButton() {
+        changeScene("/com/example/library/explore-view.fxml", "Explore");
+    }
+
+    @Override
+    public void handleGameButton() {
+
+    }
+
     @FXML
-    private void startLoading() {
+    private void handlePlayButton() {
         // Hiện hình tròn bằng hiệu ứng mờ dần
         myCircle.setOpacity(0); // Bắt đầu với độ mờ 0 (ẩn)
         myCircle.setVisible(true); // Đảm bảo hình tròn có thể nhìn thấy
@@ -38,7 +76,7 @@ public class GameProgressController {
 
             // Khi hiệu ứng hoàn tất, chuyển màn hình
             rotateTransition.setOnFinished(e -> {
-                 changeScene(play.getScene().getWindow(), "/com/example/library/game-view.fxml", "Game");
+                 changeScene("/com/example/library/game-view.fxml", "Game");
                 // music();
             });
 
@@ -61,11 +99,12 @@ public class GameProgressController {
 //    }
 //
 
-    private void changeScene(javafx.stage.Window window, String fxmlPath, String title) {
+    @Override
+    public void changeScene(String fxmlPath, String title) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
             Scene scene = new Scene(fxmlLoader.load(), 1300, 650);
-            Stage stage = (Stage) window;
+            Stage stage = (Stage) mainButton.getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle(title);
             stage.show();

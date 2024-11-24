@@ -159,9 +159,9 @@ public class SearchAccountsController extends Controller {
     //if (myButton != null ) initializeMoving();
 
     homeButton.setOnAction(actionEvent -> handleHomeButton());
-//    bookButton.setOnAction(actionEvent -> handleBookButton());
-//    exploreButton.setOnAction(actionEvent -> handleExploreButton());
-//    gameButton.setOnAction(actionEvent -> handleGameButton());
+    bookButton.setOnAction(actionEvent -> handleBookButton());
+    exploreButton.setOnAction(actionEvent -> handleExploreButton());
+    gameButton.setOnAction(actionEvent -> handleGameButton());
     searchButton.setOnAction(actionEvent -> handleSearchButton());
     deleteButton.setOnAction(actionEvent -> handleDeleteButton());
     changeButton.setOnAction(actionEvent -> handleChangeButton());
