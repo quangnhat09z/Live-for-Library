@@ -176,12 +176,6 @@ public class ManageDocumentsController extends ManageController {
         documentListView.setItems(documentStrings);
     }
 
-    public static void showWarningAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
     public static void showSuccessAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
         alert.setTitle("Success");
@@ -190,13 +184,6 @@ public class ManageDocumentsController extends ManageController {
         alert.showAndWait();
     }
 
-    public static void showInfoAlert(String title, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-        alert.showAndWait(); // Hiển thị và chờ người dùng đóng
-    }
 
     @Override
     protected void changeScene(String fxmlPath, String title) {

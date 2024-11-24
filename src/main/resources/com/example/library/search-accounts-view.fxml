@@ -16,7 +16,7 @@
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.library.controller.SearchAccountsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
@@ -193,8 +193,8 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Button>
-                        <Button fx:id="changeInfo" layoutX="152.0" layoutY="149.0" mnemonicParsing="false"
-                                onAction="#onChangeInfoInSearchingClick" prefHeight="53.0" prefWidth="208.0"
+                        <Button fx:id="changeInfoButton" layoutX="152.0" layoutY="149.0" mnemonicParsing="false"
+                                prefHeight="53.0" prefWidth="208.0"
                                 styleClass="button_changeInfo" stylesheets="@../../../CSSStyling/styleAccount.css"
                                 text="CHANGE INFO" textFill="#cccc99">
                             <cursor>

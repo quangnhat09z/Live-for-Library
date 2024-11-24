@@ -17,7 +17,7 @@
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
       xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
-      fx:controller="com.example.library.controller.SearchController">
+      fx:controller="com.example.library.controller.SearchDocumentsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
             <children>
@@ -132,7 +132,7 @@
                     <children>
                         <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0"
                                    prefWidth="150.0" styleClass="button_main" text="Documents"/>
-                        <JFXButton fx:id="accountButton" buttonType="RAISED" layoutX="650.0" layoutY="5.0"
+                        <JFXButton fx:id="accountsButton" buttonType="RAISED" layoutX="650.0" layoutY="5.0"
                                    prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Accounts">
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
@@ -181,14 +181,14 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Button>
-                        <Button fx:id="changeButton" layoutX="832.0" layoutY="114.0" mnemonicParsing="false"
+                        <Button fx:id="manageButton" layoutX="832.0" layoutY="114.0" mnemonicParsing="false"
                                 prefHeight="55.0" prefWidth="150.0" styleClass="button_change"
                                 stylesheets="@../../../CSSStyling/styleAccount.css" text="UPDATE" textFill="#cccc99">
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Button>
-                        <Button fx:id="changeInfo" onAction="#onChangeInfoInSearchingClick" layoutX="596.0"
+                        <Button fx:id="changeInfoButton" layoutX="596.0"
                                 layoutY="115.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0"
                                 styleClass="button_changeInfo" stylesheets="@../../../CSSStyling/styleAccount.css"
                                 text="CHANGE INFO" textFill="#cccc99">
