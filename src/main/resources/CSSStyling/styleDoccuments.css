@@ -1,6 +1,12 @@
 .border {
+    -fx-border-color: #000080;
+    -fx-font-family: "Times New Roman";
     -fx-background-radius: 15;
     -fx-border-radius : 15;
+}
+
+.label {
+    -fx-font-family: "Times New Roman";
 }
 
 .button {
@@ -21,6 +27,7 @@
     -fx-background-color: #FEF8F3;
     -fx-border-radius: 5px;
 }
+
 .backgroundInSearchScreen{
     -fx-background-color: #FEF8F3;
     -fx-border-radius: 5px;

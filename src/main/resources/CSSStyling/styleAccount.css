@@ -14,6 +14,7 @@
 .button_delete,.button_add,.button_show,.button_change, .button_changeInfo {
     -fx-background-color: white;
     -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-font-family: "Times New Roman";
     -fx-text-fill: black;           /* Màu chữ đen */
     -fx-font-size: 15px;            /* Kích thước chữ */
     -fx-font-weight: bold;          /* Chữ đậm */
@@ -101,6 +102,7 @@
 .button_main {
     -fx-background-color: #222222;
     -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-font-family: "Times New Roman";
     -fx-text-fill: white;           /* Màu chữ đen */
     -fx-font-size: 15px;            /* Kích thước chữ */
     -fx-font-weight: bold;          /* Chữ đậm */
@@ -114,6 +116,7 @@
 .button_not_main {
     -fx-background-color: white;
     -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-font-family: "Times New Roman";
     -fx-text-fill: black;           /* Màu chữ đen */
     -fx-font-size: 15px;            /* Kích thước chữ */
     -fx-font-weight: bold;          /* Chữ đậm */

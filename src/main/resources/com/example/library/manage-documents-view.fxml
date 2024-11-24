@@ -16,12 +16,11 @@
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0"
-      prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns:fx="http://javafx.com/fxml/1"
+      prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #FEF8F3;" styleClass="root"
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
       fx:controller="com.example.library.controller.ManageDocumentsController">
     <children>
-        <VBox prefHeight="717.0" prefWidth="200.0">
+        <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
                 <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                     <children>
@@ -71,9 +70,8 @@
                             </image>
                         </ImageView>
                         <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0"
-                                   prefHeight="60.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books"
-                                   textFill="WHITE">
+                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                                   text="Books" textFill="WHITE">
                             <font>
                                 <Font size="14.0"/>
                             </font>
@@ -106,9 +104,8 @@
                             </cursor>
                         </JFXButton>
                         <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0"
-                                   prefHeight="60.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game"
-                                   textFill="WHITE">
+                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                                   text="Game" textFill="WHITE">
                             <font>
                                 <Font size="14.0"/>
                             </font>
@@ -129,7 +126,7 @@
         </VBox>
         <VBox>
             <children>
-                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0"
+                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0" style="-fx-background-color: #353A56;"
                       stylesheets="@../../../CSSStyling/styleAccount.css">
                     <children>
                         <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0"
@@ -143,8 +140,8 @@
                     </children>
                 </Pane>
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #888888;"
-                            styleClass="background" stylesheets="@../../../CSSStyling/styleDoccuments.css">
+                            prefHeight="600.0" prefWidth="1100.0" styleClass="background"
+                            stylesheets="@../../../CSSStyling/styleDoccuments.css">
                     <children>
                         <Pane layoutX="440.0" layoutY="50.0" opacity="0.8" prefHeight="540.0" prefWidth="635.0"
                               style="-fx-background-color: #000000;">
@@ -168,9 +165,6 @@
                                 </Label>
                             </children>
                         </Pane>
-                        <Pane layoutX="50.0" layoutY="70.0" opacity="0.92" prefHeight="500.0" prefWidth="370.0"
-                              style="-fx-background-color: #C0C0C0;" styleClass="pane"
-                              stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <Button fx:id="changeButton" layoutX="275.0" layoutY="500.0" mnemonicParsing="false"
                                 prefHeight="55.0" prefWidth="120.0" styleClass="button_change"
                                 stylesheets="@../../../CSSStyling/styleAccount.css" text="SEARCH" textFill="#cccc99">
@@ -190,7 +184,7 @@
                             </children>
                         </Pane>
                         <TextField fx:id="titleField" layoutX="190.0" layoutY="75.0" prefHeight="35.0" prefWidth="225.0"
-                                   promptText="Scene Builder" style="-fx-border-color: #000080;" styleClass="border"
+                                   promptText="Scene Builder" styleClass="border"
                                    stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
                         <TextField fx:id="authorField" layoutX="190.0" layoutY="125.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;"
