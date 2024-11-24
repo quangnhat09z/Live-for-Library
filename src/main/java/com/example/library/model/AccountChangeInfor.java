@@ -5,28 +5,46 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class AccountChangeInfor {
-  public boolean updateAccount(int id,String username, String password, String email, String fullName, String address, String role, String phoneNumber, String status) {
-    String sql = "UPDATE accounts SET username = ?, password = ?, email = ?, "
-        + "full_name = ?, address = ?, role = ?, phone_number = ?, status = ? "
-        + "WHERE id = ?";
-    try (Connection connection = DatabaseHelper.connect(); // Sử dụng DatabaseHelper
-        PreparedStatement pstmt = connection.prepareStatement(sql)) {
+  public boolean updateAccount(
+      int id, String username, String password, String email,
+      String fullName, String address, String role,
+      String phoneNumber, String status) {
 
-      pstmt.setString(1, username);
-      pstmt.setString(2, password);
-      pstmt.setString(3, email);
-      pstmt.setString(4, fullName);
-      pstmt.setString(5, address);
-      pstmt.setString(6, role);
-      pstmt.setString(7, phoneNumber);
-      pstmt.setString(8, status);
-      pstmt.setInt(9, id); // Gán ID cho tham số cuối cùng
+    String updateAccountsSQL = "UPDATE accounts SET username = ?, password = ?, email = ?, role = ?, status = ? WHERE id = ?";
+    String updateUserVerificationSQL = "UPDATE user_verification SET full_name = ?, address = ?, phone_number = ? WHERE id = ?";
 
-      int rowsAffected = pstmt.executeUpdate();
-      return rowsAffected > 0; // Trả về true nếu có ít nhất 1 bản ghi được cập nhật
+    try (Connection connection = DatabaseHelper.connect()) {
+      // Disable auto-commit to manage transaction manually
+      connection.setAutoCommit(false);
+
+      // Update the accounts table
+      try (PreparedStatement pstmtAccounts = connection.prepareStatement(updateAccountsSQL)) {
+        pstmtAccounts.setString(1, username);
+        pstmtAccounts.setString(2, password);
+        pstmtAccounts.setString(3, email);
+        pstmtAccounts.setString(4, role);
+        pstmtAccounts.setString(5, status);
+        pstmtAccounts.setInt(6, id);
+        pstmtAccounts.executeUpdate();
+      }
+
+      // Update the user_verification table
+      try (PreparedStatement pstmtUserVerification = connection.prepareStatement(updateUserVerificationSQL)) {
+        pstmtUserVerification.setString(1, fullName);
+        pstmtUserVerification.setString(2, address);
+        pstmtUserVerification.setString(3, phoneNumber);
+        pstmtUserVerification.setInt(4, id);
+        pstmtUserVerification.executeUpdate();
+      }
+
+      // Commit transaction
+      connection.commit();
+      return true;
+
     } catch (SQLException e) {
       e.printStackTrace();
-      return false; // Trả về false nếu có lỗi xảy ra
+      return false;
     }
   }
+
 }

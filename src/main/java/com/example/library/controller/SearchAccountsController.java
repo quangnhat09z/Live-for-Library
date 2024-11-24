@@ -67,7 +67,7 @@ public class SearchAccountsController extends Controller {
   @FXML
   private TableColumn<Document, String> passwordColumn;
   @FXML
-  private TableColumn<Document, String> fullnameColumn;
+  private TableColumn<Document, String> fullNameColumn;
   @FXML
   private TableColumn<Document, String> phoneNumberColumn;
   @FXML
@@ -100,7 +100,7 @@ public class SearchAccountsController extends Controller {
   @Override
   public void initialize() {
     String[] a = {"idColumn", "usernameColumn", "passwordColumn",
-        "emailColumn", "fullnameColumn", "addressColumn", "roleColumn", "phoneColumn",
+        "emailColumn", "fullNameColumn", "addressColumn", "roleColumn", "phoneColumn",
         "statusColumn"};
     int cnt = 0;
     if (idColumn != null) {
@@ -127,8 +127,8 @@ public class SearchAccountsController extends Controller {
     }
     cnt++;
 
-    if (fullnameColumn != null) {
-      fullnameColumn.setCellValueFactory(
+    if (fullNameColumn != null) {
+      fullNameColumn.setCellValueFactory(
           new PropertyValueFactory<>(a[cnt].substring(0, a[cnt].length() - 6)));
     }
     cnt++;
@@ -157,15 +157,14 @@ public class SearchAccountsController extends Controller {
     }
 
     //if (myButton != null ) initializeMoving();
-
+    loadAccounts();
     homeButton.setOnAction(actionEvent -> handleHomeButton());
-    bookButton.setOnAction(actionEvent -> handleBookButton());
-    exploreButton.setOnAction(actionEvent -> handleExploreButton());
-    gameButton.setOnAction(actionEvent -> handleGameButton());
+//    bookButton.setOnAction(actionEvent -> handleBookButton());
+//    exploreButton.setOnAction(actionEvent -> handleExploreButton());
+//    gameButton.setOnAction(actionEvent -> handleGameButton());
     searchButton.setOnAction(actionEvent -> handleSearchButton());
     deleteButton.setOnAction(actionEvent -> handleDeleteButton());
     changeButton.setOnAction(actionEvent -> handleChangeButton());
-    loadAccounts();
     applySoundEffectsToButtons(root);
   }
 
@@ -226,9 +225,6 @@ public class SearchAccountsController extends Controller {
 
   public void onSearchClick(ActionEvent event) {
 
-  }
-
-  public void onChangeInfoInSearchingClick(ActionEvent event) {
   }
 
 
@@ -340,6 +336,7 @@ public class SearchAccountsController extends Controller {
       // Xử lý kết quả khi nhấn nút "OK"
       dialog.setResultConverter(dialogButton -> {
         if (dialogButton == okButton) {
+
 // public AccountDetail(int id, String username, String password, String email, String role,
 //              String fullName, String address, String phoneNumber, String status)
           int id = selectedAccount.getId();
@@ -348,6 +345,7 @@ public class SearchAccountsController extends Controller {
           String newEmail = email.getText();
           String newRole = role.getText();
           String newFullName = fullName.getText();
+          System.out.println("DA lay dc full name: " +fullName.getText());
           String newAddress = address.getText();
           String newPhoneNumber = phoneNumber.getText();
           String newStatus = status.getText();
@@ -356,7 +354,8 @@ public class SearchAccountsController extends Controller {
               id,
               newUsername,
               newPassword,
-              newEmail, newRole,
+              newEmail,
+              newRole,
               newFullName,
               newAddress,
               newPhoneNumber,
@@ -382,6 +381,7 @@ public class SearchAccountsController extends Controller {
 
         if (isUpdated) {
           System.out.println("UPDATE SUCCESSFULLY!");
+          loadAccounts();
           // Cập nhật lại danh sách tài liệu trong bảng
         } else {
           System.out.println("UPDATE FAILD!");
@@ -399,16 +399,18 @@ public class SearchAccountsController extends Controller {
 
   public void loadAccounts() {
     try {
-      List<AccountDetail> accounts = searchAccount.searchAccounts("", "", "", "", ""); // Lấy tất cả tài khoản
+      // Ensure searchAccount.searchAccounts returns a List<AccountDetail>
+      List<AccountDetail> accounts = searchAccount.searchAccounts("", "", "", "", "");
+      System.out.println("Accounts loaded: " + accounts);
       ObservableList<AccountDetail> accountList = FXCollections.observableArrayList(accounts);
-
-      // Gán lại dữ liệu vào TableView
       resultsTableView.setItems(accountList);
     } catch (Exception e) {
       e.printStackTrace();
       showWarningAlert("Error while loading accounts.");
     }
   }
+
+
 
 }
 
