@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="440.0" prefWidth="780.0" styleClass="backgroundInTutorial" stylesheets="@../../../CSSStyling/game.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.GameController">
+    <children>
+        <ImageView fitHeight="150.0" fitWidth="169.0" layoutX="7.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/coralImage.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="591.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/starImage.png" />
+            </image>
+        </ImageView>
+        <JFXButton layoutX="367.0" layoutY="373.0" maxWidth="66.0" prefHeight="37.0" prefWidth="66.0" styleClass="buttonAgree" stylesheets="@../../../CSSStyling/game.css" text="Thoát" />
+      <ImageView fitHeight="330.0" fitWidth="334.0" layoutX="244.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/scoreboard.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="253.0" layoutY="202.0" prefHeight="39.0" prefWidth="154.0" styleClass="scoreLabelInEnd" stylesheets="@../../../CSSStyling/game.css" text="Điểm số:" />
+      <Label fx:id="scoreLabel" layoutX="457.0" layoutY="207.0" styleClass="scoreLabelInEnd" stylesheets="@../../../CSSStyling/game.css" text="10" />
+      <Label layoutX="276.0" layoutY="255.0" prefHeight="39.0" prefWidth="174.0" styleClass="scoreLabelInEnd" stylesheets="@../../../CSSStyling/game.css" text="Tổng thời gian:" />
+      <Label layoutX="457.0" layoutY="262.0" styleClass="scoreLabelInEnd" stylesheets="@../../../CSSStyling/game.css" text="13 s" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/sunSmile.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

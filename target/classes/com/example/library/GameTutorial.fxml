@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="440.0" prefWidth="780.0" styleClass="backgroundInTutorial" stylesheets="@../../../CSSStyling/game.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.GameController">
+   <children>
+      <TextArea editable="false" layoutX="176.0" layoutY="150.0" prefHeight="205.0" prefWidth="476.0" styleClass="customTextAreaInTutorial" stylesheets="@../../../CSSStyling/game.css" text="+ Bạn phải vượt qua càng nhiều câu hỏi càng tốt.&#10;+ Mỗi câu hỏi có 20s suy nghĩ và trả lời.&#10;+ Bạn được phép sai tối đa 3 câu hỏi. Nếu sai đủ 3 lần, &#10;trò chơi kết thúc.&#10;&#10;                        CHÚC BẠN MAY MẮN&#10;&#10;" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="28.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/sunSmile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="169.0" layoutX="7.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/coralImage.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="591.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/starImage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="372.0" layoutY="78.0" styleClass="headerLabel" stylesheets="@../../../CSSStyling/game.css" text="HOW TO PLAY" />
+      <JFXButton layoutX="372.0" layoutY="323.0" maxWidth="66.0" prefHeight="37.0" prefWidth="66.0" styleClass="buttonAgree" stylesheets="@../../../CSSStyling/game.css" text="Đồng ý" />
+   </children>
+</AnchorPane>

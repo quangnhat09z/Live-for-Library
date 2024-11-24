@@ -1,0 +1,149 @@
+
+
+.backgroundInGameScreen{
+    -fx-background-image: url('../images/gameScreen2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+
+.backgroundInGameScreen2{
+    -fx-background-image: url('../images/gameScreen2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+
+.backgroundInTutorial{
+    -fx-background-image: url('../images/gameTutorialScreen.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+
+.headerLabel {
+    -fx-font-family: "Times New Roman"; /* Kiểu chữ Times New Roman */
+    -fx-font-size: 30px; /* Kích thước chữ lớn */
+    -fx-text-fill: #A2CF96;
+    -fx-font-weight: bold; /* Chữ đậm */
+    -fx-background-color: transparent; /* Màu nền trong suốt */
+    -fx-padding: 10px; /* Khoảng cách lề trong */
+    -fx-alignment: center-left; /* Canh lề trái và giữa dọc */
+}
+
+
+.customTextAreaInTutorial {
+    -fx-font-family: "Times New Roman"; /* Kiểu chữ Times New Roman */
+    -fx-font-size: 18px; /* Kích thước chữ, bạn có thể thay đổi tùy ý */
+    -fx-text-fill: #A2CF96; /* Màu chữ xanh */
+    -fx-background-color: white; /* Màu nền trắng */
+    -fx-background-insets: 0; /* Loại bỏ nền mặc định */
+    -fx-padding: 10px; /* Khoảng cách lề trong */
+    -fx-border-width: 0; /* Loại bỏ viền */
+}
+
+.buttonAgree {
+    -fx-background-color: #FECFA7;
+    -fx-text-fill: black;
+    -fx-border-radius: 15; /* Nếu có viền, viền cũng sẽ bo góc */
+    -fx-font-family: "Times New Roman"
+}
+
+.customListView {
+  -fx-text-fill: #156C99; /* Màu chữ */
+  -fx-padding: 10px;
+  -fx-border-color: #FECFA7; /* Viền xanh đậm */
+  -fx-background-color: #FFFFFF; /* Màu nền trắng */
+  -fx-font-size: 14px; /* Kích thước chữ */
+  -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
+}
+
+.customListView .list-cell {
+  -fx-background-color: #FFFFFF; /* Màu nền trắng cho các mục */
+  -fx-border-width: 0 0 1px 0; /* Viền dưới cho các mục */
+  -fx-border-color: #dcdcdc; /* Màu viền dưới */
+}
+
+.customListView .list-cell:filled:selected {
+  -fx-background-color: #F0F8FF; /* Màu nền khi mục được chọn */
+}
+
+.customListView .list-cell:filled:hover {
+  -fx-background-color: #E6E6FA; /* Màu nền khi hover */
+}
+
+
+.customListViewInAnswer {
+  -fx-text-fill: #156C99; /* Màu chữ */
+  -fx-background-color: #FFFFFF; /* Màu nền trắng cho các mục */
+  -fx-border-color: #AADCEB; /* Màu viền dưới */
+  -fx-padding: 0 0 0 30px; /* Thêm khoảng cách lề trái 30px */
+  -fx-wrap-text: true; /* Tự động xuống dòng khi nội dung dài */
+}
+
+
+
+.button {
+    -fx-font-family: "Times New Roman";
+    -fx-background-color: #AADCEB;
+    -fx-text-fill: white;
+    -fx-background-radius: 50; /* Để nút trở thành hình tròn */
+    -fx-border-radius: 50; /* Nếu có viền, viền cũng sẽ là hình tròn */
+    -fx-min-width: 35px; /* Đặt kích thước tối thiểu cho nút */
+    -fx-min-height: 35px;
+    -fx-max-width: 65px;
+    -fx-max-height: 65px;
+}
+
+.button:hover {
+    -fx-background-color: #A2CF96;
+}
+
+.button:pressed {
+    -fx-background-color: #A2CF96;
+}
+
+
+.countdownLabel {
+    -fx-font-family: "Times New Roman"; /* Kiểu chữ Times New Roman */
+    -fx-font-size: 20px; /* Kích thước chữ */
+    -fx-text-fill: #156C99; /* Màu chữ */
+    -fx-background-color: #FFFFFF; /* Màu nền */
+    -fx-padding: 10px; /* Khoảng cách lề trong */
+    -fx-border-color: #FECFA7 ; /* Màu viền */
+    -fx-border-width: 2px; /* Độ dày viền */
+    -fx-border-radius: 10px; /* Bo góc viền */
+    -fx-alignment: center; /* Canh giữa nội dung */
+}
+
+.scoreLabel {
+    -fx-font-family: "Times New Roman"; /* Kiểu chữ Times New Roman */
+    -fx-font-size: 35px; /* Kích thước chữ */
+    -fx-text-fill: #156C99; /* Màu chữ */
+    -fx-alignment: center; /* Canh giữa nội dung */
+}
+.scoreLabelInEnd {
+    -fx-font-family: "Times New Roman"; /* Kiểu chữ Times New Roman */
+    -fx-font-size: 25px; /* Kích thước chữ */
+    -fx-text-fill: #156C99; /* Màu chữ */
+    -fx-alignment: center; /* Canh giữa nội dung */
+}
+
+.longTextLabel {
+    -fx-font-family: "Times New Roman"; /* Kiểu chữ Times New Roman */
+    -fx-font-size: 15px; /* Kích thước chữ */
+    -fx-text-fill: #156C99; /* Màu chữ */
+    -fx-background-color: #FFFFFF; /* Màu nền */
+    -fx-padding: 10px; /* Khoảng cách lề trong */
+    -fx-border-color: #FECFA7; /* Màu viền */
+    -fx-border-width: 2px; /* Độ dày viền */
+    -fx-border-radius: 10px; /* Bo góc viền */
+    -fx-alignment: center; /* Canh giữa nội dung */
+    -fx-wrap-text: true; /* Tự động xuống dòng khi nội dung dài */
+}

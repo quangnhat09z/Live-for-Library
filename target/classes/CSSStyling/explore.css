@@ -1,0 +1,104 @@
+
+.backgroundInExploreScreen{
+    -fx-background-image: url('../images/exploreScreen.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+
+.paneIma {
+    -fx-border-color: #00008B; /* Viền xanh đậm */
+    -fx-background-color: white; /* Màu nền xám */
+    -fx-padding: 15;                /* Khoảng đệm */
+}
+
+.pane {
+    -fx-background-color: #9C9C9C; /* Màu nền xám */
+    -fx-background-radius: 20;      /* Bo góc 20px */
+    -fx-padding: 15;                /* Khoảng đệm */
+}
+
+.customTextField {
+  -fx-padding: 12px;
+  -fx-border-color: #00008B; /* Viền xanh đậm */
+  -fx-border-radius: 8px; /* Bo góc */
+  -fx-background-color: #f8f9fa; /* Màu nền nhạt */
+  -fx-font-size: 14px; /* Kích thước chữ */
+  -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
+  -fx-transition: border-color 0.3s, background-color 0.3s; /* Hiệu ứng chuyển đổi màu */
+}
+
+.customTextField:focused {
+  -fx-outline: none; /* Loại bỏ viền mặc định khi focus */
+  -fx-border-color: #1E90FF; /* Màu viền khi focus */
+  -fx-background-color: #e6f2ff; /* Màu nền khi focus */
+}
+
+
+
+.customListView {
+  -fx-padding: 10px;
+  -fx-border-color: #00008B; /* Viền xanh đậm */
+  -fx-border-radius: 10px; /* Bo góc */
+  -fx-background-color: #FFFFFF; /* Màu nền trắng */
+  -fx-font-size: 14px; /* Kích thước chữ */
+  -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
+}
+
+.customListView .list-cell {
+  -fx-background-color: #FFFFFF; /* Màu nền trắng cho các mục */
+    -fx-border-radius: 10px; /* Bo góc */
+  -fx-border-width: 0 0 1px 0; /* Viền dưới cho các mục */
+  -fx-border-color: #dcdcdc; /* Màu viền dưới */
+}
+
+.customListView .list-cell:filled:selected {
+  -fx-background-color: #F0F8FF; /* Màu nền khi mục được chọn */
+}
+
+.customListView .list-cell:filled:hover {
+  -fx-background-color: #E6E6FA; /* Màu nền khi hover */
+}
+
+.buttonHideAndSHow {
+    -fx-background-color: white;
+    -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-text-fill: black;           /* Màu chữ đen */
+    -fx-font-size: 15px;            /* Kích thước chữ */
+    -fx-font-weight: bold;          /* Chữ đậm */
+    -fx-padding: 15;                /* Khoảng cách đệm */
+    -fx-border-color: black;       /* Màu viền đen */
+    -fx-border-width: 2px;         /* Độ dày viền */
+    -fx-border-radius: 6;          /* Bo góc viền giống nút */
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.buttonHideAndSHow:hover {
+    -fx-background-color: #AADCEB; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+
+.customHyperlink {
+  -fx-text-fill: #B0E2FF; /* Màu xanh */
+  -fx-cursor: hand; /* Con trỏ chuột thay đổi thành hình bàn tay */
+  -fx-underline: true; /* Gạch chân */
+  -fx-font-size: 16px; /* Kích thước chữ */
+  -fx-transition: color 0.3s; /* Hiệu ứng chuyển đổi màu */
+}
+
+.customHyperlink:pressed {
+  -fx-text-fill: #EEE8AA; /* Màu xanh lục khi nhấn */
+}
+
+.customImageView {
+  -fx-fit-width: 200; /* Chiều rộng cố định */
+  -fx-fit-height: 200; /* Chiều cao cố định */
+  -fx-preserve-ratio: true; /* Bảo toàn tỷ lệ khung hình */
+}
