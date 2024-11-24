@@ -25,7 +25,7 @@ public class Main extends Application {
 
 //     @Override
 //    public void start(Stage primaryStage) throws Exception {
-//        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/main-view.fxml")));
+//        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/search-accounts-view.fxml")));
 //        primaryStage.setTitle("Live for Library");
 //        primaryStage.setScene(new Scene(root, 1300, 650));
 //        primaryStage.setResizable(false);

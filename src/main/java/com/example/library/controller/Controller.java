@@ -26,16 +26,26 @@ public abstract class Controller {
     public abstract void initialize();
 
     @FXML
-    public abstract void handleHomeButton();
+    public void handleHomeButton() {
+        changeScene("/com/example/library/main-view.fxml", "Live for Library");
+    }
 
     @FXML
-    public abstract void handleBookButton();
+    public void handleBookButton() {
+        // Xử lý cho nút Button1
+        System.out.println("Button1 clicked");
+    }
 
     @FXML
-    public abstract void handleExploreButton();
+    public void handleExploreButton() {
+        // Xử lý cho nút Button2
+        changeScene("/com/example/library/explore-view.fxml", "Explore");
+    }
 
     @FXML
-    public abstract void handleGameButton();
+    public void handleGameButton() {
+        changeScene("/com/example/library/gameProgress-view.fxml", "Game");
+    }
 
     @FXML
     protected abstract void changeScene(String fxmlPath, String title);
