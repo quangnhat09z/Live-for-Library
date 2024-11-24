@@ -22,7 +22,7 @@ import com.example.library.model.Document;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
-public class UpdateController extends Controller {
+public class ManageDocumentsController extends ManageController {
     @FXML
     private HBox root;
     @FXML
@@ -78,19 +78,14 @@ public class UpdateController extends Controller {
         addButton.setOnAction(actionEvent -> handleAddButton());
         deleteButton.setOnAction(actionEvent -> handleDeleteButton());
         showButton.setOnAction(actionEvent -> handleShowButton());
-        changeButton.setOnAction(actionEvent -> handleChangeButton());
-        accountButton.setOnAction(actionEvent -> handleAccountButton());
+        changeButton.setOnAction(actionEvent -> handleSearchButton());
+        accountButton.setOnAction(actionEvent -> handleChangeButton());
 
         applySoundEffectsToButtons(root);
     }
 
-    //Sẽ được cài đặt khi có view của Phước.
-    private void handleAccountButton() {
-//        changeScene(path, title);
-        changeScene("/com/example/library/manage-accounts-view.fxml", "ManageAccount");
-    }
-
-    private void handleAddButton() {
+    @Override
+    protected void handleAddButton() {
         String title = titleField.getText().trim();
         String author = authorField.getText().trim();
         String publicYear = publicYearField.getText().trim();
@@ -118,7 +113,8 @@ public class UpdateController extends Controller {
         }
     }
 
-    public void handleDeleteButton() {
+    @Override
+    protected void handleDeleteButton() {
         String selectedDocument = documentListView.getSelectionModel().getSelectedItem();
         if (selectedDocument != null) {
             int id = Integer.parseInt(selectedDocument.split(" - ")[0]); // Giả định format là "ID - Title"
@@ -155,12 +151,19 @@ public class UpdateController extends Controller {
         }
     }
 
-    public void handleShowButton() {
-        updateDocumentList(); // Cập nhật danh sách tài liệu
+    @Override
+    protected void handleShowButton() {
+        updateDocumentList();
     }
 
-    private void handleChangeButton() {
+    @Override
+    protected void handleSearchButton() {
         changeScene("/com/example/library/search-documents-view.fxml", "Search Documents");
+    }
+
+    @Override
+    protected void handleChangeButton() {
+        changeScene("/com/example/library/manage-accounts-view.fxml", "ManageAccount");
     }
 
     private void updateDocumentList() {
@@ -173,12 +176,6 @@ public class UpdateController extends Controller {
         documentListView.setItems(documentStrings);
     }
 
-    public static void showWarningAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
     public static void showSuccessAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
         alert.setTitle("Success");
@@ -187,13 +184,6 @@ public class UpdateController extends Controller {
         alert.showAndWait();
     }
 
-    public static void showInfoAlert(String title, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-        alert.showAndWait(); // Hiển thị và chờ người dùng đóng
-    }
 
     @Override
     protected void changeScene(String fxmlPath, String title) {

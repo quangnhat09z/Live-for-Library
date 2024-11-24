@@ -1,34 +1,47 @@
 package com.example.library.controller;
 
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 import static com.example.library.model.Validator.checkEmail;
 import static com.example.library.model.Validator.checkPassword;
 import static com.example.library.model.Validator.checkUsername;
 
-import com.example.library.model.ChangeView;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import com.example.library.model.Account;
 import com.example.library.model.DatabaseHelper;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class ManageAccountController {
-
+public class ManageAccountController extends ManageController {
+  @FXML
+  private HBox root;
+  @FXML
+  private Button homeButton;
+  @FXML
+  private Button bookButton;
+  @FXML
+  private Button exploreButton;
+  @FXML
+  private Button gameButton;
+  @FXML
+  private Button addButton;
+  @FXML
+  private Button showButton;
+  @FXML
+  private Button deleteButton;
+  @FXML
+  private Button searchButton;
+  @FXML
+  private Button documentsButton;
   @FXML
   private TextField usernameField;
   @FXML
@@ -43,9 +56,22 @@ public class ManageAccountController {
   private Label ManageAccountMessage;
   private DatabaseHelper dbHelper;
 
+  @Override
   public void initialize() {
     dbHelper = new DatabaseHelper();
     roleComboBox.setItems(FXCollections.observableArrayList("admin", "user"));
+
+    homeButton.setOnAction(actionEvent -> handleHomeButton());
+    bookButton.setOnAction(actionEvent -> handleBookButton());
+    exploreButton.setOnAction(actionEvent -> handleExploreButton());
+    gameButton.setOnAction(actionEvent -> handleGameButton());
+    showButton.setOnAction(actionEvent -> handleShowButton());
+    addButton.setOnAction(actionEvent -> handleAddButton());
+    deleteButton.setOnAction(actionEvent -> handleDeleteButton());
+    searchButton.setOnAction(actionEvent -> handleSearchButton());
+    documentsButton.setOnAction(actionEvent -> handleChangeButton());
+
+    applySoundEffectsToButtons(root);
   }
 
   //  @FXML
@@ -55,28 +81,17 @@ public class ManageAccountController {
 //  public String getSelectedRole() {
 //    return roleComboBox.getSelectionModel().getSelectedItem();
 //  }
-  @FXML
-  public void onShowAccountClick(ActionEvent actionEvent) {
+
+  @Override
+  protected void handleShowButton() {
     updateAccountList();
     giveBlackSpace();
     ManageAccountMessage.setText("");
     ManageAccountMessage.setTextFill(javafx.scene.paint.Color.GREEN);
   }
 
-  public void updateAccountList() {
-    List<Account> accounts = dbHelper.getAllAcounts();
-    ObservableList<String> accountStrings = FXCollections.observableArrayList();
-    for (Account acc : accounts) {
-      accountStrings.add(acc.getId() + " - " + acc.getUsername() + " - " + acc.getPassword() + " - "
-          + acc.getEmail() + " - "
-          + acc.getRole());
-    }
-    accountListView.setItems(accountStrings);
-  }
-
-
-  @FXML
-  public void onAddAccountClick() {
+  @Override
+  protected void handleAddButton() {
     String username = usernameField.getText();
     String password = passwordField.getText();
     String role = roleComboBox.getSelectionModel().getSelectedItem();
@@ -124,8 +139,8 @@ public class ManageAccountController {
     }
   }
 
-  @FXML
-  public void onDeleteAccountClick() {
+  @Override
+  protected void handleDeleteButton() {
     String selectedAccount = accountListView.getSelectionModel().getSelectedItem();
     if (selectedAccount != null) {
       int id = Integer.parseInt(
@@ -162,9 +177,26 @@ public class ManageAccountController {
     giveBlackSpace();
   }
 
-  public void onChangeToSearchingClick(ActionEvent event) {
+  @Override
+  protected void handleSearchButton() {
+    changeScene("/com/example/library/search-accounts-view.fxml", "Search Accounts");
   }
 
+  @Override
+  protected void handleChangeButton() {
+    changeScene("/com/example/library/manage-documents-view.fxml", "Manage");
+  }
+
+  public void updateAccountList() {
+    List<Account> accounts = dbHelper.getAllAcounts();
+    ObservableList<String> accountStrings = FXCollections.observableArrayList();
+    for (Account acc : accounts) {
+      accountStrings.add(acc.getId() + " - " + acc.getUsername() + " - " + acc.getPassword() + " - "
+              + acc.getEmail() + " - "
+              + acc.getRole());
+    }
+    accountListView.setItems(accountStrings);
+  }
 
   public void giveBlackSpace() {
     usernameField.clear();
@@ -175,20 +207,12 @@ public class ManageAccountController {
     roleComboBox.getItems().addAll("admin", "user");
   }
 
-
   public void clearUsernameField() {
     usernameField.clear();
   }
 
   public void clearEmailField() {
     emailField.clear();
-  }
-
-  public static void showWarningAlert(String message) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setHeaderText("WARNING");
-    alert.setContentText(message);
-    alert.showAndWait();
   }
 
   public static void showSuccessAlert(String message) {
@@ -199,23 +223,14 @@ public class ManageAccountController {
     alert.showAndWait();
   }
 
-  public static void showInfoAlert(String title, String header, String content) {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(header);
-    alert.setContentText(content);
-    alert.showAndWait(); // Hiển thị và chờ người dùng đóng
-  }
-//
+  //
 //  public void onChangeToSearchView(ActionEvent event) {
 //    Stage stage = (Stage)usernameField.getScene().getWindow();
 //    ChangeView.changeViewFXML("/com/example/library/.search-accounts.fxml", stage);
 //  }
-  public void onChangeToSearchView() {
-    changeScene("/com/example/library/search-accounts-view.fxml", "Search Accounts");
-  }
 
-  private void changeScene(String fxmlPath, String title) {
+  @Override
+  public void changeScene(String fxmlPath, String title) {
     try {
       FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
       Parent root = loader.load();

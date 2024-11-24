@@ -191,15 +191,13 @@ public class DatabaseHelper {
 
       if (rs.next()) {
         // Username đã tồn tại, hiển thị cảnh báo và xóa trường nhập liệu
-        ManageAccountController.showWarningAlert(
-            "Username already exists, please enter another UserName");
+        showWarningAlert("Username already exists, please enter another UserName");
         controller.clearUsernameField();
         System.out.println("Please enter a different username");
         throw new SQLException("Username already exists.");
       } else if (rs1.next()) {
         // Email đã tồn tại, hiển thị cảnh báo và xóa trường nhập liệu
-        ManageAccountController.showWarningAlert(
-            "Email already exists, please enter another Email");
+        showWarningAlert("Email already exists, please enter another Email");
         controller.clearEmailField();
         System.out.println("Please enter a different Email");
         throw new SQLException("Email already exists.");
@@ -270,28 +268,19 @@ public class DatabaseHelper {
     return accounts;
   }
 
-  public static void showWarningAlert(String message) {
+  private static void showWarningAlert(String message) {
     Alert alert = new Alert(Alert.AlertType.WARNING);
     alert.setContentText(message);
     alert.showAndWait();
   }
 
-  public static void showSuccessAlert(String message) {
+  private static void showSuccessAlert(String message) {
     Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
     alert.setTitle("Success");
     alert.setHeaderText("SUCCESS ADD ACCOUNT");
     alert.setContentText(message);
     alert.showAndWait();
   }
-
-  public static void showInfoAlert(String title, String header, String content) {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(header);
-    alert.setContentText(content);
-    alert.showAndWait(); // Hiển thị và chờ người dùng đóng
-  }
-
 
 }
 
