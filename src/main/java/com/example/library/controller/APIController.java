@@ -7,6 +7,9 @@ import com.google.gson.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -14,6 +17,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
@@ -21,8 +26,13 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class APIController {
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
+
+public class APIController extends Controller{
+    @FXML
+    private HBox root;
     @FXML
     private TextField searchExploreField;
     @FXML
@@ -50,6 +60,13 @@ public class APIController {
 
     @FXML
     private Button showButton;
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Button bookButton;
+    @FXML
+    private Button gameButton;
+
 
     private boolean isListViewVisible = false; // Track visibility state
     private String googleSearchUrl;
@@ -87,6 +104,22 @@ public class APIController {
             }
         });
         myHyperlink.setOnAction(event -> handleHyperlinkAction());
+
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        bookButton.setOnAction(actionEvent -> handleBookButton());
+        gameButton.setOnAction(actionEvent -> handleGameButton());
+
+        if (Controller.isDarkMode()) {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_explore.css")).toExternalForm());
+        } else {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/explore.css")).toExternalForm());
+        }
+
+        applySoundEffectsToButtons(root);
     }
 
     @FXML
@@ -226,6 +259,20 @@ public class APIController {
                SearchController.showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
             }
         } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void changeScene(String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = (Stage) bookButton.getScene().getWindow();
+            Scene scene = new Scene(root, 1300, 650);
+            stage.setTitle(title);
+            stage.setScene(scene);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

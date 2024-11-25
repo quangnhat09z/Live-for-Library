@@ -133,7 +133,7 @@ public class GameController extends Controller {
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         mainButton.setOnAction(actionEvent -> handleGameButton());
         nextButton.setOnAction(actionEvent -> handleNextButton());
-         exitButton.setOnAction(actionEvent -> handleHomeButton());
+        exitButton.setOnAction(actionEvent -> handleHomeButton());
     }
 
 

@@ -74,6 +74,7 @@ public class MainController extends Controller {
         quitButton.setOnAction(actionEvent -> handleQuitButton());
         settingButton.setOnAction(actionEvent -> handleSettingButton());
         userButton.setOnAction(actionEvent -> handleUserButton());
+
         setBookCount();
         setAccountCount();
         setBookInfo();

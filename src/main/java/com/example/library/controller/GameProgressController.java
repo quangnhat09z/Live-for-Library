@@ -8,14 +8,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 import java.io.IOException;
 
 public class GameProgressController extends Controller{
+    @FXML
+    private HBox root;
     @FXML
     private Button homeButton;
     @FXML
@@ -37,21 +40,8 @@ public class GameProgressController extends Controller{
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         mainButton.setOnAction(actionEvent -> handleGameButton());
         playButton.setOnAction(actionEvent -> handlePlayButton());
-    }
 
-    @Override
-    public void handleHomeButton() {
-        changeScene("/com/example/library/main-view.fxml", "Explore");
-    }
-
-    @Override
-    public void handleBookButton() {
-        System.out.println("Book Button clicked");
-    }
-
-    @Override
-    public void handleExploreButton() {
-        changeScene("/com/example/library/explore-view.fxml", "Explore");
+        applySoundEffectsToButtons(root);
     }
 
     @Override
