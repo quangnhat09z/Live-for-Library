@@ -308,8 +308,11 @@ public class GameController extends Controller {
             chosenAnswer = "";
         }
 
-        if(!Objects.equals(chosenAnswer, "")) System.out.println("Chosen answer: " + chosenButton.getText() + " " + chosenAnswer);
-        else System.out.println("Chosen answer: null");
+        if(!Objects.equals(chosenAnswer, "")) {
+            System.out.println("Chosen answer: " + chosenButton.getText() + " " + chosenAnswer);
+        } else {
+            System.out.println("Chosen answer: null");
+        }
         Quiz currentQuiz = quizzes.get(currentQuizIndex);
 
         Quiz quiz = quizzes.get(currentQuizIndex);
@@ -352,8 +355,8 @@ public class GameController extends Controller {
             restoreColorAnswer(chosenButton, event);
             System.out.println("Wrong answer! The correct answer is: " + currentQuiz.getRightAnswer());
         }
-
     }
+
     private void fadeTrans(ImageView imageView) {
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(3), imageView);
         fadeOut.setFromValue(1); // Bắt đầu từ độ rõ
@@ -414,15 +417,12 @@ public class GameController extends Controller {
 
         // Đặt lại trạng thái cho nextButton
         isNextButtonClicked = false; // Đặt lại trạng thái sau khi xử lý
-
-
     }
 
     private void startCountdown() {
         if (timeline != null && timeline.getStatus() == Timeline.Status.RUNNING) {
             return; // Nếu đang chạy, không bắt đầu lại
         }
-
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             if (timeSeconds > 0) {
                 timeSeconds--;
@@ -436,7 +436,6 @@ public class GameController extends Controller {
                 chooseAnswer(null);
             }
         }));
-
         timeline.setCycleCount(Timeline.INDEFINITE); // Lặp lại vô hạn
         timeline.play(); // Bắt đầu đếm ngược
     }
