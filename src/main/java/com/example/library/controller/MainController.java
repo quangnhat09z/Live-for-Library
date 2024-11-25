@@ -88,7 +88,6 @@ public class MainController extends Controller {
             root.getStylesheets().clear();
             root.getStylesheets().add(Objects.requireNonNull(
                     getClass().getResource("/CSSStyling/main.css")).toExternalForm());
-
         }
 
         String musicFile = "src/main/resources/audio/music.mp3";
@@ -110,11 +109,6 @@ public class MainController extends Controller {
 
     public static void setMediaPlayer(MediaPlayer mediaPlayer) {
         MainController.mediaPlayer = mediaPlayer;
-    }
-
-    @Override
-    public void handleHomeButton() {
-
     }
 
     private void handleAdminButton() {

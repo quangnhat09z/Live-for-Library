@@ -17,12 +17,13 @@ import com.example.library.model.searchDocument;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 import static com.example.library.controller.SearchController.showInfoAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 
-public class BooksController {
+public class BooksController extends Controller {
     private DatabaseHelper databaseHelper;
 
     public BooksController() {
@@ -65,21 +66,11 @@ public class BooksController {
     @FXML
     private Button homeButton;
     @FXML
-    private Button bookButton;
-    @FXML
     private Button exploreButton;
     @FXML
     private Button gameButton;
     @FXML
-    private Button accountsButton;
-    @FXML
     private Button searchButton;
-    @FXML
-    private Button deleteButton;
-    @FXML
-    private Button changeInfoButton;
-    @FXML
-    private Button manageButton;
     @FXML
     private Button chooseBookButton;
 
@@ -125,9 +116,23 @@ public class BooksController {
         searchButton.setOnAction(actionEvent -> handleSearchButton());
         chooseBookButton.setOnAction(actionEvent -> handleBorrowButton());
 
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
+        gameButton.setOnAction(actionEvent -> handleGameButton());
+
+        if (Controller.isDarkMode()) {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_book.css")).toExternalForm());
+
+        } else {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/book.css")).toExternalForm());
+        }
+
         applySoundEffectsToButtons(root);
     }
-
 
     protected void handleSearchButton() {
         String id = idField.getText();
@@ -158,7 +163,17 @@ public class BooksController {
     private void handleBorrowButton() {
         Document selectedDocument = resultsTableView.getSelectionModel().getSelectedItem();
         if (selectedDocument != null) {
-            changeScene("/com/example/library/borrowReturn-view.fxml", "Explore");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/borrowReturn-view.fxml"));
+                Parent root = loader.load();
+                // Lấy controller từ FXMLLoader
+                borrowController = loader.getController(); // Lưu controller vào biến
+                Stage stage = (Stage) homeButton.getScene().getWindow();
+                Scene scene = new Scene(root, 1300, 650);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if (borrowController != null) {
                 String title = selectedDocument.getTitle();
                 borrowController.loadDocumentDetails(title); // Gọi phương thức với title
@@ -175,7 +190,6 @@ public class BooksController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             // Lấy controller từ FXMLLoader
-            borrowController = loader.getController(); // Lưu controller vào biến
             Stage stage = (Stage) homeButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setTitle(title);

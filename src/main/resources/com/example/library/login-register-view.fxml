@@ -22,7 +22,7 @@
             <children>
                 <Label alignment="CENTER" contentDisplay="TOP" layoutX="45.0" layoutY="119.0" prefHeight="29.0"
                        prefWidth="227.0" style="-fx-background-color: #DC2134;" styleClass="border"
-                       stylesheets="@../../../CSSStyling/styleAccount.css" text="LIVE FOR LIBRARY">
+                       text="LIVE FOR LIBRARY">
                     <font>
                         <Font name="Times New Roman Bold" size="22.0"/>
                     </font>

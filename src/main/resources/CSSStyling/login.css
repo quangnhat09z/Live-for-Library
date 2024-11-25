@@ -1,5 +1,4 @@
 .background_Login{
-
 -fx-background-image: url('../images/SnowMan3.png');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
@@ -7,6 +6,13 @@
     -fx-background-radius : 7px;
     -fx-border-radius: 5px;
 }
+
+.border {
+    -fx-background-radius: 15;
+    -fx-border-radius : 15;
+    -fx-border:3px;
+}
+
 .background_OpenBook{
 
 -fx-background-image: url('../images/LOGINBOOK.png');
