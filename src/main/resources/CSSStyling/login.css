@@ -1,0 +1,33 @@
+.background_Login{
+
+-fx-background-image: url('../images/SnowMan3.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+.background_OpenBook{
+
+-fx-background-image: url('../images/LOGINBOOK.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+.background_NoelHat{
+-fx-noel-hat: url('../images/NOELHAT.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+
+-fx-background-threebooks: url('../images/Threebooks.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
