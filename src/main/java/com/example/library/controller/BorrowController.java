@@ -3,6 +3,7 @@ package com.example.library.controller;
 import com.example.library.model.Account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,6 +31,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.concurrent.ExecutionException;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
@@ -152,16 +154,45 @@ public class BorrowController extends Controller {
 
     // Phương thức cập nhật gợi ý
     private void updateSuggestions(String query) {
-        List<String> suggestions = databaseHelper.getSuggestions(query);
-        ObservableList<String> observableSuggestions = FXCollections.observableArrayList(suggestions);
+        // Create a Task to run the database query in a background thread
+        Task<List<String>> task = new Task<List<String>>() {
+            @Override
+            protected List<String> call() throws Exception {
+                // Fetch suggestions from the database
+                return databaseHelper.getSuggestions(query);
+            }
 
-        // Cập nhật ListView với gợi ý mới
-        suggestionsList.setItems(observableSuggestions);
-        suggestionsList.setVisible(!observableSuggestions.isEmpty()); // Hiển thị ListView khi có gợi ý
-        suggestionsList.setManaged(!observableSuggestions.isEmpty()); // Quản lý layout
+            @Override
+            protected void succeeded() {
+                super.succeeded();
+                try {
+                    // Get the result from the task
+                    List<String> suggestions = get();
+                    ObservableList<String> observableSuggestions = FXCollections.observableArrayList(suggestions);
 
-        System.out.println("Số lượng gợi ý: " + observableSuggestions.size());
+                    // Update ListView with new suggestions
+                    suggestionsList.setItems(observableSuggestions);
+                    suggestionsList.setVisible(!observableSuggestions.isEmpty());
+                    suggestionsList.setManaged(!observableSuggestions.isEmpty());
+
+                    System.out.println("Số lượng gợi ý: " + observableSuggestions.size());
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace(); // Handle exceptions
+                }
+            }
+
+            @Override
+            protected void failed() {
+                super.failed();
+                // Handle failure case
+                System.err.println("Error fetching suggestions.");
+            }
+        };
+
+        // Run the task in a new thread
+        new Thread(task).start();
     }
+
 
     public void loadDocumentDetails(String title) {
         Document document = databaseHelper.getDocumentByTitle(title); // Lấy tài liệu theo tiêu đề
@@ -175,9 +206,16 @@ public class BorrowController extends Controller {
             genreField.setText(document.getGenre());
             quantityField.setText(String.valueOf(document.getQuantity()));
 
-            // Tải hình ảnh từ liên kết
-            Image image = new Image(document.getImageLink(), true); // Tải hình ảnh bất đồng bộ
-            myImageView.setImage(image);
+            // Cập nhật hình ảnh document.getImageLink()
+            String imageLink = document.getImageLink();
+            if (imageLink == null || imageLink.isEmpty()) {
+                SearchController.showWarningAlert("Không có hình ảnh");
+            } else {
+                Image image = new Image(imageLink, true);
+                myImageView.setImage(image);
+                // myImageView.setSmooth(true); // Bạn có thể bật làm mịn nếu cần
+            }
+
             googleSearchUrl = "https://www.google.com/search?q=" + (title + " book").replace(" ", "+");
         } else {
             // Hiển thị thông báo lỗi cho người dùng

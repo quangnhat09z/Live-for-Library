@@ -6,6 +6,7 @@ import com.example.library.model.GoogleBookAPI;
 import com.google.gson.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -131,23 +132,39 @@ public class APIController extends Controller{
     }
 
     private void updateSuggestions(String query) {
-        try {
-            // Gọi API để tìm kiếm sách và nhận phản hồi JSON
-            String jsonResponse = GoogleBookAPI.searchBooks(query);
+        // Tạo một Task để gọi API
+        Task<List<String>> task = new Task<>() {
+            protected List<String> call() throws Exception {
+                // Gọi API để tìm kiếm sách và nhận phản hồi JSON
+                String jsonResponse = GoogleBookAPI.searchBooks(query);
+                // Phân tích JSON để lấy danh sách tiêu đề
+                return extractTitlesFromJson(jsonResponse);
+            }
 
-            // Phân tích JSON để lấy danh sách tiêu đề
-            List<String> suggestions = extractTitlesFromJson(jsonResponse);
-            ObservableList<String> observableSuggestions = FXCollections.observableArrayList(suggestions);
+            protected void succeeded() {
+                try {
+                    // Lấy gợi ý từ kết quả
+                    List<String> suggestions = get();
+                    ObservableList<String> observableSuggestions = FXCollections.observableArrayList(suggestions);
 
-            // Cập nhật ListView với gợi ý mới
-            suggestionsList.setItems(observableSuggestions);
-            suggestionsList.setVisible(!observableSuggestions.isEmpty());
-            suggestionsList.setManaged(!observableSuggestions.isEmpty());
+                    // Cập nhật ListView với gợi ý mới
+                    suggestionsList.setItems(observableSuggestions);
+                    suggestionsList.setVisible(!observableSuggestions.isEmpty());
+                    suggestionsList.setManaged(!observableSuggestions.isEmpty());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // Hiển thị thông báo lỗi cho người dùng
+                }
+            }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            // Hiển thị thông báo lỗi cho người dùng
-        }
+            @Override
+            protected void failed() {
+                System.out.println("fail");
+            }
+        };
+
+        // Chạy Task trong một luồng riêng
+        new Thread(task).start();
     }
 
     // Phương thức để trích xuất tiêu đề từ chuỗi JSON
@@ -212,9 +229,6 @@ public class APIController extends Controller{
         return null; // Không tìm thấy tài liệu hoặc có lỗi phân tích
     }
 
-
-
-
     private void loadDocumentDetails(String title) {
         try {
             String jsonData = String.valueOf(GoogleBookAPI.searchBooks(title)); // Gọi API để tìm sách
@@ -229,10 +243,15 @@ public class APIController extends Controller{
                 genreField.setText(document.getGenre());
                 descriptionField.setText(document.getDescription());
 
-                // Cập nhật hình ảnhdocument.getImageLink()
-                Image image = new Image(document.getImageLink(), true);
-                myImageView.setImage(image);
-                //myImageView.setSmooth(true);
+                // Cập nhật hình ảnh document.getImageLink()
+                String imageLink = document.getImageLink();
+                if (imageLink == null || imageLink.isEmpty()) {
+                    SearchController.showWarningAlert("Không có hình ảnh");
+                } else {
+                    Image image = new Image(imageLink, true);
+                    myImageView.setImage(image);
+                    // myImageView.setSmooth(true); // Làm mịn nếu cần
+                }
 
                 googleSearchUrl = "https://www.google.com/search?q=" + (title + " book").replace(" ", "+");
             } else {
