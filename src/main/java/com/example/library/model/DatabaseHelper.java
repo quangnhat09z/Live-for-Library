@@ -15,7 +15,7 @@ public class DatabaseHelper {
 
   public static final String URL = "jdbc:mysql://localhost:3306/library";
   public static final String USER = "root"; // Thay bằng tên người dùng của bạn
-  public static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
+  public static final String PASSWORD = "09022005"; // Thay bằng mật khẩu của bạn
 
   public static Connection connect() {
     try {
@@ -32,9 +32,9 @@ public class DatabaseHelper {
     String insertSql = "INSERT INTO documents (title, author, publicYear, publisher, genre, quantity, imageLink) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     try (Connection conn = connect();
-        PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-        PreparedStatement updateStmt = conn.prepareStatement(updateSql);
-        PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+         PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+         PreparedStatement updateStmt = conn.prepareStatement(updateSql);
+         PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
 
       // Kiểm tra xem tài liệu có tồn tại không
       checkStmt.setString(1, document.getTitle());
@@ -64,7 +64,7 @@ public class DatabaseHelper {
     String sql = "SELECT * FROM documents";
 
     try (Connection conn = connect(); Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql)) {
+         ResultSet rs = stmt.executeQuery(sql)) {
       while (rs.next()) {
         int id = rs.getInt("id");
         String title = rs.getString("title");
@@ -75,7 +75,7 @@ public class DatabaseHelper {
         int quantity = rs.getInt("quantity");
         String imageLink = rs.getString("imageLink");
         documents.add(
-            new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink));
+                new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -90,9 +90,9 @@ public class DatabaseHelper {
     String deleteSql = "DELETE FROM documents WHERE id = ?";
 
     try (Connection conn = connect();
-        PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-        PreparedStatement updateStmt = conn.prepareStatement(updateSql);
-        PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
+         PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+         PreparedStatement updateStmt = conn.prepareStatement(updateSql);
+         PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
       // Check the current quantity
       checkStmt.setInt(1, id);
       ResultSet rs = checkStmt.executeQuery();
@@ -129,7 +129,7 @@ public class DatabaseHelper {
     String sql = "SELECT title FROM documents WHERE title LIKE ?"; // Thay đổi tên bảng nếu cần
 
     try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setString(1, "%" + query + "%");
       ResultSet rs = pstmt.executeQuery();
 
@@ -148,7 +148,7 @@ public class DatabaseHelper {
     String query = "SELECT * FROM documents WHERE title = ?";
 
     try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        PreparedStatement pstmt = conn.prepareStatement(query)) {
+         PreparedStatement pstmt = conn.prepareStatement(query)) {
       pstmt.setString(1, title);
       ResultSet rs = pstmt.executeQuery();
 
@@ -169,7 +169,56 @@ public class DatabaseHelper {
     return document;
   }
 
+  public Document getDocumentById(int documentId) {
+    Document document = null;
+    String sql = "SELECT * FROM Documents WHERE id = ?";
 
+    try (Connection conn = connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+      pstmt.setInt(1, documentId);
+      ResultSet rs = pstmt.executeQuery();
+
+      if (rs.next()) {
+        document = new Document(
+                rs.getInt("id"),
+                rs.getString("title"),
+                rs.getString("author"),
+                rs.getString("publicYear"),
+                rs.getString("publisher"),
+                rs.getString("genre"),
+                rs.getInt("quantity"),
+                rs.getString("imageLink")
+        );
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return document;
+  }
+
+  public Account getAccountByUserName(String userName) {
+    Account account = null;
+    String sql = "SELECT * FROM accounts WHERE username = ?";
+
+    try (Connection conn = connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+      pstmt.setString(1, userName);
+      ResultSet rs = pstmt.executeQuery();
+
+      if (rs.next()) {
+        account = new Account(
+                rs.getInt("id"),
+                rs.getString("username"),
+                rs.getString("password"),
+                rs.getString("email"),
+                rs.getString("role")
+        );
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return account;
+  }
   //Account
   public void addAccount(Account account, ManageAccountController controller) throws SQLException {
     String checkSql = "SELECT * FROM accounts WHERE username = ?";
@@ -179,9 +228,9 @@ public class DatabaseHelper {
     //checkSql : username
     //checkSql1: email
     try (Connection conn = connect();
-        PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-        PreparedStatement checkStmt1 = conn.prepareStatement(checkSql1);
-        PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+         PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+         PreparedStatement checkStmt1 = conn.prepareStatement(checkSql1);
+         PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
 
       // Kiểm tra xem username đã tồn tại chưa
       checkStmt.setString(1, account.getUsername());
@@ -223,8 +272,8 @@ public class DatabaseHelper {
     String deleteSql = "DELETE FROM accounts WHERE id= ?";
     String deleteSql1 = "DELETE FROM user_verification WHERE id= ?";
     try (Connection conn = connect();
-        PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-        PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
+         PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+         PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
       checkStmt.setInt(1, id);
       ResultSet rs = checkStmt.executeQuery();
       if (rs.next()) {
@@ -250,8 +299,8 @@ public class DatabaseHelper {
     List<Account> accounts = new ArrayList<>();
     String sql = "SELECT * FROM accounts";
     try (Connection conn = connect();
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql)) {
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
 
       while (rs.next()) {
         int id = rs.getInt("id");
@@ -266,6 +315,26 @@ public class DatabaseHelper {
       showWarningAlert("CAN NOT GET ALL ACCOUNTS");
     }
     return accounts;
+  }
+
+  public int getBorrowedQuantity(int userId, int documentId) {
+    int quantity = 0; // Khởi tạo số lượng mặc định
+    String sql = "SELECT quantityBorrow FROM borrow_return WHERE user_id = ? AND document_id = ?";
+
+    try (Connection conn = connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+      pstmt.setInt(1, userId);
+      pstmt.setInt(2, documentId);
+      ResultSet rs = pstmt.executeQuery();
+
+      if (rs.next()) {
+        quantity = rs.getInt("quantityBorrow"); // Lấy số lượng từ kết quả
+      }
+    } catch (SQLException e) {
+      e.printStackTrace(); // Xử lý ngoại lệ
+    }
+    return quantity; // Trả về số lượng mượn
   }
 
   private static void showWarningAlert(String message) {

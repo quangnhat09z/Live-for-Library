@@ -32,7 +32,7 @@ public abstract class Controller {
 
     @FXML
     public void handleBookButton() {
-        // Xử lý cho nút Button1
+        changeScene("/com/example/library/books-view.fxml", "Explore");
         System.out.println("Button1 clicked");
     }
 

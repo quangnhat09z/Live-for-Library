@@ -16,7 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -32,15 +31,14 @@ public class Login_LoginController {
     @FXML
     private Button comeToRegister;
     @FXML
-    private TextField username_Textile;
+    public TextField username_Textile;
     @FXML
     private TextField password_Textile;
-    @FXML
-    private TextField passwordTextField;
+
     @FXML
     private Label loginMessage;
-    @FXML
-    private CheckBox showPasswordCheckBox;
+
+    public static String usernameToBorrow = "f";
 
     @FXML
     public void initialize() {
@@ -48,26 +46,8 @@ public class Login_LoginController {
         username_Textile.requestFocus();
         username_Textile.setOnKeyPressed(this::handleEnterKey);
         password_Textile.setOnKeyPressed(this::handleEnterKey);
-
-
-        //Dong bo password
-        passwordTextField.textProperty().bindBidirectional(password_Textile.textProperty());
-        showPasswordCheckBox.setOnAction(event -> togglePasswordVisibility());
     }
 
-    private void togglePasswordVisibility() {
-        if (showPasswordCheckBox.isSelected()) {
-            passwordTextField.setVisible(true);
-            passwordTextField.setManaged(true);
-            password_Textile.setVisible(false);
-            password_Textile.setManaged(false);
-        } else {
-            passwordTextField.setVisible(false);
-            passwordTextField.setManaged(false);
-            password_Textile.setVisible(true);
-            password_Textile.setManaged(true);
-        }
-    }
 
     private void handleEnterKey(KeyEvent event) {
         // If Enter key is pressed, trigger the login button action
@@ -102,6 +82,7 @@ public class Login_LoginController {
                 loginMessage.setTextFill(Color.GREEN);
                 //Get id for setting
                 String username = username_Textile.getText();
+                usernameToBorrow = username;
                 SettingsController.setId(getId(username));
 
                 //Get role
@@ -212,5 +193,4 @@ public class Login_LoginController {
             System.out.println("Co loi o day");
         }
     }
-
 }
