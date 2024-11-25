@@ -11,17 +11,6 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class Main extends Application {
-  //Login
-
-  @Override
-  public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/login-login-view.fxml")));
-    primaryStage.setScene(new Scene(root, 565, 471));
-    primaryStage.initStyle(StageStyle.UNDECORATED);
-    primaryStage.setResizable(false);
-    primaryStage.show();
-  }
-
 
 //     @Override
 //    public void start(Stage primaryStage) throws Exception {
@@ -31,6 +20,14 @@ public class Main extends Application {
 //        primaryStage.setResizable(false);
 //        primaryStage.show();
 //    }
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/library/login-login-view.fxml")));
+    primaryStage.setScene(new Scene(root, 565, 471));
+    primaryStage.initStyle(StageStyle.UNDECORATED);
+    primaryStage.setResizable(false);
+    primaryStage.show();
+  }
 
 
 
