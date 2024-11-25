@@ -176,6 +176,17 @@ public class SearchAccountsController extends SearchController {
     changeButton.setOnAction(actionEvent -> handleChangeToManageButton());
     documentsButton.setOnAction(actionEvent -> handleChangeButton());
 
+    if (Controller.isDarkMode()) {
+      root.getStylesheets().clear();
+      root.getStylesheets().add(Objects.requireNonNull(
+              getClass().getResource("/CSSStyling/dark_search.css")).toExternalForm());
+
+    } else {
+      root.getStylesheets().clear();
+      root.getStylesheets().add(Objects.requireNonNull(
+              getClass().getResource("/CSSStyling/search.css")).toExternalForm());
+    }
+
     applySoundEffectsToButtons(root);
 
 

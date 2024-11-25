@@ -20,6 +20,7 @@ import com.example.library.model.searchDocument;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
@@ -132,6 +133,18 @@ public class SearchDocumentsController extends SearchController {
         changeInfoButton.setOnAction(actionEvent -> handleChangeInfoButton());
         manageButton.setOnAction(actionEvent -> handleChangeToManageButton());
         accountsButton.setOnAction(actionEvent -> handleChangeButton());
+
+        if (Controller.isDarkMode()) {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_search.css")).toExternalForm());
+
+        } else {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/search.css")).toExternalForm());
+        }
+
         applySoundEffectsToButtons(root);
     }
 

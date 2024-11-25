@@ -155,30 +155,50 @@
     -fx-scale-y: 1.05;             /* Phóng to nút theo chiều dọc */
 }
 
-.list_pane {
+.table_pane {
     -fx-border-color: white;       /* Màu viền trắng */
     -fx-font-family: "Times New Roman";
     -fx-background-radius: 15;
     -fx-border-radius: 15;
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: black;
     -fx-padding: 15;               /* Khoảng đệm */
 }
 
-.list {
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-border-color: #B0E2FF; /* Màu viền xanh đậm phù hợp với Dark Mode */
-    -fx-font-family: "Times New Roman";
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-background-color: #2E2E2E; /* Màu nền tối */
+.table_view {
+    -fx-border-color: #B0E2FF; /* Viền xanh đậm */
+    -fx-border-radius: 0px; /* Bo góc */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-size: 14px; /* Kích thước chữ */
+    -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
     -fx-text-fill: white; /* Màu chữ trắng */
 }
 
-.list_label {
-    -fx-background-color: white;
-    -fx-font-family: "Times New Roman";
-    -fx-font-size: 35px;
-    -fx-border-radius: 15;
-    -fx-text-fill: black; /* Màu chữ trắng */
+.table_view .column-header {
+    -fx-background-color: #4A4A4A; /* Màu nền tối cho tiêu đề cột */
+    -fx-text-fill: white; /* Màu chữ trắng cho tiêu đề cột */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman cho tiêu đề cột */
+    -fx-font-size: 15px; /* Kích thước chữ cho tiêu đề cột */
+    -fx-font-weight: bold; /* Chữ đậm cho tiêu đề cột */
+    -fx-border-color: #4A4A4A; /* Viền xanh đậm cho tiêu đề cột */
+    -fx-border-width: 1px; /* Độ dày viền cho tiêu đề cột */
 }
+
+.table_view .table-row-cell {
+    -fx-background-color: white; /* Màu nền tối cho hàng */
+    -fx-text-fill: white; /* Màu chữ trắng cho hàng */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman cho hàng */
+    -fx-font-size: 14px; /* Kích thước chữ cho hàng */
+    -fx-border-color: #4A4A4A; /* Viền xanh đậm cho hàng */
+    -fx-border-width: 1px; /* Độ dày viền cho hàng */
+}
+
+.table_view .table-row-cell:selected {
+    -fx-background-color: #555555; /* Màu nền xám khi chọn hàng */
+    -fx-text-fill: white; /* Màu chữ trắng khi chọn hàng */
+}
+
+.table_view .table-row-cell:filled:hover {
+    -fx-background-color: #666666; /* Màu nền xám nhạt khi hover */
+    -fx-text-fill: white; /* Màu chữ trắng khi hover */
+}
+

@@ -15,11 +15,10 @@
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.SearchDocumentsController">
+      prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.SearchDocumentsController">
     <children>
-        <VBox prefHeight="717.0" prefWidth="200.0">
+        <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
                 <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                     <children>
@@ -125,8 +124,7 @@
         </VBox>
         <VBox>
             <children>
-                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0" style="-fx-background-color: #353A56;"
-                      stylesheets="@../../../CSSStyling/styleAccount.css">
+                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0">
                     <children>
                         <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0"
                                    prefWidth="150.0" styleClass="button_main" text="Documents"/>
@@ -138,33 +136,25 @@
                         </JFXButton>
                     </children>
                 </Pane>
-                <AnchorPane prefHeight="600.0" prefWidth="1100.0" styleClass="backgroundInSearchScreen"
-                            stylesheets="@../../../CSSStyling/styleDocuments.css">
+                <AnchorPane prefHeight="600.0" prefWidth="1100.0" styleClass="background">
                     <children>
                         <TextField fx:id="idField" layoutX="75.0" layoutY="50.0" prefHeight="35.0" prefWidth="70.0"
-                                   promptText="ID" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
+                                   promptText="ID" styleClass="text_field"/>
                         <TextField fx:id="titleField" layoutX="145.0" layoutY="50.0" prefHeight="35.0" prefWidth="200.0"
-                                   promptText="Title" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
+                                   promptText="Title" styleClass="text_field"/>
                         <TextField fx:id="authorField" layoutX="345.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="175.0" promptText="Author" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
+                                   prefWidth="175.0" promptText="Author" styleClass="text_field"/>
                         <TextField fx:id="publicYearField" layoutX="520.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="100.0" promptText="Publication year" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
+                                   prefWidth="100.0" promptText="Publication year" styleClass="text_field"/>
                         <TextField fx:id="publisherField" layoutX="620.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="200.0" promptText="Publisher" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
+                                   prefWidth="200.0" promptText="Publisher" styleClass="text_field"/>
                         <TextField fx:id="genreField" layoutX="820.0" layoutY="50.0" prefHeight="35.0" prefWidth="120.0"
-                                   promptText="Genre" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
+                                   promptText="Genre" styleClass="text_field"/>
                         <TextField fx:id="quantityField" layoutX="940.0" layoutY="50.0" prefHeight="35.0"
-                                   prefWidth="85.0" promptText="Quantity" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <Button fx:id="searchButton" defaultButton="true" layoutX="131.0" layoutY="115.0"
+                                   prefWidth="85.0" promptText="Quantity" styleClass="text_field"/>
+                        <Button fx:id="searchButton" defaultButton="true" layoutX="100.0" layoutY="115.0"
                                 mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="button_show"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="SEARCH" textFill="YELLOW">
+                                text="SEARCH" textFill="YELLOW">
                             <font>
                                 <Font name="System Bold" size="13.0"/>
                             </font>
@@ -172,23 +162,22 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Button>
-                        <Button fx:id="deleteButton" layoutX="351.0" layoutY="115.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="150.0" styleClass="button_delete"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="DELETE" textFill="#cccc99">
+                        <Button fx:id="deleteButton" layoutX="350.0" layoutY="115.0" mnemonicParsing="false"
+                                prefHeight="55.0" prefWidth="150.0" styleClass="button_delete" text="DELETE"
+                                textFill="#cccc99">
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Button>
-                        <Button fx:id="manageButton" layoutX="832.0" layoutY="114.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="150.0" styleClass="button_change"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="UPDATE" textFill="#cccc99">
+                        <Button fx:id="manageButton" layoutX="850.0" layoutY="115.0" mnemonicParsing="false"
+                                prefHeight="55.0" prefWidth="150.0" styleClass="button_change" text="MANAGE"
+                                textFill="#cccc99">
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Button>
-                        <Button fx:id="changeInfoButton" layoutX="596.0" layoutY="115.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="150.0" styleClass="button_changeInfo"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="CHANGE INFO"
+                        <Button fx:id="changeInfoButton" layoutX="600.0" layoutY="115.0" mnemonicParsing="false"
+                                prefHeight="55.0" prefWidth="150.0" styleClass="button_changeInfo" text="CHANGE INFO"
                                 textFill="#cccc99">
                             <cursor>
                                 <Cursor fx:constant="HAND"/>
@@ -196,12 +185,10 @@
                         </Button>
 
                         <AnchorPane layoutX="25.0" layoutY="200.0" opacity="0.91" prefHeight="375.0" prefWidth="1050.0"
-                                    style="-fx-background-color: #000000;" styleClass="button"
-                                    stylesheets="@../../../CSSStyling/styleAccount.css">
+                                    styleClass="table_pane">
                             <children>
                                 <TableView fx:id="resultsTableView" layoutX="50.0" layoutY="25.0" prefHeight="325.0"
-                                           prefWidth="950.0" styleClass="list"
-                                           stylesheets="@../../../CSSStyling/styleDocuments.css">
+                                           prefWidth="950.0" styleClass="table_view">
                                     <columns>
                                         <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
                                         <TableColumn fx:id="titleColumn" prefWidth="186.39999389648438" text="Title"/>
