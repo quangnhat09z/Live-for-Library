@@ -1,0 +1,174 @@
+#bar {
+    -fx-background-color:  #353A56;
+}
+
+.button_main {
+    -fx-background-color: #222222;
+    -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: white;           /* Màu chữ đen */
+    -fx-font-size: 15px;            /* Kích thước chữ */
+    -fx-font-weight: bold;          /* Chữ đậm */
+    -fx-border-color: black;       /* Màu viền đen */
+    -fx-border-width: 2px;         /* Độ dày viền */
+    -fx-border-radius: 6;          /* Bo góc viền giống nút */
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.button_not_main {
+    -fx-background-color: white;
+    -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: black;           /* Màu chữ đen */
+    -fx-font-size: 15px;            /* Kích thước chữ */
+    -fx-font-weight: bold;          /* Chữ đậm */
+    -fx-border-color: black;       /* Màu viền đen */
+    -fx-border-width: 2px;         /* Độ dày viền */
+    -fx-border-radius: 6;          /* Bo góc viền giống nút */
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.button_not_main:hover {
+    -fx-background-color: yellow ; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+
+.background {
+    -fx-background-color:  #FEF8F3;
+}
+
+.info_pane {
+    -fx-background-color:  #C0C0C0;
+    -fx-background-radius: 15;
+    -fx-border-radius : 15;
+    -fx-border-color: black;
+    -fx-border:1px;
+    -fx-padding:6px;
+}
+
+.label_pane {
+    -fx-background-color:  #FEF8F3;
+}
+
+.label {
+    -fx-background-color:  #C0C0C0;
+    -fx-font-family: "Times New Roman";
+}
+
+.text_field {
+    -fx-background-color:  #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-font-family: "Times New Roman";
+    -fx-background-radius: 15;
+    -fx-border-radius : 15;
+}
+
+.combo-box {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 5;
+    -fx-background-color: white;
+    -fx-border-color: black ; /* Teal border color */
+    -fx-text-fill: white;
+     -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-border-width: 2px;
+}
+
+.combo-box.list-cell {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: black;
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-padding: 5;
+}
+
+.button_delete,.button_add,.button_show,.button_change, .button_changeInfo {
+    -fx-background-color: white;
+    -fx-background-radius: 6;      /* Bo góc 6px */
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: black;           /* Màu chữ đen */
+    -fx-font-size: 15px;            /* Kích thước chữ */
+    -fx-font-weight: bold;          /* Chữ đậm */
+    -fx-padding: 15;                /* Khoảng cách đệm */
+    -fx-border-color: black;       /* Màu viền đen */
+    -fx-border-width: 2px;         /* Độ dày viền */
+    -fx-border-radius: 6;          /* Bo góc viền giống nút */
+    -fx-background-insets: 0, 0;   /* Đảm bảo nền và viền vừa khít */
+    -fx-transition: all 0.9s ease-in-out; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.button_delete:hover {
+    -fx-background-color: red; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+.button_add:hover {
+    -fx-background-color: #00FF00; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+
+.button_show:hover {
+    -fx-background-color: #33CCFF ; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+
+.button_change:hover {
+    -fx-background-color: yellow ; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+.button_changeInfo:hover {
+    -fx-background-color: green; /* Màu nền khi hover */
+    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-border-color: black;     /* Màu viền khi hover */
+    -fx-background-radius: 6;      /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+}
+
+.list_pane {
+    -fx-border-color: #000000;
+    -fx-font-family: "Times New Roman";
+    -fx-background-radius: 15;
+    -fx-border-radius : 15;
+    -fx-background-color: #000000; /* Màu nền vàng */
+    -fx-background-radius: 15;      /* Bo góc 20px */
+    -fx-padding: 15;                /* Khoảng đệm */
+}
+
+.list {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-color: #000080;
+    -fx-font-family: "Times New Roman";
+    -fx-background-radius: 15;
+    -fx-border-radius : 15;
+}
+
+.list_label {
+    -fx-background-color: black;
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 35;
+    -fx-border-radius : 15;
+}

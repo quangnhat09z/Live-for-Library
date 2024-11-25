@@ -42,6 +42,7 @@
 }
 
 .list {
-    -fx-font-weight: bold; -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
 }
 

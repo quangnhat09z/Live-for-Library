@@ -95,10 +95,6 @@
     -fx-padding: 5;
 }
 
-#bar {
-    -fx-background-color: gray;
-}
-
 .button_main {
     -fx-background-color: #222222;
     -fx-background-radius: 6;      /* Bo góc 6px */

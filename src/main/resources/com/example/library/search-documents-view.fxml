@@ -139,29 +139,29 @@
                     </children>
                 </Pane>
                 <AnchorPane prefHeight="600.0" prefWidth="1100.0" styleClass="backgroundInSearchScreen"
-                            stylesheets="@../../../CSSStyling/styleDoccuments.css">
+                            stylesheets="@../../../CSSStyling/styleDocuments.css">
                     <children>
                         <TextField fx:id="idField" layoutX="75.0" layoutY="50.0" prefHeight="35.0" prefWidth="70.0"
                                    promptText="ID" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="titleField" layoutX="145.0" layoutY="50.0" prefHeight="35.0" prefWidth="200.0"
                                    promptText="Title" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="authorField" layoutX="345.0" layoutY="50.0" prefHeight="35.0"
                                    prefWidth="175.0" promptText="Author" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="publicYearField" layoutX="520.0" layoutY="50.0" prefHeight="35.0"
                                    prefWidth="100.0" promptText="Publication year" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="publisherField" layoutX="620.0" layoutY="50.0" prefHeight="35.0"
                                    prefWidth="200.0" promptText="Publisher" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="genreField" layoutX="820.0" layoutY="50.0" prefHeight="35.0" prefWidth="120.0"
                                    promptText="Genre" style="-fx-border-color: #000080;" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="quantityField" layoutX="940.0" layoutY="50.0" prefHeight="35.0"
                                    prefWidth="85.0" promptText="Quantity" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <Button fx:id="searchButton" defaultButton="true" layoutX="131.0" layoutY="115.0"
                                 mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="button_show"
                                 stylesheets="@../../../CSSStyling/styleAccount.css" text="SEARCH" textFill="YELLOW">
@@ -201,7 +201,7 @@
                             <children>
                                 <TableView fx:id="resultsTableView" layoutX="50.0" layoutY="25.0" prefHeight="325.0"
                                            prefWidth="950.0" styleClass="list"
-                                           stylesheets="@../../../CSSStyling/styleDoccuments.css">
+                                           stylesheets="@../../../CSSStyling/styleDocuments.css">
                                     <columns>
                                         <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID"/>
                                         <TableColumn fx:id="titleColumn" prefWidth="186.39999389648438" text="Title"/>

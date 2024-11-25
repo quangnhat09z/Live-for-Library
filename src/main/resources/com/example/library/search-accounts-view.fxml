@@ -143,7 +143,7 @@
                     </children>
                 </Pane>
                 <AnchorPane prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #FEF;"
-                            stylesheets="@../../../CSSStyling/styleDoccuments.css">
+                            stylesheets="@../../../CSSStyling/styleDocuments.css">
                     <children>
                         <AnchorPane layoutX="6.0" layoutY="231.0" opacity="0.91" prefHeight="350.0" prefWidth="900.0"
                                     style="-fx-background-color: #000000;" styleClass="button"
@@ -151,7 +151,7 @@
                             <children>
                                 <TableView fx:id="resultsTableView" layoutX="39.0" layoutY="20.0" prefHeight="332.0"
                                            prefWidth="1006.0" styleClass="list"
-                                           stylesheets="@../../../CSSStyling/styleDoccuments.css">
+                                           stylesheets="@../../../CSSStyling/styleDocuments.css">
                                     <columns>
                                         <TableColumn fx:id="idColumn" prefWidth="47.224945068359375" text="ID"/>
                                         <TableColumn fx:id="usernameColumn" prefWidth="99.26419067382812"

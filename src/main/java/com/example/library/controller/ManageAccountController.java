@@ -8,6 +8,7 @@ import static com.example.library.model.Validator.checkUsername;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -70,6 +71,18 @@ public class ManageAccountController extends ManageController {
     deleteButton.setOnAction(actionEvent -> handleDeleteButton());
     searchButton.setOnAction(actionEvent -> handleSearchButton());
     documentsButton.setOnAction(actionEvent -> handleChangeButton());
+
+    if (Controller.isDarkMode()) {
+      root.getStylesheets().clear();
+      root.getStylesheets().add(Objects.requireNonNull(
+              getClass().getResource("/CSSStyling/dark_manage_accounts.css")).toExternalForm());
+
+    } else {
+      root.getStylesheets().clear();
+      root.getStylesheets().add(Objects.requireNonNull(
+              getClass().getResource("/CSSStyling/manage_accounts.css")).toExternalForm());
+
+    }
 
     applySoundEffectsToButtons(root);
   }

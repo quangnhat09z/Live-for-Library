@@ -141,7 +141,7 @@
                 </Pane>
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
                             prefHeight="600.0" prefWidth="1100.0" styleClass="background"
-                            stylesheets="@../../../CSSStyling/styleDoccuments.css">
+                            stylesheets="@../../../CSSStyling/styleDocuments.css">
                     <children>
                         <Pane layoutX="440.0" layoutY="50.0" opacity="0.8" prefHeight="540.0" prefWidth="635.0"
                               style="-fx-background-color: #000000;">
@@ -185,25 +185,25 @@
                         </Pane>
                         <TextField fx:id="titleField" layoutX="190.0" layoutY="75.0" prefHeight="35.0" prefWidth="225.0"
                                    promptText="Scene Builder" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="authorField" layoutX="190.0" layoutY="125.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="publicYearField" layoutX="190.0" layoutY="175.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="2024" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="publisherField" layoutX="190.0" layoutY="225.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="genreField" layoutX="190.0" layoutY="275.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="quantityField" layoutX="190.0" layoutY="325.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <TextField fx:id="imageLinkField" layoutX="190.0" layoutY="375.0" prefHeight="35.0"
                                    prefWidth="225.0" promptText="Optional" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDoccuments.css"/>
+                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
                         <Pane layoutX="65.0" layoutY="325.0" prefHeight="35.0" prefWidth="115.0"
                               style="-fx-background-color: #9C9C9C;" styleClass="pane">
                             <children>
