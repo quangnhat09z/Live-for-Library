@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -17,7 +16,7 @@
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #FEF8F3;" styleClass="root"
-      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.library.controller.ManageDocumentsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
@@ -124,10 +123,9 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <VBox>
+        <VBox prefHeight="650.0" prefWidth="1100.0">
             <children>
-                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0" style="-fx-background-color: #353A56;"
-                      stylesheets="@../../../CSSStyling/styleAccount.css">
+                <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0">
                     <children>
                         <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0"
                                    prefWidth="150.0" styleClass="button_main" text="Documents"/>
@@ -140,157 +138,144 @@
                     </children>
                 </Pane>
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="600.0" prefWidth="1100.0" styleClass="background"
-                            stylesheets="@../../../CSSStyling/styleDocuments.css">
+                            prefHeight="600.0" prefWidth="1100.0" styleClass="background">
                     <children>
-                        <Pane layoutX="440.0" layoutY="50.0" opacity="0.8" prefHeight="540.0" prefWidth="635.0"
-                              style="-fx-background-color: #000000;">
-                            <styleClass>
-                                <String fx:value="pane"/>
-                                <String fx:value="border"/>
-                            </styleClass>
+                        <Pane layoutX="20.0" layoutY="25.0" prefHeight="540.0" prefWidth="400.0" styleClass="info_pane">
                             <children>
-                                <ListView fx:id="documentListView" layoutX="10.0" layoutY="12.0" prefHeight="479.0"
-                                          prefWidth="617.0" stylesheets="@../../../CSSStyling/styleAccount.css">
-                                    <styleClass>
-                                        <String fx:value="list"/>
-                                        <String fx:value="border"/>
-                                    </styleClass>
-                                </ListView>
-                                <Label alignment="CENTER" layoutX="9.0" layoutY="491.0" prefHeight="43.0"
-                                       prefWidth="636.0" text="Documents" textAlignment="CENTER" textFill="WHITE">
+                                <Pane layoutX="25.0" layoutY="25.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Title"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="titleField" layoutX="170.0" layoutY="25.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="Scene Builder" styleClass="text_field"/>
+                                <Pane layoutX="25.0" layoutY="75.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Author"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="authorField" layoutX="170.0" layoutY="75.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="Kiều Văn Tuyên" styleClass="text_field"/>
+                                <Pane layoutX="25.0" layoutY="125.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Publication year"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="publicYearField" layoutX="170.0" layoutY="125.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="2024" styleClass="text_field"/>
+                                <Pane layoutX="25.0" layoutY="175.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Publisher"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="publisherField" layoutX="170.0" layoutY="175.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="Đại học Quốc gia" styleClass="text_field"/>
+                                <Pane layoutX="25.0" layoutY="225.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Genre"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="genreField" layoutX="170.0" layoutY="225.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="Sách khoa học" styleClass="text_field"/>
+                                <Pane layoutX="25.0" layoutY="275.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Quantity"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="quantityField" layoutX="170.0" layoutY="275.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="1, 2" styleClass="text_field"/>
+                                <Pane layoutX="25.0" layoutY="325.0" prefHeight="35.0" prefWidth="115.0"
+                                      styleClass="label_pane">
+                                    <children>
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Image Link"
+                                               textFill="#202020">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="imageLinkField" layoutX="170.0" layoutY="325.0" prefHeight="35.0"
+                                           prefWidth="225.0" promptText="Optional" styleClass="text_field"/>
+                                <Button fx:id="showButton" layoutX="250.0" layoutY="390.0" mnemonicParsing="false"
+                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_show" text="LIST"
+                                        textFill="YELLOW">
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="deleteButton" layoutX="25.0" layoutY="470.0" mnemonicParsing="false"
+                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_delete" text="DELETE"
+                                        textFill="#cccc99">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="addButton" layoutX="25.0" layoutY="390.0" mnemonicParsing="false"
+                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_add" text="ADD"
+                                        textFill="#cccc99">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="changeButton" layoutX="250.0" layoutY="470.0" mnemonicParsing="false"
+                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_change" text="SEARCH"
+                                        textFill="#cccc99">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="440.0" layoutY="25.0" opacity="0.8" prefHeight="540.0" prefWidth="635.0"
+                              styleClass="list_pane">
+                            <children>
+                                <ListView fx:id="documentListView" layoutX="10.0" layoutY="10.0" prefHeight="480.0"
+                                          prefWidth="617.0" styleClass="list"/>
+                                <Label alignment="CENTER" layoutX="5.0" layoutY="491.0" prefHeight="43.0"
+                                       prefWidth="625.0" styleClass="list_label" text="Documents" textAlignment="CENTER"
+                                       textFill="WHITE">
                                     <font>
                                         <Font name="Palatino Bold" size="35.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Button fx:id="changeButton" layoutX="275.0" layoutY="500.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="120.0" styleClass="button_change"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="SEARCH" textFill="#cccc99">
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <Pane layoutX="65.0" layoutY="75.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0" text="Title"
-                                       textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <TextField fx:id="titleField" layoutX="190.0" layoutY="75.0" prefHeight="35.0" prefWidth="225.0"
-                                   promptText="Scene Builder" styleClass="border"
-                                   stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <TextField fx:id="authorField" layoutX="190.0" layoutY="125.0" prefHeight="35.0"
-                                   prefWidth="225.0" promptText="Kiều Văn Tuyên" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <TextField fx:id="publicYearField" layoutX="190.0" layoutY="175.0" prefHeight="35.0"
-                                   prefWidth="225.0" promptText="2024" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <TextField fx:id="publisherField" layoutX="190.0" layoutY="225.0" prefHeight="35.0"
-                                   prefWidth="225.0" promptText="Đại học Quốc gia" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <TextField fx:id="genreField" layoutX="190.0" layoutY="275.0" prefHeight="35.0"
-                                   prefWidth="225.0" promptText="Sách khoa học" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <TextField fx:id="quantityField" layoutX="190.0" layoutY="325.0" prefHeight="35.0"
-                                   prefWidth="225.0" promptText="1, 2" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <TextField fx:id="imageLinkField" layoutX="190.0" layoutY="375.0" prefHeight="35.0"
-                                   prefWidth="225.0" promptText="Optional" style="-fx-border-color: #000080;"
-                                   styleClass="border" stylesheets="@../../../CSSStyling/styleDocuments.css"/>
-                        <Pane layoutX="65.0" layoutY="325.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0"
-                                       text="Quantity" textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Button fx:id="showButton" layoutX="275.0" layoutY="425.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="120.0" styleClass="button_show"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="LIST" textFill="YELLOW">
-                            <font>
-                                <Font name="System Bold" size="13.0"/>
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <Button fx:id="deleteButton" layoutX="80.0" layoutY="500.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="120.0" styleClass="button_delete"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="DELETE" textFill="#cccc99">
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <Button fx:id="addButton" layoutX="80.0" layoutY="425.0" mnemonicParsing="false"
-                                prefHeight="55.0" prefWidth="120.0" styleClass="button_add"
-                                stylesheets="@../../../CSSStyling/styleAccount.css" text="ADD" textFill="#cccc99">
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                        <Pane layoutX="65.0" layoutY="175.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label layoutX="23.0" layoutY="8.0"/>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0"
-                                       text="Publication year" textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="65.0" layoutY="125.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0"
-                                       text="Author" textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="65.0" layoutY="225.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0"
-                                       text="Publisher" textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="65.0" layoutY="275.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0" text="Genre"
-                                       textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="65.0" layoutY="375.0" prefHeight="35.0" prefWidth="115.0"
-                              style="-fx-background-color: #9C9C9C;" styleClass="pane">
-                            <children>
-                                <Label alignment="CENTER" layoutY="7.5" prefHeight="20.0" prefWidth="115.0"
-                                       text="Image Link" textFill="#202020">
-                                    <font>
-                                        <Font size="14.0"/>
                                     </font>
                                 </Label>
                             </children>

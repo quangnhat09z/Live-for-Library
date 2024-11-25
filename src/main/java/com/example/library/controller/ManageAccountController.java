@@ -75,13 +75,12 @@ public class ManageAccountController extends ManageController {
     if (Controller.isDarkMode()) {
       root.getStylesheets().clear();
       root.getStylesheets().add(Objects.requireNonNull(
-              getClass().getResource("/CSSStyling/dark_manage_accounts.css")).toExternalForm());
+              getClass().getResource("/CSSStyling/dark_manage.css")).toExternalForm());
 
     } else {
       root.getStylesheets().clear();
       root.getStylesheets().add(Objects.requireNonNull(
-              getClass().getResource("/CSSStyling/manage_accounts.css")).toExternalForm());
-
+              getClass().getResource("/CSSStyling/manage.css")).toExternalForm());
     }
 
     applySoundEffectsToButtons(root);

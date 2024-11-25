@@ -126,7 +126,7 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <VBox prefHeight="650.0" prefWidth="1100.0" stylesheets="@../../../CSSStyling/dark_manage_accounts.css">
+        <VBox prefHeight="650.0" prefWidth="1100.0">
             <children>
                 <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0">
                     <children>

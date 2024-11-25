@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import javafx.fxml.FXMLLoader;
@@ -80,6 +81,17 @@ public class ManageDocumentsController extends ManageController {
         showButton.setOnAction(actionEvent -> handleShowButton());
         changeButton.setOnAction(actionEvent -> handleSearchButton());
         accountButton.setOnAction(actionEvent -> handleChangeButton());
+
+        if (Controller.isDarkMode()) {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/dark_manage.css")).toExternalForm());
+
+        } else {
+            root.getStylesheets().clear();
+            root.getStylesheets().add(Objects.requireNonNull(
+                    getClass().getResource("/CSSStyling/manage.css")).toExternalForm());
+        }
 
         applySoundEffectsToButtons(root);
     }
