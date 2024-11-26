@@ -1,8 +1,5 @@
 package com.example.library.controller;
 
-
-import javafx.scene.control.Alert;
-
 public abstract class ManageController extends Controller {
     protected abstract void handleAddButton();
     protected abstract void handleShowButton();

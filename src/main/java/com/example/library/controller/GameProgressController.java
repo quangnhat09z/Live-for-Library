@@ -26,8 +26,6 @@ public class GameProgressController extends Controller{
     @FXML
     private Button exploreButton;
     @FXML
-    private Button mainButton;
-    @FXML
     private JFXButton playButton;
     @FXML
     private Circle myCircle;
@@ -38,7 +36,6 @@ public class GameProgressController extends Controller{
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
-        mainButton.setOnAction(actionEvent -> handleGameButton());
         playButton.setOnAction(actionEvent -> handlePlayButton());
 
         applySoundEffectsToButtons(root);
