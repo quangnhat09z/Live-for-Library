@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.control.Alert;
 
+import static com.example.library.model.Alert.showSuccessAlert;
+import static com.example.library.model.Alert.showWarningAlert;
+
 public class DatabaseHelper {
 
   public static final String URL = "jdbc:mysql://localhost:3306/library";
@@ -29,7 +32,8 @@ public class DatabaseHelper {
   public void addDocument(Document document) throws SQLException {
     String checkSql = "SELECT * FROM documents WHERE title = ?";
     String updateSql = "UPDATE documents SET quantity = quantity + ? WHERE title = ?";
-    String insertSql = "INSERT INTO documents (title, author, publicYear, publisher, genre, quantity, imageLink) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    String insertSql = "INSERT INTO documents (" +
+            "title, author, publicYear, publisher, genre, quantity, imageLink) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     try (Connection conn = connect();
          PreparedStatement checkStmt = conn.prepareStatement(checkSql);
@@ -335,20 +339,6 @@ public class DatabaseHelper {
       e.printStackTrace(); // Xử lý ngoại lệ
     }
     return quantity; // Trả về số lượng mượn
-  }
-
-  private static void showWarningAlert(String message) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setContentText(message);
-    alert.showAndWait();
-  }
-
-  private static void showSuccessAlert(String message) {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
-    alert.setTitle("Success");
-    alert.setHeaderText("SUCCESS ADD ACCOUNT");
-    alert.setContentText(message);
-    alert.showAndWait();
   }
 
 }

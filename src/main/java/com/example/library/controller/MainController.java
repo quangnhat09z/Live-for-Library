@@ -1,5 +1,6 @@
 package com.example.library.controller;
 
+import com.example.library.model.AudioManagement;
 import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseHelper;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 import java.nio.file.Paths;
 
@@ -58,6 +60,7 @@ public class MainController extends Controller {
     @FXML
     private Button userButton;
 
+    private static AudioManagement audioManagement;
     private static MediaPlayer mediaPlayer;
 
     @Override
@@ -66,7 +69,7 @@ public class MainController extends Controller {
         bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         gameButton.setOnAction(actionEvent -> handleGameButton());
-        if (!admin) {
+        if (!isAdmin()) {
             adminButton.setVisible(false);
         } else {
             adminButton.setOnAction(actionEvent -> handleAdminButton());
@@ -99,6 +102,9 @@ public class MainController extends Controller {
         } else if (mediaPlayer.getStatus() != MediaPlayer.Status.PLAYING) {
             mediaPlayer.play();
         }
+
+
+
 
         applySoundEffectsToButtons(root);
     }

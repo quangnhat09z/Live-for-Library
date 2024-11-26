@@ -8,6 +8,14 @@ import java.io.File;
 public class AudioManagement {
     private MediaPlayer mediaPlayer;
 
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+
+    public void setMediaPlayer(MediaPlayer mediaPlayer) {
+        this.mediaPlayer = mediaPlayer;
+    }
+
     public AudioManagement(String audioFilePath) {
         // Tạo đối tượng Media từ tệp âm thanh
         Media media = new Media(new File(audioFilePath).toURI().toString());

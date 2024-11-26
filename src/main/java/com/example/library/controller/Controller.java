@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 
 public abstract class Controller {
     private static boolean darkMode;
-    public static boolean admin;
+    private static boolean admin;
 
     public static boolean isDarkMode() {
         return darkMode;

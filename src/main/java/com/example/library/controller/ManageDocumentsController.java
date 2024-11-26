@@ -189,14 +189,6 @@ public class ManageDocumentsController extends ManageController {
         documentListView.setItems(documentStrings);
     }
 
-    public static void showSuccessAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
-        alert.setTitle("Success");
-        alert.setHeaderText("Operation Completed");
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
 
     @Override
     protected void changeScene(String fxmlPath, String title) {
