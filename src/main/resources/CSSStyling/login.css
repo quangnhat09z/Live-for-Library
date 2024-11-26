@@ -37,3 +37,18 @@
     -fx-background-radius : 7px;
     -fx-border-radius: 5px;
 }
+/* Tạo hiệu ứng chuyển đổi */
+.loginButton {
+    -fx-background-color: #fcfdff; /* Màu ban đầu */
+    -fx-text-fill: #000000; /* Màu chữ */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.loginButton:hover {
+    -fx-background-color: #007bff; /* Màu chuyển đổi */
+    -fx-text-fill: #ffffff; /* Màu chữ khi hover */
+}
+
