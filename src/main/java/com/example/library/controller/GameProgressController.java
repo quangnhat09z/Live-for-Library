@@ -87,7 +87,7 @@ public class GameProgressController extends Controller{
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
             Scene scene = new Scene(fxmlLoader.load(), 1300, 650);
-            Stage stage = (Stage) mainButton.getScene().getWindow();
+            Stage stage = (Stage) homeButton.getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle(title);
             stage.show();
