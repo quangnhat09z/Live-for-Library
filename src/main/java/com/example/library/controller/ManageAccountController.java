@@ -55,11 +55,11 @@ public class ManageAccountController extends ManageController {
   private ListView<String> accountListView;
   @FXML
   private Label ManageAccountMessage;
-  private DatabaseHelper dbHelper;
+  private DatabaseHelper databaseHelper;
 
   @Override
   public void initialize() {
-    dbHelper = new DatabaseHelper();
+    databaseHelper = new DatabaseHelper();
     roleComboBox.setItems(FXCollections.observableArrayList("admin", "user"));
 
     homeButton.setOnAction(actionEvent -> handleHomeButton());
@@ -140,7 +140,7 @@ public class ManageAccountController extends ManageController {
 
     try {
       Account newAccount = new Account(0, username, password, email, role);
-      dbHelper.addAccount(newAccount, this);
+      databaseHelper.addAccount(newAccount, this);
       ManageAccountMessage.setText("Add Account Successfully!");
       ManageAccountMessage.setTextFill(javafx.scene.paint.Color.GREEN);
       updateAccountList();
@@ -168,7 +168,7 @@ public class ManageAccountController extends ManageController {
       Optional<String> result = dialog.showAndWait();
       if (result.isPresent() && result.get().equalsIgnoreCase("YES")) {
         try {
-          dbHelper.deleteAccount(id);
+          databaseHelper.deleteAccount(id);
           updateAccountList();
           ManageAccountMessage.setText("Account have been deleted!");
           ManageAccountMessage.setTextFill(javafx.scene.paint.Color.GREEN);
@@ -200,7 +200,7 @@ public class ManageAccountController extends ManageController {
   }
 
   public void updateAccountList() {
-    List<Account> accounts = dbHelper.getAllAcounts();
+    List<Account> accounts = databaseHelper.getAllAcounts();
     ObservableList<String> accountStrings = FXCollections.observableArrayList();
     for (Account acc : accounts) {
       accountStrings.add(acc.getId() + " - " + acc.getUsername() + " - " + acc.getPassword() + " - "

@@ -69,7 +69,6 @@ public class ManageDocumentsController extends ManageController {
     private Button accountButton;
 
     private DatabaseHelper databaseHelper = new DatabaseHelper(); // Initialize DatabaseHelper
-    private static final String API_KEY = "YOUR_API_KEY"; // Replace with your API key
 
     @Override
     public void initialize() {

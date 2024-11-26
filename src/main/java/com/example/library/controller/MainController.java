@@ -59,8 +59,7 @@ public class MainController extends Controller {
     private Button settingButton;
     @FXML
     private Button userButton;
-
-    private static AudioManagement audioManagement;
+    
     private static MediaPlayer mediaPlayer;
 
     @Override
