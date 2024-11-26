@@ -227,14 +227,6 @@ public class ManageAccountController extends ManageController {
     emailField.clear();
   }
 
-  public static void showSuccessAlert(String message) {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION); // Sử dụng INFORMATION
-    alert.setTitle("Success");
-    alert.setHeaderText("SUCCESS");
-    alert.setContentText(message);
-    alert.showAndWait();
-  }
-
   //
 //  public void onChangeToSearchView(ActionEvent event) {
 //    Stage stage = (Stage)usernameField.getScene().getWindow();

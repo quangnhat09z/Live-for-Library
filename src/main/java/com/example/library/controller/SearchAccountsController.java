@@ -1,5 +1,7 @@
 package com.example.library.controller;
 
+import static com.example.library.model.Alert.showInfoAlert;
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 import com.example.library.model.AccountChangeInfor;

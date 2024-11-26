@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class APIController extends Controller{
@@ -246,7 +247,7 @@ public class APIController extends Controller{
                 // Cập nhật hình ảnh document.getImageLink()
                 String imageLink = document.getImageLink();
                 if (imageLink == null || imageLink.isEmpty()) {
-                    SearchController.showWarningAlert("Không có hình ảnh");
+                    showWarningAlert("Không có hình ảnh");
                 } else {
                     Image image = new Image(imageLink, true);
                     myImageView.setImage(image);
@@ -275,7 +276,7 @@ public class APIController extends Controller{
                 Desktop.getDesktop().browse(new URI(googleSearchUrl));
                 System.out.println(googleSearchUrl);
             } else {
-               SearchController.showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
+               showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
             }
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();

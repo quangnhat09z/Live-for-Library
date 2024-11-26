@@ -19,7 +19,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-import static com.example.library.controller.SearchController.showInfoAlert;
+import static com.example.library.model.Alert.showInfoAlert;
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 
@@ -181,7 +182,7 @@ public class BooksController extends Controller {
                 System.out.println("ExploreController chưa được khởi tạo.");
             }
         } else {
-            SearchController.showWarningAlert("Vui lòng chọn một cuốn sách để mượn");
+            showWarningAlert("Vui lòng chọn một cuốn sách để mượn");
         }
     }
 

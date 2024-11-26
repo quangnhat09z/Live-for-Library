@@ -33,6 +33,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
+import static com.example.library.model.Alert.showInfoAlert;
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class BorrowController extends Controller {
@@ -209,7 +211,7 @@ public class BorrowController extends Controller {
             // Cập nhật hình ảnh document.getImageLink()
             String imageLink = document.getImageLink();
             if (imageLink == null || imageLink.isEmpty()) {
-                SearchController.showWarningAlert("Không có hình ảnh");
+                showWarningAlert("Không có hình ảnh");
             } else {
                 Image image = new Image(imageLink, true);
                 myImageView.setImage(image);
@@ -234,7 +236,7 @@ public class BorrowController extends Controller {
                 Desktop.getDesktop().browse(new URI(googleSearchUrl));
                 System.out.println(googleSearchUrl);
             } else {
-                ManageDocumentsController.showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
+                showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
             }
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
@@ -352,19 +354,19 @@ public class BorrowController extends Controller {
                             pstmtUpdate.setInt(2, documentId);
                             pstmtUpdate.executeUpdate();
 
-                            SearchController.showInfoAlert("Thành công!", "Thông báo", "Trả sách thành công");
+                            showInfoAlert("Thành công!", "Thông báo", "Trả sách thành công");
                         } catch (SQLException e) {
                             e.printStackTrace();
-                            SearchController.showWarningAlert("Đã xảy ra lỗi khi trả sách.");
+                            showWarningAlert("Đã xảy ra lỗi khi trả sách.");
                         }
                     } else {
-                        SearchController.showWarningAlert("Số lượng trả vượt quá số lượng đã mượn.");
+                        showWarningAlert("Số lượng trả vượt quá số lượng đã mượn.");
                     }
                 } else {
-                    SearchController.showWarningAlert("Không tìm thấy tài liệu.");
+                    showWarningAlert("Không tìm thấy tài liệu.");
                 }
             } catch (NumberFormatException e) {
-                SearchController.showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                showWarningAlert("Vui lòng nhập một số hợp lệ.");
             }
         }
     }

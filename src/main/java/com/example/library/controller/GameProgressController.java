@@ -44,10 +44,6 @@ public class GameProgressController extends Controller{
         applySoundEffectsToButtons(root);
     }
 
-    @Override
-    public void handleGameButton() {
-
-    }
 
     @FXML
     private void handlePlayButton() {

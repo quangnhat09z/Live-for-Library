@@ -114,6 +114,8 @@ public class GameController extends Controller {
 
     @Override
     public void initialize() {
+        MainController.getMediaPlayer().pause();
+
         gameMusic.playAudio();
         endPane.setVisible(false);
         buttonAgree.setOnAction(event -> {
@@ -128,7 +130,7 @@ public class GameController extends Controller {
         sunTrans(sunImage2);
         sunTrans(sunImage3);
 
-        // homeButton.setOnAction(actionEvent -> handleHomeButton());
+        homeButton.setOnAction(actionEvent -> handleHomeButton());
         bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
         mainButton.setOnAction(actionEvent -> handleGameButton());
@@ -467,6 +469,8 @@ public class GameController extends Controller {
             wrongTimes = 0;
             hasAnswered = false;
             isNextButtonClicked = false;
+
+            MainController.getMediaPlayer().play();
 
         } catch (IOException e) {
             e.printStackTrace();

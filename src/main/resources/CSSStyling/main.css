@@ -1,21 +1,21 @@
-.root{
-    -fx-background-color:#FEF8F3;
+.root {
+    -fx-background-color: #FEF8F3;
 }
 
 .background {
     -fx-background-color: #FEF8F3;
 }
 
-.side_anchorpane{
-    -fx-background-color:#353A56;
+.side_anchorpane {
+    -fx-background-color: #353A56;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
     -fx-border-style: solid;
 }
 
-.inner_pane{
-    -fx-background-color:#FEF8F3;
+.inner_pane {
+    -fx-background-color: #FEF8F3;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
@@ -24,7 +24,7 @@
 }
 
 .menu_pane {
-    -fx-background-color:#748CF1;
+    -fx-background-color: #748CF1;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
@@ -32,8 +32,8 @@
     -fx-border-color: #748CF1;
 }
 
-.most_inner_pane{
-    -fx-background-color:#6780E2;
+.most_inner_pane {
+    -fx-background-color: #6780E2;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
@@ -41,8 +41,8 @@
     -fx-border-color: #748CF1;
 }
 
-#mainButton{
-    -fx-background-color:#141313;
+#mainButton {
+    -fx-background-color: #141313;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
@@ -62,26 +62,33 @@
     -fx-background-radius: 50px;
     -fx-border-style: solid;
 }
+
 .btn_1:hover {
     -fx-background-color: #FFA500;
     -fx-text-fill: black;
 }
-.pane_11{
-      -fx-background-color:#ffffff;
+
+.pane_11 {
+    -fx-background-color: #ffffff;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
-     -fx-border-style: solid;
+    -fx-border-style: solid;
     -fx-border-color: black;
 }
-.pane_111{
-    -fx-background-color:#FD9999;
+
+.pane_111 {
+    -fx-background-color: #FD9999;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
-     -fx-border-style: solid;
+    -fx-border-style: solid;
     -fx-border-color: #FD9999;
-    
+}
+
+.loan_button {
+    -fx-border-radius: 20px;
+    -fx-border-color: #748CF1;
 }
 
 .pane_button {
@@ -97,12 +104,12 @@
 }
 
 .pane_button:hover {
-        -fx-background-color: #33CCFF ; /* Màu nền khi hover */
-        -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
-        -fx-border-color: black;     /* Màu viền khi hover */
-        -fx-background-radius: 50;      /* Bo góc viền khi hover */
-        -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
-        -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
+    -fx-background-color: #33CCFF; /* Màu nền khi hover */
+    -fx-text-fill: #000000; /* Màu chữ đen khi hover */
+    -fx-border-color: black; /* Màu viền khi hover */
+    -fx-background-radius: 50; /* Bo góc viền khi hover */
+    -fx-scale-x: 1.05; /* Phóng to nút theo chiều ngang */
+    -fx-scale-y: 1.05; /* Phóng to nút theo chiều dọc */
 }
 
 .pane_button:hover {
@@ -112,7 +119,7 @@
 }
 
 .text {
-     -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
+    -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
 }
 
 .text_area {

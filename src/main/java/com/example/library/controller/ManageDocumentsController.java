@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
 
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class ManageDocumentsController extends ManageController {

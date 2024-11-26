@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import static com.example.library.model.Alert.showInfoAlert;
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 
@@ -186,6 +188,7 @@ public class SearchDocumentsController extends SearchController {
 
             // Hộp thoại để nhập số lượng cần xóa
             TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Xóa tài liệu");
             dialog.setTitle("Xóa tài liệu");
             dialog.setHeaderText("Nhập số lượng sách cần xóa:");
             dialog.setContentText("Số lượng:");
