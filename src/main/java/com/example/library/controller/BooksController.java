@@ -28,7 +28,7 @@ public class BooksController extends Controller {
     private DatabaseHelper databaseHelper;
 
     public BooksController() {
-        databaseHelper = new DatabaseHelper(); // Khởi tạo đối tượng DatabaseHelper
+        databaseHelper = new DatabaseHelper();
     }
     private BorrowController borrowController;
 

@@ -56,6 +56,8 @@ public class MainController extends Controller {
     @FXML
     private Button adminButton;
     @FXML
+    private Button borrowedButton;
+    @FXML
     private Button settingButton;
     @FXML
     private Button userButton;
@@ -74,6 +76,7 @@ public class MainController extends Controller {
             adminButton.setOnAction(actionEvent -> handleAdminButton());
         }
         quitButton.setOnAction(actionEvent -> handleQuitButton());
+        borrowedButton.setOnAction(actionEvent -> handleBorrowedButton());
         settingButton.setOnAction(actionEvent -> handleSettingButton());
         userButton.setOnAction(actionEvent -> handleUserButton());
 
@@ -139,6 +142,10 @@ public class MainController extends Controller {
         }
     }
 
+    // Tạo một view tên như dưới, sau khi xong thì bỏ comment này và mở hàm changeScene.
+    private void handleBorrowedButton() {
+//        changeScene("/com/example/library/borrowed-books-view.fxml", "Borrowed");
+    }
 
     private void handleSettingButton() {
 //        changeScene("/com/example/library/settings-view.fxml", "Settings");

@@ -3,8 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +15,7 @@
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.library.controller.MainController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
@@ -133,7 +133,7 @@
                 <Pane layoutY="15.0" prefHeight="60.0" prefWidth="1100.0">
                     <children>
                         <JFXButton fx:id="settingButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
-                                   layoutX="925.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0"
+                                   layoutX="850.0" layoutY="5.0" prefHeight="50.0" prefWidth="50.0"
                                    styleClass="pane_button" text="Button">
                             <graphic>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
@@ -162,7 +162,7 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="adminButton" layoutX="800.0" layoutY="10.0" prefHeight="40.0"
+                        <JFXButton fx:id="adminButton" layoutX="725.0" layoutY="10.0" prefHeight="40.0"
                                    prefWidth="100.0" styleClass="pane_button" text="Admin">
                             <font>
                                 <Font name="Century Gothic Bold" size="15.0"/>
@@ -173,6 +173,19 @@
                             <font>
                                 <Font name="Times New Roman Bold" size="15.0"/>
                             </font>
+                        </JFXButton>
+                        <JFXButton fx:id="borrowedButton" contentDisplay="GRAPHIC_ONLY" layoutX="925.0" layoutY="5.0"
+                                   prefHeight="50.0" prefWidth="50.0" styleClass="pane_button">
+                            <graphic>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../images/books.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </JFXButton>
                     </children>
                 </Pane>
@@ -197,17 +210,6 @@
                 </Label>
                 <Pane fx:id="pane_11111" layoutX="35.0" layoutY="210.0" prefHeight="200.0" prefWidth="325.0"
                       styleClass="pane_111"/>
-                <Pane fx:id="inner_pane1" layoutX="1000.0" layoutY="100.0" prefHeight="80.0" prefWidth="80.0"
-                      styleClass="inner_pane">
-                    <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/books.png"/>
-                            </image>
-                        </ImageView>
-                    </children>
-                </Pane>
                 <Label layoutX="20.0" layoutY="425.0" styleClass="text" text="Recommend">
                     <font>
                         <Font name="Century Gothic" size="15.0"/>
