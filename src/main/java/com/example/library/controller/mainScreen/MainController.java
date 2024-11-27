@@ -311,7 +311,8 @@ public class MainController extends Controller {
     }
 
     private void setBookInfo() {
-        String query = "SELECT * FROM documents ORDER BY RAND() LIMIT 1";
+        // String query = "SELECT * FROM documents ORDER BY RAND() LIMIT 1";
+        String query = "select * FROM documents WHERE id BETWEEN 100000 AND 101775 ORDER BY RAND() LIMIT 1";
 
         try (Connection conn = DriverManager.getConnection(DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
              Statement stmt = conn.createStatement();

@@ -323,7 +323,7 @@ public class BorrowController extends Controller {
                             e.printStackTrace();
                         }
                     } else {
-                        System.out.println("The borrowed quantity exceeds the available quantity.");
+                        showWarningAlert("The borrowed quantity exceeds the available quantity.");
                     }
                 } else {
                     System.out.println("Document not found.");
