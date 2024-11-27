@@ -162,6 +162,18 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
+
+                        <Pane fx:id="userActionPane" layoutX="915.0" layoutY="60.0" prefHeight="100.0" prefWidth="150.0"
+                              styleClass="user-action-pane" visible="false">
+                            <children>
+                                <Label fx:id="usernameLabel" layoutX="10.0" layoutY="10.0" text="Username"/>
+                                <JFXButton fx:id="logoutButton" layoutX="10.0" layoutY="40.0" text="Logout"
+                                           styleClass="user-action-button"/>
+                                <JFXButton fx:id="paneQuitButton" layoutX="10.0" layoutY="70.0" text="Quit"
+                                           styleClass="user-action-button"/>
+                            </children>
+                        </Pane>
+
                         <JFXButton fx:id="adminButton" layoutX="725.0" layoutY="10.0" prefHeight="40.0"
                                    prefWidth="100.0" styleClass="pane_button" text="Admin">
                             <font>

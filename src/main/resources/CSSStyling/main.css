@@ -134,3 +134,32 @@
     -fx-background-radius: 10px; /* Bo góc nền */
 }
 
+/* Style for the user action pane */
+.user-action-pane {
+    -fx-background-color: lightgray;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+/* Style for buttons within the user action pane */
+.user-action-button {
+    -fx-background-color: #FFFFFF; /* White background */
+    -fx-border-color: #D2D2D2; /* Light gray border */
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-text-fill: black; /* Black text */
+    -fx-font-size: 12px; /* Font size 12px */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 5;
+}
+
+.user-action-button:hover {
+    -fx-background-color: #E0E0E0; /* Slightly darker background on hover */
+    -fx-border-color: black; /* Black border on hover */
+    -fx-cursor: hand;
+}
+

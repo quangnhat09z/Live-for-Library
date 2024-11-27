@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -63,6 +64,14 @@ public class MainController extends Controller {
     private Button settingButton;
     @FXML
     private Button userButton;
+    @FXML
+    private Pane userActionPane;
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Button logoutButton;
+    @FXML
+    private Button paneQuitButton;
     
     private static MediaPlayer mediaPlayer;
 
@@ -81,7 +90,10 @@ public class MainController extends Controller {
         borrowedButton.setOnAction(actionEvent -> handleBorrowedButton());
         settingButton.setOnAction(actionEvent -> handleSettingButton());
         userButton.setOnAction(actionEvent -> handleUserButton());
+        logoutButton.setOnAction(actionEvent -> handleLogout());
+        paneQuitButton.setOnAction(actionEvent -> handleQuitButton());
 
+        setUsername();
         setBookCount();
         setAccountCount();
         setBorrowedCount();
@@ -157,7 +169,23 @@ public class MainController extends Controller {
     }
 
     private void handleUserButton() {
-        System.out.println("UserButton clicked");
+        // Toggle the visibility of the userActionPane
+        boolean isVisible = userActionPane.isVisible();
+        userActionPane.setVisible(!isVisible);
+    }
+
+    private void handleLogout() {
+        // Implement your logout logic here
+        System.out.println("User logged out");
+    }
+
+    private void setUsername() {
+        // Implement your method to get the username
+        String username = "Username";
+        if (Controller.isAdmin()) {
+            username += " (Admin)";
+        }
+        usernameLabel.setText(username);
     }
 
     private void setSpeech(String filePath) {
