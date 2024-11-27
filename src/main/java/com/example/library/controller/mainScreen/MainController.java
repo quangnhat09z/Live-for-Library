@@ -71,7 +71,7 @@ public class MainController extends Controller {
     private Button logoutButton;
     @FXML
     private Button paneQuitButton;
-    
+
     private static MediaPlayer mediaPlayer;
 
     @Override
@@ -118,8 +118,6 @@ public class MainController extends Controller {
         } else if (mediaPlayer.getStatus() != MediaPlayer.Status.PLAYING) {
             mediaPlayer.play();
         }
-
-
 
 
         applySoundEffectsToButtons(root);
@@ -179,7 +177,6 @@ public class MainController extends Controller {
         }
     }
 
-
     private void handleSettingButton() {
 //        changeScene("/com/example/library/settings-view.fxml", "Settings");
         Stage stage = (Stage) settingButton.getScene().getWindow();
@@ -193,8 +190,21 @@ public class MainController extends Controller {
     }
 
     private void handleLogout() {
-        // Implement your logout logic here
-        System.out.println("User logged out");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Quit Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to log out?");
+
+        // Thêm nút xác nhận và hủy
+        ButtonType buttonTypeYes = new ButtonType("Yes");
+        ButtonType buttonTypeNo = new ButtonType("No");
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+
+        // Xử lý kết quả
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == buttonTypeYes) {
+            changeScene("/com/example/library/login-login-view.fxml", "Login", 565, 471);
+        }
     }
 
     private void setUsername() {
@@ -264,21 +274,18 @@ public class MainController extends Controller {
     }
 
     private void setBorrowedCount() {
-        String query = "SELECT sum(quantityBorrow) AS count FROM Borrow_Return";
-
-        try (Connection conn = DriverManager.getConnection(
-                DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
-
+        String query = "SELECT IFNULL(SUM(quantityBorrow), 0) AS sum FROM Borrow_Return WHERE user_id = ?";
+        try (Connection conn = DatabaseHelper.connect();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, SettingsController.getId());
+            ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                int count = rs.getInt("count");
+                int count = rs.getInt("sum");
                 borrowedCount.setText(String.valueOf(count));
             }
-
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-            bookCount.setText("");
+            borrowedCount.setText("");
             System.out.println("Không thể lấy số lượng sách đã mượn");
         }
     }
@@ -322,6 +329,26 @@ public class MainController extends Controller {
             Parent root = loader.load();
             Stage stage = (Stage) bookButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
+            stage.setTitle(title);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void changeScene(String fxmlPath, String title, int width, int height) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = (Stage) bookButton.getScene().getWindow();
+            Scene scene = new Scene(root, width, height);
+            Screen screen = Screen.getPrimary();
+            double screenWidth = screen.getVisualBounds().getWidth();
+            double screenHeight = screen.getVisualBounds().getHeight();
+            stage.setX((screenWidth - width) / 2);
+            stage.setY((screenHeight - height) / 2);
+            stage.show();
+
             stage.setTitle(title);
             stage.setScene(scene);
         } catch (IOException e) {

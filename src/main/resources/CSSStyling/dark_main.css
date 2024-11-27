@@ -123,3 +123,39 @@
     -fx-background-radius: 10px; /* Bo góc nền */
 }
 
+.user-action-pane {
+    -fx-background-color: #2E2E2E; /* Màu nền tối */
+    -fx-border-color: white; /* Màu viền trắng */
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+.user-action-label {
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 15px;
+    -fx-text-fill: white; /* Màu chữ trắng */
+    -fx-font-weight: bold;
+}
+
+/* Style for buttons within the user action pane */
+.user-action-button {
+    -fx-background-color: #3A3A3A; /* Màu nền tối */
+    -fx-border-color: white; /* Màu viền trắng */
+    -fx-border-width: 2;
+    -fx-border-radius: 0;
+    -fx-background-radius: 5;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: white; /* Màu chữ trắng */
+    -fx-font-size: 12px; /* Kích thước chữ 12px */
+    -fx-font-weight: bold; /* Chữ đậm */
+    -fx-padding: 5;
+}
+
+.user-action-button:hover {
+    -fx-background-color: #4A4A4A; /* Màu nền tối hơn khi hover */
+    -fx-border-color: white; /* Viền trắng khi hover */
+    -fx-cursor: hand;
+}
+

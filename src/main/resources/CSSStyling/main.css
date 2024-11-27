@@ -134,9 +134,8 @@
     -fx-background-radius: 10px; /* Bo góc nền */
 }
 
-/* Style for the user action pane */
 .user-action-pane {
-    -fx-background-color: lightgray;
+    -fx-background-color: #FEF8F3;
     -fx-border-color: black;
     -fx-border-width: 2;
     -fx-border-radius: 10;
@@ -144,13 +143,21 @@
     -fx-padding: 10;
 }
 
+.user-action-label {
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 15px;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
 /* Style for buttons within the user action pane */
 .user-action-button {
-    -fx-background-color: #FFFFFF; /* White background */
-    -fx-border-color: #D2D2D2; /* Light gray border */
+    -fx-background-color: #FEF8F3; /* White background */
+    -fx-border-color: #000000; /* Light gray border */
     -fx-border-width: 2;
-    -fx-border-radius: 5;
+    -fx-border-radius: 0;
     -fx-background-radius: 5;
+    -fx-font-family: "Times New Roman";
     -fx-text-fill: black; /* Black text */
     -fx-font-size: 12px; /* Font size 12px */
     -fx-font-weight: bold; /* Bold text */

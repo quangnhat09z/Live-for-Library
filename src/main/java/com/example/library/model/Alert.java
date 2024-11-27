@@ -1,5 +1,10 @@
 package com.example.library.model;
 
+import javafx.scene.control.ButtonType;
+import javafx.stage.Stage;
+
+import java.util.Optional;
+
 public class Alert {
     public static void showInfoAlert(String title, String header, String content) {
         javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);

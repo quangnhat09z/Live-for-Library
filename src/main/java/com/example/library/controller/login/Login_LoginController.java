@@ -104,11 +104,11 @@ public class Login_LoginController {
             if (queryResult.next() && queryResult.getInt(1) == 1) {
                 loginMessage.setText("Waiting for server...!");
                 loginMessage.setTextFill(Color.GREEN);
+
                 //Get id for setting
                 String username = username_Textile.getText();
                 usernameToBorrow = username;
                 SettingsController.setId(getId(username));
-
                 //Get role
                 Controller.setAdmin(isAdmin(username));
                 //Get dark_mode
