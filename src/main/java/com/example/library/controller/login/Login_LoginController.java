@@ -2,6 +2,7 @@ package com.example.library.controller.login;
 
 import com.example.library.controller.mainScreen.Controller;
 import com.example.library.controller.mainScreen.SettingsController;
+import com.example.library.model.Alert;
 import com.example.library.model.ChangeView;
 
 import java.io.IOException;
@@ -85,7 +86,7 @@ public class Login_LoginController {
         if (!username_Textile.getText().isBlank() && !password_Textile.getText().isBlank()) {
             validateLogin();
         } else {
-            loginMessage.setText("Fill all the space!");
+            Alert.temptLabel(loginMessage,"Fill all the blank!",Color.RED);
         }
     }
 
@@ -102,13 +103,18 @@ public class Login_LoginController {
             pstmt.setString(2, password_Textile.getText());
             ResultSet queryResult = pstmt.executeQuery();
             if (queryResult.next() && queryResult.getInt(1) == 1) {
-                loginMessage.setText("Waiting for server...!");
-                loginMessage.setTextFill(Color.GREEN);
+
+                Alert.temptLabel(loginMessage,"Waiting for server/...",Color.GREEN);
+
+
+
+
 
                 //Get id for setting
                 String username = username_Textile.getText();
                 usernameToBorrow = username;
                 SettingsController.setId(getId(username));
+
                 //Get role
                 Controller.setAdmin(isAdmin(username));
                 //Get dark_mode
@@ -121,16 +127,23 @@ public class Login_LoginController {
                 Stage stage = (Stage) username_Textile.getScene().getWindow();
                 ChangeView.changeViewFXML("/com/example/library/main-view.fxml", stage);
             } else {
-                loginMessage.setText("Invalid Login. Please try again");
-                loginMessage.setTextFill(Color.RED);
+
+
+                Alert.temptLabel(loginMessage,"Invalid Login. Please try again",Color.RED);
+
+
+
                 username_Textile.clear();
                 password_Textile.clear();
                 comeToRegister.setVisible(true);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            loginMessage.setText("Error connecting to the database");
-            loginMessage.setTextFill(Color.RED);
+
+            Alert.temptLabel(loginMessage,"Error connecting to the database",Color.RED);
+
+
+
         }
 
     }
