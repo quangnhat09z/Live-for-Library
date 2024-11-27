@@ -26,6 +26,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
+import static com.example.library.model.DatabaseHelper.connect;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class MainController extends Controller {
@@ -213,6 +214,22 @@ public class MainController extends Controller {
     private void setUsername() {
         // Implement your method to get the username
         String username = "Username";
+
+        int id = SettingsController.getId();
+        String query = "select username from accounts where id = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement checkStmt = conn.prepareStatement(query)) {
+
+            checkStmt.setString(1, String.valueOf(id));
+            ResultSet resultSet = checkStmt.executeQuery();
+            if (resultSet.next()) {
+                username = resultSet.getString("username");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         if (Controller.isAdmin()) {
             username += " (Admin)";
         }
