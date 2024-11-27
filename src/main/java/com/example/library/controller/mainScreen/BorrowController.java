@@ -314,6 +314,10 @@ public class BorrowController extends Controller {
                                     pstmtUpdateDocument.setInt(2, documentId);
                                     pstmtUpdateDocument.executeUpdate();
 
+                                    // Cập nhật quantityField
+                                    int updatedQuantity = document.getQuantity() - quantityToBorrow; // Assuming document has a getQuantity() method
+                                    quantityField.setText(String.valueOf(updatedQuantity));
+
                                     showInfoAlert("NOTIFICATION", "Congratulation", "Borrowed book successfully");
                                 } catch (SQLException e) {
                                     e.printStackTrace();
@@ -393,7 +397,11 @@ public class BorrowController extends Controller {
                                 pstmtDelete.executeUpdate();
                             }
 
-                            showInfoAlert("NOTIFICATION", "Congratulation", "Returned book successfully");
+                            // Cập nhật quantityField
+                            int updatedQuantity = document.getQuantity() + quantityToReturn; // Assuming document has a getQuantity() method
+                            quantityField.setText(String.valueOf(updatedQuantity));
+
+                            showInfoAlert("NOTIFICATION", "Congratulations", "Returned book successfully");
                         } catch (SQLException e) {
                             e.printStackTrace();
                             showWarningAlert("An error occurred while returning the book.");
