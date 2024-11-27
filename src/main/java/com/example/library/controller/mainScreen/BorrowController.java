@@ -247,8 +247,6 @@ public class BorrowController extends Controller {
     private void handleBorrowButton() {
         String username = Login_LoginController.usernameToBorrow;
         Account account = databaseHelper.getAccountByUserName(username);
-
-
         int userId;
         if (account == null) {
             userId = 1;

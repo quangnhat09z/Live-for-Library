@@ -398,6 +398,7 @@ public class GameController extends Controller {
 
     // Phương thức để gán trạng thái cho nextButton
     public void handleNextButton() {
+        if (!hasAnswered) return;
         isNextButtonClicked = true; // Đánh dấu rằng nút nextButton đã được nhấn
         if (wrongTimes == 3) return;
         // Hủy Timeline nếu nó đang chạy
