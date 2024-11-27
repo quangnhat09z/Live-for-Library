@@ -1,7 +1,5 @@
-package com.example.library.controller;
+package com.example.library.controller.mainScreen;
 
-import com.example.library.model.AudioManagement;
-import com.example.library.model.BorrowReturn;
 import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseHelper;
 import javafx.fxml.FXML;
@@ -17,7 +15,6 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 
 import java.nio.file.Paths;
 
@@ -29,7 +26,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class MainController extends Controller {

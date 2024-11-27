@@ -1,4 +1,4 @@
-package com.example.library.controller;
+package com.example.library.controller.login;
 
 import static com.example.library.model.Validator.checkEmail;
 import static com.example.library.model.Validator.checkPassword;

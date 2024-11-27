@@ -1,6 +1,5 @@
-package com.example.library.controller;
+package com.example.library.controller.mainScreen;
 
-import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
 import com.example.library.model.GoogleBookAPI;
 import com.google.gson.*;
@@ -17,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 

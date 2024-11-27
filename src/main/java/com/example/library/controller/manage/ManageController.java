@@ -1,4 +1,6 @@
-package com.example.library.controller;
+package com.example.library.controller.manage;
+
+import com.example.library.controller.mainScreen.Controller;
 
 public abstract class ManageController extends Controller {
     protected abstract void handleAddButton();

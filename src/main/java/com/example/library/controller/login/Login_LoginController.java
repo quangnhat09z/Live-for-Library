@@ -1,5 +1,7 @@
-package com.example.library.controller;
+package com.example.library.controller.login;
 
+import com.example.library.controller.mainScreen.Controller;
+import com.example.library.controller.mainScreen.SettingsController;
 import com.example.library.model.ChangeView;
 
 import java.io.IOException;

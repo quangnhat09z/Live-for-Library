@@ -1,4 +1,4 @@
-package com.example.library.controller;
+package com.example.library.controller.mainScreen;
 
 import javafx.fxml.FXML;
 

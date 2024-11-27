@@ -14,7 +14,7 @@
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.GameProgressController">
+      fx:controller="com.example.library.controller.mainScreen.GameProgressController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
             <children>

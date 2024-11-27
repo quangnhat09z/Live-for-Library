@@ -16,7 +16,7 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0"
             prefWidth="565.0" styleClass="background_Login" stylesheets="@../../../CSSStyling/login.css"
             xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.library.controller.Login_LoginController">
+            fx:controller="com.example.library.controller.login.Login_LoginController">
     <right>
         <AnchorPane prefHeight="594.0" prefWidth="294.0" BorderPane.alignment="CENTER">
             <children>

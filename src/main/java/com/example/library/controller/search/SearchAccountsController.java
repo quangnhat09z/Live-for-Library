@@ -1,9 +1,10 @@
-package com.example.library.controller;
+package com.example.library.controller.search;
 
 import static com.example.library.model.Alert.showInfoAlert;
 import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
+import com.example.library.controller.mainScreen.Controller;
 import com.example.library.model.AccountChangeInfor;
 import com.example.library.model.AccountDetail;
 import com.example.library.model.DatabaseHelper;

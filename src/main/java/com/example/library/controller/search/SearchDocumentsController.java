@@ -1,5 +1,6 @@
-package com.example.library.controller;
+package com.example.library.controller.search;
 
+import com.example.library.controller.mainScreen.Controller;
 import com.example.library.model.DocumentChangeInfo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

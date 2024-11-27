@@ -1,6 +1,6 @@
-package com.example.library.controller;
+package com.example.library.controller.search;
 
-import javafx.scene.control.Alert;
+import com.example.library.controller.mainScreen.Controller;
 
 public abstract class SearchController extends Controller {
     protected abstract void handleSearchButton();

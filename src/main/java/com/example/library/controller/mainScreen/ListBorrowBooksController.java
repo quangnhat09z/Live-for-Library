@@ -1,4 +1,4 @@
-package com.example.library.controller;
+package com.example.library.controller.mainScreen;
 
 import com.example.library.model.BorrowReturn;
 import com.example.library.model.DatabaseHelper;
@@ -114,7 +114,7 @@ public class ListBorrowBooksController {
         List<BorrowReturn> loans = new ArrayList<>();
         try (Connection conn = DatabaseHelper.connect();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT imageLink, title, quantityBorrow, borrow_date, required_date FROM borrow_return")) {
+             ResultSet rs = stmt.executeQuery("SELECT imageLink, title, quantityBorrow, borrow_date, required_date FROM Borrow_Return")) {
 
             while (rs.next()) {
                 loans.add(new BorrowReturn(

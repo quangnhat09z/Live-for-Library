@@ -1,5 +1,6 @@
-package com.example.library.controller;
+package com.example.library.controller.manage;
 
+import com.example.library.controller.mainScreen.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,7 +15,6 @@ import java.util.Optional;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 

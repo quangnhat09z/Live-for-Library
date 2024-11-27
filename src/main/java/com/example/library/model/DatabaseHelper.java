@@ -1,6 +1,6 @@
 package com.example.library.model;
 
-import com.example.library.controller.ManageAccountController;
+import com.example.library.controller.manage.ManageAccountController;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.control.Alert;
 
 import static com.example.library.model.Alert.showSuccessAlert;
 import static com.example.library.model.Alert.showWarningAlert;
@@ -18,7 +17,7 @@ public class DatabaseHelper {
 
   public static final String URL = "jdbc:mysql://localhost:3306/library";
   public static final String USER = "root"; // Thay bằng tên người dùng của bạn
-  public static final String PASSWORD = "09022005"; // Thay bằng mật khẩu của bạn
+  public static final String PASSWORD = "Lequangmien10"; // Thay bằng mật khẩu của bạn
 
   public static Connection connect() {
     try {

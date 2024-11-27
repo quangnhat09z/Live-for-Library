@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.ManageAccountController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.manage.ManageAccountController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>

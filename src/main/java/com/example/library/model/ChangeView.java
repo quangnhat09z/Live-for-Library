@@ -1,18 +1,14 @@
 package com.example.library.model;
 
-import com.example.library.controller.SettingsController;
 import javafx.animation.PauseTransition;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.util.Objects;
-import java.util.Set;
 
 public class ChangeView {
 

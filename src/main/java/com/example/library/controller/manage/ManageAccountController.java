@@ -1,4 +1,4 @@
-package com.example.library.controller;
+package com.example.library.controller.manage;
 
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 import static com.example.library.model.Validator.checkEmail;
@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+
+import com.example.library.controller.mainScreen.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
