@@ -1,5 +1,7 @@
 package com.example.library.controller.mainScreen;
 
+import com.example.library.controller.login.Login_LoginController;
+import com.example.library.model.Account;
 import com.example.library.model.BorrowReturn;
 import com.example.library.model.DatabaseHelper;
 import javafx.fxml.FXML;
@@ -17,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -27,10 +30,20 @@ import static com.example.library.model.Alert.showWarningAlert;
 public class ListBorrowBooksController {
     @FXML
     private ListView<HBox> listView;
+    private DatabaseHelper databaseHelper;
+
+    public ListBorrowBooksController() {
+        // Khởi tạo databaseHelper
+        this.databaseHelper = new DatabaseHelper(); // Đảm bảo khởi tạo đúng cách
+    }
 
     @FXML
     public void initialize() {
-        List<BorrowReturn> borrowReturns = fetchData();
+        String username = Login_LoginController.usernameToBorrow;
+        Account account = databaseHelper.getAccountByUserName(username);
+        int user_id = account.getId();
+
+        List<BorrowReturn> borrowReturns = fetchData(user_id);
 
         for (BorrowReturn loan : borrowReturns) {
             HBox hbox = new HBox(10); // Khoảng cách giữa các phần tử
@@ -110,19 +123,25 @@ public class ListBorrowBooksController {
     }
 
 
-    private List<BorrowReturn> fetchData() {
+    private List<BorrowReturn> fetchData(int userId) {
         List<BorrowReturn> loans = new ArrayList<>();
-        try (Connection conn = DatabaseHelper.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT imageLink, title, quantityBorrow, borrow_date, required_date FROM Borrow_Return")) {
+        String query = "SELECT imageLink, title, quantityBorrow, borrow_date, required_date FROM Borrow_Return WHERE user_id = ?";
 
-            while (rs.next()) {
-                loans.add(new BorrowReturn(
-                        rs.getString("imageLink"),
-                        rs.getString("title"),
-                        rs.getInt("quantityBorrow"),
-                        rs.getDate("borrow_date").toLocalDate(),
-                        rs.getDate("required_date").toLocalDate()));
+        try (Connection conn = DatabaseHelper.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            // Thiết lập giá trị cho tham số userId
+            pstmt.setInt(1, userId);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    loans.add(new BorrowReturn(
+                            rs.getString("imageLink"),
+                            rs.getString("title"),
+                            rs.getInt("quantityBorrow"),
+                            rs.getDate("borrow_date").toLocalDate(),
+                            rs.getDate("required_date").toLocalDate()));
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
