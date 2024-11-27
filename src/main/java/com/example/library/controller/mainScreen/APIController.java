@@ -93,7 +93,7 @@ public class APIController extends Controller{
                 suggestionsList.setVisible(false); // Ẩn ListView sau khi chọn
                 showButton.setText("Show");
             } else {
-                System.out.println("Không có mục nào được chọn.");
+                System.out.println("No items selected.");
             }
         });
 
@@ -245,7 +245,7 @@ public class APIController extends Controller{
                 // Cập nhật hình ảnh document.getImageLink()
                 String imageLink = document.getImageLink();
                 if (imageLink == null || imageLink.isEmpty()) {
-                    showWarningAlert("Không có hình ảnh");
+                    showWarningAlert("No images");
                 } else {
                     Image image = new Image(imageLink, true);
                     myImageView.setImage(image);
@@ -274,7 +274,7 @@ public class APIController extends Controller{
                 Desktop.getDesktop().browse(new URI(googleSearchUrl));
                 System.out.println(googleSearchUrl);
             } else {
-               showWarningAlert("Vui lòng chọn nội dung tìm kiếm");
+               showWarningAlert("Please select search content");
             }
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();

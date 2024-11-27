@@ -260,9 +260,9 @@ public class BorrowController extends Controller {
 
         // Display dialog to input quantity
         TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Nhập số lượng mượn");
-        dialog.setHeaderText("Nhập số lượng bạn muốn mượn:");
-        dialog.setContentText("Số lượng:");
+        dialog.setTitle("Enter the amount borrowed");
+        dialog.setHeaderText("Enter the amount you want to borrow:");
+        dialog.setContentText("Quantity:");
 
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()) {
@@ -296,18 +296,18 @@ public class BorrowController extends Controller {
                             pstmtUpdate.setInt(2, documentId);
                             pstmtUpdate.executeUpdate();
 
-                            System.out.println("Mượn sách thành công!");
+                            System.out.println("Borrowed book successfully!");
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
                     } else {
-                        System.out.println("Số lượng mượn vượt quá số lượng có sẵn.");
+                        System.out.println("The borrowed quantity exceeds the available quantity.");
                     }
                 } else {
-                    System.out.println("Không tìm thấy tài liệu.");
+                    System.out.println("Document not found.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Vui lòng nhập số lượng hợp lệ.");
+                System.out.println("Please enter a valid quantity.");
             }
         }
     }
@@ -327,9 +327,9 @@ public class BorrowController extends Controller {
 
         // Hiển thị hộp thoại yêu cầu nhập số lượng
         TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Nhập số lượng trả");
-        dialog.setHeaderText("Nhập số lượng bạn muốn trả:");
-        dialog.setContentText("Số lượng:");
+        dialog.setTitle("Enter the amount to return");
+        dialog.setHeaderText("Enter the amount you want to pay:");
+        dialog.setContentText("Quantity:");
 
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()) {
@@ -371,19 +371,19 @@ public class BorrowController extends Controller {
                             pstmtUpdate.setInt(2, documentId);
                             pstmtUpdate.executeUpdate();
 
-                            showInfoAlert("Thông báo", "Chúc mừng bạn", "Trả sách thành công");
+                            showInfoAlert("NOTIFICATION", "Congratulation", "Returned book successfully");
                         } catch (SQLException e) {
                             e.printStackTrace();
-                            showWarningAlert("Đã xảy ra lỗi khi trả sách.");
+                            showWarningAlert("An error occurred while returning the book.");
                         }
                     } else {
-                        showWarningAlert("Số lượng trả vượt quá số lượng đã mượn.");
+                        showWarningAlert("The amount returned exceeds the amount borrowed.");
                     }
                 } else {
-                    showWarningAlert("Không tìm thấy tài liệu.");
+                    showWarningAlert("No documents found.");
                 }
             } catch (NumberFormatException e) {
-                showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                showWarningAlert("Please enter a valid number.");
             }
         }
     }

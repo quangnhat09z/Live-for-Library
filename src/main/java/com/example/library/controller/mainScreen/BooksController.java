@@ -149,7 +149,7 @@ public class BooksController extends Controller {
 
         // Kiểm tra xem có kết quả không
         if (results.isEmpty()) {
-            showInfoAlert("Thông báo", "Không tìm thấy sách bạn cần", "Vui lòng tìm sách khác");
+            showInfoAlert("NOTIFICATION", "Can't find the book you need", "Please find another book.");
             System.out.println("No results found.");
         } else {
             System.out.println("Results found: " + results.size());
@@ -182,7 +182,7 @@ public class BooksController extends Controller {
                 System.out.println("ExploreController chưa được khởi tạo.");
             }
         } else {
-            showWarningAlert("Vui lòng chọn một cuốn sách để mượn");
+            showWarningAlert("Please select a book to borrow");
         }
     }
 

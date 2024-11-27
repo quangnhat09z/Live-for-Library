@@ -166,7 +166,7 @@ public class SearchDocumentsController extends SearchController {
 
         // Kiểm tra xem có kết quả không
         if (results.isEmpty()) {
-            showInfoAlert("Thông báo", "Không tìm thấy sách bạn cần", "Vui lòng tìm sách khác");
+            showInfoAlert("NOTIFICATIONS", "Can't find the book you need?", "Please find another book.");
             System.out.println("No results found.");
         } else {
             System.out.println("Results found: " + results.size());
@@ -183,16 +183,15 @@ public class SearchDocumentsController extends SearchController {
 
         // Kiểm tra nếu không có tài liệu nào được chọn
         if (selectedDocument == null || selectedDocument.equals("null")) {
-            showWarningAlert("Vui lòng chọn tài liệu để xóa.");
+            showWarningAlert("Please select a document to delete.");
         } else {
             int id = Integer.parseInt(selectedDocument.split(" - ")[0]); // Giả định format là "ID - Title"
 
             // Hộp thoại để nhập số lượng cần xóa
             TextInputDialog dialog = new TextInputDialog();
-            dialog.setTitle("Xóa tài liệu");
-            dialog.setTitle("Xóa tài liệu");
-            dialog.setHeaderText("Nhập số lượng sách cần xóa:");
-            dialog.setContentText("Số lượng:");
+            dialog.setTitle("Delete documents");
+            dialog.setHeaderText("Enter the number of books to delete:");
+            dialog.setContentText("Quantity:");
 
             Optional<String> result = dialog.showAndWait();
             if (result.isPresent()) {
@@ -201,7 +200,7 @@ public class SearchDocumentsController extends SearchController {
                     // Gọi phương thức để xóa số lượng tài liệu tương ứng
                     databaseHelper.deleteDocument(id, quantityToDelete);
                 } catch (NumberFormatException e) {
-                    showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                    showWarningAlert("Please enter a valid number");
                 }
             }
         }
@@ -213,8 +212,8 @@ public class SearchDocumentsController extends SearchController {
         if (selectedDocument != null) {
             // Tạo hộp thoại
             Dialog<Document> dialog = new Dialog<>();
-            dialog.setTitle("Cập nhật tài liệu");
-            dialog.setHeaderText("Chỉnh sửa thông tin tài liệu");
+            dialog.setTitle("Update documents");
+            dialog.setHeaderText("Change document's information");
 
             // Tạo các trường nhập liệu
             GridPane grid = new GridPane();
@@ -296,18 +295,18 @@ public class SearchDocumentsController extends SearchController {
                         updatedDocument.getImageLink());
 
                 if (isUpdated) {
-                    System.out.println("Cập nhật thành công!");
+                    System.out.println("Update successfully!");
                     // Cập nhật lại danh sách tài liệu trong bảng
                 } else {
-                    System.out.println("Cập nhật thất bại!");
+                    System.out.println("Update failed!");
                 }
             });
         } else {
             // Thông báo nếu không có tài liệu nào được chọn
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Cảnh báo");
-            alert.setHeaderText("Không có tài liệu nào được chọn");
-            alert.setContentText("Vui lòng chọn một tài liệu để cập nhật.");
+            alert.setTitle("Warning");
+            alert.setHeaderText("NOTIFICATIONS");
+            alert.setContentText("Please select a document to update.");
             alert.showAndWait();
         }
     }

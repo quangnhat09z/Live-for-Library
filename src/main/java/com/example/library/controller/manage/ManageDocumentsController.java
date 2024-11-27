@@ -107,7 +107,7 @@ public class ManageDocumentsController extends ManageController {
         String imageLink = imageLinkField.getText();
 
         if (title.isEmpty() || author.isEmpty() || publicYear.isEmpty() || publisher.isEmpty() || genre.isEmpty() || quantityText.isEmpty()) {
-            showWarningAlert("Vui lòng nhập đầy đủ thông tin.");
+            showWarningAlert("Please enter complete information.");
             return;
         }
 
@@ -117,11 +117,11 @@ public class ManageDocumentsController extends ManageController {
             Document document = new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink);
             databaseHelper.addDocument(document); // Gọi phương thức addDocument
             updateDocumentList();
-            showWarningAlert("Tài liệu đã được thêm thành công!");
+            showWarningAlert("Document added successfully!");
         } catch (NumberFormatException e) {
-            showWarningAlert("Số lượng phải là một số hợp lệ.");
+            showWarningAlert("Quantity must be a valid number");
         } catch (SQLException e) {
-            showWarningAlert("Lỗi khi thêm tài liệu: " + e.getMessage());
+            showWarningAlert("Error adding document " + e.getMessage());
         }
     }
 
@@ -133,9 +133,9 @@ public class ManageDocumentsController extends ManageController {
 
             // Hộp thoại để nhập số lượng cần xóa
             TextInputDialog dialog = new TextInputDialog();
-            dialog.setTitle("Xóa tài liệu");
-            dialog.setHeaderText("Nhập số lượng sách cần xóa:");
-            dialog.setContentText("Số lượng:");
+            dialog.setTitle("Delete document");
+            dialog.setHeaderText("Enter the number of books to delete:");
+            dialog.setContentText("Quantity");
 
             Optional<String> result = dialog.showAndWait();
             if (result.isPresent()) {
@@ -144,7 +144,7 @@ public class ManageDocumentsController extends ManageController {
 
                     // Gọi phương thức để xóa số lượng tài liệu tương ứng
                     if (quantityToDelete < 0) {
-                        showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                        showWarningAlert("Please enter a valid number.");
                         return;
                     }
                     if (quantityToDelete == 0) {
@@ -155,11 +155,11 @@ public class ManageDocumentsController extends ManageController {
                     // Cập nhật danh sách tài liệu
                     updateDocumentList();
                 } catch (NumberFormatException e) {
-                    showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                    showWarningAlert("Please enter a valid number.");
                 }
             }
         } else {
-            showWarningAlert("Vui lòng chọn tài liệu để xóa.");
+            showWarningAlert("Please select the document to delete.");
         }
     }
 
