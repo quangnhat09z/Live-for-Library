@@ -73,7 +73,6 @@ public class Login_LoginController {
     }
 
 
-
     private void handleEnterKey(KeyEvent event) {
         // If Enter key is pressed, trigger the login button action
         if (event.getCode().equals(javafx.scene.input.KeyCode.ENTER)) {
@@ -86,7 +85,7 @@ public class Login_LoginController {
         if (!username_Textile.getText().isBlank() && !password_Textile.getText().isBlank()) {
             validateLogin();
         } else {
-            Alert.temptLabel(loginMessage,"Fill all the blank!",Color.RED);
+            Alert.temptLabel(loginMessage, "Fill all the blank!", Color.RED);
         }
     }
 
@@ -104,10 +103,7 @@ public class Login_LoginController {
             ResultSet queryResult = pstmt.executeQuery();
             if (queryResult.next() && queryResult.getInt(1) == 1) {
 
-                Alert.temptLabel(loginMessage,"Waiting for server/...",Color.GREEN);
-
-
-
+                Alert.temptLabel(loginMessage, "Waiting for server/...", Color.GREEN);
 
 
                 //Get id for setting
@@ -129,8 +125,7 @@ public class Login_LoginController {
             } else {
 
 
-                Alert.temptLabel(loginMessage,"Invalid Login. Please try again",Color.RED);
-
+                Alert.temptLabel(loginMessage, "Invalid Login. Please try again", Color.RED);
 
 
                 username_Textile.clear();
@@ -140,8 +135,7 @@ public class Login_LoginController {
         } catch (SQLException e) {
             e.printStackTrace();
 
-            Alert.temptLabel(loginMessage,"Error connecting to the database",Color.RED);
-
+            Alert.temptLabel(loginMessage, "Error connecting to the database", Color.RED);
 
 
         }
