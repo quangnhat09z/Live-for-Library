@@ -14,6 +14,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Optional;
+import javafx.scene.control.TextInputDialog;
 
 import java.awt.Desktop;
 
@@ -24,11 +32,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.time.LocalDate;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -249,7 +253,7 @@ public class BorrowController extends Controller {
         Account account = databaseHelper.getAccountByUserName(username);
         int userId;
         if (account == null) {
-            userId = 1;
+            userId = 1; // Default user ID
         } else {
             System.out.println("have acc");
             userId = account.getId();
@@ -273,30 +277,48 @@ public class BorrowController extends Controller {
                 if (document != null) {
                     int currentQuantity = document.getQuantity();
                     if (currentQuantity >= quantityToBorrow) {
-                        String sqlBorrow = "INSERT INTO Borrow_Return (user_id, document_id, borrow_date, quantityBorrow, required_date, imageLink, title) VALUES (?,?, ?, ?, ?, ?, ?)";
-                        String sqlUpdateQuantity = "UPDATE Documents SET quantity = quantity - ? WHERE id = ?";
+                        // Check if the record already exists
+                        String sqlCheckExists = "SELECT quantityBorrow FROM Borrow_Return WHERE user_id = ? AND document_id = ?";
 
                         try (Connection conn = databaseHelper.connect();
-                             PreparedStatement pstmtBorrow = conn.prepareStatement(sqlBorrow);
-                             PreparedStatement pstmtUpdate = conn.prepareStatement(sqlUpdateQuantity)) {
+                             PreparedStatement pstmtCheck = conn.prepareStatement(sqlCheckExists)) {
 
-                            // Add the borrowing information
-                            pstmtBorrow.setInt(1, userId);
-                            pstmtBorrow.setInt(2, documentId);
-                            pstmtBorrow.setDate(3, Date.valueOf(borrowDate));
-                            pstmtBorrow.setInt(4, quantityToBorrow); // Record the borrowed quantity
-                            pstmtBorrow.setDate(5, Date.valueOf(requiredDate)); // Set required date
-                            pstmtBorrow.setString(6, document.getImageLink()); // Assuming Document has getImageLink()
-                            pstmtBorrow.setString(7, document.getTitle());
+                            pstmtCheck.setInt(1, userId);
+                            pstmtCheck.setInt(2, documentId);
+                            ResultSet rs = pstmtCheck.executeQuery();
 
-                            pstmtBorrow.executeUpdate();
+                            if (rs.next()) {
+                                // If a record exists, inform the user
+                                showWarningAlert("Previously borrowed books, please return in advance.");
+                            } else {
+                                // If no record exists, proceed to borrow
+                                String sqlInsertBorrow = "INSERT INTO Borrow_Return (user_id, document_id, borrow_date, quantityBorrow, required_date, imageLink, title) VALUES (?,?,?,?,?,?,?)";
+                                String sqlUpdateDocumentQuantity = "UPDATE Documents SET quantity = quantity - ? WHERE id = ?";
 
-                            // Update the document quantity
-                            pstmtUpdate.setInt(1, quantityToBorrow);
-                            pstmtUpdate.setInt(2, documentId);
-                            pstmtUpdate.executeUpdate();
+                                try (PreparedStatement pstmtInsert = conn.prepareStatement(sqlInsertBorrow);
+                                     PreparedStatement pstmtUpdateDocument = conn.prepareStatement(sqlUpdateDocumentQuantity)) {
 
-                            System.out.println("Borrowed book successfully!");
+                                    // Add the borrowing information
+                                    pstmtInsert.setInt(1, userId);
+                                    pstmtInsert.setInt(2, documentId);
+                                    pstmtInsert.setDate(3, Date.valueOf(borrowDate));
+                                    pstmtInsert.setInt(4, quantityToBorrow); // Record the borrowed quantity
+                                    pstmtInsert.setDate(5, Date.valueOf(requiredDate)); // Set required date
+                                    pstmtInsert.setString(6, document.getImageLink());
+                                    pstmtInsert.setString(7, document.getTitle());
+
+                                    pstmtInsert.executeUpdate();
+
+                                    // Update the document quantity
+                                    pstmtUpdateDocument.setInt(1, quantityToBorrow);
+                                    pstmtUpdateDocument.setInt(2, documentId);
+                                    pstmtUpdateDocument.executeUpdate();
+
+                                    showInfoAlert("NOTIFICATION", "Congratulation", "Borrowed book successfully");
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                            }
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
@@ -339,8 +361,7 @@ public class BorrowController extends Controller {
                 // Lấy thông tin tài liệu để kiểm tra số lượng đã mượn
                 Document document = databaseHelper.getDocumentById(documentId);
                 if (document != null) {
-                    // Giả sử bạn có một phương thức để lấy số lượng đã mượn của người dùng
-                    int borrowedQuantity = databaseHelper.getBorrowedQuantity(userId, documentId); // Phương thức này cần được định nghĩa
+                    int borrowedQuantity = databaseHelper.getBorrowedQuantity(userId, documentId);
 
                     if (borrowedQuantity >= quantityToReturn) {
                         String sqlUpdateReturnDate = "UPDATE borrow_return SET quantityBorrow = quantityBorrow - ? " +
@@ -353,23 +374,24 @@ public class BorrowController extends Controller {
                              PreparedStatement pstmtDelete = conn.prepareStatement(sqlDeleteReturn);
                              PreparedStatement pstmtUpdate = conn.prepareStatement(sqlUpdateQuantity)) {
 
-                            if (borrowedQuantity == quantityToReturn) {
-                                // Xóa thông tin trả sách vì đã trả đủ số lượng
-                                pstmtDelete.setInt(1, userId);
-                                pstmtDelete.setInt(2, documentId);
-                                pstmtDelete.executeUpdate();
-                            } else {
-                                // Cập nhật ngày trả sách
-                                pstmtUpdateDate.setInt(1, quantityToReturn);
-                                pstmtUpdateDate.setInt(2, userId);
-                                pstmtUpdateDate.setInt(3, documentId);
-                                pstmtUpdateDate.executeUpdate();
-                            }
+                            // Cập nhật số lượng đã mượn
+                            pstmtUpdateDate.setInt(1, quantityToReturn);
+                            pstmtUpdateDate.setInt(2, userId);
+                            pstmtUpdateDate.setInt(3, documentId);
+                            pstmtUpdateDate.executeUpdate();
 
                             // Cập nhật số lượng tài liệu
                             pstmtUpdate.setInt(1, quantityToReturn);
                             pstmtUpdate.setInt(2, documentId);
                             pstmtUpdate.executeUpdate();
+
+                            // Kiểm tra và xóa nếu quantityBorrow <= 0
+                            int newBorrowedQuantity = borrowedQuantity - quantityToReturn;
+                            if (newBorrowedQuantity <= 0) {
+                                pstmtDelete.setInt(1, userId);
+                                pstmtDelete.setInt(2, documentId);
+                                pstmtDelete.executeUpdate();
+                            }
 
                             showInfoAlert("NOTIFICATION", "Congratulation", "Returned book successfully");
                         } catch (SQLException e) {

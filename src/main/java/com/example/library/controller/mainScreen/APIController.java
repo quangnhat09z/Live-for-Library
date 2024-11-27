@@ -245,6 +245,7 @@ public class APIController extends Controller{
                 // Cập nhật hình ảnh document.getImageLink()
                 String imageLink = document.getImageLink();
                 if (imageLink == null || imageLink.isEmpty()) {
+                    myImageView.setImage(null);
                     showWarningAlert("No images");
                 } else {
                     Image image = new Image(imageLink, true);
@@ -254,8 +255,7 @@ public class APIController extends Controller{
 
                 googleSearchUrl = "https://www.google.com/search?q=" + (title + " book").replace(" ", "+");
             } else {
-                // Hiển thị thông báo lỗi cho người dùng
-                //System.out.println("Không tìm thấy tài liệu. Vui lòng thử với tiêu đề khác.");
+                System.out.println("Không tìm thấy tài liệu. Vui lòng thử với tiêu đề khác.");
             }
         } catch (Exception e) {
             e.printStackTrace(); // In ra chi tiết lỗi

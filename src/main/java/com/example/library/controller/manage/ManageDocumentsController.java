@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Document;
 
+import static com.example.library.model.Alert.showSuccessAlert;
 import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
@@ -117,7 +118,7 @@ public class ManageDocumentsController extends ManageController {
             Document document = new Document(id, title, author, publicYear, publisher, genre, quantity, imageLink);
             databaseHelper.addDocument(document); // Gọi phương thức addDocument
             updateDocumentList();
-            showWarningAlert("Document added successfully!");
+            showSuccessAlert("Document added successfully!");
         } catch (NumberFormatException e) {
             showWarningAlert("Quantity must be a valid number");
         } catch (SQLException e) {

@@ -108,22 +108,22 @@ public class DatabaseHelper {
             updateStmt.setInt(1, quantityToDelete);
             updateStmt.setInt(2, id);
             updateStmt.executeUpdate();
-            showSuccessAlert("Đã xóa " + quantityToDelete + " tài liệu.");
+            showSuccessAlert("Deleted " + quantityToDelete + " documents.");
           } else {
             // Nếu số lượng hiện tại nhỏ hơn hoặc bằng số lượng cần xóa, xóa tài liệu
             deleteStmt.setInt(1, id);
             deleteStmt.executeUpdate();
-            showSuccessAlert("Đã xóa " + currentQuantity + " tài liệu.");
+            showSuccessAlert("Deleted " + currentQuantity + " documents.");
           }
         } else {
-          showWarningAlert("Không có tài liệu nào để xóa.");
+          showWarningAlert("There are no documents to delete..");
         }
       } else {
-        showWarningAlert("Tài liệu không tồn tại.");
+        showWarningAlert("Document does not exist.");
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      showWarningAlert("Đã xảy ra lỗi khi xóa tài liệu.");
+      showWarningAlert("An error occurred while deleting the document.");
     }
   }
 
