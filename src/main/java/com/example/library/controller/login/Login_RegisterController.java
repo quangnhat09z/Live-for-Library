@@ -4,6 +4,7 @@ import static com.example.library.model.Validator.checkEmail;
 import static com.example.library.model.Validator.checkPassword;
 import static com.example.library.model.Validator.checkUsername;
 
+import com.example.library.model.Alert;
 import com.example.library.model.DatabaseHelper;
 import com.example.library.model.Validator;
 import java.io.IOException;
@@ -22,6 +23,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
@@ -35,7 +37,6 @@ public class Login_RegisterController {
   private TextField passwordTextile;
   @FXML
   private TextField passwordTextField;
-
   @FXML
   TextField emailTextile;
 
@@ -43,7 +44,6 @@ public class Login_RegisterController {
   private CheckBox showPasswordCheckBox;
   @FXML
   private Label registerMessage;
-
 
 
   @FXML
@@ -107,26 +107,27 @@ public class Login_RegisterController {
   public boolean isUsernameTaken(String username) {
 
     String query = "SELECT * FROM accounts WHERE username = ?";
-    try(Connection connection=DatabaseHelper.connect();
-   PreparedStatement pstmt= connection.prepareStatement(query)){
-      pstmt.setString(1,username);
-      ResultSet resultSet= pstmt.executeQuery();
+    try (Connection connection = DatabaseHelper.connect();
+        PreparedStatement pstmt = connection.prepareStatement(query)) {
+      pstmt.setString(1, username);
+      ResultSet resultSet = pstmt.executeQuery();
       return resultSet.next();
-    } catch (SQLException e){
+    } catch (SQLException e) {
       System.out.println("Error checking username!");
       e.printStackTrace();
       return false;
     }
   }
+
   public boolean isEmailTaken(String email) {
 
     String query = "SELECT * FROM accounts WHERE email = ?";
-    try(Connection connection=DatabaseHelper.connect();
-        PreparedStatement pstmt= connection.prepareStatement(query)){
-      pstmt.setString(1,email);
-      ResultSet resultSet= pstmt.executeQuery();
+    try (Connection connection = DatabaseHelper.connect();
+        PreparedStatement pstmt = connection.prepareStatement(query)) {
+      pstmt.setString(1, email);
+      ResultSet resultSet = pstmt.executeQuery();
       return resultSet.next();
-    } catch (SQLException e){
+    } catch (SQLException e) {
       System.out.println("Error checking email!");
       e.printStackTrace();
       return false;
@@ -142,39 +143,50 @@ public class Login_RegisterController {
     boolean check_username = true;
     boolean check_password = true;
     if (!checkEmail(email)) {
-      registerMessage.setText("Email must be @gmail.com");
-      registerMessage.setTextFill(javafx.scene.paint.Color.RED);
+      Alert.temptLabel(registerMessage, "Email must be ...@gmail.com!", Color.RED);
       emailTextile.requestFocus();
       return;
     }
     if (!checkUsername(username)) {
-      registerMessage.setText("Invalid username");
-      registerMessage.setTextFill(javafx.scene.paint.Color.RED);
+
+      Alert.temptLabel(registerMessage, "Invalid username!", Color.RED);
       usernameTextile.requestFocus();
       return;
     }
     if (!checkPassword(password)) {
-      registerMessage.setText(
-          "Password must have at least 1 uppercase letter, 1 special character and at least 8 characters");
-      registerMessage.setTextFill(javafx.scene.paint.Color.RED);
+
+      Alert.temptLabel(registerMessage,
+          "Password must have at least 1 uppercase letter, 1 special character and at least 8 characters!",
+          Color.RED);
+
       passwordTextile.requestFocus();
       return;
     }
 
     if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
-      registerMessage.setText("Please fill in all fields.");
-      registerMessage.setTextFill(javafx.scene.paint.Color.RED);
+
+      Alert.temptLabel(registerMessage, "Please fill all the blank!", Color.RED);
+
+
     } else if (isUsernameTaken(username)) {
-      registerMessage.setText("Username is already taken. Please choose another.");
-      registerMessage.setTextFill(javafx.scene.paint.Color.RED);
+
+      Alert.temptLabel(registerMessage, "Username is already taken. Please choose another.",
+          Color.RED);
+
+
     } else if (isEmailTaken(email)) {
-      registerMessage.setText("Username is already taken. Please choose another.");
-      registerMessage.setTextFill(javafx.scene.paint.Color.RED);
+
+      Alert.temptLabel(registerMessage, "Email is already taken. Please choose another!",
+          Color.RED);
+
+
     } else {
       insertUser(email, "user", username, password);
-      registerMessage.setText("Register Successfully");
-      registerMessage.setTextFill(javafx.scene.paint.Color.GREEN);
       giveBlankSpace();
+
+      Alert.temptLabel(registerMessage, "Register Successfully", Color.GREEN);
+
+
     }
   }
 
