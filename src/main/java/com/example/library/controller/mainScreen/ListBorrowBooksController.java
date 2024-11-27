@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -98,10 +99,19 @@ public class ListBorrowBooksController {
                 // Lấy controller từ FXMLLoader
                 BorrowController borrowController = loader.getController();
 
-                // Thay đổi Scene của Stage hiện tại
-                Stage stage = (Stage) listView.getScene().getWindow();
+                // Lấy Stage hiện tại nơi listView đang được hiển thị
+                Stage currentStage = (Stage) listView.getScene().getWindow();
+
+                // Nếu bạn đang làm việc với một cửa sổ mới và muốn trở về cửa sổ chính,
+                // bạn sẽ cần một tham chiếu đến cửa sổ chính.
+                // Giả sử bạn lưu trữ một tham chiếu đến cửa sổ chính trong một biến static hoặc pass nó dưới dạng tham số tới controller này.
+
+                // Tạo một cửa sổ chính mới từ một phương thức static hoặc truyền đến cửa sổ chính
+                Stage primaryStage = MainController.primaryStage; // Giả thuyết là bạn lưu cửa sổ chính vào Main class
+
+                // Thiết lập Scene mới cho cửa sổ chính
                 Scene scene = new Scene(root, 1300, 650);
-                stage.setScene(scene); // Thay thế Scene hiện tại
+                primaryStage.setScene(scene);
 
                 // Gọi phương thức với title
                 if (borrowController != null) {
@@ -111,8 +121,18 @@ public class ListBorrowBooksController {
                     System.out.println("BorrowController chưa được khởi tạo.");
                 }
 
-                // Căn giữa cửa sổ (tùy chọn)
-                stage.centerOnScreen(); // Căn giữa cửa sổ trên màn hình
+                Screen screen = Screen.getPrimary();
+                double screenWidth = screen.getVisualBounds().getWidth();
+                double screenHeight = screen.getVisualBounds().getHeight();
+                double stageWidth = primaryStage.getWidth();
+                double stageHeight = primaryStage.getHeight();
+
+                // center position
+                primaryStage.setX((screenWidth - stageWidth) / 2);
+                primaryStage.setY((screenHeight - stageHeight) / 2);
+
+                // Đóng cửa sổ hiện tại (cửa sổ mới mở)
+                currentStage.close();
 
             } catch (IOException e) {
                 e.printStackTrace();

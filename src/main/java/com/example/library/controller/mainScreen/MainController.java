@@ -72,6 +72,7 @@ public class MainController extends Controller {
     @FXML
     private Button paneQuitButton;
 
+    public static Stage primaryStage;
     private static MediaPlayer mediaPlayer;
 
     @Override
@@ -119,7 +120,6 @@ public class MainController extends Controller {
             mediaPlayer.play();
         }
 
-
         applySoundEffectsToButtons(root);
     }
 
@@ -157,6 +157,9 @@ public class MainController extends Controller {
     // Tạo một view tên như dưới, sau khi xong thì bỏ comment này và mở hàm changeScene.
     private void handleBorrowedButton() {
         try {
+            if (primaryStage == null) {
+                primaryStage = (Stage) root.getScene().getWindow();
+            }
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/borrowed-books-view.fxml"));
             Parent root = loader.load();
 
