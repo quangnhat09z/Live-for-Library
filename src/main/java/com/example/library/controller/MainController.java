@@ -38,6 +38,8 @@ public class MainController extends Controller {
     @FXML
     private Label accountCount;
     @FXML
+    private Label borrowedCount;
+    @FXML
     private Label titleLabel;
     @FXML
     private Label authorLabel;
@@ -82,6 +84,7 @@ public class MainController extends Controller {
 
         setBookCount();
         setAccountCount();
+        setBorrowedCount();
         setBookInfo();
 
         if (Controller.isDarkMode()) {
@@ -175,7 +178,6 @@ public class MainController extends Controller {
     }
 
     private void setBookCount() {
-
         String query = "SELECT COUNT(*) AS count FROM documents";
 
         try (Connection conn = DriverManager.getConnection(DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
@@ -212,6 +214,26 @@ public class MainController extends Controller {
             e.printStackTrace();
             bookCount.setText("");
             System.out.println("Không thể lấy số lượng tài khoản");
+        }
+    }
+
+    private void setBorrowedCount() {
+        String query = "SELECT sum(quantityBorrow) AS count FROM Borrow_Return";
+
+        try (Connection conn = DriverManager.getConnection(
+                DatabaseHelper.URL, DatabaseHelper.USER, DatabaseHelper.PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                borrowedCount.setText(String.valueOf(count));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            bookCount.setText("");
+            System.out.println("Không thể lấy số lượng sách đã mượn");
         }
     }
 

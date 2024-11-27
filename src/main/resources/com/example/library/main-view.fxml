@@ -15,7 +15,7 @@
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/main.css"
-      xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.library.controller.MainController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0">
@@ -296,13 +296,13 @@
                       styleClass="pane_11">
                     <children>
                         <Label alignment="CENTER" layoutY="20.0" prefHeight="20.0" prefWidth="325.0" styleClass="text"
-                               text="Accounts">
+                               text="Books borrowed">
                             <font>
                                 <Font name="Century Gothic" size="15.0"/>
                             </font>
                         </Label>
-                        <Label alignment="CENTER" layoutY="70.0" prefHeight="60.0" prefWidth="325.0" styleClass="text"
-                               text="8">
+                        <Label fx:id="borrowedCount" alignment="CENTER" layoutY="70.0" prefHeight="60.0"
+                               prefWidth="325.0" styleClass="text" text="8">
                             <font>
                                 <Font name="Century" size="46.0"/>
                             </font>
