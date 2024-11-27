@@ -247,65 +247,86 @@ public class BorrowController extends Controller {
         String username = Login_LoginController.usernameToBorrow;
         Account account = databaseHelper.getAccountByUserName(username);
 
-        int userId = account.getId();
-        int documentId = Integer.parseInt(documentIdField.getText());
-        LocalDate borrowDate = LocalDate.now();
+        borrowButton.setOnAction(event -> {
+            int userId;
+            if(account == null) {
+                userId = 1;
+            }
+            else {
+                System.out.println("have acc");
+                userId = account.getId();
+            }
+            int documentId = Integer.parseInt(documentIdField.getText());
+            LocalDate borrowDate = LocalDate.now();
+            LocalDate requiredDate = borrowDate.plusMonths(1); // Calculate requiredDate as borrowDate + 1 month
 
-        // Hiện thị hộp thoại lấy số lượng
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Nhập số lượng mượn");
-        dialog.setHeaderText("Nhập số lượng bạn muốn mượn:");
-        dialog.setContentText("Số lượng:");
+            // Display dialog to input quantity
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Nhập số lượng mượn");
+            dialog.setHeaderText("Nhập số lượng bạn muốn mượn:");
+            dialog.setContentText("Số lượng:");
 
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()) {
-            try {
-                int quantityToBorrow = Integer.parseInt(result.get());
+            Optional<String> result = dialog.showAndWait();
+            if (result.isPresent()) {
+                try {
+                    int quantityToBorrow = Integer.parseInt(result.get());
 
-                Document document = databaseHelper.getDocumentById(documentId);
-                if (document != null) {
-                    int currentQuantity = document.getQuantity();
-                    if (currentQuantity >= quantityToBorrow) {
-                        String sqlBorrow = "INSERT INTO Borrow_Return (user_id, document_id, borrow_date, quantityBorrow) VALUES (?, ?, ?, ?)";
-                        String sqlUpdateQuantity = "UPDATE Documents SET quantity = quantity - ? WHERE id = ?";
+                    Document document = databaseHelper.getDocumentById(documentId);
+                    if (document != null) {
+                        int currentQuantity = document.getQuantity();
+                        if (currentQuantity >= quantityToBorrow) {
+                            String sqlBorrow = "INSERT INTO Borrow_Return (user_id, document_id, borrow_date, quantityBorrow, required_date, imageLink, title) VALUES (?,?, ?, ?, ?, ?, ?)";
+                            String sqlUpdateQuantity = "UPDATE Documents SET quantity = quantity - ? WHERE id = ?";
 
-                        try (Connection conn = databaseHelper.connect();
-                             PreparedStatement pstmtBorrow = conn.prepareStatement(sqlBorrow);
-                             PreparedStatement pstmtUpdate = conn.prepareStatement(sqlUpdateQuantity)) {
+                            try (Connection conn = databaseHelper.connect();
+                                 PreparedStatement pstmtBorrow = conn.prepareStatement(sqlBorrow);
+                                 PreparedStatement pstmtUpdate = conn.prepareStatement(sqlUpdateQuantity)) {
 
-                            // Thêm thông tin trả sách
-                            pstmtBorrow.setInt(1, userId);
-                            pstmtBorrow.setInt(2, documentId);
-                            pstmtBorrow.setDate(3, Date.valueOf(borrowDate));
-                            pstmtBorrow.setInt(4, quantityToBorrow); // Record the borrowed quantity
-                            pstmtBorrow.executeUpdate();
+                                // Add the borrowing information
+                                pstmtBorrow.setInt(1, userId);
+                                pstmtBorrow.setInt(2, documentId);
+                                pstmtBorrow.setDate(3, Date.valueOf(borrowDate));
+                                pstmtBorrow.setInt(4, quantityToBorrow); // Record the borrowed quantity
+                                pstmtBorrow.setDate(5, Date.valueOf(requiredDate)); // Set required date
+                                pstmtBorrow.setString(6, document.getImageLink()); // Assuming Document has getImageLink()
+                                pstmtBorrow.setString(7,document.getTitle());
 
-                            // Cập nhật số lượng tài liệu
-                            pstmtUpdate.setInt(1, quantityToBorrow);
-                            pstmtUpdate.setInt(2, documentId);
-                            pstmtUpdate.executeUpdate();
+                                pstmtBorrow.executeUpdate();
 
-                            System.out.println("Mượn sách thành công!");
-                        } catch (SQLException e) {
-                            e.printStackTrace();
+                                // Update the document quantity
+                                pstmtUpdate.setInt(1, quantityToBorrow);
+                                pstmtUpdate.setInt(2, documentId);
+                                pstmtUpdate.executeUpdate();
+
+                                System.out.println("Mượn sách thành công!");
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            System.out.println("Số lượng mượn vượt quá số lượng có sẵn.");
                         }
                     } else {
-                        System.out.println("Số lượng mượn vượt quá số lượng có sẵn.");
+                        System.out.println("Không tìm thấy tài liệu.");
                     }
-                } else {
-                    System.out.println("Không tìm thấy tài liệu.");
+                } catch (NumberFormatException e) {
+                    System.out.println("Vui lòng nhập số lượng hợp lệ.");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Vui lòng nhập số lượng hợp lệ.");
             }
-        }
+        });
     }
 
     private void handleReturnButton() {
         String username = Login_LoginController.usernameToBorrow;
         Account account = databaseHelper.getAccountByUserName(username);
 
-        int userId = account.getId();
+        int userId;
+        if(account == null) {
+            userId = 1;
+        }
+        else {
+            System.out.println("have acc");
+            userId = account.getId();
+        }
         int documentId = Integer.parseInt(documentIdField.getText());
 
         // Hiển thị hộp thoại yêu cầu nhập số lượng
@@ -326,7 +347,7 @@ public class BorrowController extends Controller {
                     int borrowedQuantity = databaseHelper.getBorrowedQuantity(userId, documentId); // Phương thức này cần được định nghĩa
 
                     if (borrowedQuantity >= quantityToReturn) {
-                        String sqlUpdateReturnDate = "UPDATE borrow_return SET return_date = NOW(), quantityBorrow = quantityBorrow - ? " +
+                        String sqlUpdateReturnDate = "UPDATE borrow_return SET quantityBorrow = quantityBorrow - ? " +
                                 "WHERE user_id = ? AND document_id = ?";
                         String sqlDeleteReturn = "DELETE FROM borrow_return WHERE user_id = ? AND document_id = ?";
                         String sqlUpdateQuantity = "UPDATE Documents SET quantity = quantity + ? WHERE id = ?";
@@ -354,7 +375,7 @@ public class BorrowController extends Controller {
                             pstmtUpdate.setInt(2, documentId);
                             pstmtUpdate.executeUpdate();
 
-                            showInfoAlert("Thành công!", "Thông báo", "Trả sách thành công");
+                            showInfoAlert("Thông báo", "Chúc mừng bạn","Trả sách thành công");
                         } catch (SQLException e) {
                             e.printStackTrace();
                             showWarningAlert("Đã xảy ra lỗi khi trả sách.");
@@ -363,10 +384,10 @@ public class BorrowController extends Controller {
                         showWarningAlert("Số lượng trả vượt quá số lượng đã mượn.");
                     }
                 } else {
-                    showWarningAlert("Không tìm thấy tài liệu.");
+                    showWarningAlert( "Không tìm thấy tài liệu.");
                 }
             } catch (NumberFormatException e) {
-                showWarningAlert("Vui lòng nhập một số hợp lệ.");
+                showWarningAlert( "Vui lòng nhập một số hợp lệ.");
             }
         }
     }

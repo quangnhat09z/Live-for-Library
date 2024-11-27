@@ -1,6 +1,7 @@
 package com.example.library.controller;
 
 import com.example.library.model.AudioManagement;
+import com.example.library.model.BorrowReturn;
 import com.example.library.model.ChangeView;
 import com.example.library.model.DatabaseHelper;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -27,6 +29,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
+import static com.example.library.model.Alert.showWarningAlert;
 import static com.example.library.model.SoundUtil.applySoundEffectsToButtons;
 
 public class MainController extends Controller {
@@ -159,8 +162,27 @@ public class MainController extends Controller {
 
     // Tạo một view tên như dưới, sau khi xong thì bỏ comment này và mở hàm changeScene.
     private void handleBorrowedButton() {
-//        changeScene("/com/example/library/borrowed-books-view.fxml", "Borrowed");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/library/borrowed-books-view.fxml"));
+            Parent root = loader.load();
+
+            // Tạo một cửa sổ mới
+            Stage borrowedBooksStage = new Stage();
+            borrowedBooksStage.setTitle("Borrowed Books");
+            borrowedBooksStage.setScene(new Scene(root, 400, 600)); // Kích thước cửa sổ mới
+
+            // Căn giữa cửa sổ mới trên màn hình
+            borrowedBooksStage.setOnShown(event -> {
+                borrowedBooksStage.setX((Screen.getPrimary().getVisualBounds().getWidth() - borrowedBooksStage.getWidth()) / 2);
+                borrowedBooksStage.setY((Screen.getPrimary().getVisualBounds().getHeight() - borrowedBooksStage.getHeight()) / 2);
+            });
+
+            borrowedBooksStage.show(); // Hiển thị cửa sổ
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     private void handleSettingButton() {
 //        changeScene("/com/example/library/settings-view.fxml", "Settings");
