@@ -35,7 +35,6 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.library.model.Alert.showInfoAlert;
@@ -72,7 +71,7 @@ public class BorrowController extends Controller {
     @FXML
     private Button homeButton;
     @FXML
-    private Button bookButton;
+    private Button exploreButton;
     @FXML
     private Button gameButton;
     @FXML
@@ -134,7 +133,7 @@ public class BorrowController extends Controller {
         myHyperlink.setOnAction(event -> handleHyperlinkAction());
         showButton.setOnAction(actionEvent -> handleShowButton());
         homeButton.setOnAction(actionEvent -> handleHomeButton());
-        bookButton.setOnAction(actionEvent -> handleBookButton());
+        exploreButton.setOnAction(actionEvent -> handleExploreButton());
         gameButton.setOnAction(actionEvent -> handleGameButton());
         borrowButton.setOnAction(actionEvent -> handleBorrowButton());
         returnButton.setOnAction(actionEvent -> handleReturnButton());
@@ -423,7 +422,7 @@ public class BorrowController extends Controller {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-            Stage stage = (Stage) bookButton.getScene().getWindow();
+            Stage stage = (Stage) exploreButton.getScene().getWindow();
             Scene scene = new Scene(root, 1300, 650);
             stage.setTitle(title);
             stage.setScene(scene);

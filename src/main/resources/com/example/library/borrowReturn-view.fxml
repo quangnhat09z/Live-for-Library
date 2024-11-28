@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" stylesheets="@../../../CSSStyling/explore.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.mainScreen.BorrowController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.mainScreen.BorrowController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
@@ -110,6 +110,16 @@
         </VBox>
         <AnchorPane prefHeight="650.0" prefWidth="1100.0" styleClass="backgroundInExploreScreen">
             <children>
+            <ImageView fitHeight="92.0" fitWidth="82.0" layoutX="51.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true" rotate="-19.5">
+               <image>
+                  <Image url="@../../../images/snowflake2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="114.0" fitWidth="105.0" layoutX="966.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" rotate="38.3">
+               <image>
+                  <Image url="@../../../images/snowflake2.png" />
+               </image>
+            </ImageView>
                 <Pane layoutX="200.0" layoutY="178.0" opacity="0.95" prefHeight="350.0" prefWidth="300.0" styleClass="paneIma">
                     <children>
                         <ImageView fx:id="myImageView" fitHeight="320.0" fitWidth="280.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
@@ -174,17 +184,17 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="returnButton" layoutX="65.0" layoutY="353.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="117.0" styleClass="buttonHideAndSHow" text="Return" textFill="#cccc99">
+                <Button fx:id="returnButton" layoutX="65.0" layoutY="352.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="117.0" styleClass="buttonHideAndSHow" text="Return" textFill="#cccc99">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
+            <ImageView fitHeight="175.0" fitWidth="202.0" layoutX="925.0" layoutY="469.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/book1.png" />
+               </image>
+            </ImageView>
                 <ListView fx:id="suggestionsList" layoutX="200.0" layoutY="90.0" prefHeight="130.0" prefWidth="791.0" styleClass="customListView" />
-                <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="905.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../images/snowflake5.png" />
-                    </image>
-                </ImageView>
             </children>
         </AnchorPane>
     </children>
