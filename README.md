@@ -1,4 +1,5 @@
 # LIBRARY MANAGEMENT SYSTEM - LIVE FOR LIBRARY
+Chủ đề mùa đông Noel (28/11/2024)
 
 Dự án của sinh viên khoa _Công nghệ thông tin_ của _trường Đại học Công Nghệ - Đại học Quốc gia Hà Nội (UET)_ thực hiện trong môn học _Lập trình hướng đối tượng OOP_ nhằm mục đích lấy điểm thành phần.
 
@@ -11,7 +12,7 @@ Group **_Live for Library_**
 | Nguyễn Thành Phước             | 23021665  |
 
 ## UML
-// Hình diagram
+![UML](https://github.com/quangnhat09z/Live-for-Library/blob/master/UML.png)
 ## Cài Đặt
 - Download zip và giải nén dự án tại link https://github.com/quangnhat09z/Live-for-Library/
 - Dùng IDE thích hợp và thêm các thư viện phù hợp: JDK 21 trở lên,...
@@ -21,7 +22,9 @@ Group **_Live for Library_**
 - Ứng dụng được viết bằng **_ngôn ngữ Java_** và sử dụng **_thư viện JavaFX_** và **_Scene Builer_** để hỗ trợ tạo giao diện đồ hoạ.
 - Ứng dụng ngoài các chức năng cơ bản vốn có của một thư viện như _lưu trữ, mượn, trả sách_ thì còn có chức năng _tra cứu các tài liệu ngoài thư viện_, có tích hợp _Quiz game_ để người dùng vừa giải trí, vừa nâng cao vốn hiểu biết.
 
-// Link ảnh
+![mainScreenLight](https://github.com/quangnhat09z/Live-for-Library/blob/master/mainScreenLight.jpg)
+![mainScreenDark](https://github.com/quangnhat09z/Live-for-Library/blob/master/mainScreenDark.jpg)
+![borrowReturn](https://github.com/quangnhat09z/Live-for-Library/blob/master/borrowReturn.jpg)
 ## Tính năng nổi bật
 - _Đăng nhập, đăng ký_ tài khoản với email và mật khẩu hợp lệ-
 - Giao diện chính chứa các thông số như: tổng số sách trong thư viện, tổng sổ tài khoản đã đăng ký, số sách mà người dùng đã mượn.
