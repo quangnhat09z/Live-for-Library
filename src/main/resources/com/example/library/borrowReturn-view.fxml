@@ -63,7 +63,7 @@
                                 <Cursor fx:constant="DEFAULT"/>
                             </cursor>
                         </JFXButton>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="5.0" layoutY="425.0" pickOnBounds="true"
+                        <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="12.5" layoutY="430.0" pickOnBounds="true"
                                    preserveRatio="true">
                             <image>
                                 <Image url="@../../../images/Logo.png"/>
@@ -124,7 +124,7 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <AnchorPane prefHeight="650.0" prefWidth="1099.0" styleClass="backgroundInExploreScreen">
+        <AnchorPane prefHeight="650.0" prefWidth="1100.0" styleClass="backgroundInExploreScreen">
             <children>
                 <Pane layoutX="200.0" layoutY="178.0" opacity="0.95" prefHeight="350.0" prefWidth="300.0"
                       styleClass="paneIma">
@@ -144,38 +144,38 @@
                         </Pane>
                         <Pane layoutX="5.0" layoutY="67.5" prefHeight="35.0" prefWidth="85.0" styleClass="pane">
                             <children>
-                                <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0"
-                                       text="Tên sách" textFill="#202020"/>
+                                <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0" text="Title"
+                                       textFill="#202020"/>
                             </children>
                         </Pane>
                         <Pane layoutX="5.0" layoutY="127.5" prefHeight="35.0" prefWidth="85.0" styleClass="pane">
                             <children>
                                 <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0"
-                                       text="Tác giả"/>
+                                       text="Author"/>
                             </children>
                         </Pane>
                         <Pane layoutX="5.0" layoutY="187.5" prefHeight="35.0" prefWidth="84.0" styleClass="pane">
                             <children>
                                 <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0"
-                                       text="Năm xuất bản"/>
+                                       text="Publication year"/>
                             </children>
                         </Pane>
                         <Pane layoutX="3.0" layoutY="247.5" prefHeight="35.0" prefWidth="85.0" styleClass="pane">
                             <children>
                                 <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0"
-                                       text="Nhà xuất bản"/>
+                                       text="Publisher"/>
                             </children>
                         </Pane>
                         <Pane layoutX="3.0" layoutY="307.5" prefHeight="35.0" prefWidth="85.0" styleClass="pane">
                             <children>
                                 <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0"
-                                       text="Thể loại"/>
+                                       text="Genre"/>
                             </children>
                         </Pane>
                         <Pane layoutX="3.0" layoutY="367.5" prefHeight="35.0" prefWidth="85.0" styleClass="pane">
                             <children>
                                 <Label alignment="CENTER" layoutY="5.0" prefHeight="25.0" prefWidth="85.0"
-                                       text="Số lượng"/>
+                                       text="Quantity"/>
                             </children>
                         </Pane>
                         <TextField fx:id="documentIdField" editable="false" layoutX="100.0" layoutY="3.0"
@@ -197,7 +197,7 @@
                     </children>
                 </Pane>
                 <TextField fx:id="searchExploreField" layoutX="200.0" layoutY="40.0" prefHeight="50.0" prefWidth="791.0"
-                           promptText="Tìm sách theo tiêu đề" styleClass="customTextField"/>
+                           promptText="Search book by title" styleClass="customTextField"/>
                 <Hyperlink fx:id="myHyperlink" layoutX="324.0" layoutY="550.0" onAction="#handleHyperlinkAction"
                            prefHeight="35.0" styleClass="customHyperlink" text="Go to book"/>
                 <Button fx:id="showButton" layoutX="65.0" layoutY="40.0" mnemonicParsing="false" prefHeight="34.0"
@@ -220,6 +220,12 @@
                 </Button>
                 <ListView fx:id="suggestionsList" layoutX="200.0" layoutY="90.0" prefHeight="130.0" prefWidth="791.0"
                           styleClass="customListView"/>
+                <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="893.0" layoutY="342.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/snowflake5.png"/>
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
     </children>

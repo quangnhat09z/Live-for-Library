@@ -16,9 +16,8 @@
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0" prefWidth="1300.0" styleClass="root"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.mainScreen.APIController">
+      prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.mainScreen.APIController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
@@ -63,7 +62,7 @@
                                 <Cursor fx:constant="DEFAULT"/>
                             </cursor>
                         </JFXButton>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="5.0" layoutY="425.0" pickOnBounds="true"
+                        <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="12.5" layoutY="430.0" pickOnBounds="true"
                                    preserveRatio="true">
                             <image>
                                 <Image url="@../../../images/Logo.png"/>
@@ -86,7 +85,7 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="mainButton" disable="true" buttonType="RAISED" layoutX="6.0" layoutY="280.0"
+                        <JFXButton fx:id="mainButton" buttonType="RAISED" disable="true" layoutX="6.0" layoutY="280.0"
                                    prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
                                    text="Explore" textFill="WHITE">
                             <font>
