@@ -108,8 +108,13 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <AnchorPane prefHeight="650.0" prefWidth="1099.0" styleClass="backgroundInExploreScreen">
+        <AnchorPane prefHeight="650.0" prefWidth="1100.0" styleClass="backgroundInExploreScreen">
             <children>
+            <ImageView fitHeight="99.0" fitWidth="129.0" layoutX="988.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" rotate="48.8">
+               <image>
+                  <Image url="@../../../images/snowflake2.png" />
+               </image>
+            </ImageView>
                 <Pane layoutX="240.0" layoutY="140.0" opacity="0.95" prefHeight="280.0" prefWidth="225.0" styleClass="paneIma">
                     <children>
                         <ImageView fx:id="myImageView" fitHeight="244.0" fitWidth="183.0" layoutX="34.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
@@ -157,7 +162,17 @@
                     </cursor>
                 </Button>
                 <Label fx:id="descriptionField" layoutX="31.0" layoutY="470.0" prefHeight="163.0" prefWidth="1039.0" styleClass="LongTextLabel" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="857.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/book5.png" />
+               </image>
+            </ImageView>
                 <ListView fx:id="suggestionsList" layoutX="152.0" layoutY="90.0" prefHeight="130.0" prefWidth="912.0" styleClass="customListView" />
+            <ImageView fitHeight="211.0" fitWidth="206.0" layoutX="8.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/boySearch.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>

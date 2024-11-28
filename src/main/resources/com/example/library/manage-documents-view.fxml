@@ -14,270 +14,223 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #FEF8F3;" styleClass="root"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.library.controller.manage.ManageDocumentsController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #FEF8F3;" styleClass="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.manage.ManageDocumentsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
                 <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                     <children>
-                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-                              styleClass="menu_pane">
+                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="menu_pane">
                             <children>
-                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
-                                      styleClass="most_inner_pane">
+                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane">
                                     <children>
-                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0"
-                                                   pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../../images/dots.png"/>
+                                                <Image url="@../../../images/dots.png" />
                                             </image>
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="5.0"
-                                           pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/animated_book.png"/>
+                                        <Image url="@../../../images/animated_book.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </Pane>
-                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Home" textFill="WHITE">
+                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE">
                             <font>
-                                <Font name="Times New Roman" size="14.0"/>
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="DEFAULT"/>
+                                <Cursor fx:constant="DEFAULT" />
                             </cursor>
                         </JFXButton>
-                        <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="12.5" layoutY="430.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="12.5" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../images/Logo.png"/>
+                                <Image url="@../../../images/Logo.png" />
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Books" textFill="WHITE">
+                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/borrow.png"/>
+                                        <Image url="@../../../images/borrow.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Explore" textFill="WHITE">
+                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/explore.png"/>
+                                        <Image url="@../../../images/explore.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Game" textFill="WHITE">
+                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/game.png"/>
+                                        <Image url="@../../../images/game.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
                     </children>
                 </AnchorPane>
             </children>
-        </VBox >
+        </VBox>
         <VBox prefHeight="650.0" prefWidth="1100.0">
             <children>
                 <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0">
                     <children>
-                        <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0"
-                                   prefWidth="150.0" styleClass="button_main" text="Documents"/>
-                        <JFXButton fx:id="accountButton" buttonType="RAISED" layoutX="650.0" layoutY="5.0"
-                                   prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Accounts">
+                        <JFXButton buttonType="RAISED" disable="true" layoutX="300.0" layoutY="5.0" prefHeight="40.0" prefWidth="150.0" styleClass="button_main" text="Documents" />
+                        <JFXButton fx:id="accountButton" buttonType="RAISED" layoutX="650.0" layoutY="5.0" prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Accounts">
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
                     </children>
                 </Pane>
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="600.0" prefWidth="1100.0" styleClass="background">
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" styleClass="background">
                     <children>
                         <Pane layoutX="20.0" layoutY="25.0" prefHeight="540.0" prefWidth="400.0" styleClass="info_pane">
                             <children>
-                                <Pane layoutX="25.0" layoutY="25.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <Pane layoutX="25.0" layoutY="25.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Title"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Title" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="titleField" layoutX="170.0" layoutY="25.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="Scene Builder" styleClass="text_field"/>
-                                <Pane layoutX="25.0" layoutY="75.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <TextField fx:id="titleField" layoutX="170.0" layoutY="25.0" prefHeight="35.0" prefWidth="225.0" promptText="Scene Builder" styleClass="text_field" />
+                                <Pane layoutX="25.0" layoutY="75.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Author"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Author" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="authorField" layoutX="170.0" layoutY="75.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="Kiều Văn Tuyên" styleClass="text_field"/>
-                                <Pane layoutX="25.0" layoutY="125.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <TextField fx:id="authorField" layoutX="170.0" layoutY="75.0" prefHeight="35.0" prefWidth="225.0" promptText="Kiều Văn Tuyên" styleClass="text_field" />
+                                <Pane layoutX="25.0" layoutY="125.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Publication year"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Publication year" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="publicYearField" layoutX="170.0" layoutY="125.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="2024" styleClass="text_field"/>
-                                <Pane layoutX="25.0" layoutY="175.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <TextField fx:id="publicYearField" layoutX="170.0" layoutY="125.0" prefHeight="35.0" prefWidth="225.0" promptText="2024" styleClass="text_field" />
+                                <Pane layoutX="25.0" layoutY="175.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Publisher"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Publisher" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="publisherField" layoutX="170.0" layoutY="175.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="Đại học Quốc gia" styleClass="text_field"/>
-                                <Pane layoutX="25.0" layoutY="225.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <TextField fx:id="publisherField" layoutX="170.0" layoutY="175.0" prefHeight="35.0" prefWidth="225.0" promptText="Đại học Quốc gia" styleClass="text_field" />
+                                <Pane layoutX="25.0" layoutY="225.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Genre"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Genre" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="genreField" layoutX="170.0" layoutY="225.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="Sách khoa học" styleClass="text_field"/>
-                                <Pane layoutX="25.0" layoutY="275.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <TextField fx:id="genreField" layoutX="170.0" layoutY="225.0" prefHeight="35.0" prefWidth="225.0" promptText="Sách khoa học" styleClass="text_field" />
+                                <Pane layoutX="25.0" layoutY="275.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Quantity"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Quantity" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="quantityField" layoutX="170.0" layoutY="275.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="1, 2" styleClass="text_field"/>
-                                <Pane layoutX="25.0" layoutY="325.0" prefHeight="35.0" prefWidth="115.0"
-                                      styleClass="label_pane">
+                                <TextField fx:id="quantityField" layoutX="170.0" layoutY="275.0" prefHeight="35.0" prefWidth="225.0" promptText="1, 2" styleClass="text_field" />
+                                <Pane layoutX="25.0" layoutY="325.0" prefHeight="35.0" prefWidth="115.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Image Link"
-                                               textFill="#202020">
+                                        <Label layoutY="5.0" prefHeight="25.0" prefWidth="115.0" text="Image Link" textFill="#202020">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="imageLinkField" layoutX="170.0" layoutY="325.0" prefHeight="35.0"
-                                           prefWidth="225.0" promptText="Optional" styleClass="text_field"/>
-                                <Button fx:id="showButton" layoutX="250.0" layoutY="390.0" mnemonicParsing="false"
-                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_show" text="LIST"
-                                        textFill="YELLOW">
+                                <TextField fx:id="imageLinkField" layoutX="170.0" layoutY="325.0" prefHeight="35.0" prefWidth="225.0" promptText="Optional" styleClass="text_field" />
+                                <Button fx:id="showButton" layoutX="250.0" layoutY="390.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" styleClass="button_show" text="LIST" textFill="YELLOW">
                                     <font>
-                                        <Font name="System Bold" size="13.0"/>
+                                        <Font name="System Bold" size="13.0" />
                                     </font>
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="deleteButton" layoutX="25.0" layoutY="470.0" mnemonicParsing="false"
-                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_delete" text="DELETE"
-                                        textFill="#cccc99">
+                                <Button fx:id="deleteButton" layoutX="25.0" layoutY="470.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" styleClass="button_delete" text="DELETE" textFill="#cccc99">
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="addButton" layoutX="25.0" layoutY="390.0" mnemonicParsing="false"
-                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_add" text="ADD"
-                                        textFill="#cccc99">
+                                <Button fx:id="addButton" layoutX="25.0" layoutY="390.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" styleClass="button_add" text="ADD" textFill="#cccc99">
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="changeButton" layoutX="250.0" layoutY="470.0" mnemonicParsing="false"
-                                        prefHeight="55.0" prefWidth="120.0" styleClass="button_change" text="SEARCH"
-                                        textFill="#cccc99">
+                                <Button fx:id="changeButton" layoutX="250.0" layoutY="470.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" styleClass="button_change" text="SEARCH" textFill="#cccc99">
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane layoutX="440.0" layoutY="25.0" opacity="0.8" prefHeight="540.0" prefWidth="635.0"
-                              styleClass="list_pane">
+                        <Pane layoutX="440.0" layoutY="25.0" opacity="0.8" prefHeight="540.0" prefWidth="635.0" styleClass="list_pane">
                             <children>
-                                <ListView fx:id="documentListView" layoutX="10.0" layoutY="10.0" prefHeight="480.0"
-                                          prefWidth="617.0" styleClass="list"/>
-                                <Label alignment="CENTER" layoutX="5.0" layoutY="491.0" prefHeight="43.0"
-                                       prefWidth="625.0" styleClass="list_label" text="Documents" textAlignment="CENTER"
-                                       textFill="WHITE">
+                                <ListView fx:id="documentListView" layoutX="10.0" layoutY="10.0" prefHeight="480.0" prefWidth="617.0" styleClass="list" />
+                                <Label alignment="CENTER" layoutX="5.0" layoutY="491.0" prefHeight="43.0" prefWidth="625.0" styleClass="list_label" text="Documents" textAlignment="CENTER" textFill="WHITE">
                                     <font>
-                                        <Font name="Palatino Bold" size="35.0"/>
+                                        <Font name="Palatino Bold" size="35.0" />
                                     </font>
                                 </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="515.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/book4.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </Pane>
                     </children>
