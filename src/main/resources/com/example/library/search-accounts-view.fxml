@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.search.SearchAccountsController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.search.SearchAccountsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
@@ -126,6 +126,21 @@
                 </Pane>
                 <AnchorPane prefHeight="600.0" prefWidth="1100.0" styleClass="background">
                     <children>
+                  <ImageView fitHeight="181.0" fitWidth="216.0" layoutX="824.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" rotate="-17.4">
+                     <image>
+                        <Image url="@../../../images/coralImage.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="95.0" layoutX="14.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true" rotate="76.0">
+                     <image>
+                        <Image url="@../../../images/snowflake1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="181.0" fitWidth="216.0" layoutX="76.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/coralImage.png" />
+                     </image>
+                  </ImageView>
                         <Pane layoutX="270.0" layoutY="10.0" prefHeight="200.0" prefWidth="560.0" styleClass="info_pane">
                             <children>
                                 <TextField fx:id="idField" layoutX="47.0" layoutY="14.0" prefHeight="29.0" prefWidth="180.0" promptText="ID" styleClass="text_field" />
