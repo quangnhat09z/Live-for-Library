@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.search.SearchDocumentsController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" styleClass="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.search.SearchDocumentsController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
@@ -121,12 +121,12 @@
                 </Pane>
                 <AnchorPane prefHeight="600.0" prefWidth="1100.0" styleClass="background">
                     <children>
-                  <ImageView fitHeight="78.0" fitWidth="100.0" layoutX="983.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="78.0" fitWidth="100.0" layoutX="983.0" pickOnBounds="true" preserveRatio="true" rotate="-16.2">
                      <image>
                         <Image url="@../../../images/snowflake.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-3.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-3.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" rotate="-101.3">
                      <image>
                         <Image url="@../../../images/snowflake2.png" />
                      </image>

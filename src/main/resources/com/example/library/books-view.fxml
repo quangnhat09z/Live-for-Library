@@ -107,10 +107,20 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <VBox stylesheets="@../../../CSSStyling/book.css">
+        <VBox>
             <children>
                 <AnchorPane prefHeight="650.0" prefWidth="1100.0" styleClass="background">
                     <children>
+                  <ImageView fitHeight="78.0" fitWidth="100.0" layoutX="987.0" pickOnBounds="true" preserveRatio="true" rotate="19.5">
+                     <image>
+                        <Image url="@../../../images/snowflake.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-4.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" rotate="-35.5">
+                     <image>
+                        <Image url="@../../../images/snowflake2.png" />
+                     </image>
+                  </ImageView>
                         <TextField fx:id="idField" layoutX="50.0" layoutY="50.0" prefHeight="35.0" prefWidth="95.0" promptText="ID" styleClass="text_field" />
                         <TextField fx:id="titleField" layoutX="145.0" layoutY="50.0" prefHeight="35.0" prefWidth="200.0" promptText="Title" styleClass="text_field" />
                         <TextField fx:id="authorField" layoutX="345.0" layoutY="50.0" prefHeight="35.0" prefWidth="170.0" promptText="Author" styleClass="text_field" />
@@ -145,6 +155,11 @@
                                   <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="127.0" text="Quantity" />
                               </columns>
                           </TableView>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="897.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/book8.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </AnchorPane>
             </children>
