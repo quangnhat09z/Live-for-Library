@@ -157,16 +157,18 @@
     -fx-background-color: #000000; /* Màu nền vàng */
     -fx-background-radius: 15;      /* Bo góc 20px */
     -fx-padding: 15;                /* Khoảng đệm */
+
 }
 
 .table_view {
-    -fx-border-color: #00008B; /* Viền xanh đậm */
+    -fx-border-color: #000000; /* Viền xanh đậm */
     -fx-border-radius: 0px; /* Bo góc */
     -fx-background-color: #FFFFFF; /* Màu nền trắng */
     -fx-font-family: "Times New Roman"; /* Font chữ Times New Roman */
     -fx-font-size: 14px; /* Kích thước chữ */
     -fx-background-insets: 0; /* Đảm bảo không có phần nền thừa */
     -fx-text-fill: black; /* Màu chữ đen */
+     -fx-border-width: 2px; /* Độ dày viền 3px */
 }
 
 .table_view .column-header {
