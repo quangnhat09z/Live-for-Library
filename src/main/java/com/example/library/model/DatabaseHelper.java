@@ -17,7 +17,7 @@ public class DatabaseHelper {
 
   public static final String URL = "jdbc:mysql://localhost:3306/library";
   public static final String USER = "root"; // Thay bằng tên người dùng của bạn
-  public static final String PASSWORD = "09022005"; // Thay bằng mật khẩu của bạn
+  public static final String PASSWORD = "Anhphuoc1@"; // Thay bằng mật khẩu của bạn
 
   public static Connection connect() {
     try {
