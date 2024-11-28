@@ -215,7 +215,7 @@ public class APIController extends Controller{
 
                 return new Document(title, author, publicYear,publisher , genre,  imageLink, description);
             } else {
-                System.out.println("Không tìm thấy tài liệu nào trong phản hồi.");
+                System.out.println("No documentation found in response.");
             }
         } //catch (JsonSyntaxException e) {
             //System.out.println("Lỗi cú pháp JSON: " + e.getMessage());
@@ -255,7 +255,7 @@ public class APIController extends Controller{
 
                 googleSearchUrl = "https://www.google.com/search?q=" + (title + " book").replace(" ", "+");
             } else {
-                System.out.println("Không tìm thấy tài liệu. Vui lòng thử với tiêu đề khác.");
+                System.out.println("No document found. Please try with another title..");
             }
         } catch (Exception e) {
             e.printStackTrace(); // In ra chi tiết lỗi
