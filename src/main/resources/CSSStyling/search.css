@@ -31,13 +31,14 @@
 }
 
 .button_not_main:hover {
-    -fx-background-color: yellow ; /* Màu nền khi hover */
+    -fx-background-color: #007bff ; /* Màu nền khi hover */
     -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
     -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
     -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
 }
+
 
 .background {
     -fx-background-color:  #FEF8F3;
@@ -105,16 +106,16 @@
 }
 
 .button_delete:hover {
-    -fx-background-color: red; /* Màu nền khi hover */
-    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-background-color: #007bff; /* Màu nền khi hover */
+    -fx-text-fill: #FFFFFF;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
     -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
     -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
 }
 .button_add:hover {
-    -fx-background-color: #00FF00; /* Màu nền khi hover */
-    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-background-color: #007bff; /* Màu nền khi hover */
+    -fx-text-fill: #FFFFFF;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
     -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
@@ -122,8 +123,8 @@
 }
 
 .button_show:hover {
-    -fx-background-color: #33CCFF ; /* Màu nền khi hover */
-    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-background-color: #007bff ; /* Màu nền khi hover */
+    -fx-text-fill: #FFFFFF;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
     -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
@@ -131,21 +132,22 @@
 }
 
 .button_change:hover {
-    -fx-background-color: yellow ; /* Màu nền khi hover */
-    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-background-color: #007bff ; /* Màu nền khi hover */
+    -fx-text-fill: #FFFFFF;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
     -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
     -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
 }
 .button_changeInfo:hover {
-    -fx-background-color: green; /* Màu nền khi hover */
-    -fx-text-fill: #000000;         /* Màu chữ đen khi hover */
+    -fx-background-color: #007bff; /* Màu nền khi hover */
+    -fx-text-fill: #FFFFFF;         /* Màu chữ đen khi hover */
     -fx-border-color: black;     /* Màu viền khi hover */
     -fx-background-radius: 6;      /* Bo góc viền khi hover */
     -fx-scale-x: 1.05;              /* Phóng to nút theo chiều ngang */
     -fx-scale-y: 1.05;              /* Phóng to nút theo chiều dọc */
 }
+
 
 .table_pane {
     -fx-border-color: #000000;

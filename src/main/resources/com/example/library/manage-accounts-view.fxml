@@ -19,107 +19,93 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.manage.ManageAccountController">
+<HBox fx:id="root" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.manage.ManageAccountController">
     <children>
         <VBox prefHeight="717.0" prefWidth="200.0" stylesheets="@../../../CSSStyling/main.css">
             <children>
                 <AnchorPane fx:id="side_anchorpane" prefHeight="650.0" prefWidth="200.0" styleClass="side_anchorpane">
                     <children>
-                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0"
-                              styleClass="menu_pane">
+                        <Pane fx:id="inner_pane" layoutX="3.0" layoutY="15.0" prefHeight="70.0" prefWidth="190.0" styleClass="menu_pane">
                             <children>
-                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0"
-                                      styleClass="most_inner_pane">
+                                <Pane fx:id="most_inner_pane" layoutX="155.0" prefHeight="70.0" prefWidth="40.0" styleClass="most_inner_pane">
                                     <children>
-                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0"
-                                                   pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="60.0" fitWidth="30.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../../images/dots.png"/>
+                                                <Image url="@../../../images/dots.png" />
                                             </image>
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="5.0"
-                                           pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/animated_book.png"/>
+                                        <Image url="@../../../images/animated_book.png" />
                                     </image>
                                 </ImageView>
                             </children>
                         </Pane>
-                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Home" textFill="WHITE">
+                        <JFXButton fx:id="homeButton" buttonType="RAISED" layoutX="6.0" layoutY="120.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Home" textFill="WHITE">
                             <font>
-                                <Font name="Times New Roman" size="14.0"/>
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/home.png"/>
+                                        <Image url="@../../../images/home.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="DEFAULT"/>
+                                <Cursor fx:constant="DEFAULT" />
                             </cursor>
                         </JFXButton>
-                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="5.0" layoutY="425.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="5.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../images/Logo.png"/>
+                                <Image url="@../../../images/Logo.png" />
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Books" textFill="WHITE">
+                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/borrow.png"/>
+                                        <Image url="@../../../images/borrow.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Explore" textFill="WHITE">
+                        <JFXButton fx:id="exploreButton" buttonType="RAISED" layoutX="6.0" layoutY="280.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Explore" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/explore.png"/>
+                                        <Image url="@../../../images/explore.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0"
-                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
-                                   text="Game" textFill="WHITE">
+                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/game.png"/>
+                                        <Image url="@../../../images/game.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
                     </children>
@@ -130,167 +116,136 @@
             <children>
                 <Pane fx:id="bar" prefHeight="50.0" prefWidth="1100.0">
                     <children>
-                        <JFXButton fx:id="documentsButton" buttonType="RAISED" layoutX="300.0" layoutY="5.0"
-                                   prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Documents">
+                        <JFXButton fx:id="documentsButton" buttonType="RAISED" layoutX="300.0" layoutY="5.0" prefHeight="40.0" prefWidth="150.0" styleClass="button_not_main" text="Documents">
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
-                        <JFXButton buttonType="RAISED" disable="true" layoutX="650.0" layoutY="5.0" prefHeight="40.0"
-                                   prefWidth="150.0" styleClass="button_main" text="Accounts">
+                        <JFXButton buttonType="RAISED" disable="true" layoutX="650.0" layoutY="5.0" prefHeight="40.0" prefWidth="150.0" styleClass="button_main" text="Accounts">
                             <cursor>
-                                <Cursor fx:constant="HAND"/>
+                                <Cursor fx:constant="HAND" />
                             </cursor>
                         </JFXButton>
                     </children>
                 </Pane>
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="600.0" prefWidth="1100.0" styleClass="background">
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #FEF8F3;" styleClass="background">
                     <children>
-                        <Pane layoutX="50.0" layoutY="25.0" opacity="0.92" prefHeight="530.0" prefWidth="360.0"
-                              styleClass="info_pane">
+                        <Pane layoutX="50.0" layoutY="25.0" opacity="0.92" prefHeight="530.0" prefWidth="360.0" styleClass="info_pane">
                             <children>
-                                <Pane layoutX="25.0" layoutY="55.0" prefHeight="38.0" prefWidth="84.0"
-                                      styleClass="label_pane">
+                                <Pane layoutX="25.0" layoutY="55.0" prefHeight="38.0" prefWidth="84.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="Email:"
-                                               textAlignment="CENTER">
+                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="Email:" textAlignment="CENTER">
                                             <font>
-                                                <Font name="Times New Roman Bold" size="13.0"/>
+                                                <Font name="Times New Roman Bold" size="13.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="emailField" layoutX="125.0" layoutY="55.0" prefHeight="38.0"
-                                           prefWidth="220.0" promptText="Ex: ntp2005gmail.com" styleClass="text_field">
+                                <TextField fx:id="emailField" layoutX="125.0" layoutY="55.0" prefHeight="38.0" prefWidth="220.0" promptText="Ex: ntp2005gmail.com" styleClass="text_field">
                                     <effect>
-                                        <DropShadow/>
+                                        <DropShadow />
                                     </effect>
                                 </TextField>
-                                <Pane layoutX="25.0" layoutY="110.0" prefHeight="38.0" prefWidth="84.0"
-                                      styleClass="label_pane">
+                                <Pane layoutX="25.0" layoutY="110.0" prefHeight="38.0" prefWidth="84.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="UserName:"
-                                               textAlignment="CENTER">
+                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="UserName:" textAlignment="CENTER">
                                             <font>
-                                                <Font name="Times New Roman Bold" size="13.0"/>
+                                                <Font name="Times New Roman Bold" size="13.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="usernameField" layoutX="125.0" layoutY="110.0" prefHeight="38.0"
-                                           prefWidth="219.0" promptText="Ex: ntpjr2005" styleClass="text_field">
+                                <TextField fx:id="usernameField" layoutX="125.0" layoutY="110.0" prefHeight="38.0" prefWidth="219.0" promptText="Ex: ntpjr2005" styleClass="text_field">
                                     <effect>
-                                        <DropShadow/>
+                                        <DropShadow />
                                     </effect>
                                 </TextField>
-                                <Pane layoutX="25.0" layoutY="165.0" prefHeight="38.0" prefWidth="84.0"
-                                      styleClass="label_pane">
+                                <Pane layoutX="25.0" layoutY="165.0" prefHeight="38.0" prefWidth="84.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="Password:"
-                                               textAlignment="CENTER">
+                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="Password:" textAlignment="CENTER">
                                             <font>
-                                                <Font name="Times New Roman Bold" size="13.0"/>
+                                                <Font name="Times New Roman Bold" size="13.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="passwordField" layoutX="125.0" layoutY="165.0" prefHeight="38.0"
-                                           prefWidth="219.0" promptText="Ex: ntpjr2005@" styleClass="text_field">
+                                <TextField fx:id="passwordField" layoutX="125.0" layoutY="165.0" prefHeight="38.0" prefWidth="219.0" promptText="Ex: ntpjr2005@" styleClass="text_field">
                                     <effect>
-                                        <DropShadow/>
+                                        <DropShadow />
                                     </effect>
                                 </TextField>
-                                <Pane layoutX="25.0" layoutY="220.0" prefHeight="38.0" prefWidth="84.0"
-                                      styleClass="label_pane">
+                                <Pane layoutX="25.0" layoutY="220.0" prefHeight="38.0" prefWidth="84.0" styleClass="label_pane">
                                     <children>
-                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="Role:"
-                                               textAlignment="CENTER">
+                                        <Label layoutY="3.0" prefHeight="32.0" prefWidth="84.0" text="Role:" textAlignment="CENTER">
                                             <font>
-                                                <Font name="Times New Roman Bold" size="13.0"/>
+                                                <Font name="Times New Roman Bold" size="13.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </Pane>
-                                <ComboBox fx:id="roleComboBox" layoutX="125.0" layoutY="220.0" mouseTransparent="false"
-                                          prefHeight="41.0" prefWidth="106.0" styleClass="combo-box"
-                                          visibleRowCount="2">
+                                <ComboBox fx:id="roleComboBox" layoutX="125.0" layoutY="220.0" mouseTransparent="false" prefHeight="41.0" prefWidth="106.0" styleClass="combo-box" visibleRowCount="2">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="admin"/>
-                                            <String fx:value="user"/>
+                                            <String fx:value="admin" />
+                                            <String fx:value="user" />
                                         </FXCollections>
                                     </items>
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                     <effect>
                                         <DropShadow>
                                             <color>
-                                                <Color red="0.02631578966975212" green="0.02631578966975212"
-                                                       blue="0.02631578966975212"/>
+                                                <Color red="0.02631578966975212" green="0.02631578966975212" blue="0.02631578966975212" />
                                             </color>
                                         </DropShadow>
                                     </effect>
                                 </ComboBox>
-                                <Label fx:id="ManageAccountMessage" alignment="CENTER" contentDisplay="CENTER"
-                                       layoutX="5.0" layoutY="300.0" prefHeight="45.0" prefWidth="350.0"
-                                       textAlignment="CENTER" wrapText="true">
+                                <Label fx:id="ManageAccountMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="300.0" prefHeight="45.0" prefWidth="350.0" textAlignment="CENTER" wrapText="true">
                                     <font>
-                                        <Font size="20.0"/>
+                                        <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="addButton" layoutX="25.0" layoutY="375.0" mnemonicParsing="false"
-                                        prefHeight="50.0" prefWidth="120.0" styleClass="button_add" text="ADD"
-                                        textFill="#cccc99">
+                                <Button fx:id="addButton" layoutX="25.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="button_add" text="ADD" textFill="#cccc99">
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="showButton" layoutX="205.0" layoutY="375.0" mnemonicParsing="false"
-                                        prefHeight="50.0" prefWidth="120.0" styleClass="button_show" text="LIST "
-                                        textFill="YELLOW">
+                                <Button fx:id="showButton" layoutX="205.0" layoutY="375.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="button_show" text="LIST " textFill="YELLOW">
                                     <font>
-                                        <Font name="System Bold" size="13.0"/>
+                                        <Font name="System Bold" size="13.0" />
                                     </font>
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="deleteButton" layoutX="25.0" layoutY="450.0" mnemonicParsing="false"
-                                        prefHeight="50.0" prefWidth="120.0" styleClass="button_delete" text="DELETE"
-                                        textFill="#cccc99">
+                                <Button fx:id="deleteButton" layoutX="25.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="button_delete" text="DELETE" textFill="#cccc99">
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="searchButton" layoutX="205.0" layoutY="450.0" mnemonicParsing="false"
-                                        prefHeight="50.0" prefWidth="120.0" styleClass="button_show" text="SEARCH"
-                                        textFill="#cccc99">
+                                <Button fx:id="searchButton" layoutX="205.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" styleClass="button_show" text="SEARCH" textFill="#cccc99">
                                     <cursor>
-                                        <Cursor fx:constant="HAND"/>
+                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
 
 
                             </children>
                         </Pane>
-                        <Pane layoutX="431.0" layoutY="25.0" opacity="0.8" prefHeight="530.0" prefWidth="636.0"
-                              styleClass="list_pane">
+                        <Pane layoutX="431.0" layoutY="25.0" opacity="0.8" prefHeight="530.0" prefWidth="636.0" styleClass="list_pane">
                             <children>
-                                <ListView fx:id="accountListView" layoutX="10.0" layoutY="12.0" prefHeight="479.0"
-                                          prefWidth="617.0" styleClass="list">
+                                <ListView fx:id="accountListView" layoutX="10.0" layoutY="12.0" prefHeight="479.0" prefWidth="617.0" styleClass="list">
                                     <cursor>
-                                        <Cursor fx:constant="CLOSED_HAND"/>
+                                        <Cursor fx:constant="CLOSED_HAND" />
                                     </cursor>
                                 </ListView>
-                                <Label alignment="CENTER" layoutY="490.0" prefHeight="43.0" prefWidth="636.0"
-                                       styleClass="list_label" text="ACCOUNT" textAlignment="CENTER" textFill="WHITE">
+                                <Label alignment="CENTER" layoutX="43.0" layoutY="491.0" prefHeight="34.0" prefWidth="549.0" styleClass="list_label" text="ACCOUNT" textAlignment="CENTER" textFill="WHITE">
                                     <font>
-                                        <Font name="Times New Roman" size="35.0"/>
+                                        <Font name="Times New Roman" size="30.0" />
                                     </font>
                                     <cursor>
-                                        <Cursor fx:constant="CLOSED_HAND"/>
+                                        <Cursor fx:constant="CLOSED_HAND" />
                                     </cursor>
                                 </Label>
                             </children>
