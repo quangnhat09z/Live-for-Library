@@ -102,10 +102,6 @@ public class ListBorrowBooksController {
                 // Lấy Stage hiện tại nơi listView đang được hiển thị
                 Stage currentStage = (Stage) listView.getScene().getWindow();
 
-                // Nếu bạn đang làm việc với một cửa sổ mới và muốn trở về cửa sổ chính,
-                // bạn sẽ cần một tham chiếu đến cửa sổ chính.
-                // Giả sử bạn lưu trữ một tham chiếu đến cửa sổ chính trong một biến static hoặc pass nó dưới dạng tham số tới controller này.
-
                 // Tạo một cửa sổ chính mới từ một phương thức static hoặc truyền đến cửa sổ chính
                 Stage primaryStage = MainController.primaryStage; // Giả thuyết là bạn lưu cửa sổ chính vào Main class
 

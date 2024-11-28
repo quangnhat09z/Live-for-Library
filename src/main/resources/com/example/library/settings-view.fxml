@@ -42,10 +42,10 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="14.0" layoutY="11.0"
+                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="5.0"
                                            pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../images/book_icon.png"/>
+                                        <Image url="@../../../images/animated_book.png"/>
                                     </image>
                                 </ImageView>
                             </children>
@@ -54,7 +54,7 @@
                                    prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
                                    text="Home" textFill="WHITE">
                             <font>
-                                <Font size="14.0"/>
+                                <Font name="Times New Roman" size="14.0"/>
                             </font>
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -67,15 +67,15 @@
                                 <Cursor fx:constant="DEFAULT"/>
                             </cursor>
                         </JFXButton>
-                        <ImageView blendMode="MULTIPLY" fitHeight="118.0" fitWidth="190.0" layoutX="5.0" layoutY="475.0"
-                                   pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="5.0" layoutY="425.0" pickOnBounds="true"
+                                   preserveRatio="true">
                             <image>
-                                <Image url="@../../../images/book_icon.png"/>
+                                <Image url="@../../../images/Logo.png"/>
                             </image>
                         </ImageView>
-                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0" prefHeight="60.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Books"
-                                   textFill="WHITE">
+                        <JFXButton fx:id="bookButton" buttonType="RAISED" layoutX="6.0" layoutY="200.0"
+                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                                   text="Books" textFill="WHITE">
                             <font>
                                 <Font size="14.0"/>
                             </font>
@@ -107,9 +107,9 @@
                                 <Cursor fx:constant="HAND"/>
                             </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0" prefHeight="60.0"
-                                   prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1" text="Game"
-                                   textFill="WHITE">
+                        <JFXButton fx:id="gameButton" buttonType="RAISED" layoutX="6.0" layoutY="360.0"
+                                   prefHeight="60.0" prefWidth="190.0" ripplerFill="WHITE" styleClass="btn_1"
+                                   text="Game" textFill="WHITE">
                             <font>
                                 <Font size="14.0"/>
                             </font>
@@ -154,11 +154,10 @@
                                             <children>
                                                 <Label text="Music volume:"/>
                                                 <Label text="SFX volume:" GridPane.rowIndex="1"/>
-                                                <JFXSlider GridPane.columnIndex="1" fx:id="musicVolumeSlider"
-                                                           max="100" value="50" blockIncrement="1"/>
-                                                <JFXSlider GridPane.columnIndex="1" GridPane.rowIndex="1"
-                                                           fx:id="sfxVolumeSlider" max="100" value="50"
-                                                           blockIncrement="1"/>
+                                                <JFXSlider fx:id="musicVolumeSlider" blockIncrement="1" max="100"
+                                                           value="50" GridPane.columnIndex="1"/>
+                                                <JFXSlider fx:id="sfxVolumeSlider" blockIncrement="1" max="100"
+                                                           value="50" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                                             </children>
                                         </GridPane>
                                     </children>

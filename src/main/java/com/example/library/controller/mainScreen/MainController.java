@@ -55,8 +55,6 @@ public class MainController extends Controller {
     @FXML
     private Button gameButton;
     @FXML
-    private Button quitButton;
-    @FXML
     private Button adminButton;
     @FXML
     private Button borrowedButton;
@@ -87,7 +85,6 @@ public class MainController extends Controller {
         } else {
             adminButton.setOnAction(actionEvent -> handleAdminButton());
         }
-        quitButton.setOnAction(actionEvent -> handleQuitButton());
         borrowedButton.setOnAction(actionEvent -> handleBorrowedButton());
         settingButton.setOnAction(actionEvent -> handleSettingButton());
         userButton.setOnAction(actionEvent -> handleUserButton());
@@ -150,7 +147,7 @@ public class MainController extends Controller {
         // Xử lý kết quả
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == buttonTypeYes) {
-            Stage stage = (Stage) quitButton.getScene().getWindow();
+            Stage stage = (Stage) paneQuitButton.getScene().getWindow();
             stage.close();
         }
     }

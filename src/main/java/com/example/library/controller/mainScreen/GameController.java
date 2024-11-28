@@ -37,8 +37,6 @@ public class GameController extends Controller {
     @FXML
     private Button exploreButton;
     @FXML
-    private Button mainButton;
-    @FXML
     private JFXButton nextButton;
     @FXML
     private Label questionPilot;
@@ -133,7 +131,6 @@ public class GameController extends Controller {
         homeButton.setOnAction(actionEvent -> handleHomeButton());
         bookButton.setOnAction(actionEvent -> handleBookButton());
         exploreButton.setOnAction(actionEvent -> handleExploreButton());
-        mainButton.setOnAction(actionEvent -> handleGameButton());
         nextButton.setOnAction(actionEvent -> handleNextButton());
         exitButton.setOnAction(actionEvent -> handleHomeButton());
     }
